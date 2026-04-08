@@ -4,7 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Checklistings App</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
 :root{
   --bg:#f8fafc;
@@ -13,33 +15,126 @@
   --text:#0f172a;
   --sub:#64748b;
 }
-body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
-.app{max-width:420px;margin:0 auto;padding:16px}
-h1{font-size:26px;margin:10px 0}
-#globalText{display:block;margin-bottom:8px}
-.bar{height:8px;background:#e2e8f0;border-radius:999px;overflow:hidden;margin-bottom:8px}
-.global-bar{height:14px;margin-bottom:24px}
-.fill{height:100%;background:linear-gradient(90deg,#3b82f6,#6366f1);width:0%}
-.card{background:var(--card);border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:0 4px 20px rgba(0,0,0,0.05);cursor:pointer}
-.title{font-weight:600}
-.sub{font-size:13px;color:var(--sub)}
-.status{font-size:12px;padding:6px 10px;border-radius:999px}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.app{
+  max-width:420px;
+  margin:0 auto;
+  padding:16px;
+}
+
+h1{
+  font-size:26px;
+  margin:10px 0;
+}
+
+#globalText{
+  display:block;
+  margin-bottom:10px;
+  font-weight:500;
+}
+
+.bar{
+  height:10px;
+  background:#e2e8f0;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.global-bar{
+  height:16px;
+  margin-bottom:28px;
+}
+
+.fill{
+  height:100%;
+  background:linear-gradient(90deg,#3b82f6,#6366f1);
+  width:0%;
+}
+
+.card{
+  background:var(--card);
+  border-radius:18px;
+  padding:16px;
+  margin-bottom:12px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.05);
+  cursor:pointer;
+  width:100%;
+  box-sizing:border-box;
+}
+
+.title{
+  font-weight:600;
+  flex:1;
+  min-width:0;
+}
+
+.sub{
+  font-size:13px;
+  color:var(--sub);
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+.status{
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  white-space:nowrap;
+}
+
 .done{background:#dcfce7;color:#166534}
 .progress{background:#e0f2fe;color:#075985}
 .new{background:#ede9fe;color:#5b21b6}
-.screen{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg);transform:translateX(100%);transition:0.3s;padding:20px;overflow:auto}
-.screen.active{transform:translateX(0)}
-.back{margin-bottom:10px;color:var(--accent);cursor:pointer}
-.row{display:flex;justify-content:space-between;align-items:center}
+
+.screen{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:var(--bg);
+  transform:translateX(100%);
+  transition:0.3s;
+  padding:20px;
+  overflow:auto;
+  box-sizing:border-box;
+}
+
+.screen.active{
+  transform:translateX(0);
+}
+
+.back{
+  margin-bottom:10px;
+  color:var(--accent);
+  cursor:pointer;
+}
 </style>
 </head>
+
 <body>
 
 <div class="app">
-<h1>Checklistings App</h1>
-<div id="globalText">Загрузка...</div>
-<div class="bar global-bar"><div id="globalFill" class="fill"></div></div>
-<div id="cats"></div>
+  <h1>Checklistings App</h1>
+
+  <div id="globalText">Загрузка...</div>
+  <div class="bar global-bar">
+    <div id="globalFill" class="fill"></div>
+  </div>
+
+  <div id="cats"></div>
 </div>
 
 <div id="screen" class="screen"></div>
@@ -75,6 +170,7 @@ function buildStructure(items){
   items.forEach(item => {
     if(!map[item.category]){
       map[item.category] = {
+        key:item.category,
         name: getCategoryName(item.category),
         desc: getCategoryDesc(item.category),
         lists: []
@@ -119,13 +215,19 @@ function getCategoryDesc(key){
     "self-dev":"Рост и дисциплина",
     "home":"Порядок и комфорт",
     "health":"Сон и питание",
-    "books":"Чтение",
+    "books":"Чтение и знания",
     "work":"Фокус и результат",
-    "lifestyle":"Стиль жизни",
-    "travel":"Поездки",
-    "psychology":"Мышление"
+    "lifestyle":"Стиль жизни и привычки",
+    "travel":"Поездки и опыт",
+    "psychology":"Мышление и осознанность"
   };
   return map[key] || "";
+}
+
+function calcCategoryProgress(cat){
+  const total = cat.lists.length;
+  const done = cat.lists.filter(l=>l.completed).length;
+  return total ? Math.round((done/total)*100) : 0;
 }
 
 function calcGlobal(){
@@ -149,10 +251,11 @@ function render(){
   document.getElementById('globalFill').style.width = g + '%';
   document.getElementById('globalText').innerText = `Общий прогресс: ${g}%`;
 
-  data.forEach((cat,i)=>{
-    const done = cat.lists.filter(l=>l.completed).length;
-    const total = cat.lists.length;
-    const p = total ? Math.round((done/total)*100) : 0;
+  // 🔥 сортировка категорий по прогрессу
+  const sorted = [...data].sort((a,b)=>calcCategoryProgress(b)-calcCategoryProgress(a));
+
+  sorted.forEach((cat)=>{
+    const p = calcCategoryProgress(cat);
 
     const el=document.createElement('div');
     el.className='card';
@@ -160,11 +263,14 @@ function render(){
     el.innerHTML=`
       <div class='title'>${cat.name}</div>
       <div class='sub'>${cat.desc}</div>
-      <div class='sub'>${p}% завершено</div>
-      <div class='bar'><div class='fill' style='width:${p}%'></div></div>
+
+      <div style="margin-top:14px">
+        <div class='sub' style='margin-bottom:6px'>${p}% завершено</div>
+        <div class='bar'><div class='fill' style='width:${p}%'></div></div>
+      </div>
     `;
 
-    el.onclick=()=>openCategory(i);
+    el.onclick=()=>openCategory(data.indexOf(cat));
     root.appendChild(el);
   });
 }
