@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Checklistings</title>
+<title>Checklistings App</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -18,23 +18,24 @@ body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--te
 h1{font-size:26px;margin:10px 0}
 .bar{height:8px;background:#e2e8f0;border-radius:999px;overflow:hidden}
 .fill{height:100%;background:linear-gradient(90deg,#3b82f6,#6366f1);width:0%;transition:0.5s}
-.card{background:var(--card);border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:0 4px 20px rgba(0,0,0,0.05);cursor:pointer;transition:0.25s}
+.card{background:var(--card);border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:0 4px 20px rgba(0,0,0,0.05);cursor:pointer;transition:0.25s;overflow:hidden}
 .card:active{transform:scale(0.97)}
-.title{font-weight:600}
+.title{font-weight:600;word-break:break-word}
 .sub{font-size:13px;color:var(--sub)}
-.status{font-size:12px;padding:4px 8px;border-radius:999px}
+.status{font-size:12px;padding:4px 8px;border-radius:999px;white-space:nowrap}
 .done{background:#dcfce7;color:#166534}
 .progress{background:#e0f2fe;color:#075985}
 .screen{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg);transform:translateX(100%);transition:0.35s ease;padding:20px;overflow:auto}
 .screen.active{transform:translateX(0)}
 .back{margin-bottom:10px;color:var(--accent);cursor:pointer}
-.row{display:flex;justify-content:space-between;align-items:center}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.row .title{flex:1}
 </style>
 </head>
 <body>
 <div class="app">
-<h1>Checklistings</h1>
-<div class="sub">Общий прогресс</div>
+<h1>Checklistings App</h1>
+<div class="sub" id="globalText">Общий прогресс</div>
 <div class="bar"><div id="globalFill" class="fill"></div></div>
 <div id="cats"></div>
 </div>
@@ -45,24 +46,20 @@ h1{font-size:26px;margin:10px 0}
 const data=[
   {name:"Отношения",lists:[
     {title:"Идеальное свидание",completed:false},
-    {title:"Флирт",completed:true}
+    {title:"Флирт и первое впечатление",completed:true}
   ]},
   {name:"Финансы",lists:[
-    {title:"Бюджет",completed:false},
-    {title:"Инвестиции",completed:false}
+    {title:"Контроль бюджета",completed:false},
+    {title:"Основы инвестиций",completed:false}
   ]}
 ];
 
-let xp=0;
-let level=1;
-
-function save(){localStorage.setItem('app',JSON.stringify({data,xp,level}))}
+function save(){localStorage.setItem('app',JSON.stringify(data))}
 function load(){
   const d=localStorage.getItem('app');
   if(d){
     const parsed=JSON.parse(d);
-    Object.assign(data,parsed.data);
-    xp=parsed.xp; level=parsed.level;
+    Object.assign(data,parsed);
   }
 }
 
@@ -78,18 +75,9 @@ function render(){
   const root=document.getElementById('cats');
   root.innerHTML='';
 
-  document.getElementById('globalFill').style.width=calcGlobal()+'%';
-
-  const xpNeeded=level*100;
-
-  const xpBlock=document.createElement('div');
-  xpBlock.className='card';
-  xpBlock.innerHTML=`
-    <div class='title'>Уровень ${level}</div>
-    <div class='sub'>XP: ${xp}/${xpNeeded}</div>
-    <div class='bar'><div class='fill' style='width:${(xp/xpNeeded)*100}%'></div></div>
-  `;
-  root.appendChild(xpBlock);
+  const g=calcGlobal();
+  document.getElementById('globalFill').style.width=g+'%';
+  document.getElementById('globalText').innerText=`Общий прогресс: ${g}%`;
 
   data.forEach((cat,i)=>{
     const done=cat.lists.filter(l=>l.completed).length;
@@ -139,8 +127,8 @@ function openChecklist(i,li){
     <h2>${item.title}</h2>
     <div class='card'>
       <div class='title'>Демо чек-лист</div>
-      <div class='sub'>Здесь будет твой контент (как HTML чек-лист)</div>
-      <button class='btn' onclick='complete(${i},${li})'>Завершить тест</button>
+      <div class='sub'>Здесь будет твой контент</div>
+      <button onclick='complete(${i},${li})'>Завершить тест</button>
     </div>
   `;
 }
@@ -149,8 +137,6 @@ function complete(i,li){
   const item=data[i].lists[li];
   if(!item.completed){
     item.completed=true;
-    xp+=20;
-    if(xp>=level*100){xp=0; level++}
     save();
   }
   openCategory(i);
