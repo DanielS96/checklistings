@@ -8,126 +8,83 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-body{
-  font-family:'Inter',sans-serif;
-  margin:0;
-  background:#f4f5f7;
-  color:#111;
-}
+body{font-family:'Inter',sans-serif;margin:0;background:#f4f5f7}
+.container{max-width:720px;margin:0 auto;padding:20px}
 
-.container{
-  max-width:720px;
-  margin:0 auto;
-  padding:20px;
+/* PROGRESS */
+.progress-big{
+  height:10px;background:#e5e7eb;border-radius:10px;overflow:hidden;margin-bottom:10px
 }
+.progress-big div{height:100%;background:#6366f1}
 
-h1{
-  font-size:28px;
-  margin-bottom:20px;
-}
-
-/* CATEGORY BLOCK */
-.category{
-  margin-top:30px;
-}
-
-.category-title{
-  font-size:20px;
-  font-weight:600;
-  margin-bottom:5px;
-}
-
-.category-sub{
-  font-size:13px;
-  color:#6b6f76;
-  margin-bottom:10px;
-}
-
-/* CARD */
-.card{
-  background:#fff;
-  border-radius:16px;
-  padding:16px;
-  margin-bottom:12px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.05);
-  cursor:pointer;
-  transition:0.2s;
-}
-
-.card:hover{
-  transform:translateY(-2px);
-}
-
-.progress{
-  height:6px;
-  background:#e5e7eb;
-  border-radius:6px;
-  margin-top:10px;
-  overflow:hidden;
-}
-
-.progress div{
-  height:100%;
-  background:#6366f1;
+/* CATEGORY */
+.category-card{
+  background:#fff;border-radius:16px;padding:16px;margin-bottom:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);cursor:pointer
 }
 
 /* CHECKLIST */
-.checklist-item{
-  background:#fff;
-  border-radius:12px;
-  padding:14px;
-  margin-bottom:10px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.04);
-  cursor:pointer;
+details{
+  background:#fff;border-radius:12px;margin-bottom:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.04)
 }
+summary{
+  padding:14px;cursor:pointer;display:flex;align-items:center
+}
+.content{padding:0 14px 14px}
 
+/* checkbox */
 .checkbox{
-  width:18px;height:18px;
-  border:2px solid #6366f1;
-  border-radius:4px;
-  display:inline-block;
-  margin-right:10px;
+  width:18px;height:18px;border:2px solid #6366f1;border-radius:4px;
+  margin-right:10px
 }
+.checked{background:#6366f1}
 
-.checked{
-  background:#6366f1;
+/* TIP */
+.tip{
+  margin-top:10px;
+  padding:10px;
+  background:#eef2ff;
+  border-radius:8px;
 }
 
 /* QUIZ */
 .question{
-  background:#fff;
-  border-radius:12px;
-  padding:14px;
-  margin-bottom:10px;
+  background:#fff;border-radius:12px;padding:14px;margin-bottom:10px
 }
-
 .answers label{
   display:block;
-  background:#f1f5f9;
-  padding:10px;
-  border-radius:8px;
+  padding:12px;
   margin-top:6px;
+  border-radius:10px;
+  background:#f1f5f9;
   cursor:pointer;
+  transition:0.2s;
 }
-
 .answers input{display:none}
 
+.correct{background:#dcfce7}
+.wrong{background:#fee2e2}
+.selected{background:#dbeafe}
+
+/* STATUS */
+.status{
+  font-size:12px;padding:4px 8px;border-radius:6px;margin-top:5px;display:inline-block
+}
+.new{background:#dbeafe}
+.progress{background:#fef3c7}
+.done{background:#dcfce7}
+
 button{
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:12px;
-  background:#6366f1;
-  color:#fff;
-  margin-top:10px;
-  font-size:15px;
+  width:100%;padding:12px;border:none;border-radius:10px;
+  background:#6366f1;color:#fff;margin-top:10px
 }
 
 .result{
-  margin-top:15px;
+  margin-top:10px;
   padding:12px;
-  border-radius:10px;
   background:#eef2ff;
+  border-radius:10px;
 }
 </style>
 </head>
@@ -136,79 +93,81 @@ button{
 <div class="container" id="app"></div>
 
 <script>
-
-let data = [];
-let state = JSON.parse(localStorage.getItem("progress")) || {};
-
-/* CATEGORY DESCRIPTIONS */
-const categoryInfo = {
-"🏠 Дом и быт":"Комфорт и порядок в жизни",
-"💰 Финансы":"Контроль и рост денег",
-"🧠 Саморазвитие":"Личностный рост",
-"💪 Здоровье":"Энергия и тело",
-"❤️ Отношения":"Качественные связи",
-"⚡ Продуктивность":"Эффективность",
-"📈 Карьера":"Профессиональный рост",
-"🧘 Ментальное состояние":"Спокойствие и контроль",
-"🌍 Социальная жизнь":"Связи и окружение",
-"📚 Книги":"Знания и развитие"
-};
+let data=[];
+let state=JSON.parse(localStorage.getItem("progress"))||{};
 
 fetch("index.json")
 .then(r=>r.json())
 .then(json=>{
-  data = json;
-  render();
+  data=json;
+  renderHome();
 });
 
 function save(){
-  localStorage.setItem("progress", JSON.stringify(state));
+  localStorage.setItem("progress",JSON.stringify(state));
 }
 
-/* GROUP */
-function group(){
-  const map={};
-  data.forEach(i=>{
-    if(!map[i.category]) map[i.category]=[];
-    map[i.category].push(i);
-  });
-  return map;
-}
-
-/* MAIN */
-function render(){
+/* HOME */
+function renderHome(){
   const app=document.getElementById("app");
 
-  app.innerHTML=`<h1>Checklistings</h1>`;
+  app.innerHTML=`
+    <h1>Checklistings</h1>
+    <div class="progress-big"><div style="width:${getTotalProgress()}%"></div></div>
+    <div>${getTotalProgress()}% выполнено</div>
+    <div id="cats"></div>
+  `;
 
-  const grouped = group();
+  const cats=[...new Set(data.map(i=>i.category))];
+  const container=document.getElementById("cats");
 
-  Object.keys(grouped).forEach(cat=>{
-    app.innerHTML+=`
-      <div class="category">
-        <div class="category-title">${cat}</div>
-        <div class="category-sub">${categoryInfo[cat]||""}</div>
+  cats.forEach(cat=>{
+    container.innerHTML+=`
+      <div class="category-card" onclick="openCategory('${cat}')">
+        <b>${cat}</b>
       </div>
     `;
-
-    grouped[cat]
-    .sort((a,b)=>getProgress(b.id)-getProgress(a.id))
-    .forEach(item=>{
-      const prog = getProgress(item.id);
-
-      app.innerHTML+=`
-        <div class="card" onclick="openChecklist('${item.id}')">
-          <b>${item.title}</b>
-          <div>${item.description}</div>
-          <div class="progress"><div style="width:${prog}%"></div></div>
-          <small>${prog}% выполнено</small>
-        </div>
-      `;
-    });
   });
 }
 
-/* OPEN */
+/* CATEGORY */
+function openCategory(cat){
+  const app=document.getElementById("app");
+
+  const list=data.filter(i=>i.category===cat)
+  .sort((a,b)=>a.id.localeCompare(b.id));
+
+  app.innerHTML=`
+    <button onclick="renderHome()">← Назад</button>
+    <h1>${cat}</h1>
+    <div id="list"></div>
+  `;
+
+  const container=document.getElementById("list");
+
+  list.forEach(item=>{
+    const s=getStatus(item.id);
+
+    container.innerHTML+=`
+      <div class="category-card" onclick="openChecklist('${item.id}')">
+        <b>${item.title}</b>
+        <div>${item.description}</div>
+        <div class="status ${s.class}">${s.text}</div>
+      </div>
+    `;
+  });
+}
+
+/* STATUS */
+function getStatus(id){
+  if(!state[id]) return {text:"новый",class:"new"};
+
+  const p=getProgress(id);
+  if(p===100) return {text:"выполнено",class:"done"};
+  return {text:"не завершен",class:"progress"};
+}
+
+/* CHECKLIST */
 function openChecklist(id){
   const item=data.find(i=>i.id===id);
   if(!state[id]) state[id]={checked:{},quizScore:0};
@@ -216,17 +175,12 @@ function openChecklist(id){
   const app=document.getElementById("app");
 
   app.innerHTML=`
-    <button onclick="render()">← Назад</button>
+    <button onclick="openCategory('${item.category}')">← Назад</button>
     <h1>${item.title}</h1>
-    <div>${item.description}</div>
-
-    <div class="progress">
-      <div style="width:${getProgress(id)}%" id="bar"></div>
-    </div>
 
     <div id="list"></div>
 
-    <h2>Тест</h2>
+    <h3>Тест</h3>
     <div id="quiz"></div>
     <button onclick="checkQuiz('${id}')">Проверить</button>
     <div class="result" id="result"></div>
@@ -238,10 +192,16 @@ function openChecklist(id){
     const checked=state[id].checked[i];
 
     list.innerHTML+=`
-      <div class="checklist-item" onclick="toggle('${id}',${i})">
-        <span class="checkbox ${checked?'checked':''}"></span>
-        ${c.title}
-      </div>
+      <details>
+        <summary onclick="toggle('${id}',${i})">
+          <span class="checkbox ${checked?'checked':''}"></span>
+          ${c.title}
+        </summary>
+        <div class="content">
+          ${c.text}
+          <div class="tip"><b>Совет:</b> ${c.tip}</div>
+        </div>
+      </details>
     `;
   });
 
@@ -253,7 +213,7 @@ function openChecklist(id){
         ${i+1}. ${q.q}
         <div class="answers">
           ${q.a.map((a,ai)=>`
-            <label>
+            <label onclick="selectAnswer(${i},${ai})" id="q${i}a${ai}">
               <input type="radio" name="q${i}" value="${ai}">
               ${a}
             </label>
@@ -266,11 +226,12 @@ function openChecklist(id){
   window.currentQuiz=item.quiz;
 }
 
-/* LOGIC */
-function toggle(id,i){
-  state[id].checked[i]=!state[id].checked[i];
-  save();
-  openChecklist(id);
+/* QUIZ */
+function selectAnswer(q,a){
+  document.querySelectorAll(`[id^="q${q}a"]`)
+    .forEach(el=>el.classList.remove("selected"));
+
+  document.getElementById(`q${q}a${a}`).classList.add("selected");
 }
 
 function checkQuiz(id){
@@ -278,6 +239,14 @@ function checkQuiz(id){
 
   currentQuiz.forEach((q,i)=>{
     const sel=document.querySelector(`input[name="q${i}"]:checked`);
+
+    q.a.forEach((_,ai)=>{
+      const el=document.getElementById(`q${i}a${ai}`);
+
+      if(ai===q.c) el.classList.add("correct");
+      if(sel && Number(sel.value)===ai && ai!==q.c) el.classList.add("wrong");
+    });
+
     if(sel && Number(sel.value)===q.c) score++;
   });
 
@@ -285,9 +254,15 @@ function checkQuiz(id){
   save();
 
   document.getElementById("result").innerText=`Результат: ${score}/${currentQuiz.length}`;
-  document.getElementById("bar").style.width=getProgress(id)+"%";
 }
 
+/* TOGGLE */
+function toggle(id,i){
+  state[id].checked[i]=!state[id].checked[i];
+  save();
+}
+
+/* PROGRESS */
 function getProgress(id){
   const item=data.find(i=>i.id===id);
   if(!state[id]) return 0;
@@ -297,9 +272,15 @@ function getProgress(id){
 
   const qProg=state[id].quizScore/item.quiz.length;
 
-  return Math.round((cProg*0.5+qProg*0.5)*100);
+  return Math.round((cProg+qProg)/2*100);
 }
 
+function getTotalProgress(){
+  let total=0;
+  data.forEach(i=>total+=getProgress(i.id));
+  return Math.round(total/data.length);
+}
 </script>
+
 </body>
 </html>
