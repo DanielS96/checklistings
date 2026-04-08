@@ -21,8 +21,6 @@ body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);}
 .app{max-width:420px;margin:0 auto;padding:16px;}
 h1{font-size:26px;margin:10px 0;}
 
-#globalText{margin-bottom:10px;font-weight:500;}
-
 .bar{height:10px;background:#e2e8f0;border-radius:999px;overflow:hidden;}
 .global-bar{height:16px;margin-bottom:28px;}
 .fill{height:100%;background:linear-gradient(90deg,#3b82f6,#6366f1);}
@@ -37,9 +35,7 @@ h1{font-size:26px;margin:10px 0;}
 
 .row{display:flex;justify-content:space-between;align-items:center;gap:10px;}
 
-.status{
-  font-size:12px;padding:6px 10px;border-radius:999px;white-space:nowrap;
-}
+.status{font-size:12px;padding:6px 10px;border-radius:999px;white-space:nowrap;}
 .done{background:#dcfce7;color:#166534}
 .progress{background:#e0f2fe;color:#075985}
 .new{background:#ede9fe;color:#5b21b6}
@@ -49,24 +45,13 @@ h1{font-size:26px;margin:10px 0;}
   background:var(--bg);transform:translateX(100%);
   transition:.3s;padding:16px;overflow:auto;
 }
-
 .screen.active{transform:translateX(0);}
-.back{margin-bottom:10px;color:var(--accent);cursor:pointer;}
 
-.content{
-  margin-top:10px;
-  width:100%;
-}
+.back{margin-bottom:10px;color:#3b82f6;cursor:pointer;}
 
-.content > *{
-  max-width:100% !important;
-}
-
+.content{margin-top:10px;width:100%;}
 .content details{
-  background:#fff;
-  padding:14px;
-  border-radius:14px;
-  margin-bottom:10px;
+  background:#fff;padding:14px;border-radius:14px;margin-bottom:10px;
   box-shadow:0 2px 10px rgba(0,0,0,0.04);
 }
 
@@ -98,9 +83,12 @@ h1{font-size:26px;margin:10px 0;}
 let data=[];
 
 function save(){localStorage.setItem('app',JSON.stringify(data));}
+
 function load(){
-  let d=localStorage.getItem('app'); if(!d)return;
+  let d=localStorage.getItem('app');
+  if(!d)return;
   let p=JSON.parse(d);
+
   p.forEach((c,i)=>{
     if(!data[i])return;
     c.lists.forEach((l,li)=>{
@@ -113,10 +101,16 @@ function load(){
 
 function build(items){
   let map={};
+
   items.forEach(it=>{
     if(!map[it.category]){
-      map[it.category]={name:getName(it.category),desc:getDesc(it.category),lists:[]};
+      map[it.category]={
+        name:getName(it.category),
+        desc:getDesc(it.category),
+        lists:[]
+      };
     }
+
     map[it.category].lists.push({
       title:it.title.replace(/-/g,' '),
       file:it.file,
@@ -124,6 +118,7 @@ function build(items){
       started:false
     });
   });
+
   return Object.values(map);
 }
 
@@ -147,46 +142,51 @@ return {
 "relationships":"Свидания, коммуникация, построение здоровых отношений",
 "finance":"Доход, инвестиции, управление деньгами",
 "self-dev":"Привычки, дисциплина, личностный рост",
-"home":"Организация пространства, комфорт, быт",
-"health":"Сон, питание, физическое состояние",
-"books":"Развитие через чтение и знания",
-"work":"Фокус, эффективность и карьерный рост",
-"lifestyle":"Образ жизни, привычки и окружение",
-"travel":"Поездки, опыт и новые впечатления",
-"psychology":"Осознанность, мышление и внутреннее состояние"
+"home":"Организация пространства и комфорт",
+"health":"Сон, питание и энергия",
+"books":"Развитие через чтение",
+"work":"Фокус и эффективность",
+"lifestyle":"Образ жизни и привычки",
+"travel":"Поездки и впечатления",
+"psychology":"Осознанность и мышление"
 }[k]||"";
 }
 
-function p(cat){
-let t=cat.lists.length,d=cat.lists.filter(x=>x.completed).length;
+function calc(cat){
+let t=cat.lists.length;
+let d=cat.lists.filter(x=>x.completed).length;
 return t?Math.round(d/t*100):0;
 }
 
-function gp(){
+function globalCalc(){
 let t=0,d=0;
 data.forEach(c=>c.lists.forEach(l=>{t++;if(l.completed)d++;}));
 return t?Math.round(d/t*100):0;
 }
 
 function render(){
-let root=document.getElementById('cats'); root.innerHTML='';
-let g=gp();
-globalFill.style.width=g+'%';
-globalText.innerText=`Общий прогресс: ${g}%`;
+let root=document.getElementById('cats');
+root.innerHTML='';
 
-let sorted=[...data].sort((a,b)=>p(b)-p(a));
+let g=globalCalc();
+document.getElementById('globalFill').style.width=g+'%';
+document.getElementById('globalText').innerText=`Общий прогресс: ${g}%`;
+
+let sorted=[...data].sort((a,b)=>calc(b)-calc(a));
 
 sorted.forEach(cat=>{
 let el=document.createElement('div');
 el.className='card';
-let pr=p(cat);
+
+let p=calc(cat);
 
 el.innerHTML=`
 <div class='title'>${cat.name}</div>
 <div class='sub'>${cat.desc}</div>
+
 <div style="margin-top:14px">
-<div class='sub' style='margin-bottom:6px'>${pr}% завершено</div>
-<div class='bar'><div class='fill' style='width:${pr}%'></div></div>
+<div class='sub' style='margin-bottom:6px'>${p}% завершено</div>
+<div class='bar'><div class='fill' style='width:${p}%'></div></div>
 </div>
 `;
 
@@ -196,7 +196,9 @@ root.appendChild(el);
 }
 
 function openCategory(i){
-let s=screen; let cat=data[i];
+let s=document.getElementById('screen');
+let cat=data[i];
+
 s.innerHTML=`<div class='back' onclick='closeScreen()'>← Назад</div><h2>${cat.name}</h2>`;
 
 cat.lists.forEach((l,li)=>{
@@ -207,10 +209,12 @@ let st="new",tx="Новый";
 if(l.completed){st="done";tx="Выполнено";}
 else if(l.started){st="progress";tx="Не завершён";}
 
-el.innerHTML=`<div class='row'>
+el.innerHTML=`
+<div class='row'>
 <div class='title'>${l.title}</div>
 <div class='status ${st}'>${tx}</div>
-</div>`;
+</div>
+`;
 
 el.onclick=()=>openChecklist(i,li);
 s.appendChild(el);
@@ -220,13 +224,19 @@ s.classList.add('active');
 }
 
 function openChecklist(i,li){
-let s=screen;
+let s=document.getElementById('screen');
 let item=data[i].lists[li];
 
 if(!item.started){item.started=true;save();}
 
-fetch(item.file).then(r=>r.text()).then(html=>{
-s.innerHTML=`<div class='back' onclick='openCategory(${i})'>← Назад</div><div id='content' class='content'></div>`;
+fetch(item.file)
+.then(r=>r.text())
+.then(html=>{
+s.innerHTML=`
+<div class='back' onclick='openCategory(${i})'>← Назад</div>
+<div id='content' class='content'></div>
+`;
+
 let c=document.getElementById('content');
 c.innerHTML=html;
 
@@ -238,31 +248,31 @@ document.body.appendChild(scr);
 old.remove();
 });
 
-// 🔥 перехват кнопки проверки
+// перехват кнопки теста
 setTimeout(()=>{
 let btn=document.querySelector("button");
 if(btn){
-btn.addEventListener("click",()=>{
+btn.onclick=()=>{
 item.completed=true;
 save();
 render();
 
-setTimeout(()=>{
-let bottom=document.createElement("button");
-bottom.className="bottom-btn";
-bottom.innerText="Назад";
-bottom.onclick=()=>openCategory(i);
-c.appendChild(bottom);
-},500);
+let backBtn=document.createElement("button");
+backBtn.className="bottom-btn";
+backBtn.innerText="Назад";
+backBtn.onclick=()=>openCategory(i);
+
+c.appendChild(backBtn);
+};
+}
+},300);
 
 });
 }
-},500);
 
-});
+function closeScreen(){
+document.getElementById('screen').classList.remove('active');
 }
-
-function closeScreen(){screen.classList.remove('active');}
 
 fetch('checklists/index.json')
 .then(r=>r.json())
@@ -271,7 +281,9 @@ data=build(items);
 load();
 render();
 })
-.catch(()=>globalText.innerText='Ошибка загрузки данных');
+.catch(()=>{
+document.getElementById('globalText').innerText='Ошибка загрузки данных';
+});
 </script>
 
 </body>
