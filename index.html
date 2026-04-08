@@ -329,10 +329,50 @@ function openChecklist(i,li){
   const screen=document.getElementById('screen');
   const item=data[i].lists[li];
 
+  // фикс статуса "начат"
   if(!item.started && !item.completed){
     item.started = true;
     save();
   }
+
+  fetch(item.file)
+    .then(res => res.text())
+    .then(html => {
+
+      // рендер страницы
+      screen.innerHTML = `
+        <div class='back' onclick='openCategory(${i})'>← Назад</div>
+        <h2>${item.title}</h2>
+        <div class='content' id='content'></div>
+      `;
+
+      const container = document.getElementById('content');
+      container.innerHTML = html;
+
+      // 🔥 КРИТИЧНО: запускаем скрипты внутри чек-листа
+      const scripts = container.querySelectorAll('script');
+
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement('script');
+
+        if(oldScript.src){
+          newScript.src = oldScript.src;
+        } else {
+          newScript.textContent = oldScript.textContent;
+        }
+
+        document.body.appendChild(newScript);
+        oldScript.remove();
+      });
+    })
+    .catch(()=>{
+      screen.innerHTML = `
+        <div class='back' onclick='openCategory(${i})'>← Назад</div>
+        <h2>${item.title}</h2>
+        <div>Ошибка загрузки чек-листа</div>
+      `;
+    });
+}
 
   fetch(item.file)
     .then(res => res.text())
