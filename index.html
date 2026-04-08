@@ -11,36 +11,86 @@
 body{font-family:'Inter',sans-serif;margin:0;background:#f4f5f7}
 .container{max-width:720px;margin:0 auto;padding:20px}
 
-/* PROGRESS */
+/* ===== GLOBAL PROGRESS ===== */
+.global-box{
+  background:#fff;
+  padding:16px;
+  border-radius:16px;
+  margin-bottom:20px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
 .progress-big{
-  height:10px;background:#e5e7eb;border-radius:10px;overflow:hidden;margin-bottom:10px
+  height:10px;background:#e5e7eb;border-radius:10px;overflow:hidden;margin-top:10px
 }
 .progress-big div{height:100%;background:#6366f1}
 
-/* CATEGORY */
+/* ===== CATEGORY ===== */
 .category-card{
-  background:#fff;border-radius:16px;padding:16px;margin-bottom:12px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.05);cursor:pointer
+  background:#fff;
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:14px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+  cursor:pointer;
 }
 
-/* CHECKLIST */
+.cat-sub{
+  font-size:13px;
+  color:#6b7280;
+  margin-top:4px;
+}
+
+.progress-small{
+  height:6px;
+  background:#e5e7eb;
+  border-radius:6px;
+  margin-top:10px;
+  overflow:hidden;
+}
+.progress-small div{
+  height:100%;
+  background:#6366f1;
+}
+
+/* ===== CHECKLIST ===== */
 details{
-  background:#fff;border-radius:12px;margin-bottom:10px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.04)
+  background:#fff;
+  border-radius:12px;
+  margin-bottom:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.04);
 }
-summary{
-  padding:14px;cursor:pointer;display:flex;align-items:center
-}
-.content{padding:0 14px 14px}
 
-/* checkbox */
+summary{
+  padding:14px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.summary-left{
+  display:flex;
+  align-items:center;
+}
+
+.arrow{
+  transition:0.2s;
+}
+
+details[open] .arrow{
+  transform:rotate(90deg);
+}
+
 .checkbox{
-  width:18px;height:18px;border:2px solid #6366f1;border-radius:4px;
-  margin-right:10px
+  width:18px;height:18px;
+  border:2px solid #6366f1;
+  border-radius:4px;
+  margin-right:10px;
 }
 .checked{background:#6366f1}
 
-/* TIP */
+.content{padding:0 14px 14px}
+
 .tip{
   margin-top:10px;
   padding:10px;
@@ -48,10 +98,14 @@ summary{
   border-radius:8px;
 }
 
-/* QUIZ */
+/* ===== QUIZ ===== */
 .question{
-  background:#fff;border-radius:12px;padding:14px;margin-bottom:10px
+  background:#fff;
+  border-radius:12px;
+  padding:14px;
+  margin-bottom:10px;
 }
+
 .answers label{
   display:block;
   padding:12px;
@@ -61,23 +115,34 @@ summary{
   cursor:pointer;
   transition:0.2s;
 }
+
+.answers label.selected{background:#dbeafe}
+.answers label.correct{background:#dcfce7}
+.answers label.wrong{background:#fee2e2}
+
 .answers input{display:none}
 
-.correct{background:#dcfce7}
-.wrong{background:#fee2e2}
-.selected{background:#dbeafe}
-
-/* STATUS */
+/* ===== STATUS ===== */
 .status{
-  font-size:12px;padding:4px 8px;border-radius:6px;margin-top:5px;display:inline-block
+  font-size:12px;
+  padding:4px 8px;
+  border-radius:6px;
+  margin-top:6px;
+  display:inline-block;
 }
+
 .new{background:#dbeafe}
 .progress{background:#fef3c7}
 .done{background:#dcfce7}
 
 button{
-  width:100%;padding:12px;border:none;border-radius:10px;
-  background:#6366f1;color:#fff;margin-top:10px
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:#6366f1;
+  color:#fff;
+  margin-top:10px;
 }
 
 .result{
@@ -93,8 +158,23 @@ button{
 <div class="container" id="app"></div>
 
 <script>
+
 let data=[];
 let state=JSON.parse(localStorage.getItem("progress"))||{};
+
+/* CATEGORY DESCRIPTIONS */
+const catInfo={
+"🏠 Дом и быт":"порядок, организация, комфорт",
+"💰 Финансы":"деньги, доход, контроль",
+"🧠 Саморазвитие":"рост, навыки, мышление",
+"💪 Здоровье":"энергия, тело, режим",
+"❤️ Отношения":"общение, близость",
+"⚡ Продуктивность":"фокус, эффективность",
+"📈 Карьера":"рост, работа, навыки",
+"🧘 Ментальное состояние":"спокойствие, контроль",
+"🌍 Социальная жизнь":"люди, связи",
+"📚 Книги":"чтение, знания"
+};
 
 fetch("index.json")
 .then(r=>r.json())
@@ -107,14 +187,21 @@ function save(){
   localStorage.setItem("progress",JSON.stringify(state));
 }
 
-/* HOME */
+/* ===== HOME ===== */
 function renderHome(){
   const app=document.getElementById("app");
 
   app.innerHTML=`
     <h1>Checklistings</h1>
-    <div class="progress-big"><div style="width:${getTotalProgress()}%"></div></div>
-    <div>${getTotalProgress()}% выполнено</div>
+
+    <div class="global-box">
+      <b>Общий прогресс</b>
+      <div class="progress-big">
+        <div style="width:${getTotalProgress()}%"></div>
+      </div>
+      <div>${getTotalProgress()}%</div>
+    </div>
+
     <div id="cats"></div>
   `;
 
@@ -122,20 +209,28 @@ function renderHome(){
   const container=document.getElementById("cats");
 
   cats.forEach(cat=>{
+    const prog=getCategoryProgress(cat);
+
     container.innerHTML+=`
       <div class="category-card" onclick="openCategory('${cat}')">
         <b>${cat}</b>
+        <div class="cat-sub">${catInfo[cat]||""}</div>
+
+        <div class="progress-small">
+          <div style="width:${prog}%"></div>
+        </div>
+        <small>${prog}%</small>
       </div>
     `;
   });
 }
 
-/* CATEGORY */
+/* ===== CATEGORY ===== */
 function openCategory(cat){
   const app=document.getElementById("app");
 
   const list=data.filter(i=>i.category===cat)
-  .sort((a,b)=>a.id.localeCompare(b.id));
+    .sort((a,b)=>a.id.localeCompare(b.id));
 
   app.innerHTML=`
     <button onclick="renderHome()">← Назад</button>
@@ -158,16 +253,7 @@ function openCategory(cat){
   });
 }
 
-/* STATUS */
-function getStatus(id){
-  if(!state[id]) return {text:"новый",class:"new"};
-
-  const p=getProgress(id);
-  if(p===100) return {text:"выполнено",class:"done"};
-  return {text:"не завершен",class:"progress"};
-}
-
-/* CHECKLIST */
+/* ===== CHECKLIST ===== */
 function openChecklist(id){
   const item=data.find(i=>i.id===id);
   if(!state[id]) state[id]={checked:{},quizScore:0};
@@ -193,9 +279,12 @@ function openChecklist(id){
 
     list.innerHTML+=`
       <details>
-        <summary onclick="toggle('${id}',${i})">
-          <span class="checkbox ${checked?'checked':''}"></span>
-          ${c.title}
+        <summary>
+          <div class="summary-left" onclick="toggle('${id}',${i})">
+            <span class="checkbox ${checked?'checked':''}"></span>
+            ${c.title}
+          </div>
+          <span class="arrow">▶</span>
         </summary>
         <div class="content">
           ${c.text}
@@ -226,12 +315,15 @@ function openChecklist(id){
   window.currentQuiz=item.quiz;
 }
 
-/* QUIZ */
+/* ===== QUIZ ===== */
 function selectAnswer(q,a){
   document.querySelectorAll(`[id^="q${q}a"]`)
     .forEach(el=>el.classList.remove("selected"));
 
-  document.getElementById(`q${q}a${a}`).classList.add("selected");
+  const el=document.getElementById(`q${q}a${a}`);
+  el.classList.add("selected");
+
+  el.querySelector("input").checked=true;
 }
 
 function checkQuiz(id){
@@ -256,13 +348,12 @@ function checkQuiz(id){
   document.getElementById("result").innerText=`Результат: ${score}/${currentQuiz.length}`;
 }
 
-/* TOGGLE */
+/* ===== HELPERS ===== */
 function toggle(id,i){
   state[id].checked[i]=!state[id].checked[i];
   save();
 }
 
-/* PROGRESS */
 function getProgress(id){
   const item=data.find(i=>i.id===id);
   if(!state[id]) return 0;
@@ -275,12 +366,21 @@ function getProgress(id){
   return Math.round((cProg+qProg)/2*100);
 }
 
+function getCategoryProgress(cat){
+  const list=data.filter(i=>i.category===cat);
+  let total=0;
+
+  list.forEach(i=>total+=getProgress(i.id));
+
+  return Math.round(total/list.length);
+}
+
 function getTotalProgress(){
   let total=0;
   data.forEach(i=>total+=getProgress(i.id));
   return Math.round(total/data.length);
 }
-</script>
 
+</script>
 </body>
 </html>
