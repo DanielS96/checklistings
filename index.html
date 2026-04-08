@@ -1,372 +1,238 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Checklistings App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklistings</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#f8fafc;
-  --card:#ffffff;
-  --accent:#3b82f6;
-  --sub:#64748b;
-}
+body{font-family:'Inter',sans-serif;margin:0;background:#f9fafb;color:#111}
+.container{max-width:720px;margin:0 auto;padding:20px}
 
-body{
-  margin:0;
-  font-family:Inter;
-  background:var(--bg);
-}
+h1{font-size:28px;margin-bottom:10px}
 
-.app{
-  max-width:420px;
-  margin:0 auto;
-  padding:16px;
-}
+/* category */
+.category{margin-top:30px}
+.category-title{font-size:20px;margin-bottom:10px}
 
-/* ✅ ПРОГРЕСС */
-.bar{
-  height:10px;
-  background:#e2e8f0;
-  border-radius:999px;
-  overflow:hidden;
-}
-
-.global-bar{
-  height:16px;
-  margin-bottom:28px;
-}
-
-.fill{
-  height:100%;
-  border-radius:999px;
-  background:linear-gradient(90deg,#3b82f6,#6366f1);
-}
-
-/* ✅ КАРТОЧКИ */
+/* card */
 .card{
   background:#fff;
-  border-radius:16px;
+  border-radius:14px;
   padding:16px;
-  margin-bottom:12px;
-  box-shadow:0 4px 20px rgba(0,0,0,0.05);
-  cursor:pointer;
-}
-
-.title{font-weight:600;}
-.sub{font-size:13px;color:var(--sub);margin-top:4px;}
-
-.row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-}
-
-/* ✅ СТАТУСЫ */
-.status{
-  font-size:12px;
-  padding:6px 10px;
-  border-radius:999px;
-}
-.done{background:#dcfce7;color:#166534}
-.progress{background:#e0f2fe;color:#075985}
-.new{background:#ede9fe;color:#5b21b6}
-
-/* ✅ ЭКРАН */
-.screen{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:#f8fafc;
-  transform:translateX(100%);
-  transition:.3s;
-  padding:16px;
-  overflow:auto;
-}
-.screen.active{transform:translateX(0);}
-
-.back{
   margin-bottom:10px;
-  color:#3b82f6;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
   cursor:pointer;
 }
 
-/* ✅ ЧЕК-ЛИСТ */
-.content{
-  display:flex;
-  justify-content:center;
+.progress{
+  height:6px;
+  background:#e5e7eb;
+  border-radius:6px;
+  overflow:hidden;
+  margin-top:10px;
+}
+.progress div{
+  height:100%;
+  background:#6366f1;
 }
 
-.content-inner{
-  width:100%;
-  max-width:420px;
-}
-
-.content details{
+/* checklist */
+.checklist-item{
   background:#fff;
-  padding:14px;
   border-radius:12px;
   margin-bottom:10px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.04);
+  padding:14px;
 }
 
-/* ✅ КНОПКА */
-.bottom-btn{
-  margin-top:20px;
+.checkbox{
+  width:18px;height:18px;border:2px solid #6366f1;
+  border-radius:4px;display:inline-block;margin-right:10px;
+}
+.checked{background:#6366f1}
+
+/* quiz */
+.question{
+  background:#fff;
+  border-radius:12px;
+  padding:14px;
+  margin-bottom:10px;
+}
+
+.answers label{
+  display:block;
+  padding:10px;
+  border-radius:8px;
+  margin-top:6px;
+  background:#f3f4f6;
+  cursor:pointer;
+}
+
+.answers input{display:none}
+
+button{
   width:100%;
   padding:14px;
-  background:#3b82f6;
-  color:#fff;
   border:none;
   border-radius:12px;
+  background:#6366f1;
+  color:#fff;
+  margin-top:10px;
+}
+
+.result{
+  margin-top:15px;
+  padding:12px;
+  border-radius:10px;
+  background:#eef2ff;
 }
 </style>
 </head>
 
 <body>
-
-<div class="app">
-  <h2>Checklistings App</h2>
-  <div id="globalText">Загрузка...</div>
-
-  <div class="bar global-bar">
-    <div id="globalFill" class="fill"></div>
-  </div>
-
-  <div id="cats"></div>
-</div>
-
-<div id="screen" class="screen"></div>
+<div class="container" id="app"></div>
 
 <script>
-let data=[];
+let data = [];
+let state = JSON.parse(localStorage.getItem("progress")) || {};
+
+fetch("index.json")
+.then(r=>r.json())
+.then(json=>{
+  data = json;
+  renderCategories();
+});
 
 function save(){
-  localStorage.setItem('app',JSON.stringify(data));
+  localStorage.setItem("progress", JSON.stringify(state));
 }
 
-function load(){
-  let d=localStorage.getItem('app');
-  if(!d)return;
+/* ===== GROUP BY CATEGORY ===== */
+function groupByCategory(){
+  const map = {};
+  data.forEach(item=>{
+    if(!map[item.category]) map[item.category] = [];
+    map[item.category].push(item);
+  });
+  return map;
+}
 
-  let p=JSON.parse(d);
+/* ===== RENDER ===== */
+function renderCategories(){
+  const app = document.getElementById("app");
+  app.innerHTML = "<h1>Checklistings</h1>";
 
-  p.forEach((c,i)=>{
-    if(!data[i]) return;
-    c.lists.forEach((l,li)=>{
-      if(!data[i].lists[li]) return;
-      data[i].lists[li].completed=l.completed||false;
-      data[i].lists[li].started=l.started||false;
-    });
+  const grouped = groupByCategory();
+
+  Object.keys(grouped).forEach(cat=>{
+    app.innerHTML += `<div class="category"><div class="category-title">${cat}</div></div>`;
+
+    grouped[cat]
+      .sort((a,b)=>getProgress(b.id)-getProgress(a.id))
+      .forEach(item=>{
+        const prog = getProgress(item.id);
+
+        app.innerHTML += `
+          <div class="card" onclick="openChecklist('${item.id}')">
+            <b>${item.title}</b>
+            <div>${item.description}</div>
+            <div class="progress"><div style="width:${prog}%"></div></div>
+            <small>${prog}%</small>
+          </div>
+        `;
+      });
   });
 }
 
-function build(items){
-  let map={};
+/* ===== CHECKLIST ===== */
+function openChecklist(id){
+  const item = data.find(i=>i.id===id);
+  if(!state[id]) state[id] = {checked:{}, quizScore:0};
 
-  items.forEach(it=>{
-    if(!map[it.category]){
-      map[it.category]={
-        key:it.category,
-        name:getName(it.category),
-        desc:getDesc(it.category),
-        lists:[]
-      };
-    }
+  const app = document.getElementById("app");
 
-    map[it.category].lists.push({
-      title:it.title,
-      file:it.file,
-      completed:false,
-      started:false
-    });
-  });
+  app.innerHTML = `
+    <button onclick="renderCategories()">← Назад</button>
+    <h1>${item.title}</h1>
 
-  return Object.values(map);
-}
+    <div class="progress"><div style="width:${getProgress(id)}%" id="bar"></div></div>
 
-function getName(k){
-return {
-"relationships":"❤️ Отношения",
-"finance":"💰 Финансы",
-"self-dev":"🧠 Саморазвитие",
-"home":"🏠 Дом и быт",
-"health":"🧍‍♂️ Здоровье и энергия",
-"books":"📚 Книги",
-"work":"💼 Работа и продуктивность",
-"lifestyle":"✨ Образ жизни (Lifestyle)",
-"travel":"🌍 Путешествия",
-"psychology":"🧘 Психология и осознанность"
-}[k]||k;
-}
+    <div id="checklist"></div>
 
-function getDesc(k){
-return {
-"relationships":"Свидания и общение",
-"finance":"Деньги и инвестиции",
-"self-dev":"Рост и привычки",
-"home":"Комфорт и порядок",
-"health":"Сон и питание",
-"books":"Чтение",
-"work":"Фокус и эффективность",
-"lifestyle":"Стиль жизни",
-"travel":"Поездки",
-"psychology":"Осознанность"
-}[k]||"";
-}
+    <h2>Тест</h2>
+    <div id="quiz"></div>
+    <button onclick="checkQuiz('${id}')">Проверить</button>
+    <div class="result" id="result"></div>
+  `;
 
-/* ✅ ПРОГРЕСС */
-function progress(cat){
-  let t=cat.lists.length;
-  let d=cat.lists.filter(x=>x.completed).length;
-  return t?Math.round(d/t*100):0;
-}
+  const cl = document.getElementById("checklist");
 
-function globalProgress(){
-  let t=0,d=0;
-  data.forEach(c=>{
-    c.lists.forEach(l=>{
-      t++; if(l.completed)d++;
-    });
-  });
-  return t?Math.round(d/t*100):0;
-}
-
-/* ✅ РЕНДЕР */
-function render(){
-  let root=document.getElementById('cats');
-  root.innerHTML='';
-
-  let g=globalProgress();
-  globalFill.style.width=g+'%';
-  globalText.innerText='Общий прогресс: '+g+'%';
-
-  // 🔥 сортировка по %
-  let sorted=[...data].sort((a,b)=>progress(b)-progress(a));
-
-  sorted.forEach(cat=>{
-    let index=data.indexOf(cat);
-
-    let el=document.createElement('div');
-    el.className='card';
-
-    let p=progress(cat);
-
-    el.innerHTML=`
-      <div class='title'>${cat.name}</div>
-      <div class='sub'>${cat.desc}</div>
-
-      <div style="margin-top:14px">
-        <div class='sub'>${p}% завершено</div>
-        <div class='bar'><div class='fill' style='width:${p}%'></div></div>
+  item.checklist.forEach((c,i)=>{
+    const checked = state[id].checked[i];
+    cl.innerHTML += `
+      <div class="checklist-item" onclick="toggle('${id}',${i})">
+        <span class="checkbox ${checked?'checked':''}"></span>
+        ${c.title}
       </div>
     `;
-
-    el.onclick=()=>openCategory(index);
-    root.appendChild(el);
   });
-}
 
-/* ✅ КАТЕГОРИЯ */
-function openCategory(i){
-  let s=document.getElementById('screen');
-  let cat=data[i];
+  const quiz = document.getElementById("quiz");
 
-  s.innerHTML=`<div class='back' onclick='closeScreen()'>← Назад</div><h3>${cat.name}</h3>`;
-
-  cat.lists.forEach((l,li)=>{
-    let el=document.createElement('div');
-    el.className='card';
-
-    let st='new',tx='Новый';
-    if(l.completed){st='done';tx='Выполнено';}
-    else if(l.started){st='progress';tx='Не завершён';}
-
-    el.innerHTML=`
-      <div class='row'>
-        <div>${l.title}</div>
-        <div class='status ${st}'>${tx}</div>
+  item.quiz.forEach((q,i)=>{
+    quiz.innerHTML += `
+      <div class="question">
+        ${i+1}. ${q.q}
+        <div class="answers">
+          ${q.a.map((a,ai)=>`
+            <label>
+              <input type="radio" name="q${i}" value="${ai}">
+              ${a}
+            </label>
+          `).join("")}
+        </div>
       </div>
     `;
-
-    el.onclick=()=>openChecklist(i,li);
-    s.appendChild(el);
   });
 
-  s.classList.add('active');
+  window.currentQuiz = item.quiz;
 }
 
-/* ✅ ЧЕК-ЛИСТ */
-function openChecklist(i,li){
-  let s=document.getElementById('screen');
-  let item=data[i].lists[li];
+/* ===== LOGIC ===== */
+function toggle(id,i){
+  state[id].checked[i] = !state[id].checked[i];
+  save();
+  openChecklist(id);
+}
 
-  item.started=true;
+function checkQuiz(id){
+  let score=0;
+
+  currentQuiz.forEach((q,i)=>{
+    const sel=document.querySelector(`input[name="q${i}"]:checked`);
+    if(sel && Number(sel.value)===q.c) score++;
+  });
+
+  state[id].quizScore=score;
   save();
 
-  fetch(item.file + '?v=' + Date.now())
-  .then(r=>r.text())
-  .then(html=>{
-    s.innerHTML=`
-      <div class='back' onclick='openCategory(${i})'>← Назад</div>
-      <div class='content'><div id='inner' class='content-inner'></div></div>
-    `;
-
-    let c=document.getElementById('inner');
-    c.innerHTML=html;
-
-    // запускаем скрипты
-    c.querySelectorAll("script").forEach(old=>{
-      let scr=document.createElement("script");
-      scr.textContent=old.textContent;
-      document.body.appendChild(scr);
-    });
-
-    // 🔥 следим за результатом (НЕ ломаем кнопку)
-    let observer=new MutationObserver(()=>{
-      if(c.innerText.includes("Результат") || c.innerText.includes("результат")){
-        item.completed=true;
-        save();
-        render();
-
-        let back=document.createElement("button");
-        back.className="bottom-btn";
-        back.innerText="Назад";
-        back.onclick=()=>openCategory(i);
-
-        c.appendChild(back);
-        observer.disconnect();
-      }
-    });
-
-    observer.observe(c,{childList:true,subtree:true});
-  });
+  document.getElementById("result").innerText = `Результат: ${score}/${currentQuiz.length}`;
+  document.getElementById("bar").style.width = getProgress(id)+"%";
 }
 
-function closeScreen(){
-  document.getElementById('screen').classList.remove('active');
-}
+function getProgress(id){
+  const item = data.find(i=>i.id===id);
+  if(!state[id]) return 0;
 
-/* ✅ ЗАГРУЗКА */
-fetch('https://daniels96.github.io/checklistings/checklists/index.json?v='+Date.now(),{
-  cache:'no-store'
-})
-.then(r=>r.json())
-.then(items=>{
-  data=build(items);
-  load();
-  render();
-})
-.catch(()=>{
-  globalText.innerText='Ошибка загрузки данных';
-});
+  const checked = Object.values(state[id].checked).filter(v=>v).length;
+  const cProg = checked/item.checklist.length;
+
+  const qProg = state[id].quizScore/item.quiz.length;
+
+  return Math.round((cProg*0.5 + qProg*0.5)*100);
+}
 </script>
-
 </body>
 </html>
