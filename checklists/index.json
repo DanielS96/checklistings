@@ -17,9 +17,7 @@
 ,
   {"category":"books","title":"test","file":"checklists/books/test.html"}
 ,
-  {"category":"books","title":"Atomic","file":"checklists/books/Atomic"}
-,
-  {"category":"habits.html","title":"habits","file":"habits.html"}
+  {"category":"books","title":"Atomic habits","file":"checklists/books/Atomic-habits.html"}
 ,
   {"category":"home","title":"test","file":"checklists/home/test.html"}
 ]
