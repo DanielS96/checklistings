@@ -8,110 +8,153 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-body{font-family:'Inter',sans-serif;margin:0;background:#f4f5f7}
-.container{max-width:720px;margin:0 auto;padding:20px}
+body{
+  font-family:'Inter',sans-serif;
+  margin:0;
+  background:#f4f5f7;
+}
+
+.container{
+  max-width:720px;
+  margin:0 auto;
+  padding:20px;
+  animation:fade 0.3s ease;
+}
+
+/* ANIMATION */
+@keyframes fade{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
 
 /* HEADER */
 .header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:20px;
-}
-
-.refresh{
-  background:#6366f1;
-  color:#fff;
-  border-radius:10px;
-  padding:8px 12px;
-  cursor:pointer;
 }
 
 /* PROGRESS */
-.progress-big{
-  height:10px;background:#e5e7eb;border-radius:10px;overflow:hidden;margin-top:10px
+.progress-box{
+  background:#fff;
+  padding:16px;
+  border-radius:16px;
+  margin:15px 0;
 }
-.progress-big div{height:100%;background:#6366f1}
 
-.level{
-  margin-top:5px;
-  font-size:14px;
-  color:#555;
+.progress-top{
+  display:flex;
+  justify-content:space-between;
+}
+
+.progress-bar{
+  height:10px;
+  background:#e5e7eb;
+  border-radius:10px;
+  overflow:hidden;
+  margin-top:10px;
+}
+
+.progress-bar div{
+  height:100%;
+  background:#6366f1;
 }
 
 /* CATEGORY */
-.category-card{
+.category{
   background:#fff;
   border-radius:16px;
   padding:16px;
-  margin-bottom:14px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom:12px;
   cursor:pointer;
+  transition:0.2s;
 }
 
-.cat-sub{
+.category:hover{
+  transform:translateY(-2px);
+}
+
+.sub{
   font-size:13px;
   color:#6b7280;
 }
 
-.progress-small{
-  height:6px;background:#e5e7eb;border-radius:6px;margin-top:10px;overflow:hidden
+/* STATUS */
+.status{
+  margin-top:6px;
+  font-size:12px;
 }
-.progress-small div{height:100%;background:#6366f1}
 
-/* CHECKLIST */
-details{
-  background:#fff;border-radius:12px;margin-bottom:10px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.04)
+.new{color:#2563eb}
+.progress{color:#d97706}
+.done{color:#16a34a}
+
+/* CHECKLIST ITEM */
+.item{
+  background:#fff;
+  border-radius:14px;
+  padding:14px;
+  margin-bottom:10px;
+  cursor:pointer;
+  transition:0.2s;
 }
-summary{
-  padding:14px;display:flex;justify-content:space-between;cursor:pointer
+
+.item:hover{
+  transform:scale(1.01);
 }
-.summary-left{display:flex;align-items:center}
 
-.arrow{transition:0.2s}
-details[open] .arrow{transform:rotate(90deg)}
-
-.checkbox{
-  width:18px;height:18px;border:2px solid #6366f1;
-  border-radius:4px;margin-right:10px
+.item-top{
+  display:flex;
+  justify-content:space-between;
 }
-.checked{background:#6366f1}
 
-.content{padding:0 14px 14px}
+.arrow{
+  transition:0.2s;
+}
+
+.open .arrow{
+  transform:rotate(90deg);
+}
+
+.content{
+  margin-top:10px;
+  color:#444;
+}
 
 .tip{
   margin-top:10px;
   padding:10px;
   background:#eef2ff;
-  border-radius:8px;
+  border-radius:10px;
 }
 
 /* QUIZ */
 .question{
-  background:#fff;border-radius:12px;padding:14px;margin-bottom:10px
+  background:#fff;
+  padding:14px;
+  border-radius:12px;
+  margin-bottom:10px;
 }
-.answers label{
-  display:block;
-  padding:12px;
-  margin-top:6px;
-  border-radius:10px;
+
+.answers div{
   background:#f1f5f9;
+  padding:12px;
+  border-radius:10px;
+  margin-top:6px;
   cursor:pointer;
 }
-.answers label.selected{background:#dbeafe}
-.answers label.correct{background:#dcfce7}
-.answers label.wrong{background:#fee2e2}
 
-.answers input{display:none}
+.answers .selected{background:#dbeafe}
+.answers .correct{background:#dcfce7}
+.answers .wrong{background:#fee2e2}
 
 button{
   width:100%;
   padding:12px;
-  border:none;
-  border-radius:10px;
   background:#6366f1;
   color:#fff;
+  border:none;
+  border-radius:10px;
   margin-top:10px;
 }
 </style>
@@ -125,13 +168,13 @@ let data=[];
 let state=JSON.parse(localStorage.getItem("progress"))||{};
 
 const catInfo={
-"🏠 Дом и быт":"порядок, организация",
-"💰 Финансы":"деньги и контроль",
-"🧠 Саморазвитие":"рост и навыки",
-"💪 Здоровье":"энергия и тело",
-"❤️ Отношения":"люди и связь",
-"⚡ Продуктивность":"фокус и дела",
-"📈 Карьера":"работа и рост",
+"🏠 Дом и быт":"порядок, комфорт",
+"💰 Финансы":"деньги, контроль",
+"🧠 Саморазвитие":"рост, навыки",
+"💪 Здоровье":"энергия, тело",
+"❤️ Отношения":"связи",
+"⚡ Продуктивность":"эффективность",
+"📈 Карьера":"рост",
 "🧘 Ментальное состояние":"спокойствие",
 "🌍 Социальная жизнь":"окружение",
 "📚 Книги":"знания"
@@ -139,93 +182,74 @@ const catInfo={
 
 fetch("index.json")
 .then(r=>r.json())
-.then(json=>{
-  data=json;
-  renderHome();
-});
+.then(j=>{data=j;renderHome();});
 
 function save(){
   localStorage.setItem("progress",JSON.stringify(state));
 }
 
 /* LEVEL */
-function getLevel(p){
-  return Math.floor(p/10)+1;
-}
+function getLevel(p){return Math.floor(p/10)+1}
 
 /* HOME */
 function renderHome(){
   const p=getTotalProgress();
 
-  const app=document.getElementById("app");
-
   app.innerHTML=`
     <div class="header">
       <h1>Checklistings App</h1>
-      <div class="refresh" onclick="location.reload()">⟳</div>
+      <div onclick="location.reload()">⟳</div>
     </div>
 
-    <div>
-      <b>Общий прогресс</b>
-      <div class="progress-big"><div style="width:${p}%"></div></div>
-      <div>${p}%</div>
-      <div class="level">Level ${getLevel(p)}</div>
-    </div>
-
-    <div id="cats"></div>
-  `;
-
-  const cats=[...new Set(data.map(i=>i.category))];
-  const container=document.getElementById("cats");
-
-  cats.forEach(cat=>{
-    const prog=getCategoryProgress(cat);
-
-    container.innerHTML+=`
-      <div class="category-card" onclick="openCategory('${cat}')">
-        <b>${cat}</b>
-        <div class="cat-sub">${catInfo[cat]||""}</div>
-        <div class="progress-small"><div style="width:${prog}%"></div></div>
-        <small>${prog}%</small>
+    <div class="progress-box">
+      <div class="progress-top">
+        <b>Общий прогресс</b>
+        <span>Level ${getLevel(p)}</span>
       </div>
-    `;
-  });
+      <div class="progress-bar"><div style="width:${p}%"></div></div>
+      <div>${p}%</div>
+    </div>
+
+    ${[...new Set(data.map(i=>i.category))].map(cat=>{
+      const prog=getCategoryProgress(cat);
+      return `
+        <div class="category" onclick="openCategory('${cat}')">
+          <b>${cat}</b>
+          <div class="sub">${catInfo[cat]}</div>
+          <div class="progress-bar"><div style="width:${prog}%"></div></div>
+        </div>
+      `;
+    }).join("")}
+  `;
 }
 
 /* CATEGORY */
 function openCategory(cat){
-  const app=document.getElementById("app");
-
   const list=data.filter(i=>i.category===cat);
 
   app.innerHTML=`
     <button onclick="renderHome()">← Назад</button>
     <h1>${cat}</h1>
-    <div id="list"></div>
+
+    ${list.map(item=>{
+      const s=getStatus(item.id);
+      return `
+        <div class="category" onclick="openChecklist('${item.id}')">
+          <b>${item.title}</b>
+          <div>${item.description}</div>
+          <div class="status ${s.class}">${s.text}</div>
+        </div>
+      `;
+    }).join("")}
   `;
-
-  const container=document.getElementById("list");
-
-  list.forEach(item=>{
-    const s=getStatus(item.id);
-
-    container.innerHTML+=`
-      <div class="category-card" onclick="openChecklist('${item.id}')">
-        <b>${item.title}</b>
-        <div>${item.description}</div>
-        <div class="status ${s.class}">${s.text}</div>
-      </div>
-    `;
-  });
 }
 
 /* STATUS */
 function getStatus(id){
-  if(!state[id]) return {text:"новый",class:"new"};
-
+  if(!state[id]) return {text:"🔵 новый",class:"new"};
   const p=getProgress(id);
-  if(p===100) return {text:"выполнено",class:"done"};
-  return {text:"не завершен",class:"progress"};
+  if(p===100) return {text:"🟢 выполнено",class:"done"};
+  return {text:"🟡 не завершен",class:"progress"};
 }
 
 /* CHECKLIST */
@@ -233,41 +257,28 @@ function openChecklist(id){
   const item=data.find(i=>i.id===id);
   if(!state[id]) state[id]={checked:{},quizScore:0};
 
-  const app=document.getElementById("app");
-
   app.innerHTML=`
     <button onclick="openCategory('${item.category}')">← Назад</button>
     <h1>${item.title}</h1>
 
-    <div id="list"></div>
+    ${item.checklist.map((c,i)=>`
+      <div class="item" onclick="toggleItem('${id}',${i},this)">
+        <div class="item-top">
+          <span>✨ ${c.title}</span>
+          <span class="arrow">▶</span>
+        </div>
+        <div class="content" style="display:none">
+          ${c.text}
+          <div class="tip"><b>Совет:</b> ${c.tip}</div>
+        </div>
+      </div>
+    `).join("")}
 
     <h3>Тест</h3>
     <div id="quiz"></div>
     <button onclick="checkQuiz('${id}')">Проверить</button>
     <div id="result"></div>
   `;
-
-  const list=document.getElementById("list");
-
-  item.checklist.forEach((c,i)=>{
-    const checked=state[id].checked[i];
-
-    list.innerHTML+=`
-      <details>
-        <summary>
-          <div class="summary-left" onclick="toggle('${id}',${i})">
-            <span class="checkbox ${checked?'checked':''}"></span>
-            ${c.title}
-          </div>
-          <span class="arrow">▶</span>
-        </summary>
-        <div class="content">
-          ${c.text}
-          <div class="tip"><b>Совет:</b> ${c.tip}</div>
-        </div>
-      </details>
-    `;
-  });
 
   const quiz=document.getElementById("quiz");
 
@@ -277,10 +288,7 @@ function openChecklist(id){
         ${i+1}. ${q.q}
         <div class="answers">
           ${q.a.map((a,ai)=>`
-            <label onclick="selectAnswer(${i},${ai})" id="q${i}a${ai}">
-              <input type="radio" name="q${i}" value="${ai}">
-              ${a}
-            </label>
+            <div onclick="selectAnswer(${i},${ai})" id="q${i}a${ai}">${a}</div>
           `).join("")}
         </div>
       </div>
@@ -290,30 +298,40 @@ function openChecklist(id){
   window.currentQuiz=item.quiz;
 }
 
+/* ITEM TOGGLE */
+function toggleItem(id,i,el){
+  const content=el.querySelector(".content");
+  const open=content.style.display==="block";
+
+  content.style.display=open?"none":"block";
+  el.classList.toggle("open");
+
+  state[id].checked[i]=!open;
+  save();
+}
+
 /* QUIZ */
 function selectAnswer(q,a){
-  document.querySelectorAll(`[id^="q${q}a"]`)
+  document.querySelectorAll(`#q${q}a0,#q${q}a1`)
     .forEach(el=>el.classList.remove("selected"));
 
-  const el=document.getElementById(`q${q}a${a}`);
-  el.classList.add("selected");
-  el.querySelector("input").checked=true;
+  document.getElementById(`q${q}a${a}`).classList.add("selected");
 }
 
 function checkQuiz(id){
   let score=0;
 
   currentQuiz.forEach((q,i)=>{
-    const sel=document.querySelector(`input[name="q${i}"]:checked`);
+    const selected=document.querySelector(`#q${i}a0.selected,#q${i}a1.selected`);
 
     q.a.forEach((_,ai)=>{
       const el=document.getElementById(`q${i}a${ai}`);
 
       if(ai===q.c) el.classList.add("correct");
-      if(sel && Number(sel.value)===ai && ai!==q.c) el.classList.add("wrong");
+      if(selected && selected.id===`q${i}a${ai}` && ai!==q.c) el.classList.add("wrong");
     });
 
-    if(sel && Number(sel.value)===q.c) score++;
+    if(selected && selected.id===`q${i}a${q.c}`) score++;
   });
 
   state[id].quizScore=score;
@@ -322,19 +340,13 @@ function checkQuiz(id){
   document.getElementById("result").innerText=`Результат: ${score}/${currentQuiz.length}`;
 }
 
-/* HELPERS */
-function toggle(id,i){
-  state[id].checked[i]=!state[id].checked[i];
-  save();
-}
-
+/* PROGRESS */
 function getProgress(id){
   const item=data.find(i=>i.id===id);
   if(!state[id]) return 0;
 
   const checked=Object.values(state[id].checked).filter(v=>v).length;
   const cProg=checked/item.checklist.length;
-
   const qProg=state[id].quizScore/item.quiz.length;
 
   return Math.round((cProg+qProg)/2*100);
@@ -353,5 +365,6 @@ function getTotalProgress(){
   return Math.round(total/data.length);
 }
 </script>
+
 </body>
 </html>
