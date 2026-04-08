@@ -16,95 +16,50 @@
   --sub:#64748b;
 }
 
-body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:var(--bg);
-}
+body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);}
 
-.app{
-  max-width:420px;
-  margin:0 auto;
-  padding:16px;
-}
-
+.app{max-width:420px;margin:0 auto;padding:16px;}
 h1{font-size:26px;margin:10px 0;}
 
 #globalText{margin-bottom:10px;font-weight:500;}
 
-.bar{
-  height:10px;
-  background:#e2e8f0;
-  border-radius:999px;
-  overflow:hidden;
-}
-
-.global-bar{
-  height:16px;
-  margin-bottom:28px;
-}
-
-.fill{
-  height:100%;
-  background:linear-gradient(90deg,#3b82f6,#6366f1);
-}
+.bar{height:10px;background:#e2e8f0;border-radius:999px;overflow:hidden;}
+.global-bar{height:16px;margin-bottom:28px;}
+.fill{height:100%;background:linear-gradient(90deg,#3b82f6,#6366f1);}
 
 .card{
-  background:#fff;
-  border-radius:18px;
-  padding:16px;
-  margin-bottom:12px;
-  box-shadow:0 4px 20px rgba(0,0,0,0.05);
-  cursor:pointer;
-  box-sizing:border-box;
+  background:#fff;border-radius:18px;padding:16px;margin-bottom:12px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.05);cursor:pointer;
 }
 
 .title{font-weight:600;}
-.sub{font-size:13px;color:#64748b;}
+.sub{font-size:13px;color:#64748b;margin-top:4px;}
 
-.row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;}
 
 .status{
-  font-size:12px;
-  padding:6px 10px;
-  border-radius:999px;
-  white-space:nowrap;
+  font-size:12px;padding:6px 10px;border-radius:999px;white-space:nowrap;
 }
-
 .done{background:#dcfce7;color:#166534}
 .progress{background:#e0f2fe;color:#075985}
 .new{background:#ede9fe;color:#5b21b6}
 
 .screen{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:var(--bg);
-  transform:translateX(100%);
-  transition:.3s;
-  padding:20px;
-  overflow:auto;
-  box-sizing:border-box;
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  background:var(--bg);transform:translateX(100%);
+  transition:.3s;padding:16px;overflow:auto;
 }
 
 .screen.active{transform:translateX(0);}
+.back{margin-bottom:10px;color:var(--accent);cursor:pointer;}
 
-.back{
-  margin-bottom:10px;
-  color:var(--accent);
-  cursor:pointer;
-}
-
-/* 🔥 чек-лист full width */
 .content{
   margin-top:10px;
+  width:100%;
+}
+
+.content > *{
+  max-width:100% !important;
 }
 
 .content details{
@@ -113,6 +68,17 @@ h1{font-size:26px;margin:10px 0;}
   border-radius:14px;
   margin-bottom:10px;
   box-shadow:0 2px 10px rgba(0,0,0,0.04);
+}
+
+.bottom-btn{
+  margin-top:20px;
+  padding:14px;
+  width:100%;
+  border:none;
+  border-radius:12px;
+  background:#3b82f6;
+  color:#fff;
+  font-weight:600;
 }
 </style>
 </head>
@@ -129,200 +95,183 @@ h1{font-size:26px;margin:10px 0;}
 <div id="screen" class="screen"></div>
 
 <script>
-let data = [];
+let data=[];
 
-function save(){
-  localStorage.setItem('app', JSON.stringify(data));
-}
-
+function save(){localStorage.setItem('app',JSON.stringify(data));}
 function load(){
-  const d = localStorage.getItem('app');
-  if(!d) return;
-
-  const parsed = JSON.parse(d);
-
-  parsed.forEach((cat,i)=>{
-    if(!data[i]) return;
-
-    cat.lists.forEach((l,li)=>{
-      if(!data[i].lists[li]) return;
-
-      data[i].lists[li].completed = l.completed || false;
-      data[i].lists[li].started = l.started || false;
+  let d=localStorage.getItem('app'); if(!d)return;
+  let p=JSON.parse(d);
+  p.forEach((c,i)=>{
+    if(!data[i])return;
+    c.lists.forEach((l,li)=>{
+      if(!data[i].lists[li])return;
+      data[i].lists[li].completed=l.completed||false;
+      data[i].lists[li].started=l.started||false;
     });
   });
 }
 
-function buildStructure(items){
-  const map = {};
-
-  items.forEach(item => {
-    if(!map[item.category]){
-      map[item.category] = {
-        name:getName(item.category),
-        desc:getDesc(item.category),
-        lists:[]
-      };
+function build(items){
+  let map={};
+  items.forEach(it=>{
+    if(!map[it.category]){
+      map[it.category]={name:getName(it.category),desc:getDesc(it.category),lists:[]};
     }
-
-    map[item.category].lists.push({
-      title:item.title.replace(/-/g,' '),
-      file:item.file,
+    map[it.category].lists.push({
+      title:it.title.replace(/-/g,' '),
+      file:it.file,
       completed:false,
       started:false
     });
   });
-
   return Object.values(map);
 }
 
 function getName(k){
-  return {
-    "relationships":"❤️ Отношения",
-    "finance":"💰 Финансы",
-    "self-dev":"🧠 Саморазвитие",
-    "home":"🏠 Дом и быт",
-    "health":"🧍‍♂️ Здоровье и энергия",
-    "books":"📚 Книги",
-    "work":"💼 Работа",
-    "lifestyle":"✨ Образ жизни",
-    "travel":"🌍 Путешествия",
-    "psychology":"🧘 Психология и осознанность"
-  }[k] || k;
+return {
+"relationships":"❤️ Отношения",
+"finance":"💰 Финансы",
+"self-dev":"🧠 Саморазвитие",
+"home":"🏠 Дом и быт",
+"health":"🧍‍♂️ Здоровье и энергия",
+"books":"📚 Книги",
+"work":"💼 Работа и продуктивность",
+"lifestyle":"✨ Образ жизни (Lifestyle)",
+"travel":"🌍 Путешествия",
+"psychology":"🧘 Психология и осознанность"
+}[k]||k;
 }
 
 function getDesc(k){
-  return {
-    "relationships":"Общение и свидания",
-    "finance":"Деньги и инвестиции",
-    "self-dev":"Рост и дисциплина",
-    "home":"Порядок и комфорт",
-    "health":"Сон и питание",
-    "books":"Чтение",
-    "work":"Фокус и результат",
-    "lifestyle":"Стиль жизни",
-    "travel":"Поездки",
-    "psychology":"Мышление"
-  }[k] || "";
+return {
+"relationships":"Свидания, коммуникация, построение здоровых отношений",
+"finance":"Доход, инвестиции, управление деньгами",
+"self-dev":"Привычки, дисциплина, личностный рост",
+"home":"Организация пространства, комфорт, быт",
+"health":"Сон, питание, физическое состояние",
+"books":"Развитие через чтение и знания",
+"work":"Фокус, эффективность и карьерный рост",
+"lifestyle":"Образ жизни, привычки и окружение",
+"travel":"Поездки, опыт и новые впечатления",
+"psychology":"Осознанность, мышление и внутреннее состояние"
+}[k]||"";
 }
 
-function progress(cat){
-  let t=cat.lists.length;
-  let d=cat.lists.filter(x=>x.completed).length;
-  return t?Math.round(d/t*100):0;
+function p(cat){
+let t=cat.lists.length,d=cat.lists.filter(x=>x.completed).length;
+return t?Math.round(d/t*100):0;
 }
 
-function globalProgress(){
-  let t=0,d=0;
-  data.forEach(c=>{
-    c.lists.forEach(l=>{
-      t++; if(l.completed)d++;
-    });
-  });
-  return t?Math.round(d/t*100):0;
+function gp(){
+let t=0,d=0;
+data.forEach(c=>c.lists.forEach(l=>{t++;if(l.completed)d++;}));
+return t?Math.round(d/t*100):0;
 }
 
 function render(){
-  const root=document.getElementById('cats');
-  root.innerHTML='';
+let root=document.getElementById('cats'); root.innerHTML='';
+let g=gp();
+globalFill.style.width=g+'%';
+globalText.innerText=`Общий прогресс: ${g}%`;
 
-  let g=globalProgress();
-  document.getElementById('globalFill').style.width=g+'%';
-  document.getElementById('globalText').innerText=`Общий прогресс: ${g}%`;
+let sorted=[...data].sort((a,b)=>p(b)-p(a));
 
-  let sorted=[...data].sort((a,b)=>progress(b)-progress(a));
+sorted.forEach(cat=>{
+let el=document.createElement('div');
+el.className='card';
+let pr=p(cat);
 
-  sorted.forEach(cat=>{
-    let p=progress(cat);
+el.innerHTML=`
+<div class='title'>${cat.name}</div>
+<div class='sub'>${cat.desc}</div>
+<div style="margin-top:14px">
+<div class='sub' style='margin-bottom:6px'>${pr}% завершено</div>
+<div class='bar'><div class='fill' style='width:${pr}%'></div></div>
+</div>
+`;
 
-    let el=document.createElement('div');
-    el.className='card';
-
-    el.innerHTML=`
-      <div class='title'>${cat.name}</div>
-      <div class='sub'>${cat.desc}</div>
-
-      <div style="margin-top:14px">
-        <div class='sub' style='margin-bottom:6px'>${p}% завершено</div>
-        <div class='bar'><div class='fill' style='width:${p}%'></div></div>
-      </div>
-    `;
-
-    el.onclick=()=>openCategory(data.indexOf(cat));
-    root.appendChild(el);
-  });
+el.onclick=()=>openCategory(data.indexOf(cat));
+root.appendChild(el);
+});
 }
 
 function openCategory(i){
-  let s=document.getElementById('screen');
-  let cat=data[i];
+let s=screen; let cat=data[i];
+s.innerHTML=`<div class='back' onclick='closeScreen()'>← Назад</div><h2>${cat.name}</h2>`;
 
-  s.innerHTML=`<div class='back' onclick='closeScreen()'>← Назад</div><h2>${cat.name}</h2>`;
+cat.lists.forEach((l,li)=>{
+let el=document.createElement('div');
+el.className='card';
 
-  cat.lists.forEach((l,li)=>{
-    let el=document.createElement('div');
-    el.className='card';
+let st="new",tx="Новый";
+if(l.completed){st="done";tx="Выполнено";}
+else if(l.started){st="progress";tx="Не завершён";}
 
-    let st="new",tx="Новый";
-    if(l.completed){st="done";tx="Выполнено";}
-    else if(l.started){st="progress";tx="Не завершён";}
+el.innerHTML=`<div class='row'>
+<div class='title'>${l.title}</div>
+<div class='status ${st}'>${tx}</div>
+</div>`;
 
-    el.innerHTML=`
-      <div class='row'>
-        <div class='title'>${l.title}</div>
-        <div class='status ${st}'>${tx}</div>
-      </div>
-    `;
+el.onclick=()=>openChecklist(i,li);
+s.appendChild(el);
+});
 
-    el.onclick=()=>openChecklist(i,li);
-    s.appendChild(el);
-  });
-
-  s.classList.add('active');
+s.classList.add('active');
 }
 
 function openChecklist(i,li){
-  let s=document.getElementById('screen');
-  let item=data[i].lists[li];
+let s=screen;
+let item=data[i].lists[li];
 
-  if(!item.started){item.started=true;save();}
+if(!item.started){item.started=true;save();}
 
-  fetch(item.file)
-    .then(r=>r.text())
-    .then(html=>{
-      s.innerHTML=`
-        <div class='back' onclick='openCategory(${i})'>← Назад</div>
-        <h2>${item.title}</h2>
-        <div class="content" id="content"></div>
-      `;
+fetch(item.file).then(r=>r.text()).then(html=>{
+s.innerHTML=`<div class='back' onclick='openCategory(${i})'>← Назад</div><div id='content' class='content'></div>`;
+let c=document.getElementById('content');
+c.innerHTML=html;
 
-      let c=document.getElementById('content');
-      c.innerHTML=html;
+// запуск скриптов
+c.querySelectorAll("script").forEach(old=>{
+let scr=document.createElement("script");
+scr.textContent=old.textContent;
+document.body.appendChild(scr);
+old.remove();
+});
 
-      // 🔥 запускаем встроенные скрипты
-      c.querySelectorAll("script").forEach(old=>{
-        let scr=document.createElement("script");
-        scr.textContent=old.textContent;
-        document.body.appendChild(scr);
-        old.remove();
-      });
-    });
+// 🔥 перехват кнопки проверки
+setTimeout(()=>{
+let btn=document.querySelector("button");
+if(btn){
+btn.addEventListener("click",()=>{
+item.completed=true;
+save();
+render();
+
+setTimeout(()=>{
+let bottom=document.createElement("button");
+bottom.className="bottom-btn";
+bottom.innerText="Назад";
+bottom.onclick=()=>openCategory(i);
+c.appendChild(bottom);
+},500);
+
+});
+}
+},500);
+
+});
 }
 
-function closeScreen(){
-  document.getElementById('screen').classList.remove('active');
-}
+function closeScreen(){screen.classList.remove('active');}
 
 fetch('checklists/index.json')
 .then(r=>r.json())
 .then(items=>{
-  data=buildStructure(items);
-  load();
-  render();
+data=build(items);
+load();
+render();
 })
-.catch(()=>{
-  document.getElementById('globalText').innerText='Ошибка загрузки данных';
-});
+.catch(()=>globalText.innerText='Ошибка загрузки данных');
 </script>
 
 </body>
