@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Checklistings App</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -20,7 +20,6 @@ body{
   margin:0;
   font-family:'Inter',sans-serif;
   background:var(--bg);
-  color:var(--text);
 }
 
 .app{
@@ -29,16 +28,9 @@ body{
   padding:16px;
 }
 
-h1{
-  font-size:26px;
-  margin:10px 0;
-}
+h1{font-size:26px;margin:10px 0;}
 
-#globalText{
-  display:block;
-  margin-bottom:10px;
-  font-weight:500;
-}
+#globalText{margin-bottom:10px;font-weight:500;}
 
 .bar{
   height:10px;
@@ -55,30 +47,20 @@ h1{
 .fill{
   height:100%;
   background:linear-gradient(90deg,#3b82f6,#6366f1);
-  width:0%;
 }
 
 .card{
-  background:var(--card);
+  background:#fff;
   border-radius:18px;
   padding:16px;
   margin-bottom:12px;
   box-shadow:0 4px 20px rgba(0,0,0,0.05);
   cursor:pointer;
-  width:100%;
   box-sizing:border-box;
 }
 
-.title{
-  font-weight:600;
-  flex:1;
-  min-width:0;
-}
-
-.sub{
-  font-size:13px;
-  color:var(--sub);
-}
+.title{font-weight:600;}
+.sub{font-size:13px;color:#64748b;}
 
 .row{
   display:flex;
@@ -106,31 +88,27 @@ h1{
   height:100%;
   background:var(--bg);
   transform:translateX(100%);
-  transition:0.3s;
+  transition:.3s;
   padding:20px;
   overflow:auto;
   box-sizing:border-box;
 }
 
-.screen.active{
-  transform:translateX(0);
-}
+.screen.active{transform:translateX(0);}
 
 .back{
   margin-bottom:10px;
   color:var(--accent);
   cursor:pointer;
 }
+
+/* 🔥 чек-лист full width */
 .content{
   margin-top:10px;
 }
 
-.content h3{
-  margin-top:20px;
-}
-
 .content details{
-  background:#ffffff;
+  background:#fff;
   padding:14px;
   border-radius:14px;
   margin-bottom:10px;
@@ -143,12 +121,8 @@ h1{
 
 <div class="app">
   <h1>Checklistings App</h1>
-
   <div id="globalText">Загрузка...</div>
-  <div class="bar global-bar">
-    <div id="globalFill" class="fill"></div>
-  </div>
-
+  <div class="bar global-bar"><div id="globalFill" class="fill"></div></div>
   <div id="cats"></div>
 </div>
 
@@ -185,16 +159,15 @@ function buildStructure(items){
   items.forEach(item => {
     if(!map[item.category]){
       map[item.category] = {
-        key:item.category,
-        name: getCategoryName(item.category),
-        desc: getCategoryDesc(item.category),
-        lists: []
+        name:getName(item.category),
+        desc:getDesc(item.category),
+        lists:[]
       };
     }
 
     map[item.category].lists.push({
-      title: formatTitle(item.title),
-      file: item.file,
+      title:item.title.replace(/-/g,' '),
+      file:item.file,
       completed:false,
       started:false
     });
@@ -203,76 +176,66 @@ function buildStructure(items){
   return Object.values(map);
 }
 
-function formatTitle(str){
-  return str.replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase());
-}
-
-function getCategoryName(key){
-  const map = {
+function getName(k){
+  return {
     "relationships":"❤️ Отношения",
     "finance":"💰 Финансы",
     "self-dev":"🧠 Саморазвитие",
     "home":"🏠 Дом и быт",
     "health":"🧍‍♂️ Здоровье и энергия",
     "books":"📚 Книги",
-    "work":"💼 Работа и продуктивность",
-    "lifestyle":"✨ Образ жизни (Lifestyle)",
+    "work":"💼 Работа",
+    "lifestyle":"✨ Образ жизни",
     "travel":"🌍 Путешествия",
     "psychology":"🧘 Психология и осознанность"
-  };
-  return map[key] || key;
+  }[k] || k;
 }
 
-function getCategoryDesc(key){
-  const map = {
+function getDesc(k){
+  return {
     "relationships":"Общение и свидания",
     "finance":"Деньги и инвестиции",
     "self-dev":"Рост и дисциплина",
     "home":"Порядок и комфорт",
     "health":"Сон и питание",
-    "books":"Чтение и знания",
+    "books":"Чтение",
     "work":"Фокус и результат",
-    "lifestyle":"Стиль жизни и привычки",
-    "travel":"Поездки и опыт",
-    "psychology":"Мышление и осознанность"
-  };
-  return map[key] || "";
+    "lifestyle":"Стиль жизни",
+    "travel":"Поездки",
+    "psychology":"Мышление"
+  }[k] || "";
 }
 
-function calcCategoryProgress(cat){
-  const total = cat.lists.length;
-  const done = cat.lists.filter(l=>l.completed).length;
-  return total ? Math.round((done/total)*100) : 0;
+function progress(cat){
+  let t=cat.lists.length;
+  let d=cat.lists.filter(x=>x.completed).length;
+  return t?Math.round(d/t*100):0;
 }
 
-function calcGlobal(){
-  let total=0,done=0;
-
+function globalProgress(){
+  let t=0,d=0;
   data.forEach(c=>{
     c.lists.forEach(l=>{
-      total++;
-      if(l.completed) done++;
+      t++; if(l.completed)d++;
     });
   });
-
-  return total ? Math.round((done/total)*100) : 0;
+  return t?Math.round(d/t*100):0;
 }
 
 function render(){
   const root=document.getElementById('cats');
   root.innerHTML='';
 
-  const g=calcGlobal();
-  document.getElementById('globalFill').style.width = g + '%';
-  document.getElementById('globalText').innerText = `Общий прогресс: ${g}%`;
+  let g=globalProgress();
+  document.getElementById('globalFill').style.width=g+'%';
+  document.getElementById('globalText').innerText=`Общий прогресс: ${g}%`;
 
-  // 🔥 сортировка категорий по прогрессу
-  const sorted = [...data].sort((a,b)=>calcCategoryProgress(b)-calcCategoryProgress(a));
+  let sorted=[...data].sort((a,b)=>progress(b)-progress(a));
 
-  sorted.forEach((cat)=>{
-    const p = calcCategoryProgress(cat);
+  sorted.forEach(cat=>{
+    let p=progress(cat);
 
-    const el=document.createElement('div');
+    let el=document.createElement('div');
     el.className='card';
 
     el.innerHTML=`
@@ -291,111 +254,59 @@ function render(){
 }
 
 function openCategory(i){
-  const screen=document.getElementById('screen');
-  const cat=data[i];
+  let s=document.getElementById('screen');
+  let cat=data[i];
 
-  screen.innerHTML = `<div class='back' onclick='closeScreen()'>← Назад</div><h2>${cat.name}</h2>`;
+  s.innerHTML=`<div class='back' onclick='closeScreen()'>← Назад</div><h2>${cat.name}</h2>`;
 
   cat.lists.forEach((l,li)=>{
-    const el=document.createElement('div');
+    let el=document.createElement('div');
     el.className='card';
 
-    let statusClass='new';
-    let statusText='Новый';
-
-    if(l.completed){
-      statusClass='done';
-      statusText='Выполнено';
-    } else if(l.started){
-      statusClass='progress';
-      statusText='Не завершён';
-    }
+    let st="new",tx="Новый";
+    if(l.completed){st="done";tx="Выполнено";}
+    else if(l.started){st="progress";tx="Не завершён";}
 
     el.innerHTML=`
       <div class='row'>
         <div class='title'>${l.title}</div>
-        <div class='status ${statusClass}'>${statusText}</div>
+        <div class='status ${st}'>${tx}</div>
       </div>
     `;
 
     el.onclick=()=>openChecklist(i,li);
-    screen.appendChild(el);
+    s.appendChild(el);
   });
 
-  screen.classList.add('active');
+  s.classList.add('active');
 }
 
 function openChecklist(i,li){
-  const screen=document.getElementById('screen');
-  const item=data[i].lists[li];
+  let s=document.getElementById('screen');
+  let item=data[i].lists[li];
 
-  // фикс статуса "начат"
-  if(!item.started && !item.completed){
-    item.started = true;
-    save();
-  }
+  if(!item.started){item.started=true;save();}
 
   fetch(item.file)
-    .then(res => res.text())
-    .then(html => {
-
-      // рендер страницы
-      screen.innerHTML = `
+    .then(r=>r.text())
+    .then(html=>{
+      s.innerHTML=`
         <div class='back' onclick='openCategory(${i})'>← Назад</div>
         <h2>${item.title}</h2>
-        <div class='content' id='content'></div>
+        <div class="content" id="content"></div>
       `;
 
-      const container = document.getElementById('content');
-      container.innerHTML = html;
+      let c=document.getElementById('content');
+      c.innerHTML=html;
 
-      // 🔥 КРИТИЧНО: запускаем скрипты внутри чек-листа
-      const scripts = container.querySelectorAll('script');
-
-      scripts.forEach(oldScript => {
-        const newScript = document.createElement('script');
-
-        if(oldScript.src){
-          newScript.src = oldScript.src;
-        } else {
-          newScript.textContent = oldScript.textContent;
-        }
-
-        document.body.appendChild(newScript);
-        oldScript.remove();
+      // 🔥 запускаем встроенные скрипты
+      c.querySelectorAll("script").forEach(old=>{
+        let scr=document.createElement("script");
+        scr.textContent=old.textContent;
+        document.body.appendChild(scr);
+        old.remove();
       });
-    })
-    .catch(()=>{
-      screen.innerHTML = `
-        <div class='back' onclick='openCategory(${i})'>← Назад</div>
-        <h2>${item.title}</h2>
-        <div>Ошибка загрузки чек-листа</div>
-      `;
     });
-}
-
-  fetch(item.file)
-    .then(res => res.text())
-    .then(html => {
-      screen.innerHTML=`
-        <div class='back' onclick='openCategory(${i})'>← Назад</div>
-        <h2>${item.title}</h2>
-        <div class='content'>${html}</div>
-      `;
-    })
-    .catch(()=>{
-      screen.innerHTML=`Ошибка загрузки`;
-    });
-}
-
-function complete(i,li){
-  const item=data[i].lists[li];
-  item.started = true;
-  item.completed = true;
-
-  save();
-  openCategory(i);
-  render();
 }
 
 function closeScreen(){
@@ -403,15 +314,15 @@ function closeScreen(){
 }
 
 fetch('checklists/index.json')
-  .then(res => res.json())
-  .then(items => {
-    data = buildStructure(items);
-    load();
-    render();
-  })
-  .catch(()=>{
-    document.getElementById('globalText').innerText = 'Ошибка загрузки данных';
-  });
+.then(r=>r.json())
+.then(items=>{
+  data=buildStructure(items);
+  load();
+  render();
+})
+.catch(()=>{
+  document.getElementById('globalText').innerText='Ошибка загрузки данных';
+});
 </script>
 
 </body>
