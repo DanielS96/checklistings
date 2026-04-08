@@ -5,55 +5,95 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checklistings</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-body{font-family:'Inter',sans-serif;margin:0;background:#f9fafb;color:#111}
-.container{max-width:720px;margin:0 auto;padding:20px}
+body{
+  font-family:'Inter',sans-serif;
+  margin:0;
+  background:#f4f5f7;
+  color:#111;
+}
 
-h1{font-size:28px;margin-bottom:10px}
+.container{
+  max-width:720px;
+  margin:0 auto;
+  padding:20px;
+}
 
-/* category */
-.category{margin-top:30px}
-.category-title{font-size:20px;margin-bottom:10px}
+h1{
+  font-size:28px;
+  margin-bottom:20px;
+}
 
-/* card */
+/* CATEGORY BLOCK */
+.category{
+  margin-top:30px;
+}
+
+.category-title{
+  font-size:20px;
+  font-weight:600;
+  margin-bottom:5px;
+}
+
+.category-sub{
+  font-size:13px;
+  color:#6b6f76;
+  margin-bottom:10px;
+}
+
+/* CARD */
 .card{
   background:#fff;
-  border-radius:14px;
+  border-radius:16px;
   padding:16px;
-  margin-bottom:10px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+  margin-bottom:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
   cursor:pointer;
+  transition:0.2s;
+}
+
+.card:hover{
+  transform:translateY(-2px);
 }
 
 .progress{
   height:6px;
   background:#e5e7eb;
   border-radius:6px;
-  overflow:hidden;
   margin-top:10px;
+  overflow:hidden;
 }
+
 .progress div{
   height:100%;
   background:#6366f1;
 }
 
-/* checklist */
+/* CHECKLIST */
 .checklist-item{
   background:#fff;
   border-radius:12px;
-  margin-bottom:10px;
   padding:14px;
+  margin-bottom:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.04);
+  cursor:pointer;
 }
 
 .checkbox{
-  width:18px;height:18px;border:2px solid #6366f1;
-  border-radius:4px;display:inline-block;margin-right:10px;
+  width:18px;height:18px;
+  border:2px solid #6366f1;
+  border-radius:4px;
+  display:inline-block;
+  margin-right:10px;
 }
-.checked{background:#6366f1}
 
-/* quiz */
+.checked{
+  background:#6366f1;
+}
+
+/* QUIZ */
 .question{
   background:#fff;
   border-radius:12px;
@@ -63,10 +103,10 @@ h1{font-size:28px;margin-bottom:10px}
 
 .answers label{
   display:block;
+  background:#f1f5f9;
   padding:10px;
   border-radius:8px;
   margin-top:6px;
-  background:#f3f4f6;
   cursor:pointer;
 }
 
@@ -80,6 +120,7 @@ button{
   background:#6366f1;
   color:#fff;
   margin-top:10px;
+  font-size:15px;
 }
 
 .result{
@@ -95,71 +136,95 @@ button{
 <div class="container" id="app"></div>
 
 <script>
+
 let data = [];
 let state = JSON.parse(localStorage.getItem("progress")) || {};
+
+/* CATEGORY DESCRIPTIONS */
+const categoryInfo = {
+"🏠 Дом и быт":"Комфорт и порядок в жизни",
+"💰 Финансы":"Контроль и рост денег",
+"🧠 Саморазвитие":"Личностный рост",
+"💪 Здоровье":"Энергия и тело",
+"❤️ Отношения":"Качественные связи",
+"⚡ Продуктивность":"Эффективность",
+"📈 Карьера":"Профессиональный рост",
+"🧘 Ментальное состояние":"Спокойствие и контроль",
+"🌍 Социальная жизнь":"Связи и окружение",
+"📚 Книги":"Знания и развитие"
+};
 
 fetch("index.json")
 .then(r=>r.json())
 .then(json=>{
   data = json;
-  renderCategories();
+  render();
 });
 
 function save(){
   localStorage.setItem("progress", JSON.stringify(state));
 }
 
-/* ===== GROUP BY CATEGORY ===== */
-function groupByCategory(){
-  const map = {};
-  data.forEach(item=>{
-    if(!map[item.category]) map[item.category] = [];
-    map[item.category].push(item);
+/* GROUP */
+function group(){
+  const map={};
+  data.forEach(i=>{
+    if(!map[i.category]) map[i.category]=[];
+    map[i.category].push(i);
   });
   return map;
 }
 
-/* ===== RENDER ===== */
-function renderCategories(){
-  const app = document.getElementById("app");
-  app.innerHTML = "<h1>Checklistings</h1>";
+/* MAIN */
+function render(){
+  const app=document.getElementById("app");
 
-  const grouped = groupByCategory();
+  app.innerHTML=`<h1>Checklistings</h1>`;
+
+  const grouped = group();
 
   Object.keys(grouped).forEach(cat=>{
-    app.innerHTML += `<div class="category"><div class="category-title">${cat}</div></div>`;
+    app.innerHTML+=`
+      <div class="category">
+        <div class="category-title">${cat}</div>
+        <div class="category-sub">${categoryInfo[cat]||""}</div>
+      </div>
+    `;
 
     grouped[cat]
-      .sort((a,b)=>getProgress(b.id)-getProgress(a.id))
-      .forEach(item=>{
-        const prog = getProgress(item.id);
+    .sort((a,b)=>getProgress(b.id)-getProgress(a.id))
+    .forEach(item=>{
+      const prog = getProgress(item.id);
 
-        app.innerHTML += `
-          <div class="card" onclick="openChecklist('${item.id}')">
-            <b>${item.title}</b>
-            <div>${item.description}</div>
-            <div class="progress"><div style="width:${prog}%"></div></div>
-            <small>${prog}%</small>
-          </div>
-        `;
-      });
+      app.innerHTML+=`
+        <div class="card" onclick="openChecklist('${item.id}')">
+          <b>${item.title}</b>
+          <div>${item.description}</div>
+          <div class="progress"><div style="width:${prog}%"></div></div>
+          <small>${prog}% выполнено</small>
+        </div>
+      `;
+    });
   });
 }
 
-/* ===== CHECKLIST ===== */
+/* OPEN */
 function openChecklist(id){
-  const item = data.find(i=>i.id===id);
-  if(!state[id]) state[id] = {checked:{}, quizScore:0};
+  const item=data.find(i=>i.id===id);
+  if(!state[id]) state[id]={checked:{},quizScore:0};
 
-  const app = document.getElementById("app");
+  const app=document.getElementById("app");
 
-  app.innerHTML = `
-    <button onclick="renderCategories()">← Назад</button>
+  app.innerHTML=`
+    <button onclick="render()">← Назад</button>
     <h1>${item.title}</h1>
+    <div>${item.description}</div>
 
-    <div class="progress"><div style="width:${getProgress(id)}%" id="bar"></div></div>
+    <div class="progress">
+      <div style="width:${getProgress(id)}%" id="bar"></div>
+    </div>
 
-    <div id="checklist"></div>
+    <div id="list"></div>
 
     <h2>Тест</h2>
     <div id="quiz"></div>
@@ -167,11 +232,12 @@ function openChecklist(id){
     <div class="result" id="result"></div>
   `;
 
-  const cl = document.getElementById("checklist");
+  const list=document.getElementById("list");
 
   item.checklist.forEach((c,i)=>{
-    const checked = state[id].checked[i];
-    cl.innerHTML += `
+    const checked=state[id].checked[i];
+
+    list.innerHTML+=`
       <div class="checklist-item" onclick="toggle('${id}',${i})">
         <span class="checkbox ${checked?'checked':''}"></span>
         ${c.title}
@@ -179,10 +245,10 @@ function openChecklist(id){
     `;
   });
 
-  const quiz = document.getElementById("quiz");
+  const quiz=document.getElementById("quiz");
 
   item.quiz.forEach((q,i)=>{
-    quiz.innerHTML += `
+    quiz.innerHTML+=`
       <div class="question">
         ${i+1}. ${q.q}
         <div class="answers">
@@ -197,12 +263,12 @@ function openChecklist(id){
     `;
   });
 
-  window.currentQuiz = item.quiz;
+  window.currentQuiz=item.quiz;
 }
 
-/* ===== LOGIC ===== */
+/* LOGIC */
 function toggle(id,i){
-  state[id].checked[i] = !state[id].checked[i];
+  state[id].checked[i]=!state[id].checked[i];
   save();
   openChecklist(id);
 }
@@ -218,21 +284,22 @@ function checkQuiz(id){
   state[id].quizScore=score;
   save();
 
-  document.getElementById("result").innerText = `Результат: ${score}/${currentQuiz.length}`;
-  document.getElementById("bar").style.width = getProgress(id)+"%";
+  document.getElementById("result").innerText=`Результат: ${score}/${currentQuiz.length}`;
+  document.getElementById("bar").style.width=getProgress(id)+"%";
 }
 
 function getProgress(id){
-  const item = data.find(i=>i.id===id);
+  const item=data.find(i=>i.id===id);
   if(!state[id]) return 0;
 
-  const checked = Object.values(state[id].checked).filter(v=>v).length;
-  const cProg = checked/item.checklist.length;
+  const checked=Object.values(state[id].checked).filter(v=>v).length;
+  const cProg=checked/item.checklist.length;
 
-  const qProg = state[id].quizScore/item.quiz.length;
+  const qProg=state[id].quizScore/item.quiz.length;
 
-  return Math.round((cProg*0.5 + qProg*0.5)*100);
+  return Math.round((cProg*0.5+qProg*0.5)*100);
 }
+
 </script>
 </body>
 </html>
