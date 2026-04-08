@@ -49,7 +49,35 @@ h1{font-size:26px;margin:10px 0}
 <div id="screen" class="screen"></div>
 
 <script>
-const data=[
+const data = [
+  {name:"🧠 Саморазвитие",desc:"Рост, навыки, дисциплина",lists:[
+    {title:"Привычки",completed:false},
+    {title:"Фокус",completed:false}
+  ]},
+  {name:"💰 Финансы",desc:"Деньги, учет, инвестиции",lists:[
+    {title:"Контроль бюджета",completed:false},
+    {title:"Основы инвестиций",completed:false}
+  ]},
+  {name:"❤️ Отношения",desc:"Общение, свидания, дети",lists:[
+    {title:"Идеальное свидание",completed:false},
+    {title:"Флирт и первое впечатление",completed:false}
+  ]},
+  {name:"🏠 Дом и быт",desc:"Порядок и комфорт",lists:[
+    {title:"Уборка",completed:false},
+    {title:"Организация пространства",completed:false}
+  ]},
+  {name:"🧍‍♂️ Здоровье и энергия",desc:"Сон, тело, питание",lists:[
+    {title:"Физическая форма",completed:false},
+    {title:"Сон",completed:false}
+  ]},
+  {name:"📚 Книги",desc:"Чтение и знания",lists:[
+    {title:"Как читать эффективно",completed:false},
+    {title:"Конспектирование",completed:false}
+  ]},
+  {name:"💼 Работа и продуктивность",desc:"Фокус и результаты",lists:[
+    {title:"Планирование",completed:false},
+    {title:"Дисциплина",completed:false}
+  ]},
   {name:"✨ Образ жизни (Lifestyle)",desc:"Стиль жизни и привычки",lists:[
     {title:"Рутина дня",completed:false},
     {title:"Баланс жизни",completed:false}
@@ -64,21 +92,39 @@ const data=[
   ]}
 ];
 
-function save(){localStorage.setItem('app',JSON.stringify(data))}
+function save(){
+  localStorage.setItem('app', JSON.stringify(data));
+}
+
 function load(){
-  const d=localStorage.getItem('app');
-  if(d){
-    const parsed=JSON.parse(d);
-    Object.assign(data,parsed);
-  }
+  const d = localStorage.getItem('app');
+  if(!d) return;
+
+  const parsed = JSON.parse(d);
+
+  parsed.forEach((cat,i)=>{
+    if(!data[i]) return;
+
+    cat.lists.forEach((l,li)=>{
+      if(!data[i].lists[li]) return;
+
+      data[i].lists[li].completed = l.completed || false;
+      data[i].lists[li].started = l.started || false;
+    });
+  });
 }
 
 function calcGlobal(){
   let total=0,done=0;
+
   data.forEach(c=>{
-    c.lists.forEach(l=>{total++; if(l.completed) done++})
+    c.lists.forEach(l=>{
+      total++;
+      if(l.completed) done++;
+    });
   });
-  return Math.round((done/total)*100)||0;
+
+  return total ? Math.round((done/total)*100) : 0;
 }
 
 function render(){
@@ -86,22 +132,24 @@ function render(){
   root.innerHTML='';
 
   const g=calcGlobal();
-  document.getElementById('globalFill').style.width=g+'%';
-  document.getElementById('globalText').innerText=`Общий прогресс: ${g}%`;
+  document.getElementById('globalFill').style.width = g + '%';
+  document.getElementById('globalText').innerText = `Общий прогресс: ${g}%`;
 
   data.forEach((cat,i)=>{
-    const done=cat.lists.filter(l=>l.completed).length;
-    const total=cat.lists.length;
-    const p=Math.round((done/total)*100)||0;
+    const done = cat.lists.filter(l=>l.completed).length;
+    const total = cat.lists.length;
+    const p = total ? Math.round((done/total)*100) : 0;
 
     const el=document.createElement('div');
     el.className='card';
+
     el.innerHTML=`
       <div class='title'>${cat.name}</div>
       <div class='sub'>${cat.desc}</div>
       <div class='sub' style='margin-top:12px;margin-bottom:6px'>${p}% завершено</div>
       <div class='bar'><div class='fill' style='width:${p}%'></div></div>
     `;
+
     el.onclick=()=>openCategory(i);
     root.appendChild(el);
   });
@@ -111,7 +159,7 @@ function openCategory(i){
   const screen=document.getElementById('screen');
   const cat=data[i];
 
-  screen.innerHTML=`<div class='back' onclick='closeScreen()'>← Назад</div><h2>${cat.name}</h2>`;
+  screen.innerHTML = `<div class='back' onclick='closeScreen()'>← Назад</div><h2>${cat.name}</h2>`;
 
   cat.lists.forEach((l,li)=>{
     const el=document.createElement('div');
@@ -165,12 +213,10 @@ function openChecklist(i,li){
 function complete(i,li){
   const item=data[i].lists[li];
 
-  if(!item.started) item.started=true;
+  item.started = true;
+  item.completed = true;
 
-  if(!item.completed){
-    item.completed=true;
-    save();
-  }
+  save();
   openCategory(i);
   render();
 }
