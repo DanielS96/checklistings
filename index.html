@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Checklistings</title>
+<title>Checklistings App</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
@@ -11,20 +11,35 @@
 body{font-family:'Inter',sans-serif;margin:0;background:#f4f5f7}
 .container{max-width:720px;margin:0 auto;padding:20px}
 
-/* ===== GLOBAL PROGRESS ===== */
-.global-box{
-  background:#fff;
-  padding:16px;
-  border-radius:16px;
+/* HEADER */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   margin-bottom:20px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.05);
 }
+
+.refresh{
+  background:#6366f1;
+  color:#fff;
+  border-radius:10px;
+  padding:8px 12px;
+  cursor:pointer;
+}
+
+/* PROGRESS */
 .progress-big{
   height:10px;background:#e5e7eb;border-radius:10px;overflow:hidden;margin-top:10px
 }
 .progress-big div{height:100%;background:#6366f1}
 
-/* ===== CATEGORY ===== */
+.level{
+  margin-top:5px;
+  font-size:14px;
+  color:#555;
+}
+
+/* CATEGORY */
 .category-card{
   background:#fff;
   border-radius:16px;
@@ -37,55 +52,29 @@ body{font-family:'Inter',sans-serif;margin:0;background:#f4f5f7}
 .cat-sub{
   font-size:13px;
   color:#6b7280;
-  margin-top:4px;
 }
 
 .progress-small{
-  height:6px;
-  background:#e5e7eb;
-  border-radius:6px;
-  margin-top:10px;
-  overflow:hidden;
+  height:6px;background:#e5e7eb;border-radius:6px;margin-top:10px;overflow:hidden
 }
-.progress-small div{
-  height:100%;
-  background:#6366f1;
-}
+.progress-small div{height:100%;background:#6366f1}
 
-/* ===== CHECKLIST ===== */
+/* CHECKLIST */
 details{
-  background:#fff;
-  border-radius:12px;
-  margin-bottom:10px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.04);
+  background:#fff;border-radius:12px;margin-bottom:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.04)
 }
-
 summary{
-  padding:14px;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  padding:14px;display:flex;justify-content:space-between;cursor:pointer
 }
+.summary-left{display:flex;align-items:center}
 
-.summary-left{
-  display:flex;
-  align-items:center;
-}
-
-.arrow{
-  transition:0.2s;
-}
-
-details[open] .arrow{
-  transform:rotate(90deg);
-}
+.arrow{transition:0.2s}
+details[open] .arrow{transform:rotate(90deg)}
 
 .checkbox{
-  width:18px;height:18px;
-  border:2px solid #6366f1;
-  border-radius:4px;
-  margin-right:10px;
+  width:18px;height:18px;border:2px solid #6366f1;
+  border-radius:4px;margin-right:10px
 }
 .checked{background:#6366f1}
 
@@ -98,14 +87,10 @@ details[open] .arrow{
   border-radius:8px;
 }
 
-/* ===== QUIZ ===== */
+/* QUIZ */
 .question{
-  background:#fff;
-  border-radius:12px;
-  padding:14px;
-  margin-bottom:10px;
+  background:#fff;border-radius:12px;padding:14px;margin-bottom:10px
 }
-
 .answers label{
   display:block;
   padding:12px;
@@ -113,27 +98,12 @@ details[open] .arrow{
   border-radius:10px;
   background:#f1f5f9;
   cursor:pointer;
-  transition:0.2s;
 }
-
 .answers label.selected{background:#dbeafe}
 .answers label.correct{background:#dcfce7}
 .answers label.wrong{background:#fee2e2}
 
 .answers input{display:none}
-
-/* ===== STATUS ===== */
-.status{
-  font-size:12px;
-  padding:4px 8px;
-  border-radius:6px;
-  margin-top:6px;
-  display:inline-block;
-}
-
-.new{background:#dbeafe}
-.progress{background:#fef3c7}
-.done{background:#dcfce7}
 
 button{
   width:100%;
@@ -144,13 +114,6 @@ button{
   color:#fff;
   margin-top:10px;
 }
-
-.result{
-  margin-top:10px;
-  padding:12px;
-  background:#eef2ff;
-  border-radius:10px;
-}
 </style>
 </head>
 
@@ -158,22 +121,20 @@ button{
 <div class="container" id="app"></div>
 
 <script>
-
 let data=[];
 let state=JSON.parse(localStorage.getItem("progress"))||{};
 
-/* CATEGORY DESCRIPTIONS */
 const catInfo={
-"🏠 Дом и быт":"порядок, организация, комфорт",
-"💰 Финансы":"деньги, доход, контроль",
-"🧠 Саморазвитие":"рост, навыки, мышление",
-"💪 Здоровье":"энергия, тело, режим",
-"❤️ Отношения":"общение, близость",
-"⚡ Продуктивность":"фокус, эффективность",
-"📈 Карьера":"рост, работа, навыки",
-"🧘 Ментальное состояние":"спокойствие, контроль",
-"🌍 Социальная жизнь":"люди, связи",
-"📚 Книги":"чтение, знания"
+"🏠 Дом и быт":"порядок, организация",
+"💰 Финансы":"деньги и контроль",
+"🧠 Саморазвитие":"рост и навыки",
+"💪 Здоровье":"энергия и тело",
+"❤️ Отношения":"люди и связь",
+"⚡ Продуктивность":"фокус и дела",
+"📈 Карьера":"работа и рост",
+"🧘 Ментальное состояние":"спокойствие",
+"🌍 Социальная жизнь":"окружение",
+"📚 Книги":"знания"
 };
 
 fetch("index.json")
@@ -187,19 +148,28 @@ function save(){
   localStorage.setItem("progress",JSON.stringify(state));
 }
 
-/* ===== HOME ===== */
+/* LEVEL */
+function getLevel(p){
+  return Math.floor(p/10)+1;
+}
+
+/* HOME */
 function renderHome(){
+  const p=getTotalProgress();
+
   const app=document.getElementById("app");
 
   app.innerHTML=`
-    <h1>Checklistings</h1>
+    <div class="header">
+      <h1>Checklistings App</h1>
+      <div class="refresh" onclick="location.reload()">⟳</div>
+    </div>
 
-    <div class="global-box">
+    <div>
       <b>Общий прогресс</b>
-      <div class="progress-big">
-        <div style="width:${getTotalProgress()}%"></div>
-      </div>
-      <div>${getTotalProgress()}%</div>
+      <div class="progress-big"><div style="width:${p}%"></div></div>
+      <div>${p}%</div>
+      <div class="level">Level ${getLevel(p)}</div>
     </div>
 
     <div id="cats"></div>
@@ -215,22 +185,18 @@ function renderHome(){
       <div class="category-card" onclick="openCategory('${cat}')">
         <b>${cat}</b>
         <div class="cat-sub">${catInfo[cat]||""}</div>
-
-        <div class="progress-small">
-          <div style="width:${prog}%"></div>
-        </div>
+        <div class="progress-small"><div style="width:${prog}%"></div></div>
         <small>${prog}%</small>
       </div>
     `;
   });
 }
 
-/* ===== CATEGORY ===== */
+/* CATEGORY */
 function openCategory(cat){
   const app=document.getElementById("app");
 
-  const list=data.filter(i=>i.category===cat)
-    .sort((a,b)=>a.id.localeCompare(b.id));
+  const list=data.filter(i=>i.category===cat);
 
   app.innerHTML=`
     <button onclick="renderHome()">← Назад</button>
@@ -253,7 +219,16 @@ function openCategory(cat){
   });
 }
 
-/* ===== CHECKLIST ===== */
+/* STATUS */
+function getStatus(id){
+  if(!state[id]) return {text:"новый",class:"new"};
+
+  const p=getProgress(id);
+  if(p===100) return {text:"выполнено",class:"done"};
+  return {text:"не завершен",class:"progress"};
+}
+
+/* CHECKLIST */
 function openChecklist(id){
   const item=data.find(i=>i.id===id);
   if(!state[id]) state[id]={checked:{},quizScore:0};
@@ -269,7 +244,7 @@ function openChecklist(id){
     <h3>Тест</h3>
     <div id="quiz"></div>
     <button onclick="checkQuiz('${id}')">Проверить</button>
-    <div class="result" id="result"></div>
+    <div id="result"></div>
   `;
 
   const list=document.getElementById("list");
@@ -315,14 +290,13 @@ function openChecklist(id){
   window.currentQuiz=item.quiz;
 }
 
-/* ===== QUIZ ===== */
+/* QUIZ */
 function selectAnswer(q,a){
   document.querySelectorAll(`[id^="q${q}a"]`)
     .forEach(el=>el.classList.remove("selected"));
 
   const el=document.getElementById(`q${q}a${a}`);
   el.classList.add("selected");
-
   el.querySelector("input").checked=true;
 }
 
@@ -348,7 +322,7 @@ function checkQuiz(id){
   document.getElementById("result").innerText=`Результат: ${score}/${currentQuiz.length}`;
 }
 
-/* ===== HELPERS ===== */
+/* HELPERS */
 function toggle(id,i){
   state[id].checked[i]=!state[id].checked[i];
   save();
@@ -369,9 +343,7 @@ function getProgress(id){
 function getCategoryProgress(cat){
   const list=data.filter(i=>i.category===cat);
   let total=0;
-
   list.forEach(i=>total+=getProgress(i.id));
-
   return Math.round(total/list.length);
 }
 
@@ -380,7 +352,6 @@ function getTotalProgress(){
   data.forEach(i=>total+=getProgress(i.id));
   return Math.round(total/data.length);
 }
-
 </script>
 </body>
 </html>
