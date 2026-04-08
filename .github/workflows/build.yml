@@ -1,1 +1,43 @@
+name: Build checklist index
 
+on:
+  push:
+    paths:
+      - 'checklists/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Generate index.json
+        run: |
+          echo "[" > checklists/index.json
+          first=true
+
+          for file in $(find checklists -name "*.html"); do
+            if [ "$file" != "checklists/index.json" ]; then
+              category=$(echo $file | cut -d'/' -f2)
+              title=$(basename "$file" .html | sed 's/-/ /g')
+
+              if [ "$first" = true ]; then
+                first=false
+              else
+                echo "," >> checklists/index.json
+              fi
+
+              echo "  {\"category\":\"$category\",\"title\":\"$title\",\"file\":\"$file\"}" >> checklists/index.json
+            fi
+          done
+
+          echo "]" >> checklists/index.json
+
+      - name: Commit index.json
+        run: |
+          git config --global user.name 'bot'
+          git config --global user.email 'bot@github.com'
+          git add checklists/index.json
+          git commit -m "auto: update index" || echo "no changes"
+          git push
