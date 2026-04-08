@@ -19,15 +19,19 @@ body{margin:0;font-family:Inter;background:var(--bg);}
 .app{max-width:420px;margin:0 auto;padding:16px;}
 
 .bar{height:10px;background:#e2e8f0;border-radius:999px;}
+.global-bar{height:16px;margin-bottom:28px;}
 .fill{height:100%;background:linear-gradient(90deg,#3b82f6,#6366f1);}
 
 .card{
   background:#fff;border-radius:16px;padding:16px;margin-bottom:12px;
   box-shadow:0 4px 20px rgba(0,0,0,0.05);
+  cursor:pointer;
 }
 
-.row{display:flex;justify-content:space-between;align-items:center;}
-.sub{font-size:13px;color:var(--sub);}
+.title{font-weight:600;}
+.sub{font-size:13px;color:var(--sub);margin-top:4px;}
+
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;}
 
 .status{font-size:12px;padding:6px 10px;border-radius:999px;}
 .done{background:#dcfce7;color:#166534}
@@ -41,13 +45,28 @@ body{margin:0;font-family:Inter;background:var(--bg);}
 }
 .screen.active{transform:translateX(0);}
 
+.back{margin-bottom:10px;color:#3b82f6;cursor:pointer;}
+
+.content{
+  margin-top:10px;
+  width:100%;
+}
+
 .content details{
-  background:#fff;padding:14px;border-radius:12px;margin-bottom:10px;
+  background:#fff;
+  padding:14px;
+  border-radius:12px;
+  margin-bottom:10px;
 }
 
 .bottom-btn{
-  margin-top:20px;width:100%;padding:14px;
-  background:#3b82f6;color:#fff;border:none;border-radius:12px;
+  margin-top:20px;
+  width:100%;
+  padding:14px;
+  background:#3b82f6;
+  color:#fff;
+  border:none;
+  border-radius:12px;
 }
 </style>
 </head>
@@ -56,8 +75,8 @@ body{margin:0;font-family:Inter;background:var(--bg);}
 
 <div class="app">
   <h2>Checklistings App</h2>
-  <div id="globalText"></div>
-  <div class="bar"><div id="globalFill" class="fill"></div></div>
+  <div id="globalText">Загрузка...</div>
+  <div class="bar global-bar"><div id="globalFill" class="fill"></div></div>
   <div id="cats"></div>
 </div>
 
@@ -66,26 +85,38 @@ body{margin:0;font-family:Inter;background:var(--bg);}
 <script>
 let data=[];
 
-function save(){localStorage.setItem('app',JSON.stringify(data));}
+function save(){
+  localStorage.setItem('app',JSON.stringify(data));
+}
 
 function load(){
   let d=localStorage.getItem('app');
   if(!d)return;
   let p=JSON.parse(d);
+
   p.forEach((c,i)=>{
+    if(!data[i]) return;
     c.lists.forEach((l,li)=>{
-      data[i].lists[li].completed=l.completed;
-      data[i].lists[li].started=l.started;
+      if(!data[i].lists[li]) return;
+      data[i].lists[li].completed=l.completed||false;
+      data[i].lists[li].started=l.started||false;
     });
   });
 }
 
 function build(items){
   let map={};
+
   items.forEach(it=>{
     if(!map[it.category]){
-      map[it.category]={name:it.category,lists:[]};
+      map[it.category]={
+        key:it.category,
+        name:getName(it.category),
+        desc:getDesc(it.category),
+        lists:[]
+      };
     }
+
     map[it.category].lists.push({
       title:it.title,
       file:it.file,
@@ -93,7 +124,38 @@ function build(items){
       started:false
     });
   });
+
   return Object.values(map);
+}
+
+function getName(k){
+return {
+"relationships":"❤️ Отношения",
+"finance":"💰 Финансы",
+"self-dev":"🧠 Саморазвитие",
+"home":"🏠 Дом и быт",
+"health":"🧍‍♂️ Здоровье и энергия",
+"books":"📚 Книги",
+"work":"💼 Работа и продуктивность",
+"lifestyle":"✨ Образ жизни (Lifestyle)",
+"travel":"🌍 Путешествия",
+"psychology":"🧘 Психология и осознанность"
+}[k]||k;
+}
+
+function getDesc(k){
+return {
+"relationships":"Свидания, коммуникация, построение здоровых отношений",
+"finance":"Доход, инвестиции, управление деньгами",
+"self-dev":"Привычки, дисциплина, личностный рост",
+"home":"Организация пространства и комфорт",
+"health":"Сон, питание и энергия",
+"books":"Развитие через чтение",
+"work":"Фокус и эффективность",
+"lifestyle":"Образ жизни и привычки",
+"travel":"Поездки и впечатления",
+"psychology":"Осознанность и мышление"
+}[k]||"";
 }
 
 function progress(cat){
@@ -104,7 +166,11 @@ function progress(cat){
 
 function globalProgress(){
   let t=0,d=0;
-  data.forEach(c=>c.lists.forEach(l=>{t++;if(l.completed)d++;}));
+  data.forEach(c=>{
+    c.lists.forEach(l=>{
+      t++; if(l.completed)d++;
+    });
+  });
   return t?Math.round(d/t*100):0;
 }
 
@@ -113,8 +179,8 @@ function render(){
   root.innerHTML='';
 
   let g=globalProgress();
-  globalFill.style.width=g+'%';
-  globalText.innerText='Общий прогресс: '+g+'%';
+  document.getElementById('globalFill').style.width=g+'%';
+  document.getElementById('globalText').innerText='Общий прогресс: '+g+'%';
 
   data.forEach((cat,i)=>{
     let el=document.createElement('div');
@@ -123,9 +189,12 @@ function render(){
     let p=progress(cat);
 
     el.innerHTML=`
-      <b>${cat.name}</b>
-      <div class='sub'>${p}% завершено</div>
-      <div class='bar'><div class='fill' style='width:${p}%'></div></div>
+      <div class='title'>${cat.name}</div>
+      <div class='sub'>${cat.desc}</div>
+      <div style="margin-top:14px">
+        <div class='sub'>${p}% завершено</div>
+        <div class='bar'><div class='fill' style='width:${p}%'></div></div>
+      </div>
     `;
 
     el.onclick=()=>openCategory(i);
@@ -137,7 +206,7 @@ function openCategory(i){
   let s=document.getElementById('screen');
   let cat=data[i];
 
-  s.innerHTML=`<div onclick="closeScreen()">← Назад</div><h3>${cat.name}</h3>`;
+  s.innerHTML=`<div class='back' onclick='closeScreen()'>← Назад</div><h3>${cat.name}</h3>`;
 
   cat.lists.forEach((l,li)=>{
     let el=document.createElement('div');
@@ -165,25 +234,30 @@ function openChecklist(i,li){
   let s=document.getElementById('screen');
   let item=data[i].lists[li];
 
-  item.started=true;
-  save();
+  if(!item.started){
+    item.started=true;
+    save();
+  }
 
-  fetch(item.file)
+  fetch(item.file + '?v=' + Date.now())
   .then(r=>r.text())
   .then(html=>{
-    s.innerHTML=`<div onclick="openCategory(${i})">← Назад</div><div id="content"></div>`;
+    s.innerHTML=`
+      <div class='back' onclick='openCategory(${i})'>← Назад</div>
+      <div id='content' class='content'></div>
+    `;
 
     let c=document.getElementById('content');
     c.innerHTML=html;
 
-    // запускаем скрипты
+    // запуск скриптов внутри чек-листа
     c.querySelectorAll("script").forEach(old=>{
       let scr=document.createElement("script");
       scr.textContent=old.textContent;
       document.body.appendChild(scr);
     });
 
-    // ловим кнопку теста
+    // отслеживание теста
     setTimeout(()=>{
       let btn=document.querySelector("button");
       if(btn){
@@ -208,12 +282,21 @@ function closeScreen(){
   document.getElementById('screen').classList.remove('active');
 }
 
-fetch('checklists/index.json')
-.then(r=>r.json())
+// 🔥 ЗАГРУЗКА ДАННЫХ (без кэша)
+fetch('https://daniels96.github.io/checklistings/checklists/index.json?v=' + Date.now(), {
+  cache:'no-store'
+})
+.then(res=>{
+  if(!res.ok) throw new Error(res.status);
+  return res.json();
+})
 .then(items=>{
   data=build(items);
   load();
   render();
+})
+.catch(err=>{
+  document.getElementById('globalText').innerText='Ошибка загрузки: '+err.message;
 });
 </script>
 
