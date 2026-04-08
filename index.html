@@ -134,6 +134,7 @@ function openCategory(i){
         <div class='status ${statusClass}'>${statusText}</div>
       </div>
     `;
+
     el.onclick=()=>openChecklist(i,li);
     screen.appendChild(el);
   });
@@ -144,6 +145,11 @@ function openCategory(i){
 function openChecklist(i,li){
   const screen=document.getElementById('screen');
   const item=data[i].lists[li];
+
+  if(!item.started && !item.completed){
+    item.started = true;
+    save();
+  }
 
   screen.innerHTML=`
     <div class='back' onclick='openCategory(${i})'>← Назад</div>
