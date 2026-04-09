@@ -324,9 +324,9 @@ h3 {
 /* ===== STATUS BADGES ===== */
 
 .status {
-  font-size: 12px;
-  font-weight: 600;
-  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 8px;
   border-radius: 999px;
 }
 
