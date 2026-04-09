@@ -320,3 +320,36 @@ h3 {
   font-size: 14px;
   padding: 12px;
 }
+
+/* ===== STATUS BADGES ===== */
+
+.status {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.status.new {
+  background: rgba(0,122,255,0.12);
+  color: #007aff;
+}
+
+.status.progress {
+  background: rgba(255,149,0,0.12);
+  color: #ff9500;
+}
+
+.status.done {
+  background: rgba(52,199,89,0.12);
+  color: #34c759;
+}
+
+/* ===== CHECKLIST SUBTITLE ===== */
+
+.checklist-subtitle {
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+  line-height: 1.4;
+}
