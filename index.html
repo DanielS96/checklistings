@@ -3,103 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Checklistings</title>
 
 <style>
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #f2f2f7;
+  margin:0;
+  font-family:-apple-system;
+  background:#f2f2f7;
 }
 
 #app {
-  max-width: 720px;
-  margin: auto;
-  padding: 16px;
+  max-width:720px;
+  margin:auto;
+  padding:16px;
 }
 
-h1 { margin: 0; }
-
-.card {
-  background: white;
-  border-radius: 16px;
-  padding: 16px;
-  margin-bottom: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+/* HEADER */
+.header {
+  margin-bottom:20px;
 }
 
-.progress {
-  height: 8px;
-  background: #eee;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 8px;
+/* PROGRESS */
+.progress-card {
+  background:white;
+  padding:16px;
+  border-radius:16px;
+  margin-bottom:16px;
 }
 
 .progress-bar {
-  height: 100%;
-  background: #007aff;
+  height:10px;
+  background:#eee;
+  border-radius:10px;
+  overflow:hidden;
 }
 
+.progress-fill {
+  height:100%;
+  background:#34c759;
+  width:0%;
+}
+
+/* CATEGORY */
 .category {
-  cursor: pointer;
+  background:white;
+  padding:16px;
+  border-radius:16px;
+  margin-bottom:12px;
+  cursor:pointer;
+}
+
+.category-title {
+  font-weight:700;
+}
+
+.category-desc {
+  color:#666;
+  font-size:14px;
+}
+
+/* CHECKLIST */
+.card {
+  background:white;
+  padding:16px;
+  border-radius:16px;
+  margin-bottom:12px;
 }
 
 .item {
-  background: white;
-  border-radius: 14px;
-  margin-bottom: 10px;
+  border-top:1px solid #eee;
+  padding:12px 0;
 }
 
 .item-header {
-  padding: 14px;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-  font-weight: 600;
+  font-weight:600;
+  cursor:pointer;
 }
 
 .item-body {
-  display: none;
-  padding: 14px;
-  border-top: 1px solid #eee;
+  display:none;
+  margin-top:8px;
 }
 
 .tip {
-  background: #e8f0ff;
-  padding: 10px;
-  border-radius: 10px;
-  margin-top: 10px;
+  background:#e8f0ff;
+  padding:8px;
+  border-radius:8px;
+  margin-top:6px;
 }
 
+/* BUTTON */
 button {
-  background: #007aff;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 10px;
-  width: 100%;
-  margin-top: 10px;
-  font-weight: 600;
+  background:#007aff;
+  color:white;
+  border:none;
+  padding:12px;
+  border-radius:10px;
+  width:100%;
+  margin-top:10px;
 }
 
 .back {
-  margin-bottom: 10px;
-  background: none;
-  color: #007aff;
-}
-
-.quiz {
-  margin-top: 20px;
-}
-
-.q {
-  margin-bottom: 12px;
+  background:none;
+  color:#007aff;
+  margin-bottom:10px;
 }
 </style>
 </head>
 
 <body>
+
 <div id="app"></div>
 
 <script type="module">
@@ -110,13 +124,13 @@ let state = {
   screen: 'categories',
   category: null,
   checklists: [],
-  currentChecklist: null
+  current: null
 }
 
-// ===== STORAGE =====
+// STORAGE
 const getProgress = () => JSON.parse(localStorage.getItem('progress') || '{}')
 
-const setDone = (id) => {
+const setDone = (id)=>{
   const p = getProgress()
   p[id] = true
   localStorage.setItem('progress', JSON.stringify(p))
@@ -128,17 +142,30 @@ async function renderCategories(){
   const categories = await loadCategories()
   const progress = getProgress()
 
-  document.getElementById('app').innerHTML = `
-    <h1>Checklistings</h1>
+  const total = Object.keys(progress).length
 
-    ${categories.map(cat=>{
-      return `
-        <div class="card category" onclick="openCategory('${cat.id}')">
-          <b>${cat.emoji} ${cat.title}</b>
-          <div>${cat.description}</div>
+  document.getElementById('app').innerHTML = `
+    <div class="header">
+      <h1>Checklistings</h1>
+    </div>
+
+    <div class="progress-card">
+      <b>Общий прогресс</b>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width:${total * 10}%"></div>
+      </div>
+    </div>
+
+    ${categories.map(cat=>`
+      <div class="category" onclick="openCategory('${cat.id}')">
+        <div class="category-title">
+          ${cat.emoji || '📁'} ${cat.title}
         </div>
-      `
-    }).join('')}
+        <div class="category-desc">
+          ${cat.description}
+        </div>
+      </div>
+    `).join('')}
   `
 }
 
@@ -162,12 +189,12 @@ function renderCategory(){
 }
 
 window.openChecklist = (id)=>{
-  state.currentChecklist = state.checklists.find(c=>c.id===id)
+  state.current = state.checklists.find(c=>c.id===id)
   renderChecklist()
 }
 
 function renderChecklist(){
-  const c = state.currentChecklist
+  const c = state.current
 
   document.getElementById('app').innerHTML = `
     <button class="back" onclick="renderCategory()">← Назад</button>
@@ -183,9 +210,8 @@ function renderChecklist(){
           ${item.emoji} ${item.title}
         </div>
         <div class="item-body" id="i${i}">
-          <p><b>Источник:</b> ${item.source}</p>
           <p>${item.text}</p>
-          <div class="tip">💡 ${item.tip}</div>
+          <div class="tip">${item.tip}</div>
         </div>
       </div>
     `).join('')}
@@ -199,33 +225,32 @@ window.toggle = (i)=>{
   el.style.display = el.style.display==='block'?'none':'block'
 }
 
-// ===== QUIZ =====
-
+// QUIZ
 function renderQuiz(c){
+  if(!c.quiz) return ''
+
   return `
-    <div class="quiz">
-      <h2>Тест</h2>
+    <h3>Тест</h3>
 
-      ${c.quiz.map((q,i)=>`
-        <div class="q">
-          <p>${q.q}</p>
-          ${q.a.map((a,j)=>`
-            <label>
-              <input type="radio" name="q${i}" value="${j}">
-              ${a}
-            </label><br>
-          `).join('')}
-        </div>
-      `).join('')}
+    ${c.quiz.map((q,i)=>`
+      <div>
+        <p>${q.q}</p>
+        ${q.a.map((a,j)=>`
+          <label>
+            <input type="radio" name="q${i}" value="${j}">
+            ${a}
+          </label><br>
+        `).join('')}
+      </div>
+    `).join('')}
 
-      <button onclick="checkQuiz()">Проверить</button>
-      <div id="result"></div>
-    </div>
+    <button onclick="checkQuiz()">Проверить</button>
+    <div id="result"></div>
   `
 }
 
 window.checkQuiz = ()=>{
-  const c = state.currentChecklist
+  const c = state.current
   let score = 0
 
   c.quiz.forEach((q,i)=>{
@@ -234,22 +259,20 @@ window.checkQuiz = ()=>{
   })
 
   document.getElementById('result').innerHTML = `
-    <div class="card">
-      Результат: ${score}/${c.quiz.length}
-      <button onclick="finishChecklist('${c.id}')">Завершить</button>
-    </div>
+    Результат: ${score}/${c.quiz.length}
+    <button onclick="finish('${c.id}')">Завершить</button>
   `
 }
 
-window.finishChecklist = (id)=>{
+window.finish = (id)=>{
   setDone(id)
-  alert('Готово ✅')
-  renderCategory()
+  renderCategories()
 }
 
 // INIT
 renderCategories()
 
 </script>
+
 </body>
 </html>
