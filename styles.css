@@ -328,6 +328,7 @@ h3 {
   font-weight: 500;
   padding: 4px 8px;
   border-radius: 999px;
+  white-space: nowrap;
 }
 
 .status.new {
