@@ -12,11 +12,26 @@ let state = {
 
 // STORAGE
 const getProgress = () => JSON.parse(localStorage.getItem('progress') || '{}')
+const getOpened = () => JSON.parse(localStorage.getItem('opened') || '{}')
 
 const setDone = (id)=>{
   const p = getProgress()
   p[id] = true
   localStorage.setItem('progress', JSON.stringify(p))
+}
+
+const setOpened = (id)=>{
+  const o = getOpened()
+  o[id] = true
+  localStorage.setItem('opened', JSON.stringify(o))
+}
+
+// LEVEL
+function getLevel(percent){
+  if(percent < 20) return 'Новичок'
+  if(percent < 50) return 'Любитель'
+  if(percent < 80) return 'Продвинутый'
+  return 'Мастер'
 }
 
 // INIT
@@ -39,32 +54,33 @@ async function renderCategories(){
   const totalDone = Object.keys(progress).length
   const percent = Math.round(totalDone / 10 * 100)
 
+  const level = getLevel(percent)
+
   const categoriesWithProgress = await Promise.all(
     state.categories.map(async (c)=>{
       const lists = await loadChecklists(c.id)
-
       const total = lists.length
       const done = lists.filter(l => progress[l.id]).length
-
       const percent = total ? Math.round(done / total * 100) : 0
 
-      const level = Math.floor(percent / 20) + 1 // 1–5 уровень
-
-      return { ...c, percent, level }
+      return { ...c, percent }
     })
   )
 
-  // сортировка по прогрессу
   categoriesWithProgress.sort((a,b)=> b.percent - a.percent)
 
   app.innerHTML = `
     <h1>Checklistings</h1>
 
-    <div class="card">
-      Общий прогресс
-      <div class="progress-bar">
-        <div class="progress-fill" style="width:${percent}%"></div>
+    <div class="dashboard">
+      <div class="dashboard-title">Общий уровень</div>
+      <div class="dashboard-level">${level}</div>
+
+      <div class="dashboard-bar">
+        <div class="dashboard-fill" style="width:${percent}%"></div>
       </div>
+
+      <div style="margin-top:6px;">${percent}% завершено</div>
     </div>
 
     ${categoriesWithProgress.map(c=>`
@@ -72,12 +88,12 @@ async function renderCategories(){
 
         <div class="category-header">
           <div class="category-title">${c.icon} ${c.title}</div>
-          <div class="category-meta">Lvl ${c.level} • ${c.percent}%</div>
+          <div class="category-percent">${c.percent}%</div>
         </div>
 
         <div class="category-desc">${c.description}</div>
 
-        <div class="progress-bar" style="margin-top:10px;">
+        <div class="progress-bar">
           <div class="progress-fill" style="width:${c.percent}%"></div>
         </div>
 
@@ -94,21 +110,37 @@ window.openCategory = async (id)=>{
   render()
 }
 
+function getStatus(id){
+  const progress = getProgress()
+  const opened = getOpened()
+
+  if(progress[id]) return {text:'✅ Завершен', class:'done'}
+  if(opened[id]) return {text:'⏳ Не завершен', class:'progress'}
+  return {text:'🆕 Новый', class:'new'}
+}
+
 function renderList(){
   app.innerHTML = `
     <button class="back" onclick="goBack()">← Назад</button>
 
-    ${state.checklists.map(c=>`
-      <div class="card" onclick="openChecklist('${c.id}')">
-        <b>${c.title}</b>
-        <div>${c.subtitle}</div>
-      </div>
-    `).join('')}
+    ${state.checklists.map(c=>{
+      const s = getStatus(c.id)
+
+      return `
+        <div class="card" onclick="openChecklist('${c.id}')">
+          <b>${c.title}</b>
+          <div>${c.subtitle}</div>
+          <div class="status ${s.class}">${s.text}</div>
+        </div>
+      `
+    }).join('')}
   `
 }
 
 // ===== CHECKLIST =====
 window.openChecklist = (id)=>{
+  setOpened(id)
+
   state.current = state.checklists.find(x=>x.id===id)
   state.screen = 'check'
   render()
@@ -122,7 +154,6 @@ function renderCheck(){
 
     <h2>${c.title}</h2>
     <p class="checklist-description">${c.subtitle}</p>
-
     <p class="checklist-description">${c.description}</p>
 
     ${c.items.map((item,i)=>`
@@ -142,13 +173,11 @@ function renderCheck(){
   `
 }
 
-// ===== TOGGLE =====
 window.toggle = (i)=>{
   const item = document.querySelectorAll('.item')[i]
   const body = document.getElementById('i'+i)
 
   const isOpen = body.style.display === 'block'
-
   body.style.display = isOpen ? 'none' : 'block'
   item.classList.toggle('open')
 }
@@ -158,25 +187,23 @@ function renderQuiz(c){
   if(!c.quiz) return ''
 
   return `
-    <div class="quiz">
-      <h3>🧠 Мини-тест</h3>
+    <h3>🧠 Тест</h3>
 
-      ${c.quiz.map((q,i)=>`
-        <div class="quiz-question">
-          <p class="quiz-q">${q.q}</p>
+    ${c.quiz.map((q,i)=>`
+      <div class="quiz-question">
+        <p>${q.q}</p>
 
-          ${q.a.map((a,j)=>`
-            <label class="quiz-option">
-              <input type="radio" name="q${i}" value="${j}">
-              <span>${a}</span>
-            </label>
-          `).join('')}
-        </div>
-      `).join('')}
+        ${q.a.map((a,j)=>`
+          <label class="quiz-option">
+            <input type="radio" name="q${i}" value="${j}">
+            ${a}
+          </label>
+        `).join('')}
+      </div>
+    `).join('')}
 
-      <button onclick="checkQuiz()">Проверить</button>
-      <div id="result"></div>
-    </div>
+    <button onclick="checkQuiz()">Проверить</button>
+    <div id="result"></div>
   `
 }
 
@@ -189,21 +216,30 @@ window.checkQuiz = ()=>{
     if(v && Number(v.value)===q.correct) score++
   })
 
+  if(score === c.quiz.length){
+    setDone(c.id)
+    launchConfetti()
+  }
+
   document.getElementById('result').innerHTML = `
     <div class="card">
       Результат: ${score}/${c.quiz.length}
-      <button onclick="finish('${c.id}')">Завершить</button>
+      <button onclick="goBack()">Назад</button>
     </div>
   `
 }
 
-// ===== FINISH =====
-window.finish = (id)=>{
-  setDone(id)
-  goBack()
+// CONFETTI
+function launchConfetti(){
+  const el = document.createElement('div')
+  el.className = 'confetti'
+  el.innerHTML = '🎉🎉🎉🎉🎉'
+  document.body.appendChild(el)
+
+  setTimeout(()=> el.remove(), 1500)
 }
 
-// ===== BACK =====
+// BACK
 window.goBack = ()=>{
   if(state.screen === 'check') state.screen = 'list'
   else state.screen = 'categories'
