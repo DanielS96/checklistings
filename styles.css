@@ -273,3 +273,50 @@ h3 {
   border-radius: 999px;
   transition: width 0.5s ease;
 }
+
+/* ===== CATEGORY UI IMPROVE ===== */
+
+.card.category {
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.category-title {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.category-header div div:last-child {
+  font-size: 13px;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+/* ===== MORE AIR ===== */
+
+.card {
+  margin-bottom: 16px;
+}
+
+/* ===== QUIZ UI ===== */
+
+.quiz-section {
+  margin-top: 24px;
+}
+
+.quiz-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.quiz-question p {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.quiz-option {
+  font-size: 14px;
+  padding: 12px;
+}
