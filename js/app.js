@@ -7,10 +7,11 @@ let categories = []
 let currentCategory = null
 let currentChecklist = null
 
+/* 🔥 ВАЖНО — делаем функции глобальными */
+
 window.openCategory = async (id)=>{
   currentCategory = categories.find(c=>c.id===id)
   currentCategory.checklists = await loadChecklists(id)
-
   renderCategory()
 }
 
@@ -27,19 +28,24 @@ window.finishChecklist = (id)=>{
 /* RENDER */
 
 function renderCategories(){
-  app.innerHTML = categories.map(c=>`
-    <div onclick="openCategory('${c.id}')">
-      ${c.icon} ${c.title}
-    </div>
-  `).join('')
+  app.innerHTML = `
+    <h1>Checklistings</h1>
+
+    ${categories.map(c=>`
+      <div class="card" onclick="openCategory('${c.id}')">
+        ${c.icon} ${c.title}
+      </div>
+    `).join('')}
+  `
 }
 
 function renderCategory(){
   app.innerHTML = `
     <button onclick="renderCategories()">← Назад</button>
+    <h2>${currentCategory.title}</h2>
 
     ${currentCategory.checklists.map(cl=>`
-      <div onclick="openChecklist('${cl.id}')">
+      <div class="card" onclick="openChecklist('${cl.id}')">
         ${cl.title}
       </div>
     `).join('')}
