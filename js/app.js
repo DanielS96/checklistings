@@ -60,7 +60,6 @@ async function renderCategories(){
     })
   )
 
-  // средний прогресс
   const percent = Math.round(
     categoriesWithProgress.reduce((acc,c)=>acc+c.percent,0) / categoriesWithProgress.length
   )
@@ -115,9 +114,9 @@ function getStatus(id){
   const progress = getProgress()
   const opened = getOpened()
 
-  if(progress[id]) return {text:'✅', class:'done'}
-  if(opened[id]) return {text:'⏳', class:'progress'}
-  return {text:'🆕', class:'new'}
+  if(progress[id]) return {text:'Выполнен', class:'done'}
+  if(opened[id]) return {text:'Не завершен', class:'progress'}
+  return {text:'Новый', class:'new'}
 }
 
 function renderList(){
@@ -131,10 +130,20 @@ function renderList(){
         <div class="card" onclick="openChecklist('${c.id}')">
           <div class="card-row">
             <div>
-              <b>${c.title}</b>
-              <div>${c.subtitle || ''}</div>
+              <div style="font-weight:700;font-size:16px;">
+                ${c.title}
+              </div>
+
+              ${c.subtitle ? `
+                <div class="checklist-subtitle">
+                  ${c.subtitle}
+                </div>
+              ` : ''}
             </div>
-            <div class="status ${s.class}">${s.text}</div>
+
+            <div class="status ${s.class}">
+              ${s.text}
+            </div>
           </div>
         </div>
       `
@@ -164,7 +173,7 @@ function renderCheck(){
       </div>
     ` : ''}
 
-    ${c.items.map((item,i)=>`
+    ${(c.items || []).map((item,i)=>`
       <div class="item">
         <div class="item-header" onclick="toggle(${i})">
           ${item.emoji} ${item.title}
