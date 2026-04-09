@@ -1,8 +1,8 @@
-export function renderProgress(done, total){
-  const percent = total ? (done/total)*100 : 0
+export function Progress(done, total){
+  const percent = total ? Math.round((done/total)*100) : 0
 
   return `
-    <div class="card">
+    <div class="card progress-card">
       <b>Общий прогресс</b>
       <div class="progress-bar">
         <div class="progress-fill" style="width:${percent}%"></div>
@@ -11,31 +11,43 @@ export function renderProgress(done, total){
   `
 }
 
-export function renderCategoryCard(cat){
+export function CategoryCard(cat){
   return `
     <div class="card category" onclick="openCategory('${cat.id}')">
-      <div class="category-title">${cat.emoji} ${cat.title}</div>
-      <div class="category-desc">${cat.description}</div>
+      <div class="category-title">
+        ${cat.emoji || '❓'} ${cat.title}
+      </div>
+      <div class="category-desc">
+        ${cat.description}
+      </div>
     </div>
   `
 }
 
-export function renderChecklistCard(c){
+export function ChecklistCard(c){
   return `
-    <div class="card checklist-card" onclick="openChecklist('${c.id}')">
+    <div class="card checklist" onclick="openChecklist('${c.id}')">
       <b>${c.title}</b>
       <div>${c.subtitle}</div>
     </div>
   `
 }
 
-export function renderItem(item, i){
+export function ChecklistHeader(c){
+  return `
+    <h1>${c.title}</h1>
+    <p>${c.subtitle}</p>
+    <div class="card">${c.description}</div>
+  `
+}
+
+export function Item(item, i){
   return `
     <div class="item">
-      <div class="item-header" onclick="toggleItem(${i})">
+      <div class="item-header" onclick="toggle(${i})">
         ${item.emoji} ${item.title}
       </div>
-      <div class="item-body" id="item-${i}">
+      <div class="item-body" id="i${i}">
         <p><b>Источник:</b> ${item.source}</p>
         <p>${item.text}</p>
         <div class="tip">💡 ${item.tip}</div>
@@ -44,7 +56,7 @@ export function renderItem(item, i){
   `
 }
 
-export function renderQuiz(c){
+export function Quiz(c){
   if(!c.quiz) return ''
 
   return `
@@ -63,6 +75,6 @@ export function renderQuiz(c){
     `).join('')}
 
     <button onclick="checkQuiz()">Проверить</button>
-    <div id="quiz-result"></div>
+    <div id="result"></div>
   `
 }
