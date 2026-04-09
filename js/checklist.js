@@ -1,22 +1,59 @@
-export function renderChecklist(c){
+import { renderItem, renderQuiz } from './components.js'
 
-  return `
-    <div class="header">
-      <h2>${c.title}</h2>
-      <p>${c.description}</p>
-    </div>
+const app = document.getElementById('app')
 
-    ${c.items.map(i=>`
-      <details>
-        <summary>${i.emoji} ${i.title}</summary>
-        <div class="content">
-          <div class="source">${i.source}</div>
-          <div>${i.text}</div>
-          <div class="tip"><b>Совет:</b> ${i.tip}</div>
-        </div>
-      </details>
-    `).join('')}
+const setDone = (id)=>{
+  const p = JSON.parse(localStorage.getItem('progress') || '{}')
+  p[id] = true
+  localStorage.setItem('progress', JSON.stringify(p))
+}
 
-    <button onclick="finishChecklist('${c.id}')">Завершить</button>
+export function renderChecklistScreen(c, goBack){
+  app.innerHTML = `
+    <button class="back" onclick="goBackChecklist()">← Назад</button>
+
+    <h1>${c.title}</h1>
+    <p>${c.subtitle}</p>
+
+    <div class="card">${c.description}</div>
+
+    ${c.items.map(renderItem).join('')}
+
+    ${renderQuiz(c)}
   `
+
+  window.goBackChecklist = goBack
+}
+
+window.toggleItem = (i)=>{
+  const el = document.getElementById('item-'+i)
+  el.style.display = el.style.display==='block'?'none':'block'
+}
+
+window.checkQuiz = ()=>{
+  const questions = document.querySelectorAll('[name^="q"]')
+  const quiz = window.currentChecklist?.quiz
+
+  let score = 0
+
+  quiz.forEach((q,i)=>{
+    const checked = document.querySelector(`input[name="q${i}"]:checked`)
+    if(checked && Number(checked.value) === q.correct){
+      score++
+    }
+  })
+
+  document.getElementById('quiz-result').innerHTML = `
+    <div class="card">
+      Результат: ${score}/${quiz.length}
+      <button onclick="finishChecklist('${window.currentChecklist.id}')">
+        Завершить
+      </button>
+    </div>
+  `
+}
+
+window.finishChecklist = (id)=>{
+  setDone(id)
+  alert('Чек-лист завершён ✅')
 }
