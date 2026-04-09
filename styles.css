@@ -14,6 +14,41 @@ h1 {
   font-size:30px;
 }
 
+/* DASHBOARD */
+.dashboard {
+  background:linear-gradient(135deg,#007aff,#34c759);
+  color:white;
+  border-radius:20px;
+  padding:20px;
+  margin-bottom:16px;
+}
+
+.dashboard-title {
+  font-size:14px;
+  opacity:0.9;
+}
+
+.dashboard-level {
+  font-size:22px;
+  font-weight:700;
+  margin-top:4px;
+}
+
+.dashboard-bar {
+  margin-top:12px;
+  height:10px;
+  background:rgba(255,255,255,0.3);
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.dashboard-fill {
+  height:100%;
+  background:white;
+  border-radius:10px;
+  transition:width 0.4s;
+}
+
 /* CARD */
 .card {
   background:white;
@@ -23,25 +58,7 @@ h1 {
   box-shadow:0 6px 20px rgba(0,0,0,0.06);
 }
 
-/* PROGRESS */
-.progress-bar {
-  height:10px;
-  background:#eee;
-  border-radius:10px;
-  overflow:hidden;
-}
-
-.progress-fill {
-  height:100%;
-  background:linear-gradient(90deg,#34c759,#30d158);
-  transition: width 0.4s ease;
-}
-
 /* CATEGORY */
-.category {
-  cursor:pointer;
-}
-
 .category-header {
   display:flex;
   justify-content:space-between;
@@ -56,20 +73,40 @@ h1 {
 .category-desc {
   color:#666;
   font-size:14px;
-  margin-top:4px;
 }
 
-.category-meta {
+.category-percent {
   font-size:12px;
   color:#999;
-  font-weight:600;
 }
 
-/* ===== CHECKLIST ===== */
+/* PROGRESS */
+.progress-bar {
+  height:8px;
+  background:#eee;
+  border-radius:10px;
+  margin-top:8px;
+  overflow:hidden;
+}
 
+.progress-fill {
+  height:100%;
+  background:#34c759;
+}
+
+/* STATUS */
+.status {
+  font-size:12px;
+  margin-top:6px;
+}
+
+.status.new { color:#999 }
+.status.progress { color:#ff9500 }
+.status.done { color:#34c759 }
+
+/* CHECKLIST */
 .checklist-description {
   color:#555;
-  line-height:1.5;
   margin-bottom:16px;
 }
 
@@ -79,30 +116,22 @@ h1 {
   border-radius:16px;
   margin-bottom:10px;
   box-shadow:0 3px 10px rgba(0,0,0,0.04);
-  transition:0.2s;
-}
-
-.item:hover {
-  transform: translateY(-2px);
 }
 
 .item-header {
   padding:14px;
-  font-weight:600;
-  cursor:pointer;
   display:flex;
   justify-content:space-between;
-  align-items:center;
+  cursor:pointer;
 }
 
 .item-header::after {
-  content: "›";
-  font-size:20px;
+  content:"›";
   transition:0.2s;
 }
 
 .item.open .item-header::after {
-  transform: rotate(90deg);
+  transform:rotate(90deg);
 }
 
 .item-body {
@@ -111,50 +140,27 @@ h1 {
   border-top:1px solid #eee;
 }
 
-/* TIP */
 .tip {
   background:#f0f9ff;
   padding:10px;
   border-radius:10px;
   margin-top:10px;
-  font-size:14px;
 }
 
-/* ===== QUIZ ===== */
-
-.quiz {
-  margin-top:20px;
-}
-
+/* QUIZ */
 .quiz-question {
   background:white;
   padding:14px;
   border-radius:16px;
-  margin-bottom:12px;
-  box-shadow:0 3px 10px rgba(0,0,0,0.04);
-}
-
-.quiz-q {
-  font-weight:600;
   margin-bottom:10px;
 }
 
 .quiz-option {
   display:block;
   padding:10px;
-  border-radius:10px;
   border:1px solid #eee;
+  border-radius:10px;
   margin-bottom:6px;
-  cursor:pointer;
-  transition:0.2s;
-}
-
-.quiz-option:hover {
-  background:#f5f5f5;
-}
-
-.quiz-option input {
-  margin-right:8px;
 }
 
 /* BUTTON */
@@ -171,4 +177,15 @@ button {
 .back {
   background:none;
   color:#007aff;
+}
+
+/* CONFETTI */
+.confetti {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:999;
 }
