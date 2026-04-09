@@ -1,10 +1,10 @@
-export function renderChecklist(checklist){
+export function renderChecklist(c){
 
   return `
-    <h2>${checklist.title}</h2>
-    <p>${checklist.description}</p>
+    <h2>${c.title}</h2>
+    <p>${c.description}</p>
 
-    ${checklist.items.map(i=>`
+    ${c.items.map(i=>`
       <details>
         <summary>${i.emoji} ${i.title}</summary>
         <div>
@@ -15,6 +15,6 @@ export function renderChecklist(checklist){
       </details>
     `).join('')}
 
-    <button onclick="finishChecklist('${checklist.id}')">Завершить</button>
+    <button onclick="finishChecklist('${c.id}')">Завершить</button>
   `
 }
