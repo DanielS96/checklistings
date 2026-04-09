@@ -1,6 +1,6 @@
 body {
   margin:0;
-  font-family:-apple-system;
+  font-family:-apple-system, BlinkMacSystemFont;
   background:#f2f2f7;
 }
 
@@ -10,8 +10,10 @@ body {
   padding:16px;
 }
 
+/* TITLE */
 h1 {
-  font-size:30px;
+  font-size:28px;
+  margin-bottom:16px;
 }
 
 /* CARD */
@@ -21,6 +23,11 @@ h1 {
   padding:16px;
   margin-bottom:12px;
   box-shadow:0 6px 20px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform:scale(1.01);
 }
 
 /* PROGRESS */
@@ -29,11 +36,13 @@ h1 {
   background:#eee;
   border-radius:10px;
   overflow:hidden;
+  margin-top:8px;
 }
 
 .progress-fill {
   height:100%;
   background:linear-gradient(90deg,#34c759,#30d158);
+  transition: width 0.4s ease;
 }
 
 /* CATEGORY */
@@ -49,6 +58,14 @@ h1 {
 .category-desc {
   color:#666;
   font-size:14px;
+  margin-top:4px;
+}
+
+/* STATUS */
+.status {
+  margin-top:6px;
+  font-size:13px;
+  color:#888;
 }
 
 /* ITEM */
@@ -66,9 +83,15 @@ h1 {
 }
 
 .item-body {
-  display:none;
+  max-height:0;
+  overflow:hidden;
+  padding:0 14px;
+  transition: all 0.3s ease;
+}
+
+.item-body.open {
   padding:14px;
-  border-top:1px solid #eee;
+  max-height:500px;
 }
 
 /* BUTTON */
