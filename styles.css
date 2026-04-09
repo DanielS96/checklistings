@@ -10,20 +10,23 @@ body {
   padding:16px;
 }
 
-/* HEADER */
 h1 {
-  font-size:34px;
-  font-weight:700;
+  font-size:32px;
   margin-bottom:16px;
+}
+
+/* CARD */
+.card {
+  background:white;
+  border-radius:18px;
+  padding:16px;
+  margin-bottom:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.05);
 }
 
 /* PROGRESS */
 .progress-card {
-  background:white;
-  border-radius:20px;
-  padding:16px;
   margin-bottom:16px;
-  box-shadow:0 8px 24px rgba(0,0,0,0.06);
 }
 
 .progress-bar {
@@ -37,26 +40,17 @@ h1 {
 .progress-fill {
   height:100%;
   background:linear-gradient(90deg,#34c759,#30d158);
-  transition:0.4s;
+  transition:0.3s;
 }
 
 /* CATEGORY */
-.card {
-  background:white;
-  border-radius:20px;
-  padding:16px;
-  margin-bottom:12px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.05);
-  transition:0.2s;
-}
-
-.card:active {
-  transform:scale(0.98);
+.category {
+  cursor:pointer;
 }
 
 .category-title {
-  font-size:18px;
   font-weight:700;
+  font-size:18px;
 }
 
 .category-desc {
@@ -66,37 +60,28 @@ h1 {
 }
 
 /* CHECKLIST */
+.checklist {
+  cursor:pointer;
+}
+
+/* ITEM */
 .item {
   background:white;
   border-radius:16px;
   margin-bottom:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.04);
+  box-shadow:0 3px 10px rgba(0,0,0,0.04);
 }
 
 .item-header {
   padding:14px;
   font-weight:600;
-  display:flex;
-  justify-content:space-between;
+  cursor:pointer;
 }
 
 .item-body {
   display:none;
   padding:14px;
   border-top:1px solid #eee;
-  animation:fadeIn 0.2s ease;
-}
-
-@keyframes fadeIn {
-  from {opacity:0; transform:translateY(-5px);}
-  to {opacity:1;}
-}
-
-.tip {
-  background:#eef4ff;
-  padding:10px;
-  border-radius:10px;
-  margin-top:8px;
 }
 
 /* BUTTON */
@@ -107,8 +92,7 @@ button {
   border-radius:12px;
   background:#007aff;
   color:white;
-  margin-top:12px;
-  font-weight:600;
+  margin-top:10px;
 }
 
 .back {
