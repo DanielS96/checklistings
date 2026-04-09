@@ -1,0 +1,12 @@
+[
+  {
+    "id": "relationships",
+    "title": "Отношения",
+    "icon": "❤️"
+  },
+  {
+    "id": "finance",
+    "title": "Финансы",
+    "icon": "💰"
+  }
+]
