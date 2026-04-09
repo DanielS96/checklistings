@@ -1,13 +1,20 @@
 body {
   margin:0;
-  font-family:-apple-system;
+  font-family:-apple-system, BlinkMacSystemFont;
   background:#f2f2f7;
+  color:#111;
 }
 
 #app {
-  max-width:680px;
+  max-width:720px;
   margin:auto;
   padding:16px;
+}
+
+/* HEADER */
+h1 {
+  font-size:32px;
+  margin-bottom:16px;
 }
 
 /* CARD */
@@ -15,8 +22,8 @@ body {
   background:white;
   border-radius:20px;
   padding:16px;
-  margin-bottom:12px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.05);
+  margin-bottom:14px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.06);
 }
 
 /* PROGRESS */
@@ -35,17 +42,23 @@ body {
 .progress-fill {
   height:100%;
   background:linear-gradient(90deg,#34c759,#30d158);
+  transition:0.4s;
 }
 
 /* CATEGORY */
+.category {
+  cursor:pointer;
+}
+
 .category-title {
   font-size:18px;
   font-weight:700;
 }
 
 .category-desc {
-  font-size:14px;
   color:#666;
+  font-size:14px;
+  margin-top:4px;
 }
 
 /* CHECKLIST */
@@ -63,22 +76,48 @@ body {
   background:white;
   border-radius:16px;
   margin-bottom:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.04);
 }
 
 .item-header {
   padding:14px;
   font-weight:600;
+  cursor:pointer;
 }
 
 .item-body {
   display:none;
   padding:14px;
   border-top:1px solid #eee;
+  animation:fade 0.2s ease;
+}
+
+@keyframes fade {
+  from {opacity:0; transform:translateY(-5px);}
+  to {opacity:1;}
 }
 
 .tip {
   background:#eef4ff;
-  padding:8px;
-  border-radius:8px;
+  padding:10px;
+  border-radius:10px;
   margin-top:8px;
+}
+
+/* BUTTON */
+button {
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  background:#007aff;
+  color:white;
+  margin-top:12px;
+  font-weight:600;
+}
+
+.back {
+  background:none;
+  color:#007aff;
+  margin-bottom:10px;
 }
