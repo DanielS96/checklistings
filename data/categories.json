@@ -1,12 +1,52 @@
 [
   {
-    "id": "relationships",
-    "title": "Отношения",
-    "icon": "❤️"
+    "id": "self-dev",
+    "title": "Саморазвитие",
+    "icon": "🧠"
   },
   {
     "id": "finance",
     "title": "Финансы",
     "icon": "💰"
+  },
+  {
+    "id": "relationships",
+    "title": "Отношения",
+    "icon": "❤️"
+  },
+  {
+    "id": "home",
+    "title": "Дом и быт",
+    "icon": "🏠"
+  },
+  {
+    "id": "health",
+    "title": "Здоровье и энергия",
+    "icon": "🧍‍♂️"
+  },
+  {
+    "id": "books",
+    "title": "Книги",
+    "icon": "📚"
+  },
+  {
+    "id": "work",
+    "title": "Работа и продуктивность",
+    "icon": "💼"
+  },
+  {
+    "id": "lifestyle",
+    "title": "Образ жизни",
+    "icon": "✨"
+  },
+  {
+    "id": "travel",
+    "title": "Путешествия",
+    "icon": "🌍"
+  },
+  {
+    "id": "mindfulness",
+    "title": "Психология и осознанность",
+    "icon": "🧘"
   }
 ]
