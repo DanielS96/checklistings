@@ -5,12 +5,12 @@ const app = document.getElementById('app')
 let state = {
   screen: 'categories',
   categories: [],
-  checklists: {},
   category: null,
+  checklists: [],
   current: null
 }
 
-// ===== STORAGE =====
+// STORAGE
 const getProgress = () => JSON.parse(localStorage.getItem('progress') || '{}')
 
 const setDone = (id)=>{
@@ -19,119 +19,67 @@ const setDone = (id)=>{
   localStorage.setItem('progress', JSON.stringify(p))
 }
 
-// ===== INIT =====
+// INIT
 async function init(){
   state.categories = await loadCategories()
-
-  // заранее грузим чек-листы для прогресса
-  for(const c of state.categories){
-    state.checklists[c.id] = await loadChecklists(c.id)
-  }
-
   render()
 }
 
-// ===== ROUTER =====
+// ROUTER
 function render(){
   if(state.screen === 'categories') renderCategories()
   if(state.screen === 'list') renderList()
   if(state.screen === 'check') renderCheck()
 }
 
-// ===== CALC =====
-function getCategoryProgress(categoryId){
-  const progress = getProgress()
-  const list = state.checklists[categoryId] || []
-
-  const total = list.length
-  const done = list.filter(c => progress[c.id]).length
-
-  const percent = total ? Math.round(done / total * 100) : 0
-
-  return { total, done, percent }
-}
-
 // ===== CATEGORIES =====
 function renderCategories(){
   const progress = getProgress()
-
-  let totalAll = 0
-  let doneAll = 0
-
-  state.categories.forEach(c=>{
-    const p = getCategoryProgress(c.id)
-    totalAll += p.total
-    doneAll += p.done
-  })
-
-  const percentAll = totalAll ? Math.round(doneAll / totalAll * 100) : 0
+  const percent = Math.round(Object.keys(progress).length / 10 * 100)
 
   app.innerHTML = `
     <h1>Checklistings</h1>
 
     <div class="card">
-      <b>Общий прогресс</b>
+      Общий прогресс
       <div class="progress-bar">
-        <div class="progress-fill" style="width:${percentAll}%"></div>
+        <div class="progress-fill" style="width:${percent}%"></div>
       </div>
-      <div class="status">${percentAll}% завершено</div>
     </div>
 
-    ${state.categories.map(c=>{
-      const p = getCategoryProgress(c.id)
-
-      return `
-        <div class="card category" onclick="openCategory('${c.id}')">
-          <div class="category-title">${c.icon} ${c.title}</div>
-          <div class="category-desc">${c.description}</div>
-
-          <div class="progress-bar">
-            <div class="progress-fill" style="width:${p.percent}%"></div>
-          </div>
-
-          <div class="status">
-            ${p.done}/${p.total} чек-листов • ${p.percent}%
-          </div>
-        </div>
-      `
-    }).join('')}
+    ${state.categories.map(c=>`
+      <div class="card category" onclick="openCategory('${c.id}')">
+        <div class="category-title">${c.icon} ${c.title}</div>
+        <div class="category-desc">${c.description}</div>
+      </div>
+    `).join('')}
   `
 }
 
 // ===== CATEGORY =====
-window.openCategory = (id)=>{
+window.openCategory = async (id)=>{
   state.category = id
+  state.checklists = await loadChecklists(id)
   state.screen = 'list'
   render()
 }
 
 function renderList(){
-  const progress = getProgress()
-  const list = state.checklists[state.category]
-
   app.innerHTML = `
     <button class="back" onclick="goBack()">← Назад</button>
 
-    ${list.map(c=>{
-      const done = progress[c.id]
-
-      return `
-        <div class="card" onclick="openChecklist('${c.id}')">
-          <b>${c.title}</b>
-          <div>${c.subtitle}</div>
-          <div class="status">
-            ${done ? '✅ Завершено' : '⏳ Не завершено'}
-          </div>
-        </div>
-      `
-    }).join('')}
+    ${state.checklists.map(c=>`
+      <div class="card" onclick="openChecklist('${c.id}')">
+        <b>${c.title}</b>
+        <div>${c.subtitle}</div>
+      </div>
+    `).join('')}
   `
 }
 
 // ===== CHECKLIST =====
 window.openChecklist = (id)=>{
-  const list = state.checklists[state.category]
-  state.current = list.find(x=>x.id===id)
+  state.current = state.checklists.find(x=>x.id===id)
   state.screen = 'check'
   render()
 }
@@ -143,19 +91,19 @@ function renderCheck(){
     <button class="back" onclick="goBack()">← Назад</button>
 
     <h2>${c.title}</h2>
-    <p>${c.subtitle}</p>
+    <p class="checklist-description">${c.subtitle}</p>
 
-    <div class="card">${c.description}</div>
+    <p class="checklist-description">${c.description}</p>
 
     ${c.items.map((item,i)=>`
       <div class="item">
         <div class="item-header" onclick="toggle(${i})">
-          ${item.emoji} ${item.title}
+          <span>${item.emoji} ${item.title}</span>
         </div>
         <div class="item-body" id="i${i}">
           <p><b>Источник:</b> ${item.source}</p>
           <p>${item.text}</p>
-          <p>${item.tip}</p>
+          <p class="tip">${item.tip}</p>
         </div>
       </div>
     `).join('')}
@@ -166,8 +114,13 @@ function renderCheck(){
 
 // ===== TOGGLE =====
 window.toggle = (i)=>{
-  const el = document.getElementById('i'+i)
-  el.classList.toggle('open')
+  const item = document.querySelectorAll('.item')[i]
+  const body = document.getElementById('i'+i)
+
+  const isOpen = body.style.display === 'block'
+
+  body.style.display = isOpen ? 'none' : 'block'
+  item.classList.toggle('open')
 }
 
 // ===== QUIZ =====
@@ -175,22 +128,25 @@ function renderQuiz(c){
   if(!c.quiz) return ''
 
   return `
-    <h3>Тест</h3>
+    <div class="quiz">
+      <h3>🧠 Мини-тест</h3>
 
-    ${c.quiz.map((q,i)=>`
-      <div>
-        <p>${q.q}</p>
-        ${q.a.map((a,j)=>`
-          <label>
-            <input type="radio" name="q${i}" value="${j}">
-            ${a}
-          </label><br>
-        `).join('')}
-      </div>
-    `).join('')}
+      ${c.quiz.map((q,i)=>`
+        <div class="quiz-question">
+          <p class="quiz-q">${q.q}</p>
 
-    <button onclick="checkQuiz()">Проверить</button>
-    <div id="result"></div>
+          ${q.a.map((a,j)=>`
+            <label class="quiz-option">
+              <input type="radio" name="q${i}" value="${j}">
+              <span>${a}</span>
+            </label>
+          `).join('')}
+        </div>
+      `).join('')}
+
+      <button onclick="checkQuiz()">Проверить</button>
+      <div id="result"></div>
+    </div>
   `
 }
 
@@ -214,8 +170,7 @@ window.checkQuiz = ()=>{
 // ===== FINISH =====
 window.finish = (id)=>{
   setDone(id)
-  state.screen = 'categories'
-  render()
+  goBack()
 }
 
 // ===== BACK =====
