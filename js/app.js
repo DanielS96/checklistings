@@ -50,12 +50,6 @@ function render(){
 async function renderCategories(){
   const progress = getProgress()
 
-  const total = 10
-  const done = Object.keys(progress).length
-  const percent = Math.round(done / total * 100)
-
-  const level = getLevel(percent)
-
   const categoriesWithProgress = await Promise.all(
     state.categories.map(async (c)=>{
       const lists = await loadChecklists(c.id)
@@ -65,6 +59,13 @@ async function renderCategories(){
       return { ...c, percent }
     })
   )
+
+  // 👉 СРЕДНИЙ ПРОГРЕСС
+  const percent = Math.round(
+    categoriesWithProgress.reduce((acc,c)=>acc+c.percent,0) / categoriesWithProgress.length
+  )
+
+  const level = getLevel(percent)
 
   categoriesWithProgress.sort((a,b)=> b.percent - a.percent)
 
@@ -85,7 +86,12 @@ async function renderCategories(){
     ${categoriesWithProgress.map(c=>`
       <div class="card category" onclick="openCategory('${c.id}')">
         <div class="category-header">
-          <div class="category-title">${c.icon} ${c.title}</div>
+          <div>
+            <div class="category-title">${c.icon} ${c.title}</div>
+            <div style="font-size:12px;color:#666;margin-top:2px;">
+              ${c.description}
+            </div>
+          </div>
           <div class="category-percent">${c.percent}%</div>
         </div>
 
@@ -126,7 +132,7 @@ function renderList(){
           <div class="card-row">
             <div>
               <b>${c.title}</b>
-              <div>${c.subtitle}</div>
+              <div>${c.subtitle || ''}</div>
             </div>
             <div class="status ${s.class}">${s.text}</div>
           </div>
@@ -157,8 +163,21 @@ function renderCheck(){
         <div class="item-header" onclick="toggle(${i})">
           ${item.emoji} ${item.title}
         </div>
+
         <div class="item-body" id="i${i}">
           <p>${item.text}</p>
+
+          ${item.source ? `
+            <div style="font-size:12px;color:#888;margin-top:8px;">
+              📚 ${item.source}
+            </div>
+          ` : ''}
+
+          ${item.tip ? `
+            <div style="margin-top:8px;padding:10px;background:#f2f2f7;border-radius:10px;font-size:13px;">
+              💡 ${item.tip}
+            </div>
+          ` : ''}
         </div>
       </div>
     `).join('')}
@@ -196,7 +215,9 @@ function renderQuiz(c){
       </div>
     `).join('')}
 
-    <button class="btn btn-primary" onclick="checkQuiz()">Проверить</button>
+    <div style="text-align:center;margin-top:12px;">
+      <button class="btn btn-primary" onclick="checkQuiz()">Проверить</button>
+    </div>
   `
 }
 
@@ -219,7 +240,7 @@ window.checkQuiz = ()=>{
       <div class="modal-content">
         <h3>🎉 Отлично!</h3>
         <p>${score}/${c.quiz.length}</p>
-        <p>Ты полностью прошел чек-лист 🚀</p>
+        <p>Ты полностью прошёл чек-лист 🚀</p>
         <button class="btn btn-primary" onclick="closeModal(true)">Завершить</button>
       </div>
     `
@@ -228,8 +249,8 @@ window.checkQuiz = ()=>{
       <div class="modal-content">
         <h3>Результат</h3>
         <p>${score}/${c.quiz.length}</p>
-        <p>Попробуй ещё раз — ты почти там 💪</p>
-        <button class="btn btn-primary" onclick="closeModal(false)">Вернуться к тесту</button>
+        <p>Попробуй ещё раз — ты почти у цели 🎯</p>
+        <button class="btn btn-primary" onclick="closeModal(false)">Вернуться</button>
       </div>
     `
   }
@@ -239,10 +260,7 @@ window.checkQuiz = ()=>{
 
 window.closeModal = (done)=>{
   document.querySelector('.modal').remove()
-
-  if(done){
-    goBack()
-  }
+  if(done) goBack()
 }
 
 // BACK
