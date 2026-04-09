@@ -5,126 +5,251 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checklistings</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
 <style>
-body{
-  margin:0;
-  font-family:Inter;
-  background:#f8fafc;
-  color:#111827;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f2f2f7;
 }
 
-.container{
-  max-width:720px;
-  margin:auto;
-  padding:20px;
+#app {
+  max-width: 720px;
+  margin: auto;
+  padding: 16px;
 }
 
-/* ANIMATION */
-.fade{
-  animation:fade .4s ease;
-}
-@keyframes fade{
-  from{opacity:0; transform:translateY(10px)}
-  to{opacity:1; transform:translateY(0)}
+h1 { margin: 0; }
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
 
-/* HEADER */
-h1{margin-bottom:5px}
-.subtitle{color:#6b7280;margin-bottom:20px}
-
-/* CARD */
-.card{
-  background:#fff;
-  border-radius:16px;
-  padding:16px;
-  margin-bottom:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.05);
-  cursor:pointer;
-  transition:0.2s;
-}
-.card:hover{transform:translateY(-3px)}
-.card:active{transform:scale(0.98)}
-
-.card-title{font-weight:600}
-.card-sub{font-size:13px;color:#6b7280;margin-top:4px}
-
-/* PROGRESS */
-.progress{
-  height:6px;
-  background:#e5e7eb;
-  border-radius:999px;
-  overflow:hidden;
-  margin-top:10px;
-}
-.fill{
-  height:100%;
-  background:#6366f1;
-  transition:.4s;
+.progress {
+  height: 8px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 8px;
 }
 
-/* GLOBAL */
-.global{
-  background:linear-gradient(135deg,#6366f1,#8b5cf6);
-  color:#fff;
+.progress-bar {
+  height: 100%;
+  background: #007aff;
 }
 
-/* BADGE */
-.badge{
-  display:inline-block;
-  margin-top:10px;
-  padding:4px 10px;
-  border-radius:999px;
-  font-size:12px;
-}
-.done{background:#dcfce7}
-.inprogress{background:#fef3c7}
-
-/* CHECKLIST */
-.header{
-  background:#fff;
-  padding:16px;
-  border-radius:16px;
-  margin-bottom:12px;
+.category {
+  cursor: pointer;
 }
 
-details{
-  background:#fff;
-  border-radius:12px;
-  margin-bottom:10px;
-  border:1px solid #e5e7eb;
-}
-summary{
-  padding:14px;
-  cursor:pointer;
-  font-weight:500;
-}
-.content{padding:14px}
-.source{font-size:12px;color:#6b7280}
-
-.tip{
-  background:#eef2ff;
-  padding:10px;
-  border-radius:8px;
-  margin-top:10px;
+.item {
+  background: white;
+  border-radius: 14px;
+  margin-bottom: 10px;
 }
 
-/* BUTTON */
-button{
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:12px;
-  background:#6366f1;
-  color:#fff;
-  margin-top:10px;
+.item-header {
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.item-body {
+  display: none;
+  padding: 14px;
+  border-top: 1px solid #eee;
+}
+
+.tip {
+  background: #e8f0ff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+button {
+  background: #007aff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.back {
+  margin-bottom: 10px;
+  background: none;
+  color: #007aff;
+}
+
+.quiz {
+  margin-top: 20px;
+}
+
+.q {
+  margin-bottom: 12px;
 }
 </style>
 </head>
 
 <body>
-<div class="container fade" id="app"></div>
-<script type="module" src="./js/app.js"></script>
+<div id="app"></div>
+
+<script type="module">
+
+import { loadCategories, loadChecklists } from './js/api.js'
+
+let state = {
+  screen: 'categories',
+  category: null,
+  checklists: [],
+  currentChecklist: null
+}
+
+// ===== STORAGE =====
+const getProgress = () => JSON.parse(localStorage.getItem('progress') || '{}')
+
+const setDone = (id) => {
+  const p = getProgress()
+  p[id] = true
+  localStorage.setItem('progress', JSON.stringify(p))
+}
+
+// ===== RENDER =====
+
+async function renderCategories(){
+  const categories = await loadCategories()
+  const progress = getProgress()
+
+  document.getElementById('app').innerHTML = `
+    <h1>Checklistings</h1>
+
+    ${categories.map(cat=>{
+      return `
+        <div class="card category" onclick="openCategory('${cat.id}')">
+          <b>${cat.emoji} ${cat.title}</b>
+          <div>${cat.description}</div>
+        </div>
+      `
+    }).join('')}
+  `
+}
+
+window.openCategory = async (id)=>{
+  state.category = id
+  state.checklists = await loadChecklists(id)
+  renderCategory()
+}
+
+function renderCategory(){
+  document.getElementById('app').innerHTML = `
+    <button class="back" onclick="renderCategories()">← Назад</button>
+
+    ${state.checklists.map(c=>`
+      <div class="card" onclick="openChecklist('${c.id}')">
+        <b>${c.title}</b>
+        <div>${c.subtitle}</div>
+      </div>
+    `).join('')}
+  `
+}
+
+window.openChecklist = (id)=>{
+  state.currentChecklist = state.checklists.find(c=>c.id===id)
+  renderChecklist()
+}
+
+function renderChecklist(){
+  const c = state.currentChecklist
+
+  document.getElementById('app').innerHTML = `
+    <button class="back" onclick="renderCategory()">← Назад</button>
+
+    <h1>${c.title}</h1>
+    <p>${c.subtitle}</p>
+
+    <div class="card">${c.description}</div>
+
+    ${c.items.map((item,i)=>`
+      <div class="item">
+        <div class="item-header" onclick="toggle(${i})">
+          ${item.emoji} ${item.title}
+        </div>
+        <div class="item-body" id="i${i}">
+          <p><b>Источник:</b> ${item.source}</p>
+          <p>${item.text}</p>
+          <div class="tip">💡 ${item.tip}</div>
+        </div>
+      </div>
+    `).join('')}
+
+    ${renderQuiz(c)}
+  `
+}
+
+window.toggle = (i)=>{
+  const el = document.getElementById('i'+i)
+  el.style.display = el.style.display==='block'?'none':'block'
+}
+
+// ===== QUIZ =====
+
+function renderQuiz(c){
+  return `
+    <div class="quiz">
+      <h2>Тест</h2>
+
+      ${c.quiz.map((q,i)=>`
+        <div class="q">
+          <p>${q.q}</p>
+          ${q.a.map((a,j)=>`
+            <label>
+              <input type="radio" name="q${i}" value="${j}">
+              ${a}
+            </label><br>
+          `).join('')}
+        </div>
+      `).join('')}
+
+      <button onclick="checkQuiz()">Проверить</button>
+      <div id="result"></div>
+    </div>
+  `
+}
+
+window.checkQuiz = ()=>{
+  const c = state.currentChecklist
+  let score = 0
+
+  c.quiz.forEach((q,i)=>{
+    const v = document.querySelector(`input[name="q${i}"]:checked`)
+    if(v && Number(v.value)===q.correct) score++
+  })
+
+  document.getElementById('result').innerHTML = `
+    <div class="card">
+      Результат: ${score}/${c.quiz.length}
+      <button onclick="finishChecklist('${c.id}')">Завершить</button>
+    </div>
+  `
+}
+
+window.finishChecklist = (id)=>{
+  setDone(id)
+  alert('Готово ✅')
+  renderCategory()
+}
+
+// INIT
+renderCategories()
+
+</script>
 </body>
 </html>
