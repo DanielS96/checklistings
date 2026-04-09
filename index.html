@@ -1,93 +1,119 @@
-<div id="app"></div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklistings</title>
+
+<style>
+body{font-family:Arial;background:#f5f5f5;margin:0}
+#app{max-width:700px;margin:0 auto;padding:20px}
+
+.card{
+  background:#fff;
+  padding:15px;
+  border-radius:12px;
+  margin-bottom:10px;
+  cursor:pointer;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+<div id="app">Загрузка...</div>
 
 <script>
 let DATA = null
+let screen = 'categories'
 let currentCategory = null
 let currentChecklist = null
 
-async function load(){
-  const res = await fetch('./data.json?v=' + Date.now())
-  DATA = await res.json()
-  renderCategories()
+async function init(){
+  try{
+    const res = await fetch('./data.json?v=' + Date.now())
+    if(!res.ok) throw new Error('data.json не найден')
+    DATA = await res.json()
+    render()
+  }catch(e){
+    document.getElementById('app').innerHTML = '❌ Ошибка загрузки data.json'
+    console.error(e)
+  }
 }
 
-function getChecklistStatus(id){
-  return localStorage.getItem(id)
+function render(){
+  if(screen==='categories') renderCategories()
+  if(screen==='category') renderCategory()
+  if(screen==='checklist') renderChecklist()
 }
 
-function setChecklistDone(id){
-  localStorage.setItem(id, 'done')
-}
-
-function getProgress(){
-  let total = 0
-  let done = 0
-
-  DATA.categories.forEach(cat=>{
-    cat.checklists.forEach(cl=>{
-      total++
-      if(getChecklistStatus(cl.id)==='done') done++
-    })
-  })
-
-  return total ? Math.round(done/total*100) : 0
-}
+/* ---------- ГЛАВНЫЙ ---------- */
 
 function renderCategories(){
   const app = document.getElementById('app')
 
   app.innerHTML = `
     <h1>Checklistings</h1>
-    <p>Общий прогресс: ${getProgress()}%</p>
 
-    ${DATA.categories.map(cat=>`
-      <div onclick="openCategory('${cat.id}')">
-        ${cat.icon} ${cat.title}
+    ${DATA.categories.map(c=>`
+      <div class="card" onclick="openCategory('${c.id}')">
+        ${c.icon} ${c.title}
       </div>
     `).join('')}
   `
 }
 
+/* ---------- КАТЕГОРИЯ ---------- */
+
 function openCategory(id){
   currentCategory = DATA.categories.find(c=>c.id===id)
-  renderCategory()
+  screen='category'
+  render()
 }
 
 function renderCategory(){
   const app = document.getElementById('app')
 
   app.innerHTML = `
-    <button onclick="renderCategories()">← Назад</button>
+    <button onclick="back()">← Назад</button>
     <h2>${currentCategory.title}</h2>
 
     ${currentCategory.checklists.map(cl=>`
-      <div onclick="openChecklist('${cl.id}')">
-        ${cl.title} — ${getChecklistStatus(cl.id)==='done' ? '✅' : '⏳'}
+      <div class="card" onclick="openChecklist('${cl.id}')">
+        ${cl.title}
       </div>
     `).join('')}
   `
 }
 
+/* ---------- ЧЕК-ЛИСТ ---------- */
+
 function openChecklist(id){
   currentChecklist = currentCategory.checklists.find(c=>c.id===id)
-  renderChecklist()
+  screen='checklist'
+  render()
 }
 
 function renderChecklist(){
-  const cl = currentChecklist
+  const c = currentChecklist
   const app = document.getElementById('app')
 
   app.innerHTML = `
-    <button onclick="renderCategory()">← Назад</button>
+    <button onclick="back()">← Назад</button>
 
-    <h2>${cl.title}</h2>
-    <p>${cl.description}</p>
+    <h2>${c.title}</h2>
+    <p>${c.description}</p>
 
-    ${cl.items.map(i=>`
+    ${c.items.map(i=>`
       <details>
         <summary>${i.emoji} ${i.title}</summary>
         <div>${i.text}</div>
-        <div>${i.tip}</div>
+        <div><b>${i.tip}</b></div>
       </details>
     `).join('')}
 
@@ -95,10 +121,20 @@ function renderChecklist(){
   `
 }
 
+/* ---------- ЛОГИКА ---------- */
+
 function finishChecklist(){
-  setChecklistDone(currentChecklist.id)
-  renderCategory()
+  localStorage.setItem(currentChecklist.id,'done')
+  alert('Готово')
 }
 
-load()
+function back(){
+  if(screen==='checklist') screen='category'
+  else if(screen==='category') screen='categories'
+  render()
+}
+
+init()
 </script>
+</body>
+</html>
