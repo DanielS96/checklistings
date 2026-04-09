@@ -33,9 +33,29 @@ function render(){
 }
 
 // ===== CATEGORIES =====
-function renderCategories(){
+async function renderCategories(){
   const progress = getProgress()
-  const percent = Math.round(Object.keys(progress).length / 10 * 100)
+
+  const totalDone = Object.keys(progress).length
+  const percent = Math.round(totalDone / 10 * 100)
+
+  const categoriesWithProgress = await Promise.all(
+    state.categories.map(async (c)=>{
+      const lists = await loadChecklists(c.id)
+
+      const total = lists.length
+      const done = lists.filter(l => progress[l.id]).length
+
+      const percent = total ? Math.round(done / total * 100) : 0
+
+      const level = Math.floor(percent / 20) + 1 // 1–5 уровень
+
+      return { ...c, percent, level }
+    })
+  )
+
+  // сортировка по прогрессу
+  categoriesWithProgress.sort((a,b)=> b.percent - a.percent)
 
   app.innerHTML = `
     <h1>Checklistings</h1>
@@ -47,10 +67,20 @@ function renderCategories(){
       </div>
     </div>
 
-    ${state.categories.map(c=>`
+    ${categoriesWithProgress.map(c=>`
       <div class="card category" onclick="openCategory('${c.id}')">
-        <div class="category-title">${c.icon} ${c.title}</div>
+
+        <div class="category-header">
+          <div class="category-title">${c.icon} ${c.title}</div>
+          <div class="category-meta">Lvl ${c.level} • ${c.percent}%</div>
+        </div>
+
         <div class="category-desc">${c.description}</div>
+
+        <div class="progress-bar" style="margin-top:10px;">
+          <div class="progress-fill" style="width:${c.percent}%"></div>
+        </div>
+
       </div>
     `).join('')}
   `
