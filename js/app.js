@@ -158,6 +158,12 @@ function renderCheck(){
 
     <h2>${c.title}</h2>
 
+    ${c.description ? `
+      <div class="checklist-description">
+        ${c.description}
+      </div>
+    ` : ''}
+
     ${c.items.map((item,i)=>`
       <div class="item">
         <div class="item-header" onclick="toggle(${i})">
