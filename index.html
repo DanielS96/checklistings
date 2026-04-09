@@ -3,56 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Checklistings</title>
 
-<style>
-body{font-family:Arial;background:#f5f5f5;margin:0}
-#app{max-width:700px;margin:0 auto;padding:20px}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-.card{
-  background:#fff;
-  padding:15px;
-  border-radius:12px;
-  margin-bottom:10px;
-  cursor:pointer;
+<style>
+body{
+  font-family:Inter;
+  background:#f8fafc;
+  margin:0;
 }
 
+.container{
+  max-width:720px;
+  margin:0 auto;
+  padding:20px;
+}
+
+/* HEADER */
+h1{margin-bottom:10px}
+
+/* CARD */
+.card{
+  background:#fff;
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:12px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.06);
+  cursor:pointer;
+  transition:0.2s;
+}
+.card:hover{transform:scale(1.02)}
+
+/* STATUS */
+.status{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:12px;
+}
+.progress{background:#fef3c7}
+.done{background:#dcfce7}
+
+/* CHECKLIST */
+details{
+  background:#fff;
+  border-radius:12px;
+  margin-top:10px;
+  border:1px solid #e5e7eb;
+}
+summary{
+  padding:14px;
+  cursor:pointer;
+  font-weight:500;
+}
+.content{padding:14px}
+.source{font-size:12px;color:#6b7280}
+.tip{
+  background:#eef2ff;
+  padding:10px;
+  border-radius:8px;
+  margin-top:8px;
+}
+
+/* BUTTON */
 button{
   width:100%;
-  padding:12px;
+  padding:14px;
+  border:none;
+  border-radius:12px;
   margin-top:10px;
+  background:#6366f1;
+  color:#fff;
 }
 </style>
 </head>
 
 <body>
-<div id="app">Загрузка...</div>
+<div class="container" id="app">Загрузка...</div>
 
 <script>
-let DATA = null
-let screen = 'categories'
+
+let categories = []
 let currentCategory = null
 let currentChecklist = null
 
-async function init(){
-  try{
-    const res = await fetch('./data.json?v=' + Date.now())
-    if(!res.ok) throw new Error('data.json не найден')
-    DATA = await res.json()
-    render()
-  }catch(e){
-    document.getElementById('app').innerHTML = '❌ Ошибка загрузки data.json'
-    console.error(e)
-  }
+/* ---------- LOAD ---------- */
+
+async function loadCategories(){
+  const res = await fetch('./data/categories.json?v='+Date.now())
+  categories = await res.json()
+  renderCategories()
 }
 
-function render(){
-  if(screen==='categories') renderCategories()
-  if(screen==='category') renderCategory()
-  if(screen==='checklist') renderChecklist()
-}
-
-/* ---------- ГЛАВНЫЙ ---------- */
+/* ---------- SCREENS ---------- */
 
 function renderCategories(){
   const app = document.getElementById('app')
@@ -60,7 +105,7 @@ function renderCategories(){
   app.innerHTML = `
     <h1>Checklistings</h1>
 
-    ${DATA.categories.map(c=>`
+    ${categories.map(c=>`
       <div class="card" onclick="openCategory('${c.id}')">
         ${c.icon} ${c.title}
       </div>
@@ -68,35 +113,47 @@ function renderCategories(){
   `
 }
 
-/* ---------- КАТЕГОРИЯ ---------- */
+/* ---------- CATEGORY ---------- */
 
-function openCategory(id){
-  currentCategory = DATA.categories.find(c=>c.id===id)
-  screen='category'
-  render()
+async function openCategory(id){
+  currentCategory = categories.find(c=>c.id===id)
+
+  const res = await fetch(`./data/${id}/index.json?v=`+Date.now())
+  const files = await res.json()
+
+  const checklists = await Promise.all(
+    files.map(f=>fetch(`./data/${id}/${f}`).then(r=>r.json()))
+  )
+
+  currentCategory.checklists = checklists
+
+  renderCategory()
 }
 
 function renderCategory(){
   const app = document.getElementById('app')
 
   app.innerHTML = `
-    <button onclick="back()">← Назад</button>
+    <button onclick="renderCategories()">← Назад</button>
     <h2>${currentCategory.title}</h2>
 
     ${currentCategory.checklists.map(cl=>`
       <div class="card" onclick="openChecklist('${cl.id}')">
-        ${cl.title}
+        <b>${cl.title}</b><br>
+        <small>${cl.subtitle}</small><br>
+        <span class="status ${localStorage.getItem(cl.id)==='done'?'done':'progress'}">
+          ${localStorage.getItem(cl.id)==='done'?'Выполнено':'В процессе'}
+        </span>
       </div>
     `).join('')}
   `
 }
 
-/* ---------- ЧЕК-ЛИСТ ---------- */
+/* ---------- CHECKLIST ---------- */
 
 function openChecklist(id){
   currentChecklist = currentCategory.checklists.find(c=>c.id===id)
-  screen='checklist'
-  render()
+  renderChecklist()
 }
 
 function renderChecklist(){
@@ -104,16 +161,22 @@ function renderChecklist(){
   const app = document.getElementById('app')
 
   app.innerHTML = `
-    <button onclick="back()">← Назад</button>
+    <button onclick="renderCategory()">← Назад</button>
 
-    <h2>${c.title}</h2>
-    <p>${c.description}</p>
+    <div class="card">
+      <h2>${c.title}</h2>
+      <div>${c.subtitle}</div>
+      <p>${c.description}</p>
+    </div>
 
     ${c.items.map(i=>`
       <details>
         <summary>${i.emoji} ${i.title}</summary>
-        <div>${i.text}</div>
-        <div><b>${i.tip}</b></div>
+        <div class="content">
+          <div class="source">${i.source}</div>
+          <div>${i.text}</div>
+          <div class="tip"><b>Совет:</b> ${i.tip}</div>
+        </div>
       </details>
     `).join('')}
 
@@ -121,20 +184,17 @@ function renderChecklist(){
   `
 }
 
-/* ---------- ЛОГИКА ---------- */
+/* ---------- LOGIC ---------- */
 
 function finishChecklist(){
   localStorage.setItem(currentChecklist.id,'done')
-  alert('Готово')
+  renderCategory()
 }
 
-function back(){
-  if(screen==='checklist') screen='category'
-  else if(screen==='category') screen='categories'
-  render()
-}
+/* ---------- START ---------- */
 
-init()
+loadCategories()
+
 </script>
 </body>
 </html>
