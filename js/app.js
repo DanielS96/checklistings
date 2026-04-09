@@ -1,125 +1,66 @@
 import { loadCategories, loadChecklists } from './api.js'
-import { renderChecklist } from './checklist.js'
+import { renderProgress, renderCategoryCard, renderChecklistCard } from './components.js'
+import { renderChecklistScreen } from './checklist.js'
 
 const app = document.getElementById('app')
 
-let categories = []
-let currentCategory = null
-let currentChecklist = null
-
-/* GLOBAL FUNCTIONS */
-
-window.openCategory = async (id)=>{
-  currentCategory = categories.find(c=>c.id===id)
-  currentCategory.checklists = await loadChecklists(id)
-  renderCategory()
+let state = {
+  categories: [],
+  checklists: [],
+  currentCategory: null
 }
 
-window.openChecklist = (id)=>{
-  currentChecklist = currentCategory.checklists.find(c=>c.id===id)
-  renderChecklistScreen()
+const getProgress = () => JSON.parse(localStorage.getItem('progress') || '{}')
+
+// ===== MAIN SCREEN =====
+
+async function init(){
+  state.categories = await loadCategories()
+  renderCategories()
 }
 
-window.finishChecklist = (id)=>{
-  localStorage.setItem(id,'done')
-  renderCategory()
-}
-
-/* PROGRESS */
-
-function isDone(id){
-  return localStorage.getItem(id)==='done'
-}
-
-function categoryProgress(cat){
-  let done = cat.checklists.filter(c=>isDone(c.id)).length
-  return Math.round(done/cat.checklists.length*100)
-}
-
-function globalProgress(){
-  let all=[]
-  categories.forEach(c=>{
-    if(c.checklists) all=all.concat(c.checklists)
-  })
-  let done = all.filter(c=>isDone(c.id)).length
-  return all.length ? Math.round(done/all.length*100) : 0
-}
-
-/* ANIMATION */
-
-function animate(){
-  app.classList.remove('fade')
-  void app.offsetWidth
-  app.classList.add('fade')
-}
-
-/* RENDER */
-
-async function renderCategories(){
-
-  for(let c of categories){
-    c.checklists = await loadChecklists(c.id)
-  }
+function renderCategories(){
+  const progress = getProgress()
 
   app.innerHTML = `
-    <h1>Checklistings</h1>
-    <div class="subtitle">Система развития</div>
-
-    <div class="card global">
-      <div class="card-title">Общий прогресс</div>
-      <div>${globalProgress()}%</div>
-
-      <div class="progress">
-        <div class="fill" style="width:${globalProgress()}%"></div>
-      </div>
+    <div class="header">
+      <h1>Checklistings</h1>
     </div>
 
-    ${categories.map(c=>`
-      <div class="card" onclick="openCategory('${c.id}')">
-        <div class="card-title">${c.icon} ${c.title}</div>
-        <div class="card-sub">${c.description || ''}</div>
+    ${renderProgress(Object.keys(progress).length, 10)}
 
-        <div class="progress">
-          <div class="fill" style="width:${categoryProgress(c)}%"></div>
-        </div>
-      </div>
-    `).join('')}
+    ${state.categories.map(renderCategoryCard).join('')}
   `
-
-  animate()
 }
 
-function renderCategory(){
+// ===== CATEGORY =====
+
+window.openCategory = async (id)=>{
+  state.currentCategory = id
+  state.checklists = await loadChecklists(id)
+
   app.innerHTML = `
-    <button onclick="renderCategories()">← Назад</button>
-    <h2>${currentCategory.title}</h2>
+    <button class="back" onclick="goBack()">← Назад</button>
 
-    ${currentCategory.checklists.map(cl=>`
-      <div class="card" onclick="openChecklist('${cl.id}')">
-        <div class="card-title">${cl.title}</div>
-        <div class="card-sub">${cl.subtitle || ''}</div>
-
-        <div class="badge ${isDone(cl.id)?'done':'inprogress'}">
-          ${isDone(cl.id)?'Выполнено':'В процессе'}
-        </div>
-      </div>
-    `).join('')}
+    ${state.checklists.map(renderChecklistCard).join('')}
   `
-
-  animate()
 }
 
-function renderChecklistScreen(){
-  app.innerHTML = `
-    <button onclick="renderCategory()">← Назад</button>
-    ${renderChecklist(currentChecklist)}
-  `
-  animate()
-}
-
-/* START */
-
-loadCategories().then(data=>{
-  categories = data
+window.goBack = ()=>{
+  state.currentCategory = null
   renderCategories()
-})
+}
+
+// ===== CHECKLIST =====
+
+window.openChecklist = (id)=>{
+  const checklist = state.checklists.find(c=>c.id===id)
+  renderChecklistScreen(checklist, goBackToCategory)
+}
+
+function goBackToCategory(){
+  openCategory(state.currentCategory)
+}
+
+// INIT
+init()
