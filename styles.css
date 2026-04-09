@@ -188,3 +188,88 @@ body {
   margin:0;
   line-height:1.4;
 }
+
+/* ===== iOS ANIMATIONS ===== */
+
+.card {
+  animation: fadeInUp 0.4s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.item {
+  animation: fadeInUp 0.3s ease;
+}
+
+.item-header {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* раскрытие */
+.item-body {
+  display: none;
+  padding: 14px;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity:0 }
+  to { opacity:1 }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity:0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity:1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+h3 {
+  margin-top: 20px;
+}
+
+.item-body p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* ===== CHECKLIST DESCRIPTION ===== */
+
+.checklist-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+/* ===== ROUNDED PROGRESS ===== */
+
+.progress-bar {
+  height: 10px;
+  background: #eee;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #34c759;
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
