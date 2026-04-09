@@ -1,66 +1,119 @@
 import { loadCategories, loadChecklists } from './api.js'
-import { renderProgress, renderCategoryCard, renderChecklistCard } from './components.js'
-import { renderChecklistScreen } from './checklist.js'
 
 const app = document.getElementById('app')
 
 let state = {
   categories: [],
+  category: null,
   checklists: [],
-  currentCategory: null
+  current: null
 }
 
-const getProgress = () => JSON.parse(localStorage.getItem('progress') || '{}')
-
-// ===== MAIN SCREEN =====
-
+// ===== INIT =====
 async function init(){
   state.categories = await loadCategories()
   renderCategories()
 }
 
+// ===== CATEGORIES =====
 function renderCategories(){
-  const progress = getProgress()
-
   app.innerHTML = `
-    <div class="header">
-      <h1>Checklistings</h1>
-    </div>
+    <h1>Checklistings</h1>
 
-    ${renderProgress(Object.keys(progress).length, 10)}
-
-    ${state.categories.map(renderCategoryCard).join('')}
+    ${state.categories.map(cat=>`
+      <div class="card category" onclick="openCategory('${cat.id}')">
+        <div class="category-title">${cat.emoji} ${cat.title}</div>
+        <div>${cat.description}</div>
+      </div>
+    `).join('')}
   `
 }
 
-// ===== CATEGORY =====
-
 window.openCategory = async (id)=>{
-  state.currentCategory = id
+  state.category = id
   state.checklists = await loadChecklists(id)
 
   app.innerHTML = `
-    <button class="back" onclick="goBack()">← Назад</button>
+    <button class="back" onclick="renderCategories()">← Назад</button>
 
-    ${state.checklists.map(renderChecklistCard).join('')}
+    ${state.checklists.map(c=>`
+      <div class="card checklist" onclick="openChecklist('${c.id}')">
+        <b>${c.title}</b>
+        <div>${c.subtitle}</div>
+      </div>
+    `).join('')}
   `
 }
 
-window.goBack = ()=>{
-  state.currentCategory = null
-  renderCategories()
-}
-
 // ===== CHECKLIST =====
-
 window.openChecklist = (id)=>{
-  const checklist = state.checklists.find(c=>c.id===id)
-  renderChecklistScreen(checklist, goBackToCategory)
+  const c = state.checklists.find(x=>x.id===id)
+  state.current = c
+
+  app.innerHTML = `
+    <button class="back" onclick="openCategory('${state.category}')">← Назад</button>
+
+    <h1>${c.title}</h1>
+    <p>${c.subtitle}</p>
+
+    <div class="card">${c.description}</div>
+
+    ${c.items.map((item,i)=>`
+      <div class="item">
+        <div class="item-header" onclick="toggle(${i})">
+          ${item.emoji} ${item.title}
+        </div>
+        <div class="item-body" id="i${i}">
+          <p>${item.text}</p>
+        </div>
+      </div>
+    `).join('')}
+
+    ${renderQuiz(c)}
+  `
 }
 
-function goBackToCategory(){
-  openCategory(state.currentCategory)
+window.toggle = (i)=>{
+  const el = document.getElementById('i'+i)
+  el.style.display = el.style.display==='block'?'none':'block'
 }
 
-// INIT
+// ===== QUIZ =====
+function renderQuiz(c){
+  if(!c.quiz) return ''
+
+  return `
+    <h3>Тест</h3>
+
+    ${c.quiz.map((q,i)=>`
+      <div>
+        <p>${q.q}</p>
+        ${q.a.map((a,j)=>`
+          <label>
+            <input type="radio" name="q${i}" value="${j}">
+            ${a}
+          </label><br>
+        `).join('')}
+      </div>
+    `).join('')}
+
+    <button onclick="checkQuiz()">Проверить</button>
+    <div id="result"></div>
+  `
+}
+
+window.checkQuiz = ()=>{
+  const c = state.current
+  let score = 0
+
+  c.quiz.forEach((q,i)=>{
+    const v = document.querySelector(`input[name="q${i}"]:checked`)
+    if(v && Number(v.value)===q.correct) score++
+  })
+
+  document.getElementById('result').innerHTML = `
+    Результат: ${score}/${c.quiz.length}
+  `
+}
+
 init()
