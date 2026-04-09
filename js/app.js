@@ -60,7 +60,7 @@ async function renderCategories(){
     })
   )
 
-  // 👉 СРЕДНИЙ ПРОГРЕСС
+  // средний прогресс
   const percent = Math.round(
     categoriesWithProgress.reduce((acc,c)=>acc+c.percent,0) / categoriesWithProgress.length
   )
@@ -88,7 +88,7 @@ async function renderCategories(){
         <div class="category-header">
           <div>
             <div class="category-title">${c.icon} ${c.title}</div>
-            <div style="font-size:12px;color:#666;margin-top:2px;">
+            <div style="font-size:13px;color:#666;margin-top:4px;">
               ${c.description}
             </div>
           </div>
@@ -206,23 +206,25 @@ function renderQuiz(c){
   if(!c.quiz) return ''
 
   return `
-    <h3>Тест</h3>
+    <div class="quiz-section">
+      <div class="quiz-title">🧠 Мини-тест</div>
 
-    ${c.quiz.map((q,i)=>`
-      <div class="quiz-question">
-        <p>${q.q}</p>
+      ${c.quiz.map((q,i)=>`
+        <div class="quiz-question">
+          <p>${q.q}</p>
 
-        ${q.a.map((a,j)=>`
-          <label class="quiz-option">
-            <input type="radio" name="q${i}" value="${j}">
-            ${a}
-          </label>
-        `).join('')}
+          ${q.a.map((a,j)=>`
+            <label class="quiz-option">
+              <input type="radio" name="q${i}" value="${j}">
+              ${a}
+            </label>
+          `).join('')}
+        </div>
+      `).join('')}
+
+      <div style="text-align:center;margin-top:12px;">
+        <button class="btn btn-primary" onclick="checkQuiz()">Проверить</button>
       </div>
-    `).join('')}
-
-    <div style="text-align:center;margin-top:12px;">
-      <button class="btn btn-primary" onclick="checkQuiz()">Проверить</button>
     </div>
   `
 }
@@ -239,7 +241,23 @@ window.checkQuiz = ()=>{
   const modal = document.createElement('div')
   modal.className = 'modal'
 
-  if(score === c.quiz.length){
+  const success = score === c.quiz.length
+
+  // вибрация
+  if(navigator.vibrate){
+    navigator.vibrate(success ? [100, 50, 100] : [200])
+  }
+
+  // звук
+  const audio = new Audio(
+    success
+      ? 'https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3'
+      : 'https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3'
+  )
+  audio.volume = 0.4
+  audio.play()
+
+  if(success){
     setDone(c.id)
 
     modal.innerHTML = `
