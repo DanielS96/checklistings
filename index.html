@@ -3,15 +3,223 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Checklistings</title>
 
-<link rel="stylesheet" href="./styles.css?v=1">
+<style>
+body {
+  margin:0;
+  font-family:-apple-system;
+  background:#f2f2f7;
+}
+#app {
+  max-width:700px;
+  margin:auto;
+  padding:16px;
+}
+.card {
+  background:white;
+  border-radius:20px;
+  padding:16px;
+  margin-bottom:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.06);
+}
+.progress-bar {
+  height:10px;
+  background:#eee;
+  border-radius:10px;
+}
+.progress-fill {
+  height:100%;
+  background:linear-gradient(90deg,#34c759,#30d158);
+}
+.item-header {
+  padding:12px;
+  font-weight:600;
+  cursor:pointer;
+}
+.item-body {
+  display:none;
+  padding:12px;
+  border-top:1px solid #eee;
+}
+button {
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  background:#007aff;
+  color:white;
+  margin-top:10px;
+}
+.back {
+  background:none;
+  color:#007aff;
+}
+</style>
 </head>
 
 <body>
 <div id="app"></div>
 
-<script type="module" src="./js/app.js?v=1"></script>
+<script>
+const app = document.getElementById('app')
+
+const data = {
+  categories: [
+    {id:'finance', title:'Финансы', emoji:'💰', desc:'Деньги и рост'}
+  ],
+  checklists: {
+    finance: [{
+      id:'finance-1',
+      title:'Финансовая база',
+      subtitle:'Контроль денег',
+      description:'Основа управления финансами',
+      items:[
+        {emoji:'💡', title:'Учёт расходов', text:'Записывай всё'}
+      ],
+      quiz:[
+        {q:'Главное?', a:['Учёт','Игнор'], correct:0}
+      ]
+    }]
+  }
+}
+
+let state = {
+  screen:'categories',
+  category:null,
+  checklist:null
+}
+
+const getProgress = ()=>JSON.parse(localStorage.getItem('p')||'{}')
+const setDone = id=>{
+  const p=getProgress()
+  p[id]=true
+  localStorage.setItem('p',JSON.stringify(p))
+}
+
+function render(){
+  if(state.screen==='categories') renderCategories()
+  if(state.screen==='list') renderList()
+  if(state.screen==='check') renderCheck()
+}
+
+function renderCategories(){
+  const p=getProgress()
+  const percent=Object.keys(p).length*10
+
+  app.innerHTML=`
+    <h1>Checklistings</h1>
+
+    <div class="card">
+      Прогресс
+      <div class="progress-bar">
+        <div class="progress-fill" style="width:${percent}%"></div>
+      </div>
+    </div>
+
+    ${data.categories.map(c=>`
+      <div class="card" onclick="openCat('${c.id}')">
+        ${c.emoji} ${c.title}
+      </div>
+    `).join('')}
+  `
+}
+
+function openCat(id){
+  state.category=id
+  state.screen='list'
+  render()
+}
+
+function renderList(){
+  const list=data.checklists[state.category]
+
+  app.innerHTML=`
+    <button class="back" onclick="back()">← Назад</button>
+
+    ${list.map(c=>`
+      <div class="card" onclick="openCheck('${c.id}')">
+        ${c.title}
+      </div>
+    `).join('')}
+  `
+}
+
+function openCheck(id){
+  const list=data.checklists[state.category]
+  state.checklist=list.find(x=>x.id===id)
+  state.screen='check'
+  render()
+}
+
+function renderCheck(){
+  const c=state.checklist
+
+  app.innerHTML=`
+    <button class="back" onclick="back()">← Назад</button>
+
+    <h2>${c.title}</h2>
+
+    ${c.items.map((i,idx)=>`
+      <div class="card">
+        <div class="item-header" onclick="toggle(${idx})">
+          ${i.emoji} ${i.title}
+        </div>
+        <div class="item-body" id="i${idx}">
+          ${i.text}
+        </div>
+      </div>
+    `).join('')}
+
+    <h3>Тест</h3>
+
+    ${c.quiz.map((q,i)=>`
+      <div>
+        <p>${q.q}</p>
+        ${q.a.map((a,j)=>`
+          <label><input type="radio" name="q${i}" value="${j}">${a}</label><br>
+        `).join('')}
+      </div>
+    `).join('')}
+
+    <button onclick="check()">Проверить</button>
+    <div id="res"></div>
+  `
+}
+
+function toggle(i){
+  const el=document.getElementById('i'+i)
+  el.style.display=el.style.display==='block'?'none':'block'
+}
+
+function check(){
+  const c=state.checklist
+  let score=0
+
+  c.quiz.forEach((q,i)=>{
+    const v=document.querySelector(`input[name="q${i}"]:checked`)
+    if(v && Number(v.value)===q.correct) score++
+  })
+
+  document.getElementById('res').innerHTML=`
+    ${score}/${c.quiz.length}
+    <button onclick="finish('${c.id}')">Завершить</button>
+  `
+}
+
+function finish(id){
+  setDone(id)
+  back()
+}
+
+function back(){
+  if(state.screen==='check') state.screen='list'
+  else state.screen='categories'
+  render()
+}
+
+render()
+</script>
+
 </body>
 </html>
