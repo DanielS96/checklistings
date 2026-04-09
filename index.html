@@ -10,9 +10,10 @@
 
 <style>
 body{
+  margin:0;
   font-family:Inter;
   background:#f8fafc;
-  margin:0;
+  color:#111827;
 }
 
 .container{
@@ -21,8 +22,18 @@ body{
   padding:20px;
 }
 
+/* ANIMATION */
+.fade-in{
+  animation:fade 0.4s ease;
+}
+@keyframes fade{
+  from{opacity:0; transform:translateY(10px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
 /* HEADER */
-h1{margin-bottom:10px}
+h1{margin-bottom:4px}
+.subtitle{color:#6b7280;margin-bottom:20px}
 
 /* CARD */
 .card{
@@ -30,41 +41,68 @@ h1{margin-bottom:10px}
   border-radius:16px;
   padding:16px;
   margin-bottom:12px;
-  box-shadow:0 8px 24px rgba(0,0,0,0.06);
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
   cursor:pointer;
   transition:0.2s;
 }
-.card:hover{transform:scale(1.02)}
+.card:hover{transform:translateY(-3px)}
+.card:active{transform:scale(0.98)}
 
-/* STATUS */
-.status{
+.card-title{font-weight:600}
+.card-sub{font-size:13px;color:#6b7280;margin-top:4px}
+
+/* PROGRESS BAR */
+.progress-bar{
+  height:6px;
+  background:#e5e7eb;
+  border-radius:999px;
+  overflow:hidden;
+  margin-top:10px;
+}
+.progress-fill{
+  height:100%;
+  background:#6366f1;
+}
+
+/* GLOBAL PROGRESS */
+.global{
+  background:linear-gradient(135deg,#6366f1,#8b5cf6);
+  color:#fff;
+}
+
+/* BADGE */
+.badge{
   display:inline-block;
+  margin-top:10px;
   padding:4px 10px;
   border-radius:999px;
   font-size:12px;
 }
-.progress{background:#fef3c7}
+.inprogress{background:#fef3c7}
 .done{background:#dcfce7}
 
 /* CHECKLIST */
+.checklist-header{
+  background:#fff;
+  padding:16px;
+  border-radius:16px;
+  margin-bottom:12px;
+}
+
 details{
   background:#fff;
   border-radius:12px;
-  margin-top:10px;
+  margin-bottom:10px;
   border:1px solid #e5e7eb;
 }
-summary{
-  padding:14px;
-  cursor:pointer;
-  font-weight:500;
-}
+summary{padding:14px;cursor:pointer;font-weight:500}
 .content{padding:14px}
 .source{font-size:12px;color:#6b7280}
 .tip{
   background:#eef2ff;
   padding:10px;
   border-radius:8px;
-  margin-top:8px;
+  margin-top:10px;
 }
 
 /* BUTTON */
@@ -73,87 +111,145 @@ button{
   padding:14px;
   border:none;
   border-radius:12px;
-  margin-top:10px;
   background:#6366f1;
   color:#fff;
+  margin-top:10px;
 }
 </style>
 </head>
 
 <body>
-<div class="container" id="app">Загрузка...</div>
+
+<div class="container fade-in" id="app"></div>
 
 <script>
 
 let categories = []
 let currentCategory = null
 let currentChecklist = null
+let screen = "categories"
 
-/* ---------- LOAD ---------- */
+/* LOAD */
 
-async function loadCategories(){
-  const res = await fetch('./data/categories.json?v='+Date.now())
+async function load(){
+  const res = await fetch('./data/categories.json?v=' + Date.now())
   categories = await res.json()
-  renderCategories()
+  render()
 }
 
-/* ---------- SCREENS ---------- */
+/* PROGRESS */
 
-function renderCategories(){
+function getChecklistDone(id){
+  return localStorage.getItem(id)==='done'
+}
+
+function calcCategoryProgress(cat){
+  if(!cat.checklists) return 0
+  let done = cat.checklists.filter(c=>getChecklistDone(c.id)).length
+  return cat.checklists.length ? Math.round(done/cat.checklists.length*100) : 0
+}
+
+function calcGlobalProgress(){
+  let all = []
+  categories.forEach(c=>{
+    if(c.checklists) all = all.concat(c.checklists)
+  })
+  let done = all.filter(c=>getChecklistDone(c.id)).length
+  return all.length ? Math.round(done/all.length*100) : 0
+}
+
+/* ROUTER */
+
+function render(){
+  const app = document.getElementById('app')
+  app.classList.remove('fade-in')
+  void app.offsetWidth
+  app.classList.add('fade-in')
+
+  if(screen==="categories") renderCategories()
+  if(screen==="category") renderCategory()
+  if(screen==="checklist") renderChecklist()
+}
+
+/* CATEGORIES */
+
+async function renderCategories(){
+
+  // подгружаем чек-листы для прогресса
+  for(let c of categories){
+    const res = await fetch(`./data/${c.id}/index.json?v=`+Date.now())
+    const files = await res.json()
+
+    const lists = await Promise.all(
+      files.map(f=>fetch(`./data/${c.id}/${f}`).then(r=>r.json()))
+    )
+    c.checklists = lists
+  }
+
   const app = document.getElementById('app')
 
   app.innerHTML = `
     <h1>Checklistings</h1>
+    <div class="subtitle">Система развития</div>
+
+    <div class="card global">
+      <div class="card-title">Общий прогресс</div>
+      <div>${calcGlobalProgress()}%</div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" style="width:${calcGlobalProgress()}%"></div>
+      </div>
+    </div>
 
     ${categories.map(c=>`
       <div class="card" onclick="openCategory('${c.id}')">
-        ${c.icon} ${c.title}
+        <div class="card-title">${c.icon} ${c.title}</div>
+        <div class="card-sub">
+          ${c.checklists.slice(0,3).map(x=>x.title).join(', ')}
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:${calcCategoryProgress(c)}%"></div>
+        </div>
       </div>
     `).join('')}
   `
 }
 
-/* ---------- CATEGORY ---------- */
+/* CATEGORY */
 
-async function openCategory(id){
+function openCategory(id){
   currentCategory = categories.find(c=>c.id===id)
-
-  const res = await fetch(`./data/${id}/index.json?v=`+Date.now())
-  const files = await res.json()
-
-  const checklists = await Promise.all(
-    files.map(f=>fetch(`./data/${id}/${f}`).then(r=>r.json()))
-  )
-
-  currentCategory.checklists = checklists
-
-  renderCategory()
+  screen="category"
+  render()
 }
 
 function renderCategory(){
   const app = document.getElementById('app')
 
   app.innerHTML = `
-    <button onclick="renderCategories()">← Назад</button>
+    <button onclick="back()">← Назад</button>
     <h2>${currentCategory.title}</h2>
 
     ${currentCategory.checklists.map(cl=>`
       <div class="card" onclick="openChecklist('${cl.id}')">
-        <b>${cl.title}</b><br>
-        <small>${cl.subtitle}</small><br>
-        <span class="status ${localStorage.getItem(cl.id)==='done'?'done':'progress'}">
-          ${localStorage.getItem(cl.id)==='done'?'Выполнено':'В процессе'}
-        </span>
+        <div class="card-title">${cl.title}</div>
+        <div class="card-sub">${cl.subtitle}</div>
+
+        <div class="badge ${getChecklistDone(cl.id)?'done':'inprogress'}">
+          ${getChecklistDone(cl.id)?'Выполнено':'В процессе'}
+        </div>
       </div>
     `).join('')}
   `
 }
 
-/* ---------- CHECKLIST ---------- */
+/* CHECKLIST */
 
 function openChecklist(id){
   currentChecklist = currentCategory.checklists.find(c=>c.id===id)
-  renderChecklist()
+  screen="checklist"
+  render()
 }
 
 function renderChecklist(){
@@ -161,11 +257,11 @@ function renderChecklist(){
   const app = document.getElementById('app')
 
   app.innerHTML = `
-    <button onclick="renderCategory()">← Назад</button>
+    <button onclick="back()">← Назад</button>
 
-    <div class="card">
+    <div class="checklist-header">
       <h2>${c.title}</h2>
-      <div>${c.subtitle}</div>
+      <div class="card-sub">${c.subtitle}</div>
       <p>${c.description}</p>
     </div>
 
@@ -184,16 +280,22 @@ function renderChecklist(){
   `
 }
 
-/* ---------- LOGIC ---------- */
+/* LOGIC */
 
 function finishChecklist(){
   localStorage.setItem(currentChecklist.id,'done')
-  renderCategory()
+  back()
 }
 
-/* ---------- START ---------- */
+function back(){
+  if(screen==="checklist") screen="category"
+  else if(screen==="category") screen="categories"
+  render()
+}
 
-loadCategories()
+/* START */
+
+load()
 
 </script>
 </body>
