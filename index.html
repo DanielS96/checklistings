@@ -204,6 +204,7 @@ async function renderCategories(){
     ${categories.map(c=>`
       <div class="card" onclick="openCategory('${c.id}')">
         <div class="card-title">${c.icon} ${c.title}</div>
+        <div class="card-sub">${c.description || ''}</div>
         <div class="card-sub">
           ${c.checklists.slice(0,3).map(x=>x.title).join(', ')}
         </div>
