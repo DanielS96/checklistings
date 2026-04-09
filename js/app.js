@@ -9,26 +9,54 @@ let state = {
   current: null
 }
 
+// ===== STORAGE =====
+const getProgress = () => JSON.parse(localStorage.getItem('progress') || '{}')
+
+const setDone = (id)=>{
+  const p = getProgress()
+  p[id] = true
+  localStorage.setItem('progress', JSON.stringify(p))
+}
+
 // ===== INIT =====
 async function init(){
   state.categories = await loadCategories()
+  console.log('CATEGORIES:', state.categories)
   renderCategories()
 }
 
 // ===== CATEGORIES =====
 function renderCategories(){
+  const progress = getProgress()
+
+  const total = 10
+  const done = Object.keys(progress).length
+  const percent = Math.round((done / total) * 100)
+
   app.innerHTML = `
     <h1>Checklistings</h1>
 
+    <div class="card progress-card">
+      <b>Общий прогресс</b>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width:${percent}%"></div>
+      </div>
+    </div>
+
     ${state.categories.map(cat=>`
       <div class="card category" onclick="openCategory('${cat.id}')">
-        <div class="category-title">${cat.emoji} ${cat.title}</div>
-        <div>${cat.description}</div>
+        <div class="category-title">
+          ${cat.emoji || '❓'} ${cat.title}
+        </div>
+        <div class="category-desc">
+          ${cat.description}
+        </div>
       </div>
     `).join('')}
   `
 }
 
+// ===== CATEGORY =====
 window.openCategory = async (id)=>{
   state.category = id
   state.checklists = await loadChecklists(id)
@@ -73,6 +101,7 @@ window.openChecklist = (id)=>{
   `
 }
 
+// ===== TOGGLE =====
 window.toggle = (i)=>{
   const el = document.getElementById('i'+i)
   el.style.display = el.style.display==='block'?'none':'block'
@@ -112,8 +141,18 @@ window.checkQuiz = ()=>{
   })
 
   document.getElementById('result').innerHTML = `
-    Результат: ${score}/${c.quiz.length}
+    <div class="card">
+      Результат: ${score}/${c.quiz.length}
+      <button onclick="finish('${c.id}')">Завершить</button>
+    </div>
   `
+}
+
+// ===== FINISH =====
+window.finish = (id)=>{
+  setDone(id)
+  alert('Готово ✅')
+  renderCategories()
 }
 
 init()
