@@ -1,16 +1,18 @@
 export function renderChecklist(c){
 
   return `
-    <h2>${c.title}</h2>
-    <p>${c.description}</p>
+    <div class="header">
+      <h2>${c.title}</h2>
+      <p>${c.description}</p>
+    </div>
 
     ${c.items.map(i=>`
       <details>
         <summary>${i.emoji} ${i.title}</summary>
-        <div>
-          <div>${i.source}</div>
+        <div class="content">
+          <div class="source">${i.source}</div>
           <div>${i.text}</div>
-          <div><b>Совет:</b> ${i.tip}</div>
+          <div class="tip"><b>Совет:</b> ${i.tip}</div>
         </div>
       </details>
     `).join('')}
