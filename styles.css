@@ -1,6 +1,6 @@
 body {
   margin:0;
-  font-family:-apple-system, BlinkMacSystemFont;
+  font-family:-apple-system;
   background:#f2f2f7;
 }
 
@@ -10,10 +10,8 @@ body {
   padding:16px;
 }
 
-/* TITLE */
 h1 {
-  font-size:28px;
-  margin-bottom:16px;
+  font-size:30px;
 }
 
 /* CARD */
@@ -23,11 +21,6 @@ h1 {
   padding:16px;
   margin-bottom:12px;
   box-shadow:0 6px 20px rgba(0,0,0,0.06);
-  transition: transform 0.2s ease;
-}
-
-.card:hover {
-  transform:scale(1.01);
 }
 
 /* PROGRESS */
@@ -36,13 +29,11 @@ h1 {
   background:#eee;
   border-radius:10px;
   overflow:hidden;
-  margin-top:8px;
 }
 
 .progress-fill {
   height:100%;
   background:linear-gradient(90deg,#34c759,#30d158);
-  transition: width 0.4s ease;
 }
 
 /* CATEGORY */
@@ -58,14 +49,14 @@ h1 {
 .category-desc {
   color:#666;
   font-size:14px;
-  margin-top:4px;
 }
 
-/* STATUS */
-.status {
-  margin-top:6px;
-  font-size:13px;
-  color:#888;
+/* ===== CHECKLIST ===== */
+
+.checklist-description {
+  color:#555;
+  line-height:1.5;
+  margin-bottom:16px;
 }
 
 /* ITEM */
@@ -74,24 +65,82 @@ h1 {
   border-radius:16px;
   margin-bottom:10px;
   box-shadow:0 3px 10px rgba(0,0,0,0.04);
+  transition:0.2s;
+}
+
+.item:hover {
+  transform: translateY(-2px);
 }
 
 .item-header {
   padding:14px;
   font-weight:600;
   cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.item-header::after {
+  content: "›";
+  font-size:20px;
+  transition:0.2s;
+}
+
+.item.open .item-header::after {
+  transform: rotate(90deg);
 }
 
 .item-body {
-  max-height:0;
-  overflow:hidden;
-  padding:0 14px;
-  transition: all 0.3s ease;
+  display:none;
+  padding:14px;
+  border-top:1px solid #eee;
 }
 
-.item-body.open {
+/* TIP */
+.tip {
+  background:#f0f9ff;
+  padding:10px;
+  border-radius:10px;
+  margin-top:10px;
+  font-size:14px;
+}
+
+/* ===== QUIZ ===== */
+
+.quiz {
+  margin-top:20px;
+}
+
+.quiz-question {
+  background:white;
   padding:14px;
-  max-height:500px;
+  border-radius:16px;
+  margin-bottom:12px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.04);
+}
+
+.quiz-q {
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.quiz-option {
+  display:block;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #eee;
+  margin-bottom:6px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.quiz-option:hover {
+  background:#f5f5f5;
+}
+
+.quiz-option input {
+  margin-right:8px;
 }
 
 /* BUTTON */
