@@ -49,7 +49,7 @@ function renderCategories(){
 
     ${state.categories.map(c=>`
       <div class="card category" onclick="openCategory('${c.id}')">
-        <div class="category-title">${c.emoji} ${c.title}</div>
+        <div class="category-title">${c.icon} ${c.title}</div>
         <div class="category-desc">${c.description}</div>
       </div>
     `).join('')}
