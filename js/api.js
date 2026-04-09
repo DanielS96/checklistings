@@ -1,14 +1,57 @@
 export async function loadCategories(){
-  return fetch('data/categories.json').then(r=>r.json())
+  try {
+    const res = await fetch('data/categories.json')
+    return await res.json()
+  } catch (e) {
+    console.error('Ошибка загрузки categories.json', e)
+    return []
+  }
 }
 
 export async function loadChecklists(categoryId){
-  const files = await fetch(`data/${categoryId}/index.json`)
-    .then(r=>r.json())
+  try {
+    const res = await fetch(`data/${categoryId}/index.json`)
+    const files = await res.json()
 
-  return Promise.all(
-    files.map(f =>
-      fetch(`data/${categoryId}/${f}`).then(r=>r.json())
+    if(!Array.isArray(files)){
+      console.error(`index.json в ${categoryId} не является массивом`)
+      return []
+    }
+
+    const results = await Promise.all(
+      files.map(async (f)=>{
+        try {
+          const r = await fetch(`data/${categoryId}/${f}`)
+
+          if(!r.ok){
+            console.error(`Файл не найден: ${categoryId}/${f}`)
+            return null
+          }
+
+          const data = await r.json()
+
+          // базовая защита структуры
+          return {
+            id: data.id || f,
+            title: data.title || 'Без названия',
+            subtitle: data.subtitle || '',
+            description: data.description || '',
+            items: Array.isArray(data.items) ? data.items : [],
+            quiz: Array.isArray(data.quiz) ? data.quiz : []
+          }
+
+        } catch (e) {
+          console.error(`Ошибка в файле ${categoryId}/${f}`, e)
+          return null
+        }
+      })
     )
-  )
+
+    // убираем битые файлы
+    return results.filter(Boolean)
+
+  } catch (e) {
+    console.error(`Ошибка загрузки index.json для ${categoryId}`, e)
+    return []
+  }
 }
