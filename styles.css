@@ -1,20 +1,17 @@
 body {
   margin:0;
-  font-family:-apple-system, BlinkMacSystemFont;
+  font-family:-apple-system;
   background:#f2f2f7;
-  color:#111;
 }
 
 #app {
-  max-width:720px;
+  max-width:700px;
   margin:auto;
   padding:16px;
 }
 
-/* HEADER */
 h1 {
-  font-size:32px;
-  margin-bottom:16px;
+  font-size:30px;
 }
 
 /* CARD */
@@ -22,16 +19,11 @@ h1 {
   background:white;
   border-radius:20px;
   padding:16px;
-  margin-bottom:14px;
-  box-shadow:0 8px 24px rgba(0,0,0,0.06);
+  margin-bottom:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.06);
 }
 
 /* PROGRESS */
-.progress-title {
-  font-weight:600;
-  margin-bottom:8px;
-}
-
 .progress-bar {
   height:10px;
   background:#eee;
@@ -42,7 +34,6 @@ h1 {
 .progress-fill {
   height:100%;
   background:linear-gradient(90deg,#34c759,#30d158);
-  transition:0.4s;
 }
 
 /* CATEGORY */
@@ -51,24 +42,13 @@ h1 {
 }
 
 .category-title {
-  font-size:18px;
   font-weight:700;
+  font-size:18px;
 }
 
 .category-desc {
   color:#666;
   font-size:14px;
-  margin-top:4px;
-}
-
-/* CHECKLIST */
-.check-title {
-  font-weight:700;
-}
-
-.check-sub {
-  font-size:14px;
-  color:#666;
 }
 
 /* ITEM */
@@ -76,7 +56,7 @@ h1 {
   background:white;
   border-radius:16px;
   margin-bottom:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.04);
+  box-shadow:0 3px 10px rgba(0,0,0,0.04);
 }
 
 .item-header {
@@ -89,19 +69,6 @@ h1 {
   display:none;
   padding:14px;
   border-top:1px solid #eee;
-  animation:fade 0.2s ease;
-}
-
-@keyframes fade {
-  from {opacity:0; transform:translateY(-5px);}
-  to {opacity:1;}
-}
-
-.tip {
-  background:#eef4ff;
-  padding:10px;
-  border-radius:10px;
-  margin-top:8px;
 }
 
 /* BUTTON */
@@ -112,12 +79,10 @@ button {
   border-radius:12px;
   background:#007aff;
   color:white;
-  margin-top:12px;
-  font-weight:600;
+  margin-top:10px;
 }
 
 .back {
   background:none;
   color:#007aff;
-  margin-bottom:10px;
 }
