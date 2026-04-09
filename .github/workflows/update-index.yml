@@ -1,43 +1,45 @@
-name: Update index.json
+name: Build & Deploy
 
 on:
   push:
     paths:
-      - 'data/**.json'
+      - 'data/**'
+      - 'index.html'
+      - 'js/**'
 
 jobs:
-  update-index:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Generate index files
+      # 🔥 авто-индексация
+      - name: Generate index.json
         run: |
           for dir in data/*/ ; do
             if [ -d "$dir" ]; then
-              files=$(ls "$dir"*.json 2>/dev/null | grep -v index.json | xargs -n 1 basename)
-              if [ ! -z "$files" ]; then
-                printf "[\n" > "$dir/index.json"
-                first=true
-                for file in $files; do
-                  if [ "$first" = true ]; then
-                    printf "  \"%s\"" "$file" >> "$dir/index.json"
-                    first=false
-                  else
-                    printf ",\n  \"%s\"" "$file" >> "$dir/index.json"
-                  fi
-                done
-                printf "\n]\n" >> "$dir/index.json"
-              fi
+              ls "$dir" | grep '.json' | grep -v 'index.json' > "$dir/index.json"
             fi
           done
 
-      - name: Commit changes
+      - name: Commit index.json
         run: |
-          git config user.name \"github-actions\"
-          git config user.email \"actions@github.com\"
-          git add data/*/index.json
-          git commit -m \"auto-update index.json\" || echo \"No changes\"
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add data/**/index.json
+          git commit -m "auto update index" || echo "no changes"
           git push
+
+      # 🔥 деплой
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.'
+
+      - name: Deploy
+        uses: actions/deploy-pages@v2
