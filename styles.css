@@ -183,3 +183,8 @@ body {
   border-radius:10px;
   margin-bottom:6px;
 }
+
+.item-body p {
+  margin:0;
+  line-height:1.4;
+}
