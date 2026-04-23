@@ -149,7 +149,7 @@ body {
 }
 
 .item-header {
-  padding:16px;
+  padding:14px;
   display:flex;
   justify-content:space-between;
   cursor:pointer;
@@ -206,7 +206,7 @@ body {
 }
 
 .item-header {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 15px;
 }
 
