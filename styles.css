@@ -283,25 +283,21 @@ h2 {
   }
 }
 
-
-
-
-
-/* Анимированный градиент для дашборда */
+/* Animated gradient for dashboard */
 .dashboard {
   background: linear-gradient(135deg, #007aff, #34c759, #5856d6, #007aff);
   background-size: 300% 300%;
   animation: gradientShift 8s ease infinite;
 }
 
-/* Градиент для кнопок */
+/* Gradient for buttons */
 .btn-primary {
   background: linear-gradient(135deg, #007aff, #5856d6, #007aff);
   background-size: 200% 200%;
   animation: gradientShift 6s ease infinite;
 }
 
-/* Легкий градиент для карточек категорий при наведении */
+/* Subtle gradient for category cards on hover */
 .card.category {
   transition: all 0.3s ease;
 }
