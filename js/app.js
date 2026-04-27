@@ -131,7 +131,7 @@ async function renderCategories() {
   categoriesWithProgress.sort((a, b) => b.percent - a.percent);
 
   app.innerHTML = `
-    <h1>Checklists!</h1>
+    <h1>Checklistings!</h1>
     <div class="dashboard">
       <div class="dashboard-title">Your Progress</div>
       <div class="dashboard-level">${level}</div>
