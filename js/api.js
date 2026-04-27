@@ -3,7 +3,7 @@ export async function loadCategories() {
     const res = await fetch('data/categories.json')
     return await res.json()
   } catch (e) {
-    console.error('Ошибка загрузки categories.json', e)
+    console.error('Error loading categories.json', e)
     return []
   }
 }
@@ -14,7 +14,7 @@ export async function loadChecklists(categoryId) {
     const files = await res.json()
 
     if (!Array.isArray(files)) {
-      console.error(`index.json в ${categoryId} не является массивом`)
+      console.error(`index.json in ${categoryId} is not an array`)
       return []
     }
 
@@ -24,7 +24,7 @@ export async function loadChecklists(categoryId) {
           const r = await fetch(`data/${categoryId}/${f}`)
 
           if (!r.ok) {
-            console.error(`Файл не найден: ${categoryId}/${f}`)
+            console.error(`File not found: ${categoryId}/${f}`)
             return null
           }
 
@@ -32,7 +32,7 @@ export async function loadChecklists(categoryId) {
 
           return {
             id: data.id || f,
-            title: data.title || 'Без названия',
+            title: data.title || 'Untitled',
             subtitle: data.subtitle || '',
             description: data.description || '',
             items: Array.isArray(data.items) ? data.items : [],
@@ -40,7 +40,7 @@ export async function loadChecklists(categoryId) {
           }
 
         } catch (e) {
-          console.error(`Ошибка в файле ${categoryId}/${f}`, e)
+          console.error(`Error in file ${categoryId}/${f}`, e)
           return null
         }
       })
@@ -49,7 +49,7 @@ export async function loadChecklists(categoryId) {
     return results.filter(Boolean)
 
   } catch (e) {
-    console.error(`Ошибка загрузки index.json для ${categoryId}`, e)
+    console.error(`Error loading index.json for ${categoryId}`, e)
     return []
   }
 }
