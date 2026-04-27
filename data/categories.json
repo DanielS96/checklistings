@@ -1,72 +1,72 @@
 [
   {
     "id": "self-dev",
-    "title": "Саморазвитие",
+    "title": "Self-Development",
     "icon": "🧠",
-    "description": "Навыки, мышление и рост личности для достижения целей",
+    "description": "Skills, mindset, and personal growth for achieving goals",
     "free_checklist": "self-development-pro"
   },
   {
     "id": "finance",
-    "title": "Финансы",
+    "title": "Finance",
     "icon": "💰",
-    "description": "Контроль денег, накопления, инвестиции и финансовая свобода",
+    "description": "Money control, savings, investments, and financial freedom",
     "free_checklist": "finance-investing-pro"
   },
   {
     "id": "relationships",
-    "title": "Отношения",
+    "title": "Relationships",
     "icon": "❤️",
-    "description": "Знакомства, общение и построение прочных и сильных связей",
+    "description": "Dating, communication, and building strong lasting connections",
     "free_checklist": "relationships-pro"
   },
   {
     "id": "home",
-    "title": "Дом и быт",
+    "title": "Home & Living",
     "icon": "🏠",
-    "description": "Порядок, комфорт и организация повседневной жизни",
+    "description": "Organization, comfort, and everyday life management",
     "free_checklist": "home-living-pro"
   },
   {
     "id": "health",
-    "title": "Здоровье и энергия",
+    "title": "Health & Energy",
     "icon": "🧍‍♂️",
-    "description": "Физическое состояние, сон, питание и уровень энергии",
+    "description": "Physical fitness, sleep, nutrition, and energy levels",
     "free_checklist": "health-energy-pro"
   },
   {
     "id": "books",
-    "title": "Книги",
+    "title": "Books",
     "icon": "📚",
-    "description": "Ключевые идеи из лучших книг и применение знаний на практике",
+    "description": "Key insights from top books and practical knowledge application",
     "free_checklist": "books-reading-pro"
   },
   {
     "id": "work",
-    "title": "Работа и продуктивность",
+    "title": "Work & Productivity",
     "icon": "💼",
-    "description": "Фокус, эффективность и управление задачами",
+    "description": "Focus, efficiency, and task management",
     "free_checklist": "work-productivity-pro"
   },
   {
     "id": "lifestyle",
-    "title": "Образ жизни",
+    "title": "Lifestyle",
     "icon": "✨",
-    "description": "Стиль жизни, привычки и повышение качества жизни",
+    "description": "Lifestyle design, habits, and improving quality of life",
     "free_checklist": "lifestyle-design-pro"
   },
   {
     "id": "travel",
-    "title": "Путешествия",
+    "title": "Travel",
     "icon": "🌍",
-    "description": "Поездки, планирование туров и новые впечатления",
+    "description": "Trips, tour planning, and new experiences",
     "free_checklist": "travel-exploration-pro"
   },
   {
     "id": "mindfulness",
-    "title": "Психология и осознанность",
+    "title": "Psychology & Mindfulness",
     "icon": "🧘",
-    "description": "Эмоции, мышление, внутреннее состояние и свобода",
+    "description": "Emotions, mindset, inner state, and freedom",
     "free_checklist": "psychology-mindfulness-pro"
   }
 ]
