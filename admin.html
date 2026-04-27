@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Админка Checklistings</title>
+    <title>Checklistings Admin</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -237,73 +237,73 @@
         <div class="header">
             <div>
                 <h1>📊 Checklistings</h1>
-                <p>Админ-панель v2.0</p>
+                <p>Admin Panel v2.0</p>
             </div>
             <button class="btn" style="background:rgba(255,255,255,0.2);color:white;" onclick="loadData()">🔄</button>
         </div>
         
-        <!-- Вкладки -->
+        <!-- Tabs -->
         <div class="tabs">
-            <button class="tab active" onclick="showTab('overview')">📋 Обзор</button>
-            <button class="tab" onclick="showTab('completed')">✅ Пройденные</button>
-            <button class="tab" onclick="showTab('opened')">👁 Открытые</button>
-            <button class="tab" onclick="showTab('categories')">📂 Категории</button>
-            <button class="tab" onclick="showTab('users')">👥 Пользователи</button>
-            <button class="tab" onclick="showTab('sales')">💰 Продажи</button>
+            <button class="tab active" onclick="showTab('overview')">📋 Overview</button>
+            <button class="tab" onclick="showTab('completed')">✅ Completed</button>
+            <button class="tab" onclick="showTab('opened')">👁 Opened</button>
+            <button class="tab" onclick="showTab('categories')">📂 Categories</button>
+            <button class="tab" onclick="showTab('users')">👥 Users</button>
+            <button class="tab" onclick="showTab('sales')">💰 Sales</button>
         </div>
         
-        <!-- Обзор -->
+        <!-- Overview -->
         <div id="tab-overview">
             <div class="stats" id="stats-overview"></div>
             <div class="grid-2">
                 <div class="card">
-                    <h3>🏆 Топ пройденных</h3>
+                    <h3>🏆 Top Completed</h3>
                     <div id="top-completed"></div>
                 </div>
                 <div class="card">
-                    <h3>📅 Продажи по дням</h3>
+                    <h3>📅 Sales by Day</h3>
                     <div id="sales-chart"></div>
                 </div>
             </div>
         </div>
         
-        <!-- Пройденные -->
+        <!-- Completed -->
         <div id="tab-completed" style="display:none;">
             <div class="card">
-                <h3>✅ Рейтинг пройденных чек-листов</h3>
+                <h3>✅ Completed Checklists Ranking</h3>
                 <div class="ranking-list" id="ranking-completed"></div>
             </div>
         </div>
         
-        <!-- Открытые -->
+        <!-- Opened -->
         <div id="tab-opened" style="display:none;">
             <div class="card">
-                <h3>👁 Рейтинг открытых (не законченных) чек-листов</h3>
+                <h3>👁 Opened (Unfinished) Checklists Ranking</h3>
                 <div class="ranking-list" id="ranking-opened"></div>
             </div>
         </div>
         
-        <!-- Категории -->
+        <!-- Categories -->
         <div id="tab-categories" style="display:none;">
             <div class="card">
-                <h3>📂 Рейтинг категорий</h3>
+                <h3>📂 Categories Ranking</h3>
                 <div class="ranking-list" id="ranking-categories"></div>
             </div>
         </div>
         
-        <!-- Пользователи -->
+        <!-- Users -->
         <div id="tab-users" style="display:none;">
             <div class="stats" id="stats-users"></div>
             <div class="card">
-                <h3>👥 Последние посетители</h3>
+                <h3>👥 Recent Visitors</h3>
                 <div id="recent-users"></div>
             </div>
         </div>
         
-        <!-- Продажи -->
+        <!-- Sales -->
         <div id="tab-sales" style="display:none;">
             <div class="card">
-                <h3>💰 История продаж</h3>
+                <h3>💰 Sales History</h3>
                 <div id="sales-history"></div>
             </div>
         </div>
@@ -321,13 +321,13 @@
                 renderAll();
             } catch (e) {
                 console.error('Error:', e);
-                alert('Ошибка загрузки: ' + e.message);
+                alert('Loading error: ' + e.message);
             }
         }
         
         function showLoading() {
             document.querySelectorAll('.ranking-list, [id^="top-"], [id^="sales-"], [id^="recent-"], [id^="stats-"]').forEach(el => {
-                if (el) el.innerHTML = '<div class="empty">Загрузка...</div>';
+                if (el) el.innerHTML = '<div class="empty">Loading...</div>';
             });
         }
         
@@ -346,19 +346,19 @@
             const returnRate = d.total_users > 0 ? Math.round((d.returning_users / d.total_users) * 100) : 0;
             
             document.getElementById('stats-overview').innerHTML = `
-                <div class="stat-card blue"><div class="number">${d.total_users || 0}</div><div class="label">Всего пользователей</div></div>
-                <div class="stat-card purple"><div class="number">${d.returning_users || 0}</div><div class="label">Вернувшихся</div></div>
-                <div class="stat-card"><div class="number" style="color:#007aff;">${d.unique_buyers || 0}</div><div class="label">Покупателей</div></div>
-                <div class="stat-card revenue"><div class="number">${d.total_revenue || 0} ⭐</div><div class="label">Заработано</div></div>
-                <div class="stat-card green"><div class="number">${convRate}%</div><div class="label">Конверсия</div></div>
-                <div class="stat-card"><div class="number" style="color:#ff9500;">${returnRate}%</div><div class="label">Возврат</div></div>
+                <div class="stat-card blue"><div class="number">${d.total_users || 0}</div><div class="label">Total Users</div></div>
+                <div class="stat-card purple"><div class="number">${d.returning_users || 0}</div><div class="label">Returning</div></div>
+                <div class="stat-card"><div class="number" style="color:#007aff;">${d.unique_buyers || 0}</div><div class="label">Buyers</div></div>
+                <div class="stat-card revenue"><div class="number">${d.total_revenue || 0} ⭐</div><div class="label">Revenue</div></div>
+                <div class="stat-card green"><div class="number">${convRate}%</div><div class="label">Conversion</div></div>
+                <div class="stat-card"><div class="number" style="color:#ff9500;">${returnRate}%</div><div class="label">Return Rate</div></div>
             `;
             
-            // Топ пройденных
+            // Top completed
             const completed = (allData.ranking || []).slice(0, 5);
             const maxComp = completed.length > 0 ? completed[0].completions : 1;
             
-            document.getElementById('top-completed').innerHTML = completed.length === 0 ? '<div class="empty">Нет данных</div>' :
+            document.getElementById('top-completed').innerHTML = completed.length === 0 ? '<div class="empty">No data</div>' :
                 completed.map((cl, i) => {
                     const pct = Math.round((cl.completions / maxComp) * 100);
                     const badge = i === 0 ? 'badge-hot' : i < 3 ? 'badge-good' : 'badge-neutral';
@@ -366,18 +366,18 @@
                         <div style="margin-bottom:10px;">
                             <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
                                 <span style="font-size:12px;font-weight:500;">${i+1}. ${cl.title}</span>
-                                <span class="badge ${badge}">${cl.completions} раз</span>
+                                <span class="badge ${badge}">${cl.completions} times</span>
                             </div>
                             <div class="ranking-bar"><div class="ranking-fill" style="width:${pct}%"></div></div>
                         </div>
                     `;
                 }).join('');
             
-            // График продаж
+            // Sales chart
             const byDay = allData.sales_by_day || [];
             const maxDay = byDay.length > 0 ? Math.max(...byDay.map(d => d.count)) : 1;
             
-            document.getElementById('sales-chart').innerHTML = byDay.length === 0 ? '<div class="empty">Нет данных</div>' : `
+            document.getElementById('sales-chart').innerHTML = byDay.length === 0 ? '<div class="empty">No data</div>' : `
                 <div class="bar-chart">
                     ${byDay.slice(-7).map(day => {
                         const h = Math.max(6, (day.count / maxDay) * 140);
@@ -391,7 +391,7 @@
             const ranking = allData.ranking || [];
             const maxVal = ranking.length > 0 ? ranking[0].completions : 1;
             
-            document.getElementById('ranking-completed').innerHTML = ranking.length === 0 ? '<div class="empty">Нет прохождений</div>' :
+            document.getElementById('ranking-completed').innerHTML = ranking.length === 0 ? '<div class="empty">No completions</div>' :
                 ranking.map((cl, i) => {
                     const pos = i + 1;
                     const pct = Math.round((cl.completions / maxVal) * 100);
@@ -409,7 +409,7 @@
                             </div>
                             <div class="ranking-stats">
                                 <div class="ranking-value">${cl.completions}</div>
-                                <div class="ranking-sub">раз</div>
+                                <div class="ranking-sub">times</div>
                             </div>
                         </div>
                     `;
@@ -417,42 +417,42 @@
         }
         
     function renderOpened() {
-    const opened = allData.opened_ranking || [];
-    // Сортируем по not_completed (открытые, но не пройденные)
-    const sorted = opened.sort((a, b) => (b.not_completed || 0) - (a.not_completed || 0));
-    const maxVal = sorted.length > 0 ? Math.max(...sorted.map(o => o.not_completed || 0)) : 1;
-    
-    document.getElementById('ranking-opened').innerHTML = sorted.length === 0 ? '<div class="empty">Нет открытий</div>' :
-        sorted.map((cl, i) => {
-            const pos = i + 1;
-            const pct = Math.round(((cl.not_completed || 0) / maxVal) * 100);
-            let posClass = 'position-other', medal = pos;
-            if (pos === 1) { posClass = 'position-1'; medal = '🥇'; }
-            else if (pos === 2) { posClass = 'position-2'; medal = '🥈'; }
-            else if (pos === 3) { posClass = 'position-3'; medal = '🥉'; }
-            
-            return `
-                <div class="ranking-item">
-                    <div class="ranking-position ${posClass}">${medal}</div>
-                    <div class="ranking-info">
-                        <div class="ranking-title">${cl.title || cl.checklist_id}</div>
-                        <div class="ranking-bar"><div class="ranking-fill" style="width:${pct}%"></div></div>
+        const opened = allData.opened_ranking || [];
+        // Sort by not_completed (opened but not finished)
+        const sorted = opened.sort((a, b) => (b.not_completed || 0) - (a.not_completed || 0));
+        const maxVal = sorted.length > 0 ? Math.max(...sorted.map(o => o.not_completed || 0)) : 1;
+        
+        document.getElementById('ranking-opened').innerHTML = sorted.length === 0 ? '<div class="empty">No opens</div>' :
+            sorted.map((cl, i) => {
+                const pos = i + 1;
+                const pct = Math.round(((cl.not_completed || 0) / maxVal) * 100);
+                let posClass = 'position-other', medal = pos;
+                if (pos === 1) { posClass = 'position-1'; medal = '🥇'; }
+                else if (pos === 2) { posClass = 'position-2'; medal = '🥈'; }
+                else if (pos === 3) { posClass = 'position-3'; medal = '🥉'; }
+                
+                return `
+                    <div class="ranking-item">
+                        <div class="ranking-position ${posClass}">${medal}</div>
+                        <div class="ranking-info">
+                            <div class="ranking-title">${cl.title || cl.checklist_id}</div>
+                            <div class="ranking-bar"><div class="ranking-fill" style="width:${pct}%"></div></div>
+                        </div>
+                        <div class="ranking-stats">
+                            <div class="ranking-value">${cl.not_completed || 0}</div>
+                            <div class="ranking-sub">opened (unfinished)</div>
+                            <div style="font-size:10px;color:#999;">total opens: ${cl.opens || 0}</div>
+                        </div>
                     </div>
-                    <div class="ranking-stats">
-                        <div class="ranking-value">${cl.not_completed || 0}</div>
-                        <div class="ranking-sub">открыто (не пройдено)</div>
-                        <div style="font-size:10px;color:#999;">всего открытий: ${cl.opens || 0}</div>
-                    </div>
-                </div>
-            `;
-        }).join('');
-}
+                `;
+            }).join('');
+    }
         
         function renderCategories() {
             const cats = allData.categories_ranking || [];
             const maxVal = cats.length > 0 ? cats[0].opens : 1;
             
-            document.getElementById('ranking-categories').innerHTML = cats.length === 0 ? '<div class="empty">Нет данных</div>' :
+            document.getElementById('ranking-categories').innerHTML = cats.length === 0 ? '<div class="empty">No data</div>' :
                 cats.map((cat, i) => {
                     const pos = i + 1;
                     const pct = Math.round((cat.opens / maxVal) * 100);
@@ -470,7 +470,7 @@
                             </div>
                             <div class="ranking-stats">
                                 <div class="ranking-value">${cat.opens}</div>
-                                <div class="ranking-sub">открытий</div>
+                                <div class="ranking-sub">opens</div>
                             </div>
                         </div>
                     `;
@@ -482,17 +482,17 @@
             const returnRate = d.total_users > 0 ? Math.round((d.returning_users / d.total_users) * 100) : 0;
             
             document.getElementById('stats-users').innerHTML = `
-                <div class="stat-card blue"><div class="number">${d.total_users || 0}</div><div class="label">Всего</div></div>
-                <div class="stat-card purple"><div class="number">${d.returning_users || 0}</div><div class="label">Вернувшихся</div></div>
-                <div class="stat-card green"><div class="number">${returnRate}%</div><div class="label">% возврата</div></div>
-                <div class="stat-card"><div class="number" style="color:#007aff;">${d.avg_visits || 0}</div><div class="label">Среднее посещений</div></div>
+                <div class="stat-card blue"><div class="number">${d.total_users || 0}</div><div class="label">Total</div></div>
+                <div class="stat-card purple"><div class="number">${d.returning_users || 0}</div><div class="label">Returning</div></div>
+                <div class="stat-card green"><div class="number">${returnRate}%</div><div class="label">% Return</div></div>
+                <div class="stat-card"><div class="number" style="color:#007aff;">${d.avg_visits || 0}</div><div class="label">Avg Visits</div></div>
             `;
             
             const users = allData.recent_visitors || [];
             
-            document.getElementById('recent-users').innerHTML = users.length === 0 ? '<div class="empty">Нет данных</div>' : `
+            document.getElementById('recent-users').innerHTML = users.length === 0 ? '<div class="empty">No data</div>' : `
                 <table>
-                    <tr><th>User ID</th><th>Имя</th><th>Посещений</th><th>Последний визит</th></tr>
+                    <tr><th>User ID</th><th>Name</th><th>Visits</th><th>Last Visit</th></tr>
                     ${users.slice(0, 15).map(u => `
                         <tr>
                             <td>${u.user_id}</td>
@@ -508,9 +508,9 @@
         function renderSales() {
             const buyers = allData.recent_buyers || [];
             
-            document.getElementById('sales-history').innerHTML = buyers.length === 0 ? '<div class="empty">Нет продаж</div>' : `
+            document.getElementById('sales-history').innerHTML = buyers.length === 0 ? '<div class="empty">No sales</div>' : `
                 <table>
-                    <tr><th>User ID</th><th>Чек-лист</th><th>Сумма</th><th>Дата</th></tr>
+                    <tr><th>User ID</th><th>Checklist</th><th>Amount</th><th>Date</th></tr>
                     ${buyers.slice(0, 20).map(u => `
                         <tr>
                             <td>${u.user_id}</td>
