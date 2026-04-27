@@ -2,7 +2,7 @@ import { loadCategories, loadChecklists } from './api.js';
 import { isPaid, needsPayment, showPaymentModal, getPrice } from './payments.js';
 
 const app = document.getElementById('app');
-const WORKER_URL = 'https://checklistings.dan-svistunov.workers.dev';
+const WORKER_URL = 'https://checklistings-en.dan-svistunov.workers.dev';
 
 let state = {
   screen: 'categories',
@@ -36,10 +36,10 @@ const setOpened = (id) => {
 };
 
 function getLevel(percent) {
-  if (percent < 20) return 'Новичок';
-  if (percent < 50) return 'Любитель';
-  if (percent < 80) return 'Продвинутый';
-  return 'Мастер';
+  if (percent < 20) return 'Beginner';
+  if (percent < 50) return 'Amateur';
+  if (percent < 80) return 'Advanced';
+  return 'Master';
 }
 
 async function trackUser() {
@@ -102,7 +102,7 @@ async function init() {
     render();
   } catch (e) {
     console.error('Init error:', e);
-    app.innerHTML = '<p style="text-align:center;padding:40px;">Ошибка загрузки</p>';
+    app.innerHTML = '<p style="text-align:center;padding:40px;">Loading error</p>';
   }
 }
 
@@ -131,12 +131,12 @@ async function renderCategories() {
   categoriesWithProgress.sort((a, b) => b.percent - a.percent);
 
   app.innerHTML = `
-    <h1>Чек-листы!</h1>
+    <h1>Checklists!</h1>
     <div class="dashboard">
-      <div class="dashboard-title">Ваш прогресс</div>
+      <div class="dashboard-title">Your Progress</div>
       <div class="dashboard-level">${level}</div>
       <div class="dashboard-bar"><div class="dashboard-fill" style="width:${percent}%"></div></div>
-      <div style="margin-top:6px;">${percent}% завершено</div>
+      <div style="margin-top:6px;">${percent}% completed</div>
     </div>
     ${categoriesWithProgress.map(c => `
       <div class="card category" onclick="openCategory('${c.id}')">
@@ -167,9 +167,9 @@ window.openCategory = async (id) => {
 function getStatus(id) {
   const progress = getProgress();
   const opened = getOpened();
-  if (progress[id]) return { text: 'Выполнен', class: 'done' };
-  if (opened[id]) return { text: 'Не завершен', class: 'progress' };
-  return { text: 'Новый', class: 'new' };
+  if (progress[id]) return { text: 'Completed', class: 'done' };
+  if (opened[id]) return { text: 'In Progress', class: 'progress' };
+  return { text: 'New', class: 'new' };
 }
 
 function renderList() {
@@ -193,7 +193,7 @@ function renderList() {
   });
 
   app.innerHTML = `
-    <button class="btn btn-ghost" onclick="goBack()">← Назад</button>
+    <button class="btn btn-ghost" onclick="goBack()">← Back</button>
     <h2 style="margin-top:8px;">${cat.icon} ${cat.title}</h2>
     <p style="font-size:13px;color:#666;margin-bottom:16px;">${cat.description}</p>
     ${sorted.map(c => {
@@ -216,7 +216,7 @@ function renderList() {
     }).join('')}
   `;
 
-  // Прокрутка вверх страницы
+  // Scroll to top of page
   window.scrollTo(0, 0);
 }
 
@@ -231,7 +231,7 @@ window.openChecklist = (id) => {
   state.current = state.checklists.find(x => x.id === id);
   state.screen = 'check';
   
-  // Трекинг открытия
+  // Opening tracking
   try {
     if (window.Telegram?.WebApp) {
       const tg = window.Telegram.WebApp;
@@ -262,7 +262,7 @@ window.openChecklist = (id) => {
 function renderCheck() {
   const c = state.current;
   app.innerHTML = `
-    <button class="btn btn-ghost" onclick="goBack()">← Назад</button>
+    <button class="btn btn-ghost" onclick="goBack()">← Back</button>
     <h2>${c.title}</h2>
     ${c.description ? `<div class="checklist-description">${c.description}</div>` : ''}
     ${(c.items || []).map((item, i) => `
@@ -292,14 +292,14 @@ function renderQuiz(c) {
   if (!c.quiz || !c.quiz.length) return '';
   return `
     <div class="quiz-section">
-      <div class="quiz-title">🧠 Мини-тест</div>
+      <div class="quiz-title">🧠 Mini Quiz</div>
       ${c.quiz.map((q, i) => `
         <div class="quiz-question">
           <p>${q.q}</p>
           ${q.a.map((a, j) => `<label class="quiz-option"><input type="radio" name="q${i}" value="${j}"> ${a}</label>`).join('')}
         </div>
       `).join('')}
-      <div style="text-align:center;margin-top:12px;"><button class="btn btn-primary" onclick="checkQuiz()">Проверить</button></div>
+      <div style="text-align:center;margin-top:12px;"><button class="btn btn-primary" onclick="checkQuiz()">Check</button></div>
     </div>
   `;
 }
@@ -315,7 +315,7 @@ window.checkQuiz = () => {
     if (v && Number(v.value) === q.correct) score++;
   });
 
-  if (!all) { alert('Ответьте на все вопросы'); return; }
+  if (!all) { alert('Answer all questions'); return; }
 
   const modal = document.createElement('div');
   modal.className = 'modal';
@@ -327,15 +327,15 @@ window.checkQuiz = () => {
 
   modal.innerHTML = ok ? `
     <div class="modal-content">
-      <h3>🎉 Отлично!</h3><p>${score}/${c.quiz.length}</p>
-      <p>Ты прошёл чек-лист 🚀</p>
-      <button class="btn btn-primary" onclick="closeModal(true)">Завершить</button>
+      <h3>🎉 Excellent!</h3><p>${score}/${c.quiz.length}</p>
+      <p>You've completed the checklist 🚀</p>
+      <button class="btn btn-primary" onclick="closeModal(true)">Finish</button>
     </div>
   ` : `
     <div class="modal-content">
-      <h3>Результат</h3><p>${score}/${c.quiz.length}</p>
-      <p>Попробуй ещё раз 🎯</p>
-      <button class="btn btn-primary" onclick="closeModal(false)">Вернуться</button>
+      <h3>Result</h3><p>${score}/${c.quiz.length}</p>
+      <p>Try again 🎯</p>
+      <button class="btn btn-primary" onclick="closeModal(false)">Go Back</button>
     </div>
   `;
   
