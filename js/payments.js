@@ -1,6 +1,6 @@
 console.log('💰 Payments module loading...');
 
-const WORKER_URL = 'https://checklistings.dan-svistunov.workers.dev';
+const WORKER_URL = 'https://checklistings-en.dan-svistunov.workers.dev';
 const CHECKLIST_PRICE = 100;
 
 let tg = null;
@@ -70,19 +70,19 @@ async function createInvoice(title, checklistId) {
     body: JSON.stringify({
       user_id: userId,
       title: title.substring(0, 32),
-      description: `Доступ к чек-листу "${title}"`.substring(0, 255),
+      description: `Access to checklist "${title}"`.substring(0, 255),
       payload: payload,
-      prices: [{ label: 'Чек-лист', amount: CHECKLIST_PRICE }]
+      prices: [{ label: 'Checklist', amount: CHECKLIST_PRICE }]
     })
   });
 
   if (!response.ok) {
     const error = await response.json();
-    throw new Error(error.details || 'Ошибка сервера');
+    throw new Error(error.details || 'Server error');
   }
 
   const data = await response.json();
-  if (!data.invoice_url) throw new Error('Нет ссылки на оплату');
+  if (!data.invoice_url) throw new Error('No payment link');
   
   return data.invoice_url;
 }
@@ -147,34 +147,34 @@ export async function payForChecklist(checklistId, title) {
   const ready = await readyPromise;
 
   if (!ready || !tg) {
-    alert('Оплата доступна только в Telegram\nОткройте приложение через бота');
+    alert('Payment is only available in Telegram\nOpen the app via the bot');
     return false;
   }
 
   if (!userId) {
-    alert('Не удалось идентифицировать пользователя');
+    alert('Could not identify user');
     return false;
   }
 
-  // Показываем загрузку
+  // Show loading
   const existingModals = document.querySelectorAll('.modal');
   existingModals.forEach(m => m.remove());
 
   const loadingModal = document.createElement('div');
   loadingModal.className = 'modal';
   loadingModal.id = 'loading-modal';
-  loadingModal.innerHTML = `<div class="modal-content"><div style="font-size:18px;">⏳</div><p>Создаём счёт...</p></div>`;
+  loadingModal.innerHTML = `<div class="modal-content"><div style="font-size:18px;">⏳</div><p>Creating invoice...</p></div>`;
   document.body.appendChild(loadingModal);
 
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
       const url = await createInvoice(title, checklistId);
       
-      // Убираем загрузку
+      // Remove loading
       const lm = document.getElementById('loading-modal');
       if (lm) lm.remove();
       
-      // Пауза перед открытием
+      // Pause before opening
       await new Promise(r => setTimeout(r, 300));
       
       console.log(`Opening invoice, attempt ${attempt}/3`);
@@ -190,25 +190,25 @@ export async function payForChecklist(checklistId, title) {
         return false;
       }
       
-      // Load failed — пробуем еще раз
+      // Load failed — try again
       if (result.error === 'failed' && attempt < 3) {
-        console.log(`Load failed, попытка ${attempt}/3`);
+        console.log(`Load failed, attempt ${attempt}/3`);
         
         const retryModal = document.createElement('div');
         retryModal.className = 'modal';
         retryModal.id = 'loading-modal';
-        retryModal.innerHTML = `<div class="modal-content"><div style="font-size:18px;">⏳</div><p>Создаём новый счёт...</p></div>`;
+        retryModal.innerHTML = `<div class="modal-content"><div style="font-size:18px;">⏳</div><p>Creating new invoice...</p></div>`;
         document.body.appendChild(retryModal);
         
         await new Promise(r => setTimeout(r, 800));
         continue;
       }
       
-      // Исчерпаны попытки
+      // Attempts exhausted
       if (attempt === 3 && result.error === 'failed') {
         const lm2 = document.getElementById('loading-modal');
         if (lm2) lm2.remove();
-        alert('Не удалось открыть оплату.\n\nПопробуйте еще раз.');
+        alert('Could not open payment.\n\nPlease try again.');
       }
       
       return false;
@@ -218,7 +218,7 @@ export async function payForChecklist(checklistId, title) {
       if (attempt === 3) {
         const lm3 = document.getElementById('loading-modal');
         if (lm3) lm3.remove();
-        alert('Ошибка: ' + e.message);
+        alert('Error: ' + e.message);
         return false;
       }
       await new Promise(r => setTimeout(r, 800));
@@ -239,7 +239,7 @@ export function showPaymentModal(checklistId, title, subtitle, onSuccess) {
   modal.innerHTML = `
     <div class="modal-content" style="max-width:340px;width:90%;padding:24px 20px;text-align:center;">
       <h3 style="font-size:20px;font-weight:700;margin:0 0 8px 0;color:#1c1c1e;">
-        Доступ к чек-листу
+        Checklist Access
       </h3>
       
       <p style="font-size:15px;font-weight:600;margin:0 0 4px 0;color:#333;line-height:1.3;">
@@ -259,15 +259,15 @@ export function showPaymentModal(checklistId, title, subtitle, onSuccess) {
       
       <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:20px;padding:10px 14px;background:rgba(52,199,89,0.08);border-radius:10px;">
         <span style="font-size:15px;">✅</span>
-        <span style="font-size:13px;font-weight:600;color:#34c759;">Доступ навсегда</span>
+        <span style="font-size:13px;font-weight:600;color:#34c759;">Lifetime access</span>
       </div>
       
       <div style="display:flex;gap:8px;">
         <button class="btn btn-ghost" id="modal-cancel" style="flex:1;background:#f2f2f7;color:#333;font-size:14px;border-radius:12px;">
-          Отмена
+          Cancel
         </button>
         <button class="btn btn-primary" id="modal-pay" style="flex:1;font-size:14px;border-radius:12px;">
-          Оплатить
+          Pay
         </button>
       </div>
     </div>
