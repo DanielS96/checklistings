@@ -1,87 +1,87 @@
 {
   "id": "health-energy-pro",
-  "title": "Биохакинг и управление энергией",
-  "subtitle": "Тело, сон, питание и ментальная выносливость",
-  "description": "Фундаментальный чек-лист о том, как работает человеческий организм и как управлять его ресурсами. Без физического здоровья и стабильной энергии любые амбиции в других сферах теряют смысл. Здесь собраны научно обоснованные принципы оптимизации тела и мозга.",
+  "title": "Biohacking and Energy Management",
+  "subtitle": "Body, Sleep, Nutrition, and Mental Stamina",
+  "description": "A foundational checklist on how the human body works and how to manage its resources. Without physical health and stable energy, any ambition in other areas loses meaning. Here are scientifically grounded principles for optimizing the body and brain.",
 
   "items": [
     {
       "emoji": "😴",
-      "title": "Циркадные ритмы и сон",
+      "title": "Circadian Rhythms and Sleep",
       "source": "Matthew Walker — Why We Sleep",
-      "text": "Сон — это не пассивный отдых, а активный процесс очистки мозга от токсинов и консолидации памяти. Хронический недосып (менее 7 часов) повышает риск деменции, снижает тестостерон и нарушает метаболизм глюкозы. Один час сна до полуночи по восстановительной ценности равен двум часам после.",
-      "tip": "Вставай и ложись в одно и то же время каждый день, включая выходные. Это настраивает внутренние часы."
+      "text": "Sleep is not passive rest, but an active process of brain cleansing from toxins and memory consolidation. Chronic sleep deprivation (less than 7 hours) increases risk of dementia, reduces testosterone, and disrupts glucose metabolism. One hour of sleep before midnight equals two hours after in restorative value.",
+      "tip": "Wake up and go to bed at the same time every day, including weekends. This sets your internal clock."
     },
     {
       "emoji": "☀️",
-      "title": "Утренний свет",
+      "title": "Morning Light",
       "source": "Andrew Huberman — Huberman Lab",
-      "text": "Первое, что должен увидеть мозг после пробуждения — это яркий естественный свет (даже в пасмурный день). Это запускает выработку кортизола в нужное время и устанавливает таймер на выработку мелатонина вечером. Без этого сигнала циркадный ритм сбивается.",
-      "tip": "В течение 30 минут после пробуждения выйди на балкон или улицу на 5-10 минут без солнцезащитных очков."
+      "text": "The first thing the brain should see after waking is bright natural light (even on overcast days). This triggers timely cortisol production and sets the timer for evening melatonin production. Without this signal, the circadian rhythm is disrupted.",
+      "tip": "Within 30 minutes of waking, go out on the balcony or outside for 5-10 minutes without sunglasses."
     },
     {
       "emoji": "☕",
-      "title": "Отложенный кофеин",
+      "title": "Delayed Caffeine",
       "source": "Andrew Huberman",
-      "text": "Аденозин — молекула усталости — накапливается за ночь. Кофеин не даёт ему энергии, он просто блокирует рецепторы аденозина. Если выпить кофе сразу после пробуждения, к полудню наступит резкий спад энергии. Организму нужно 90-120 минут, чтобы естественным образом 'проснуться'.",
-      "tip": "Пей первый кофе или чай через 1.5-2 часа после подъёма."
+      "text": "Adenosine — the fatigue molecule — accumulates overnight. Caffeine doesn't give energy; it simply blocks adenosine receptors. If you drink coffee immediately after waking, an acute energy crash occurs by midday. The body needs 90-120 minutes to naturally 'wake up.'",
+      "tip": "Drink your first coffee or tea 1.5-2 hours after waking."
     },
     {
       "emoji": "🏃",
-      "title": "Зона 2 кардио",
+      "title": "Zone 2 Cardio",
       "source": "Peter Attia — Outlive",
-      "text": "Для долголетия и метаболического здоровья важнее не высокоинтенсивные тренировки до изнеможения, а длительная работа в низкоинтенсивной 'Зоне 2'. В этом пульсовом диапазоне (120-140 уд/мин) митохондрии учатся эффективно использовать жир как топливо.",
-      "tip": "Тренируйся на пульсе, при котором ты можешь поддерживать разговор, но уже не хочешь петь."
+      "text": "For longevity and metabolic health, long-duration, low-intensity 'Zone 2' training is more important than high-intensity training to exhaustion. In this heart rate range (120-140 bpm), mitochondria learn to efficiently use fat as fuel.",
+      "tip": "Train at a heart rate where you can maintain a conversation but don't want to sing."
     },
     {
       "emoji": "💪",
-      "title": "Силовой тренинг и старение",
+      "title": "Strength Training and Aging",
       "source": "Brad Schoenfeld",
-      "text": "После 30 лет человек теряет 3-8% мышечной массы за десятилетие (саркопения). Мышцы — это не только сила, но и метаболический орган, регулирующий уровень сахара в крови. Силовые тренировки — единственный доказанный способ замедлить этот процесс.",
-      "tip": "Включи в программу базовые многосуставные упражнения: приседания, тяги, жимы."
+      "text": "After age 30, a person loses 3-8% of muscle mass per decade (sarcopenia). Muscles are not only for strength but also a metabolic organ regulating blood sugar. Strength training is the only proven way to slow this process.",
+      "tip": "Incorporate basic multi-joint exercises: squats, pulls, presses."
     },
     {
       "emoji": "🧘",
-      "title": "Парасимпатическая активация",
+      "title": "Parasympathetic Activation",
       "source": "Stephen Porges — Polyvagal Theory",
-      "text": "Хронический стресс держит нервную систему в режиме 'бей или беги'. Без сознательного включения 'режима отдыха' (парасимпатики) организм не восстанавливается. Дыхание — единственный вегетативный процесс, которым мы можем управлять осознанно.",
-      "tip": "Практикуй физиологический вздох: двойной вдох носом и долгий выдох ртом. Это снижает пульс за 30 секунд."
+      "text": "Chronic stress keeps the nervous system in 'fight or flight' mode. Without conscious activation of the 'rest' mode (parasympathetic), the body cannot recover. Breathing is the only autonomic process we can consciously control.",
+      "tip": "Practice the physiological sigh: double inhale through the nose and long exhale through the mouth. This lowers heart rate in 30 seconds."
     },
     {
       "emoji": "🥩",
-      "title": "Белковое окно и MPS",
+      "title": "Protein Timing and MPS",
       "source": "Stuart Phillips",
-      "text": "Синтез мышечного белка (MPS) — это процесс обновления тканей. Он максимально активен в первые часы после нагрузки, но для его запуска нужен строительный материал. Распределение белка равномерно в течение дня (по 30-40 г на приём) эффективнее, чем один большой ужин.",
-      "tip": "Стремись к потреблению 1.6 г белка на 1 кг веса тела в сутки."
+      "text": "Muscle Protein Synthesis (MPS) — the tissue renewal process — is most active in the first hours after exercise, but it needs building materials. Distributing protein evenly throughout the day (30-40g per meal) is more effective than one large dinner.",
+      "tip": "Aim for 1.6g of protein per kg of body weight daily."
     },
     {
       "emoji": "📱",
-      "title": "Дофаминовое голодание перед сном",
+      "title": "Dopamine Fasting Before Sleep",
       "source": "Anna Lembke",
-      "text": "Синий свет от экранов подавляет мелатонин, но главная проблема — это дофаминовая стимуляция от контента. Прокрутка ленты перед сном держит мозг в возбуждённом состоянии поиска новизны, мешая переходу в фазу глубокого сна.",
-      "tip": "За час до сна убери телефон в другую комнату или включи чёрно-белый режим экрана."
+      "text": "Blue light from screens suppresses melatonin, but the main problem is dopamine stimulation from content. Scrolling feeds before sleep keeps the brain in an excited novelty-seeking state, preventing transition into deep sleep.",
+      "tip": "Put your phone in another room an hour before bed, or activate black-and-white screen mode."
     },
     {
       "emoji": "🧊",
-      "title": "Терморегуляция для сна",
+      "title": "Thermoregulation for Sleep",
       "source": "Matthew Walker",
-      "text": "Для засыпания температура ядра тела должна упасть на 1-2 градуса. Слишком тёплая спальня — частая причина бессонницы. Тёплый душ перед сном парадоксально помогает, так как после него сосуды расширяются и тепло отдаётся в окружающую среду.",
-      "tip": "Оптимальная температура в спальне: 18-19°C."
+      "text": "For sleep onset, core body temperature must drop by 1-2 degrees. A bedroom that's too warm is a common cause of insomnia. A warm shower before bed paradoxically helps, as afterward blood vessels dilate and heat is released to the environment.",
+      "tip": "Optimal bedroom temperature: 18-19°C."
     },
     {
       "emoji": "🧠",
-      "title": "Нейропластичность и фокус",
+      "title": "Neuroplasticity and Focus",
       "source": "Andrew Huberman",
-      "text": "Мозг учится только в состоянии повышенной концентрации, за которым следует глубокий отдых. Часовые сессии работы с максимальной фокусировкой и последующий период 'блуждания мыслей' — это оптимальный цикл для запоминания и креативности.",
-      "tip": "Работай циклами 90 минут фокуса / 20 минут отдыха без телефона."
+      "text": "The brain learns only in a state of heightened concentration followed by deep rest. 90-minute sessions of maximum focus work followed by a period of 'mind-wandering' is the optimal cycle for memory and creativity.",
+      "tip": "Work in cycles: 90 minutes focus / 20 minutes rest without phone."
     }
   ],
 
   "quiz": [
-    {"q": "Через сколько после пробуждения рекомендуется пить первый кофе?", "a": ["Сразу", "30 минут", "90-120 минут"], "correct": 2},
-    {"q": "Что такое 'Зона 2' в тренировках?", "a": ["Максимальная интенсивность", "Работа на пульсе с возможностью говорить", "Силовые подходы"], "correct": 1},
-    {"q": "Какова оптимальная температура в спальне для качественного сна?", "a": ["22-24°C", "18-19°C", "Чем теплее, тем лучше"], "correct": 1},
-    {"q": "Что происходит с мышечной массой после 30 лет без силовых тренировок?", "a": ["Увеличивается", "Снижается на 3-8% за десятилетие", "Не меняется"], "correct": 1},
-    {"q": "Какой приём помогает быстро активировать парасимпатическую систему?", "a": ["Быстрое дыхание", "Двойной вдох и долгий выдох", "Задержка дыхания"], "correct": 1}
+    {"q": "How long after waking is it recommended to drink your first coffee?", "a": ["Immediately", "30 minutes", "90-120 minutes"], "correct": 2},
+    {"q": "What is 'Zone 2' in training?", "a": ["Maximum intensity", "Working at a heart rate where you can talk", "Strength sets"], "correct": 1},
+    {"q": "What is the optimal bedroom temperature for quality sleep?", "a": ["22-24°C", "18-19°C", "The warmer the better"], "correct": 1},
+    {"q": "What happens to muscle mass after age 30 without strength training?", "a": ["It increases", "It decreases by 3-8% per decade", "It doesn't change"], "correct": 1},
+    {"q": "Which technique helps quickly activate the parasympathetic system?", "a": ["Rapid breathing", "Double inhale and long exhale", "Breath hold"], "correct": 1}
   ]
 }
