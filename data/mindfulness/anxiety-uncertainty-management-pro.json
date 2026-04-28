@@ -1,106 +1,106 @@
 {
   "id": "anxiety-uncertainty-management-pro",
-  "title": "Работа с тревогой и неопределённостью",
-  "subtitle": "КПТ-техники для снижения тревоги. Различение реальной угрозы и воображаемой. Заземление и контакт с телом",
-  "description": "Этот чек-лист — практическое руководство по управлению тревогой, основанное на принципах когнитивно-поведенческой терапии (КПТ), нейробиологии и соматических практиках. Вы узнаете, как работает тревога на уровне мозга и тела, научитесь отличать реальную угрозу от воображаемой, освоите техники заземления и когнитивной реструктуризации. Тревога — это не враг, а неверно настроенная сигнализация. Цель не в том, чтобы 'никогда не тревожиться', а в том, чтобы вернуть себе контроль над реакцией на неопределённость.",
+  "title": "Working with Anxiety and Uncertainty",
+  "subtitle": "CBT techniques for reducing anxiety. Distinguishing real threat from imagined. Grounding and body contact",
+  "description": "This checklist is a practical guide to managing anxiety, based on principles of cognitive-behavioral therapy (CBT), neuroscience, and somatic practices. You'll learn how anxiety works at the brain and body level, distinguish real threat from imagined, and master grounding and cognitive restructuring techniques. Anxiety is not an enemy, but a mis-calibrated alarm system. The goal is not to 'never be anxious,' but to regain control over your response to uncertainty.",
 
   "items": [
     {
       "emoji": "🧠",
-      "title": "Нейробиология тревоги: миндалевидное тело и префронтальная кора",
+      "title": "The Neuroscience of Anxiety: Amygdala and Prefrontal Cortex",
       "source": "Joseph LeDoux — Anxious: Using the Brain to Understand and Treat Fear and Anxiety",
-      "text": "Тревога — это не 'слабость характера', а эволюционно древний механизм выживания. Миндалевидное тело (амигдала) — это 'дымовой датчик' мозга, который срабатывает за миллисекунды до того, как сознание успевает оценить ситуацию. Его задача — обнаружить угрозу и запустить реакцию 'бей, беги или замри'. Префронтальная кора — 'пожарный инспектор', который оценивает, реален ли пожар или это просто подгоревший тост. При хронической тревоге связь между амигдалой и префронтальной корой ослабевает: 'датчик' становится гиперчувствительным, а 'инспектор' теряет способность его успокоить. Понимание этой нейробиологии снимает самокритику: вы не 'тревожный человек', у вас просто тренированная амигдала и ослабленная префронтальная регуляция. И то, и другое поддаётся тренировке.",
-      "tip": "Когда чувствуете прилив тревоги, скажите себе: 'Это моя амигдала сработала. Она пытается меня защитить. Спасибо, но сейчас нет реальной опасности'. Это простое называние процесса активирует префронтальную кору и снижает интенсивность реакции."
+      "text": "Anxiety is not a 'character flaw' but an evolutionarily ancient survival mechanism. The amygdala is the brain's 'smoke detector,' reacting milliseconds before conscious awareness can assess the situation. Its job is to detect threat and trigger the 'fight, flight, or freeze' response. The prefrontal cortex is the 'fire inspector,' assessing whether there's a real fire or just burnt toast. In chronic anxiety, the connection between amygdala and prefrontal cortex weakens: the 'detector' becomes hypersensitive, and the 'inspector' loses the ability to calm it. Understanding this neurobiology removes self-criticism: you're not an 'anxious person,' you just have a trained amygdala and weakened prefrontal regulation. Both are trainable.",
+      "tip": "When you feel a surge of anxiety, tell yourself: 'This is my amygdala firing. It's trying to protect me. Thank you, but there's no real danger right now.' This simple naming process activates the prefrontal cortex and reduces reaction intensity."
     },
     {
       "emoji": "🔍",
-      "title": "Когнитивная реструктуризация: отделяем факты от интерпретаций",
+      "title": "Cognitive Restructuring: Separating Facts from Interpretations",
       "source": "David Burns — Feeling Good: The New Mood Therapy",
-      "text": "Основа КПТ-подхода к тревоге — выявление и оспаривание автоматических мыслей. Автоматические мысли — это быстрые, неосознаваемые интерпретации ситуации, которые вызывают эмоциональную реакцию. Например, начальник не ответил на письмо → автоматическая мысль 'он мной недоволен, меня уволят' → тревога. Техника когнитивной реструктуризации состоит из шагов: 1) Записать ситуацию (только факты, без оценок). 2) Записать автоматическую мысль и уровень веры в неё (0-100%). 3) Записать эмоцию и её интенсивность. 4) Найти когнитивные искажения (катастрофизация, чтение мыслей, предсказание будущего). 5) Сформулировать рациональный ответ (альтернативные объяснения, доказательства за и против). 6) Переоценить уровень веры в автоматическую мысль и интенсивность эмоции. Регулярная практика этого протокола физически укрепляет связь между префронтальной корой и амигдалой.",
-      "tip": "Заведите 'дневник автоматических мыслей' в телефоне. При вспышке тревоги запишите: 1) Что произошло? (только факт). 2) Что я подумал(а)? 3) Какие есть альтернативные, менее пугающие объяснения? (минимум 3)."
+      "text": "The foundation of the CBT approach to anxiety is identifying and challenging automatic thoughts. Automatic thoughts are fast, unconscious interpretations of a situation that trigger an emotional response. For example, boss doesn't reply to an email → automatic thought 'he's unhappy with me, I'll be fired' → anxiety. The cognitive restructuring technique consists of steps: 1) Write down the situation (facts only, no judgments). 2) Write down the automatic thought and your belief level (0-100%). 3) Write down the emotion and its intensity. 4) Identify cognitive distortions (catastrophizing, mind reading, fortune telling). 5) Formulate a rational response (alternative explanations, evidence for and against). 6) Re-rate your belief in the automatic thought and emotion intensity. Regular practice of this protocol physically strengthens the connection between prefrontal cortex and amygdala.",
+      "tip": "Start an 'automatic thought diary' on your phone. When anxiety spikes, write down: 1) What happened? (just the fact). 2) What did I think? 3) What are alternative, less frightening explanations? (at least 3)."
     },
     {
       "emoji": "📋",
-      "title": "Техника 'Декатастрофизация': что на самом деле случится в худшем случае?",
+      "title": "The 'Decatastrophizing' Technique: What Happens in the Worst Case?",
       "source": "Albert Ellis — A Guide to Rational Living",
-      "text": "Тревожный мозг — мастер катастрофизации: 'Если я опоздаю на встречу → меня уволят → я останусь без денег → стану бомжом'. Техника декатастрофизации (разрушения катастрофы) помогает вернуть мышление в реалистичное русло. Алгоритм: 1) Чётко сформулируйте пугающий сценарий. 2) Оцените вероятность того, что это произойдёт (в процентах). 3) Если худшее всё-таки случится, что конкретно произойдёт? (опишите детально, без обобщений). 4) Как вы можете справиться с этой ситуацией? (конкретные действия, ресурсы, люди). 5) Что самое вероятное произойдёт на самом деле? 6) Как вы справитесь с наиболее вероятным исходом? Исследования показывают: простое доведение пугающей мысли до логического конца снижает её эмоциональный заряд, потому что мозг перестаёт видеть 'неизвестный ужас' и видит конкретную, решаемую проблему.",
-      "tip": "Когда тревога рисует катастрофический сценарий, спросите себя: 'Хорошо, допустим, худшее случилось. Что я буду делать через час после этого? Через день? Через неделю? Кто мне поможет?'. Запишите ответы. Вы увидите, что даже 'худшее' переживаемо."
+      "text": "The anxious brain is a master of catastrophizing: 'If I'm late for the meeting → I'll be fired → I'll be broke → I'll be homeless'. Decatastrophizing helps bring thinking back to realistic ground. Algorithm: 1) Clearly formulate the frightening scenario. 2) Estimate the probability of it happening (as a percentage). 3) If the worst does happen, what specifically will occur? (describe in detail, no generalizations). 4) How can you cope with that situation? (specific actions, resources, people). 5) What is most likely to happen in reality? 6) How will you cope with the most likely outcome? Studies show: simply taking a frightening thought to its logical conclusion reduces its emotional charge, because the brain stops seeing 'unknown horror' and sees a specific, solvable problem.",
+      "tip": "When anxiety paints a catastrophic scenario, ask yourself: 'Okay, suppose the worst happens. What will I do an hour after that? A day after? A week after? Who can help me?' Write down the answers. You'll see that even the 'worst' is survivable."
     },
     {
       "emoji": "⚠️",
-      "title": "Различение реальной и воображаемой угрозы: три вопроса",
+      "title": "Distinguishing Real and Imagined Threat: Three Questions",
       "source": "Rick Hanson — Resilient: How to Grow an Unshakable Core of Calm, Strength, and Happiness",
-      "text": "Мозг эволюционно настроен на 'лучше перебдеть, чем недобдеть'. Цена ложной тревоги (лишний стресс) для эволюции была меньше, чем цена пропущенной угрозы (смерть). Поэтому мы склонны переоценивать опасность. Чтобы перенастроить этот механизм, полезно задавать себе три вопроса в момент тревоги: 1) 'Эта угроза происходит прямо сейчас, здесь, в этой комнате, или она в будущем/прошлом?' (Амигдала реагирует только на 'здесь и сейчас'. Осознание, что прямо сейчас вы в безопасности, снижает её активность). 2) 'Есть ли что-то, что я могу сделать прямо сейчас, чтобы повлиять на ситуацию?' (Если да — действуйте. Если нет — тревога бесполезна, это просто 'шум'). 3) 'Что я вижу, слышу, чувствую телом прямо сейчас, что доказывает, что я в безопасности?' (Это переключает внимание с мыслей на сенсорный опыт).",
-      "tip": "Запишите эти три вопроса на карточку или в заметки телефона. В момент тревоги достаньте её и честно ответьте на каждый. Это занимает 30 секунд, но переключает мозг из режима 'паника' в режим 'оценка'."
+      "text": "The brain is evolutionarily wired for 'better safe than sorry'. The cost of a false alarm (extra stress) evolutionarily was less than the cost of a missed threat (death). So we tend to overestimate danger. To recalibrate this mechanism, ask yourself three questions in moments of anxiety: 1) 'Is this threat happening right now, here, in this room, or is it in the future/past?' (The amygdala only reacts to 'here and now'. Realizing you are safe right now reduces its activity). 2) 'Is there anything I can do right now to influence the situation?' (If yes — act. If no — anxiety is useless, just 'noise'). 3) 'What do I see, hear, feel in my body right now that proves I am safe?' (This shifts attention from thoughts to sensory experience).",
+      "tip": "Write these three questions on a card or phone note. In moments of anxiety, pull it out and honestly answer each. This takes 30 seconds but switches the brain from 'panic' mode to 'assessment' mode."
     },
     {
       "emoji": "🌬️",
-      "title": "Дыхательные техники: физиологический вздох и квадратное дыхание",
+      "title": "Breathing Techniques: Physiological Sigh and Box Breathing",
       "source": "Andrew Huberman — Huberman Lab Podcast (Stress & Anxiety Episodes)",
-      "text": "Дыхание — единственная вегетативная функция, которую мы можем контролировать осознанно, и это прямой пульт управления нервной системой. Две наиболее эффективные техники для быстрого снижения тревоги: 1) 'Физиологический вздох' (Physiological Sigh): два быстрых вдоха носом (второй — до предела) и один долгий, медленный выдох ртом. Этот паттерн естественно возникает у людей и животных во сне и при плаче, он мгновенно активирует парасимпатическую систему, снижая уровень CO2 в крови и успокаивая амигдалу. 2) 'Квадратное дыхание' (Box Breathing): вдох на 4 счёта → задержка на 4 → выдох на 4 → задержка на 4. Повторить 4-5 циклов. Эта техника используется спецназом для сохранения спокойствия в критических ситуациях и переключает внимание с мыслей на счёт и телесные ощущения.",
-      "tip": "Потренируйте физиологический вздох в спокойном состоянии. Затем при первых признаках тревоги сделайте 1-3 таких цикла. Эффект наступает в течение 20-30 секунд."
+      "text": "Breathing is the only autonomic function we can consciously control, and it's a direct remote control for the nervous system. Two most effective techniques for rapidly reducing anxiety: 1) 'Physiological Sigh': two quick inhales through the nose (the second to the max) and one long, slow exhale through the mouth. This pattern occurs naturally in humans and animals during sleep and crying; it instantly activates the parasympathetic system, lowering blood CO2 levels and calming the amygdala. 2) 'Box Breathing': inhale for 4 counts → hold for 4 → exhale for 4 → hold for 4. Repeat 4-5 cycles. This technique is used by Navy SEALs to stay calm in critical situations and shifts attention from thoughts to counting and body sensations.",
+      "tip": "Practice the physiological sigh in a calm state. Then, at the first signs of anxiety, do 1-3 cycles. Effect occurs within 20-30 seconds."
     },
     {
       "emoji": "🦶",
-      "title": "Техники заземления: возвращение в тело и 'здесь и сейчас'",
+      "title": "Grounding Techniques: Returning to the Body and 'Here and Now'",
       "source": "Babette Rothschild — The Body Remembers (Somatic Trauma Therapy)",
-      "text": "Тревога 'уносит' нас в голову — в мысли о будущем, катастрофические сценарии, бесконечное прокручивание. Заземление — это набор техник, возвращающих внимание в тело и текущий момент, где опасности обычно нет. Классическая техника '5-4-3-2-1': найдите и назовите (вслух или про себя) 5 вещей, которые вы видите; 4 вещи, которые вы физически ощущаете (ткань одежды, температура воздуха); 3 звука, которые вы слышите; 2 запаха; 1 вкус. Другие техники: сильно надавить стопами в пол, ощутить опору; сжать и разжать кулаки, чувствуя напряжение и расслабление; умыться холодной водой или подержать в руках кубик льда (холод сильно активирует парасимпатику через нырятельный рефлекс). Ключ в том, чтобы переключить фокус с 'там и тогда' на 'здесь и сейчас'.",
-      "tip": "В момент острой тревоги начните описывать комнату вокруг себя: 'Белый потолок, деревянный стол, зелёное растение, синяя кружка...' Это простое действие перехватывает внимание у тревожных мыслей."
+      "text": "Anxiety 'carries' us into the head — into thoughts about the future, catastrophic scenarios, endless rumination. Grounding is a set of techniques returning attention to the body and the present moment, where danger usually does not exist. Classic '5-4-3-2-1' technique: find and name (aloud or silently) 5 things you see; 4 things you physically feel (fabric of clothing, air temperature); 3 sounds you hear; 2 smells; 1 taste. Other techniques: press your feet hard into the floor, feel the support; clench and unclench your fists, feeling tension and relaxation; wash your face with cold water or hold an ice cube (cold strongly activates the parasympathetic via the dive reflex). The key is to shift focus from 'there and then' to 'here and now'.",
+      "tip": "In moments of acute anxiety, start describing the room around you: 'White ceiling, wooden table, green plant, blue mug...' This simple action intercepts attention from anxious thoughts."
     },
     {
       "emoji": "📝",
-      "title": "Техника 'Назначенное время для тревоги'",
+      "title": "The 'Scheduled Worry Time' Technique",
       "source": "Reid Wilson — Stopping the Noise in Your Head",
-      "text": "Парадоксальная, но очень эффективная техника из арсенала КПТ. Вместо того чтобы бороться с тревожными мыслями весь день, вы назначаете им конкретное 'время приёма' — например, 15-20 минут в 17:00. В течение дня, когда приходит тревожная мысль, вы говорите ей: 'Спасибо, я услышал(а), но твоё время — в 17:00. Сейчас я занят(а)'. И записываете мысль в блокнот или заметку. В назначенное время вы садитесь, ставите таймер на 15 минут и сознательно тревожитесь по полной программе: перебираете все записанные мысли, представляете худшие сценарии, записываете новые. Когда таймер звенит — вы встаёте и переключаетесь на другую деятельность. Эта техника даёт парадоксальный эффект: 1) Вы перестаёте бояться тревоги, потому что у неё есть 'законное место'. 2) Часто к 17:00 большинство 'срочных' тревог уже кажутся неважными. 3) Тревога теряет свою вездесущность и становится управляемой.",
-      "tip": "Внедрите 'время тревоги' на неделю. Каждый раз, когда ловите тревожную мысль вне этого времени, просто записывайте её в список и возвращайтесь к текущему делу. Вы удивитесь, как много 'экстренных' тревог теряют свою силу через пару часов."
+      "text": "A paradoxical but very effective technique from the CBT arsenal. Instead of fighting anxious thoughts all day, you assign them a specific 'appointment time' — for example, 15-20 minutes at 5:00 PM. During the day, when an anxious thought comes, you tell it: 'Thank you, I heard you, but your time is at 5:00 PM. I'm busy now.' And write the thought in a notepad or note. At the appointed time, you sit down, set a timer for 15 minutes, and consciously worry to the fullest: go through all the recorded thoughts, imagine worst-case scenarios, write down new ones. When the timer rings — you get up and switch to another activity. This technique has a paradoxical effect: 1) You stop fearing anxiety because it has a 'legitimate place'. 2) Often by 5:00 PM, most 'urgent' worries seem unimportant. 3) Anxiety loses its omnipresence and becomes manageable.",
+      "tip": "Implement 'worry time' for a week. Each time you catch an anxious thought outside this time, simply write it in the list and return to your current task. You'll be surprised how many 'urgent' worries lose their power after a few hours."
     },
     {
       "emoji": "🧘",
-      "title": "Принятие неопределённости: от борьбы к сосуществованию",
+      "title": "Accepting Uncertainty: From Struggle to Coexistence",
       "source": "Pema Chödrön — Comfortable with Uncertainty",
-      "text": "Значительная часть тревоги — это не реакция на конкретную угрозу, а непереносимость неопределённости. Мы хотим гарантий, предсказуемости, контроля. Но жизнь фундаментально неопределённа. Борьба с неопределённостью похожа на попытку остановить волны руками — она лишь усиливает страдание. Буддийская монахиня Пема Чодрон предлагает альтернативу: научиться 'комфортно располагаться в неопределённости'. Это не пассивное смирение, а активное принятие реальности такой, какая она есть — текучей, изменчивой, непредсказуемой. Практика включает: 1) Замечание моментов, когда вы требуете гарантий ('Точно всё будет хорошо?'). 2) Мягкое напоминание себе: 'Я не могу знать наверняка. И это нормально. Я справлюсь с тем, что придёт'. 3) Перенос фокуса с 'Что будет?' на 'Что я могу сделать сейчас, исходя из того, что знаю?'. Это освобождает огромное количество энергии, которая тратилась на бесплодные попытки контролировать неконтролируемое.",
-      "tip": "Когда чувствуете, что тревожитесь из-за неопределённости, скажите себе фразу: 'Я не знаю, что будет дальше. И прямо сейчас мне не нужно это знать. Я справлюсь с этим, когда оно наступит'. Почувствуйте, как напряжение отпускает."
+      "text": "A significant portion of anxiety is not a reaction to a specific threat, but intolerance of uncertainty. We want guarantees, predictability, control. But life is fundamentally uncertain. Fighting uncertainty is like trying to stop waves with your hands — it only intensifies suffering. Buddhist nun Pema Chödrön offers an alternative: learn to 'get comfortable with uncertainty.' This is not passive resignation, but active acceptance of reality as it is — fluid, changeable, unpredictable. The practice includes: 1) Noticing moments when you demand guarantees ('Will everything be definitely okay?'). 2) Gently reminding yourself: 'I cannot know for sure. And that's okay. I'll cope with whatever comes.' 3) Shifting focus from 'What will happen?' to 'What can I do now based on what I know?' This frees up enormous energy previously spent on futile attempts to control the uncontrollable.",
+      "tip": "When you feel anxious due to uncertainty, say to yourself: 'I don't know what will happen next. And right now, I don't need to know. I'll deal with it when it arrives.' Feel the tension release."
     },
     {
       "emoji": "🏃",
-      "title": "Физическая активность как 'выпускной клапан' для тревоги",
+      "title": "Physical Activity as a 'Release Valve' for Anxiety",
       "source": "John Ratey — Spark: The Revolutionary New Science of Exercise and the Brain",
-      "text": "Тревога — это не только мысли, но и физиологическое состояние: повышенный кортизол, адреналин, мышечное напряжение. Организм готовится к действию, но в современном мире угроза часто абстрактна ('дедлайн', 'ипотека'), и энергия не находит выхода, зацикливая тревогу. Физическая активность — самый физиологичный способ 'завершить цикл стресса'. Интенсивное движение (бег, быстрая ходьба, танцы, силовая тренировка) метаболизирует стрессовые гормоны, снижает мышечное напряжение и стимулирует выработку эндорфинов и эндоканнабиноидов. Исследования показывают, что регулярная аэробная нагрузка так же эффективна для снижения тревоги, как и некоторые медикаменты (для лёгкой и средней степени). Ключ — в регулярности и интенсивности, достаточной, чтобы 'сжечь' адреналин.",
-      "tip": "При остром приступе тревоги, если есть возможность, сделайте 5-10 минут интенсивной физической активности: пробегитесь по лестнице, попрыгайте, потанцуйте под энергичную музыку. Почувствуйте, как меняется состояние тела."
+      "text": "Anxiety is not only thoughts but also a physiological state: elevated cortisol, adrenaline, muscle tension. The body prepares for action, but in the modern world the threat is often abstract ('deadline', 'mortgage'), and energy finds no outlet, perpetuating anxiety. Physical activity is the most physiological way to 'complete the stress cycle'. Intense movement (running, brisk walking, dancing, strength training) metabolizes stress hormones, reduces muscle tension, and stimulates endorphin and endocannabinoid production. Studies show regular aerobic exercise is as effective for reducing anxiety as some medications (for mild to moderate severity). The key is regularity and sufficient intensity to 'burn off' adrenaline.",
+      "tip": "During an acute anxiety attack, if possible, do 5-10 minutes of intense physical activity: run up stairs, jump, dance to energetic music. Notice how your body state changes."
     },
     {
       "emoji": "🤝",
-      "title": "Социальная поддержка и ко-регуляция: мы не созданы тревожиться в одиночку",
+      "title": "Social Support and Co-regulation: We Are Not Designed to Be Anxious Alone",
       "source": "Stephen Porges — Polyvagal Theory",
-      "text": "Поливагальная теория Стивена Порджеса утверждает: нервная система человека эволюционно настроена на ко-регуляцию с другими людьми. Присутствие спокойного, безопасного человека (с 'социально вовлечённой' нервной системой) буквально успокаивает нашу собственную нервную систему через тонкие сигналы: тон голоса, выражение лица, ритм дыхания. Именно поэтому разговор с другом, объятия с близким или даже просто нахождение в одной комнате с кем-то, кто спокоен, снижает тревогу. Изоляция, наоборот, усиливает тревогу, потому что древние части мозга интерпретируют одиночество как повышенную уязвимость перед хищниками. Важно: просить о поддержке в тревоге — это не слабость, а использование эволюционно заложенного механизма выживания.",
-      "tip": "Создайте свой 'список поддержки': 2-3 человека, которым можно написать или позвонить в момент сильной тревоги. Договоритесь с ними заранее: 'Мне не нужно решать мою проблему, просто побудь со мной / послушай / скажи что-то спокойное'."
+      "text": "Polyvagal theory by Stephen Porges states: the human nervous system is evolutionarily wired for co-regulation with other people. The presence of a calm, safe person (with a 'socially engaged' nervous system) literally calms our own nervous system through subtle signals: tone of voice, facial expression, breathing rhythm. That's why talking to a friend, hugging a loved one, or simply being in the same room with someone who is calm reduces anxiety. Isolation, conversely, intensifies anxiety because ancient brain parts interpret solitude as heightened vulnerability to predators. Important: asking for support in anxiety is not weakness, but using an evolutionarily built-in survival mechanism.",
+      "tip": "Create your 'support list': 2-3 people you can text or call in moments of intense anxiety. Agree with them in advance: 'I don't need to solve my problem, just be with me / listen / say something calm.'"
     }
   ],
 
   "quiz": [
     {
-      "q": "Какая структура мозга играет роль 'дымового датчика', запускающего реакцию тревоги до сознательной оценки?",
-      "a": ["Префронтальная кора", "Миндалевидное тело (амигдала)", "Гиппокамп"],
+      "q": "Which brain structure acts as the 'smoke detector', triggering the anxiety response before conscious assessment?",
+      "a": ["Prefrontal cortex", "Amygdala", "Hippocampus"],
       "correct": 1
     },
     {
-      "q": "Что такое 'когнитивная реструктуризация' в КПТ?",
-      "a": ["Техника релаксации", "Выявление и оспаривание автоматических тревожных мыслей", "Метод планирования дня"],
+      "q": "What is 'cognitive restructuring' in CBT?",
+      "a": ["Relaxation technique", "Identifying and challenging automatic anxious thoughts", "Daily planning method"],
       "correct": 1
     },
     {
-      "q": "Как работает техника 'физиологический вздох'?",
-      "a": ["Задержка дыхания на 30 секунд", "Два быстрых вдоха носом и долгий выдох ртом", "Дыхание только через левую ноздрю"],
+      "q": "How does the 'physiological sigh' technique work?",
+      "a": ["Hold breath for 30 seconds", "Two quick inhales through the nose and a long exhale through the mouth", "Breathe only through the left nostril"],
       "correct": 1
     },
     {
-      "q": "В чём суть техники заземления '5-4-3-2-1'?",
-      "a": ["Счёт от 5 до 1 для успокоения", "Называние 5 вещей, которые видишь, 4 — ощущаешь, 3 — слышишь, 2 — запаха, 1 — вкус", "5 вдохов, 4 задержки, 3 выдоха"],
+      "q": "What is the essence of the '5-4-3-2-1' grounding technique?",
+      "a": ["Counting from 5 to 1 to calm down", "Naming 5 things you see, 4 you feel, 3 you hear, 2 smells, 1 taste", "5 inhales, 4 holds, 3 exhales"],
       "correct": 1
     },
     {
-      "q": "Почему изоляция усиливает тревогу с точки зрения поливагальной теории?",
-      "a": ["Потому что некому отвлечь", "Нервная система эволюционно настроена на ко-регуляцию с другими, одиночество = уязвимость", "Потому что в одиночестве больше времени на мысли"],
+      "q": "Why does isolation intensify anxiety from a polyvagal theory perspective?",
+      "a": ["Because there's no one to distract you", "Nervous system is evolutionarily wired for co-regulation, solitude = vulnerability", "Because there's more time to think in solitude"],
       "correct": 1
     }
   ]
