@@ -1,106 +1,106 @@
 {
   "id": "microbiome-immunity-pro",
-  "title": "Микробиом и иммунитет",
-  "subtitle": "Связь кишечника и мозга. Пребиотики, пробиотики, ферментированные продукты. Как питание влияет на настроение",
-  "description": "Этот чек-лист — глубокое погружение в мир микробиома кишечника и его влияния на иммунитет, психику и общее здоровье. Вы узнаете, как триллионы бактерий, живущих внутри нас, управляют воспалением, синтезируют нейромедиаторы и модулируют иммунный ответ. Мы разберём разницу между пребиотиками и пробиотиками, научимся выбирать работающие ферментированные продукты и выстроим питание, поддерживающее здоровую микробиоту и устойчивую психику.",
+  "title": "Microbiome and Immunity",
+  "subtitle": "Gut-brain connection. Prebiotics, probiotics, fermented foods. How nutrition affects mood",
+  "description": "This checklist is a deep dive into the gut microbiome and its influence on immunity, psyche, and overall health. You'll learn how trillions of bacteria living inside us manage inflammation, synthesize neurotransmitters, and modulate immune response. We'll break down the difference between prebiotics and probiotics, learn how to choose effective fermented foods, and build a diet supporting a healthy microbiota and resilient psyche.",
 
   "items": [
     {
       "emoji": "🦠",
-      "title": "Микробиом как отдельный орган",
+      "title": "The Microbiome as a Separate Organ",
       "source": "Justin Sonnenburg — The Good Gut",
-      "text": "Микробиом человека — это совокупность микроорганизмов (бактерий, архей, грибов, вирусов), населяющих кишечник, кожу, ротовую полость и другие слизистые. Только в толстом кишечнике живёт около 38 триллионов бактерий — примерно столько же, сколько клеток в нашем теле. Их совокупный геном в 150 раз больше человеческого. Микробиом выполняет функции, которые наш организм не может выполнять сам: расщепляет неперевариваемые пищевые волокна, синтезирует витамины (K, B12, биотин, фолат), производит короткоцепочечные жирные кислоты (бутират, ацетат, пропионат), тренирует иммунную систему, защищает от патогенов и напрямую общается с мозгом через блуждающий нерв и нейромедиаторы. Разнообразие микробиома — ключевой показатель здоровья: чем больше разных видов бактерий, тем устойчивее система.",
-      "tip": "Думайте о микробиоме как о саде, который вы возделываете. Разнообразное растительное питание = разнообразные 'семена' и 'удобрения' для полезных бактерий."
+      "text": "The human microbiome is the collection of microorganisms (bacteria, archaea, fungi, viruses) inhabiting the gut, skin, oral cavity, and other mucous membranes. In the large intestine alone live about 38 trillion bacteria — roughly the same number as our own cells. Their collective genome is 150 times larger than the human genome. The microbiome performs functions our body cannot perform on its own: breaks down indigestible dietary fiber, synthesizes vitamins (K, B12, biotin, folate), produces short-chain fatty acids (butyrate, acetate, propionate), trains the immune system, protects against pathogens, and communicates directly with the brain via the vagus nerve and neurotransmitters. Microbiome diversity is a key health indicator: the more different bacterial species, the more resilient the system.",
+      "tip": "Think of the microbiome as a garden you cultivate. Diverse plant-based nutrition = diverse 'seeds' and 'fertilizers' for beneficial bacteria."
     },
     {
       "emoji": "🧠",
-      "title": "Ось кишечник-мозг: как бактерии влияют на настроение",
+      "title": "The Gut-Brain Axis: How Bacteria Affect Mood",
       "source": "Emeran Mayer — The Mind-Gut Connection",
-      "text": "Кишечник и мозг соединены двусторонней системой коммуникации, включающей блуждающий нерв (vagus nerve), иммунные сигналы, гормоны и метаболиты бактерий. 90% серотонина — 'гормона счастья' — производится в энтерохромаффинных клетках кишечника, и бактерии напрямую влияют на этот процесс. Определённые штаммы (Lactobacillus, Bifidobacterium) синтезируют ГАМК — главный тормозной нейромедиатор, снижающий тревогу. Другие производят предшественники дофамина. Дисбиоз (нарушение баланса микробиома) ассоциирован с депрессией, тревожными расстройствами, аутизмом и даже болезнью Паркинсона. Исследования показывают: пересадка микробиоты от депрессивных мышей здоровым вызывает депрессивное поведение, и наоборот.",
-      "tip": "Если вы чувствуете тревогу или подавленность, посмотрите на свой рацион последних 2-3 недель. Было ли в нём достаточно клетчатки и ферментированных продуктов? Кишечник 'помнит' пищевые привычки и отвечает настроением."
+      "text": "The gut and brain are connected by a two-way communication system involving the vagus nerve, immune signals, hormones, and bacterial metabolites. 90% of serotonin — the 'happiness hormone' — is produced in the enterochromaffin cells of the gut, and bacteria directly influence this process. Certain strains (Lactobacillus, Bifidobacterium) synthesize GABA — the main inhibitory neurotransmitter, reducing anxiety. Others produce dopamine precursors. Dysbiosis (microbiome imbalance) is associated with depression, anxiety disorders, autism, and even Parkinson's disease. Studies show: transplanting microbiota from depressed mice to healthy ones induces depressive behavior, and vice versa.",
+      "tip": "If you feel anxiety or depression, look at your diet over the last 2-3 weeks. Was there enough fiber and fermented food? The gut 'remembers' eating habits and responds with mood."
     },
     {
       "emoji": "🌾",
-      "title": "Пребиотики: еда для ваших бактерий",
+      "title": "Prebiotics: Food for Your Bacteria",
       "source": "International Scientific Association for Probiotics and Prebiotics (ISAPP)",
-      "text": "Пребиотики — это неперевариваемые пищевые волокна, которые избирательно стимулируют рост и активность полезных бактерий в толстом кишечнике. В отличие от пробиотиков (живых бактерий), пребиотики — это субстрат, 'удобрение'. Главные типы пребиотиков: инулин, фруктоолигосахариды (FOS), галактоолигосахариды (GOS), резистентный крахмал. Бактерии ферментируют эти волокна, производя короткоцепочечные жирные кислоты, особенно бутират — основное топливо для клеток кишечного эпителия (колоноцитов). Бутират снижает воспаление, укрепляет кишечный барьер и защищает от 'синдрома дырявого кишечника'. Суточная норма пребиотиков — 5-10 граммов, но современный человек получает в среднем 1-3 грамма.",
-      "tip": "Лучшие источники пребиотиков: корень цикория (инулин), топинамбур, лук, чеснок, лук-порей, спаржа, зелёные бананы, овёс (бета-глюканы), охлаждённый после варки картофель и рис (резистентный крахмал)."
+      "text": "Prebiotics are indigestible dietary fibers that selectively stimulate the growth and activity of beneficial bacteria in the large intestine. Unlike probiotics (live bacteria), prebiotics are a substrate, 'fertilizer.' Main types of prebiotics: inulin, fructooligosaccharides (FOS), galactooligosaccharides (GOS), resistant starch. Bacteria ferment these fibers, producing short-chain fatty acids, especially butyrate — the main fuel for gut epithelial cells (colonocytes). Butyrate reduces inflammation, strengthens the intestinal barrier, and protects against 'leaky gut syndrome.' Daily prebiotic norm is 5-10 grams, but the average modern person gets only 1-3 grams.",
+      "tip": "Best sources of prebiotics: chicory root (inulin), Jerusalem artichoke, onion, garlic, leek, asparagus, green bananas, oats (beta-glucans), cooled cooked potato and rice (resistant starch)."
     },
     {
       "emoji": "🧫",
-      "title": "Пробиотики: живые бактерии и как их выбирать",
+      "title": "Probiotics: Live Bacteria and How to Choose Them",
       "source": "Mary Ellen Sanders — Probiotics Expert Consensus",
-      "text": "Пробиотики — это живые микроорганизмы, которые при введении в адекватных количествах приносят пользу здоровью. Ключевые слова: 'живые', 'адекватные количества', 'доказанная польза'. Не все йогурты и добавки работают. Для эффективности пробиотик должен: 1) содержать идентифицированный штамм (не просто 'Lactobacillus', а 'Lactobacillus rhamnosus GG'), 2) иметь достаточное количество КОЕ (колониеобразующих единиц) — обычно от 1 до 100 миллиардов на дозу, 3) быть жизнеспособным на момент употребления (срок годности, правильное хранение). Важно: пробиотики из добавок редко колонизируют кишечник надолго — они работают 'транзитом', модулируя иммунный ответ и вытесняя патогены, пока проходят через ЖКТ. Для долгосрочной колонизации нужны пребиотики и ферментированные продукты.",
-      "tip": "Ищите добавки с доказанными штаммами: Lactobacillus rhamnosus GG (при диарее и аллергии), Bifidobacterium longum BB536 (при тревоге и запорах), Saccharomyces boulardii (при дисбиозе после антибиотиков)."
+      "text": "Probiotics are live microorganisms that, when administered in adequate amounts, confer a health benefit. Key words: 'live', 'adequate amounts', 'proven benefit.' Not all yogurts and supplements work. For effectiveness, a probiotic must: 1) contain an identified strain (not just 'Lactobacillus', but 'Lactobacillus rhamnosus GG'), 2) have a sufficient number of CFU (colony-forming units) — usually 1 to 100 billion per dose, 3) be viable at the time of consumption (expiration date, proper storage). Important: probiotics from supplements rarely colonize the gut long-term — they work 'transiently,' modulating the immune response and displacing pathogens as they pass through the GI tract. For long-term colonization, prebiotics and fermented foods are needed.",
+      "tip": "Look for supplements with proven strains: Lactobacillus rhamnosus GG (for diarrhea and allergies), Bifidobacterium longum BB536 (for anxiety and constipation), Saccharomyces boulardii (for dysbiosis after antibiotics)."
     },
     {
       "emoji": "🥬",
-      "title": "Ферментированные продукты: природные пробиотики",
+      "title": "Fermented Foods: Natural Probiotics",
       "source": "Sandor Katz — The Art of Fermentation",
-      "text": "Ферментация — древнейший способ сохранения пищи, при котором микроорганизмы (бактерии, дрожжи, плесени) преобразуют сахара и крахмалы в кислоты, спирт и газы. В процессе образуются живые пробиотические культуры, а также новые витамины и биоактивные пептиды. Ключевое отличие от покупных пробиотиков: ферментированные продукты содержат сложные микробные консорциумы (десятки и сотни штаммов), а не 1-2 изолированных штамма. Это больше соответствует естественному разнообразию микробиома. Однако важно различать живые и пастеризованные ферментированные продукты. Квашеная капуста из бочки на рынке содержит живые бактерии. Консервированная квашеная капуста из супермаркета, прошедшая термообработку — нет.",
-      "tip": "Включите в рацион 1-2 порции живых ферментированных продуктов ежедневно: кефир, йогурт без сахара с живыми культурами, квашеная капуста (не пастеризованная), кимчи, мисо-паста, натто, чайный гриб (комбуча) домашнего приготовления."
+      "text": "Fermentation is the oldest method of food preservation, where microorganisms (bacteria, yeasts, molds) convert sugars and starches into acids, alcohol, and gases. During the process, live probiotic cultures are formed, as well as new vitamins and bioactive peptides. Key difference from store-bought probiotics: fermented foods contain complex microbial consortia (tens or hundreds of strains), not 1-2 isolated strains. This is more consistent with the natural diversity of the microbiome. However, it's important to distinguish live from pasteurized fermented products. Barrel sauerkraut from the market contains live bacteria. Canned sauerkraut from the supermarket that has undergone heat treatment does not.",
+      "tip": "Include 1-2 servings of live fermented food daily: kefir, unsweetened live-culture yogurt, unpasteurized sauerkraut, kimchi, miso paste, natto, home-brewed kombucha."
     },
     {
       "emoji": "🛡️",
-      "title": "Микробиом и иммунитет: 70% иммунной системы живёт в кишечнике",
+      "title": "Microbiome and Immunity: 70% of the Immune System Lives in the Gut",
       "source": "Dan Littman — Mucosal Immunology",
-      "text": "Кишечно-ассоциированная лимфоидная ткань (GALT) — крупнейший иммунный орган тела. Слизистая кишечника — это граница между 'внешним' миром (содержимым кишечника) и 'внутренней' средой организма. Здесь постоянно происходит 'обучение' иммунных клеток: отличать безвредные антигены (пища, комменсальные бактерии) от опасных (патогены). Микробиом играет ключевую роль в этом процессе. Определённые бактерии (Bacteroides fragilis, Clostridia clusters) стимулируют развитие регуляторных T-клеток (Treg), которые подавляют избыточное воспаление и предотвращают аутоиммунные реакции. Дисбиоз снижает продукцию Treg, что ведёт к хроническому низкоуровневому воспалению — основе большинства современных болезней: от аллергии и астмы до диабета 2 типа и атеросклероза.",
-      "tip": "Поддержка микробиома — это профилактика не только кишечных инфекций, но и системных воспалительных заболеваний. Каждая порция овощей с клетчаткой — это вклад в 'обучение' вашей иммунной системы."
+      "text": "Gut-associated lymphoid tissue (GALT) is the largest immune organ in the body. The intestinal mucosa is the boundary between the 'outside' world (gut contents) and the 'internal' environment. Here, constant 'training' of immune cells occurs: distinguishing harmless antigens (food, commensal bacteria) from dangerous ones (pathogens). The microbiome plays a key role in this process. Certain bacteria (Bacteroides fragilis, Clostridia clusters) stimulate the development of regulatory T-cells (Tregs), which suppress excessive inflammation and prevent autoimmune reactions. Dysbiosis reduces Treg production, leading to chronic low-grade inflammation — the basis of most modern diseases: from allergies and asthma to type 2 diabetes and atherosclerosis.",
+      "tip": "Supporting the microbiome is prevention not only of intestinal infections but also of systemic inflammatory diseases. Each serving of vegetables with fiber is a contribution to 'educating' your immune system."
     },
     {
       "emoji": "💊",
-      "title": "Антибиотики и микробиом: как восстановиться после курса",
+      "title": "Antibiotics and the Microbiome: How to Recover After a Course",
       "source": "Martin Blaser — Missing Microbes",
-      "text": "Антибиотики спасают жизни, но они — ядерная бомба для микробиома. Один курс антибиотиков широкого спектра может уничтожить 30-50% видового разнообразия кишечных бактерий. Хотя общая численность восстанавливается за 1-2 месяца, видовой состав может оставаться обеднённым годами. Некоторые виды исчезают безвозвратно. Это особенно критично в детстве: раннее применение антибиотиков ассоциировано с повышенным риском ожирения, аллергии, астмы и воспалительных заболеваний кишечника в будущем. После курса антибиотиков необходима целенаправленная стратегия восстановления: пребиотики (пища для уцелевших), пробиотики (временная поддержка), ферментированные продукты (восстановление разнообразия), исключение сахара и processed food (корм для патогенов).",
-      "tip": "После антибиотиков: 1) пробиотик Saccharomyces boulardii во время и 2 недели после курса (устойчив к антибиотикам, предотвращает C. diff), 2) пребиотики (инулин, GOS) для питания уцелевших бактерий, 3) разнообразные ферментированные продукты в течение 2-3 месяцев."
+      "text": "Antibiotics save lives, but they are a nuclear bomb for the microbiome. One course of broad-spectrum antibiotics can wipe out 30-50% of the species diversity of gut bacteria. While total numbers recover within 1-2 months, the species composition can remain depleted for years. Some species disappear forever. This is especially critical in childhood: early antibiotic use is associated with increased risk of obesity, allergies, asthma, and inflammatory bowel disease later in life. After a course of antibiotics, a targeted recovery strategy is necessary: prebiotics (food for survivors), probiotics (temporary support), fermented foods (restoring diversity), elimination of sugar and processed foods (feed for pathogens).",
+      "tip": "After antibiotics: 1) Probiotic Saccharomyces boulardii during and for 2 weeks after the course (resistant to antibiotics, prevents C. diff), 2) Prebiotics (inulin, GOS) to feed surviving bacteria, 3) Diverse fermented foods for 2-3 months."
     },
     {
       "emoji": "🍰",
-      "title": "Сахар, эмульгаторы и 'западная диета': как питание убивает микробиом",
+      "title": "Sugar, Emulsifiers, and the 'Western Diet': How Nutrition Kills the Microbiome",
       "source": "Benoir Chassaing — Dietary Emulsifiers and Microbiota",
-      "text": "Современная 'западная диета' (Western diet) — высокое содержание сахара, рафинированных углеводов, насыщенных жиров, низкое содержание клетчатки — является главным драйвером дисбиоза. Избыток сахара и простых углеводов кормит не полезные бактерии в толстом кишечнике, а патогенные и условно-патогенные в тонком, способствуя СИБР (синдрому избыточного бактериального роста). Особую опасность представляют пищевые эмульгаторы (полисорбат-80, карбоксиметилцеллюлоза), добавляемые в мороженое, соусы, выпечку для создания кремовой текстуры. Исследования показывают, что эмульгаторы разрушают защитный слизистый слой кишечника, вызывая прямое воспаление и изменяя состав микробиома в пользу провоспалительных видов.",
-      "tip": "Читайте состав на упаковке. Избегайте продуктов с эмульгаторами (E433, E466), искусственными подсластителями (аспартам, сукралоза — они также негативно влияют на микробиом) и добавленным сахаром в первых трёх строках состава."
+      "text": "The modern 'Western diet' — high in sugars, refined carbohydrates, saturated fats, low in fiber — is the main driver of dysbiosis. Excess sugar and simple carbohydrates feed not the beneficial bacteria in the large intestine, but pathogenic and opportunistic ones in the small intestine, contributing to SIBO (small intestinal bacterial overgrowth). Particularly dangerous are food emulsifiers (polysorbate-80, carboxymethylcellulose), added to ice cream, sauces, baked goods to create a creamy texture. Studies show: emulsifiers destroy the protective mucus layer of the intestine, causing direct inflammation and altering microbiome composition in favor of pro-inflammatory species.",
+      "tip": "Read ingredient labels. Avoid products with emulsifiers (E433, E466), artificial sweeteners (aspartame, sucralose — they also negatively affect the microbiome), and added sugar in the first three ingredients."
     },
     {
       "emoji": "🥩",
-      "title": "Клетчатка и полифенолы: двойной удар по дисбиозу",
+      "title": "Fiber and Polyphenols: A Double Blow Against Dysbiosis",
       "source": "Tim Spector — The Diet Myth",
-      "text": "Профессор Тим Спектор, руководитель проекта British Gut Project, выделяет два ключевых компонента питания для здоровья микробиома: растворимую клетчатку (пребиотики) и полифенолы. Полифенолы — это растительные соединения, придающие цвет, вкус и аромат фруктам, овощам, чаю, кофе, какао, оливковому маслу. Только 5-10% полифенолов всасывается в тонком кишечнике. Остальные 90-95% попадают в толстый кишечник, где служат пищей для специфических бактерий (например, Akkermansia muciniphila, ассоциированной со стройностью и здоровым метаболизмом). Бактерии расщепляют полифенолы на более мелкие биоактивные молекулы, которые затем всасываются и оказывают системное противовоспалительное и антиоксидантное действие.",
-      "tip": "Стремитесь к 'радуге на тарелке' и разнообразию растительной пищи. Цель — 30 разных растительных продуктов в неделю (включая специи, травы, орехи, семена). Это сильнее всего коррелирует с разнообразием микробиома."
+      "text": "Professor Tim Spector, head of the British Gut Project, highlights two key nutritional components for microbiome health: soluble fiber (prebiotics) and polyphenols. Polyphenols are plant compounds giving color, taste, and aroma to fruits, vegetables, tea, coffee, cocoa, olive oil. Only 5-10% of polyphenols are absorbed in the small intestine. The remaining 90-95% reach the large intestine, where they serve as food for specific bacteria (e.g., Akkermansia muciniphila, associated with leanness and healthy metabolism). Bacteria break down polyphenols into smaller bioactive molecules, which are then absorbed and exert systemic anti-inflammatory and antioxidant effects.",
+      "tip": "Aim for a 'rainbow on your plate' and plant food diversity. Target 30 different plant foods per week (including spices, herbs, nuts, seeds). This correlates most strongly with microbiome diversity."
     },
     {
       "emoji": "🧪",
-      "title": "Постбиотики и короткоцепочечные жирные кислоты (КЦЖК)",
+      "title": "Postbiotics and Short-Chain Fatty Acids (SCFAs)",
       "source": "Eran Elinav — Postbiotics Research",
-      "text": "Постбиотики — это метаболиты, производимые бактериями в процессе ферментации. Главные из них — короткоцепочечные жирные кислоты (КЦЖК): ацетат, пропионат и бутират. Бутират — основное топливо для колоноцитов (клеток кишечника), он укрепляет кишечный барьер, снижает воспаление, регулирует апоптоз (запрограммированную смерть) раковых клеток и проникает в кровоток, оказывая системное противовоспалительное действие, включая мозг. Пропионат участвует в регуляции аппетита и глюконеогенеза в печени. Ацетат — субстрат для синтеза холестерина. Уровень КЦЖК в стуле — прямой маркер здоровья микробиома и достаточности потребления клетчатки. Низкий бутират ассоциирован с 'синдромом дырявого кишечника', воспалительными заболеваниями кишечника и колоректальным раком.",
-      "tip": "Повысить бутират можно двумя путями: 1) есть больше растворимой клетчатки (овёс, бобовые, корнеплоды), 2) включить продукты, содержащие масляную кислоту напрямую: сливочное масло (особенно от коров травяного откорма), твёрдые сыры (пармезан)."
+      "text": "Postbiotics are metabolites produced by bacteria during fermentation. The main ones are short-chain fatty acids (SCFAs): acetate, propionate, and butyrate. Butyrate is the main fuel for colonocytes (intestinal cells), it strengthens the intestinal barrier, reduces inflammation, regulates apoptosis (programmed cell death) of cancer cells, and enters the bloodstream, exerting systemic anti-inflammatory effects, including in the brain. Propionate is involved in appetite regulation and gluconeogenesis in the liver. Acetate is a substrate for cholesterol synthesis. SCFA levels in stool are a direct marker of microbiome health and adequate fiber intake. Low butyrate is associated with 'leaky gut syndrome,' inflammatory bowel diseases, and colorectal cancer.",
+      "tip": "Increase butyrate in two ways: 1) eat more soluble fiber (oats, legumes, root vegetables), 2) include products containing butyric acid directly: butter (especially from grass-fed cows), hard cheeses (Parmesan)."
     }
   ],
 
   "quiz": [
     {
-      "q": "Где производится 90% серотонина в организме человека?",
-      "a": ["В головном мозге", "В энтерохромаффинных клетках кишечника", "В надпочечниках"],
+      "q": "Where is 90% of the body's serotonin produced?",
+      "a": ["In the brain", "In the enterochromaffin cells of the gut", "In the adrenal glands"],
       "correct": 1
     },
     {
-      "q": "Что такое пребиотики?",
-      "a": ["Живые бактерии", "Неперевариваемые волокна, служащие пищей для полезных бактерий", "Ферментированные продукты"],
+      "q": "What are prebiotics?",
+      "a": ["Live bacteria", "Indigestible fibers that serve as food for beneficial bacteria", "Fermented foods"],
       "correct": 1
     },
     {
-      "q": "Какой процент иммунной системы ассоциирован с кишечником?",
-      "a": ["Около 20%", "Около 50%", "Около 70%"],
+      "q": "What percentage of the immune system is associated with the gut?",
+      "a": ["About 20%", "About 50%", "About 70%"],
       "correct": 2
     },
     {
-      "q": "Какая бактерия ассоциирована со стройностью и здоровым метаболизмом, питается полифенолами?",
+      "q": "Which bacterium is associated with leanness and healthy metabolism and feeds on polyphenols?",
       "a": ["Escherichia coli", "Akkermansia muciniphila", "Staphylococcus aureus"],
       "correct": 1
     },
     {
-      "q": "Какая короткоцепочечная жирная кислота является основным топливом для клеток кишечного эпителия?",
-      "a": ["Ацетат", "Пропионат", "Бутират"],
+      "q": "Which short-chain fatty acid is the main fuel for intestinal epithelial cells?",
+      "a": ["Acetate", "Propionate", "Butyrate"],
       "correct": 2
     }
   ]
