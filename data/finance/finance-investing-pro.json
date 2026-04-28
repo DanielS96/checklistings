@@ -1,144 +1,144 @@
 {
   "id": "finance-investing-pro",
-  "title": "Финансовый интеллект",
-  "subtitle": "Деньги, инвестиции и мышление богатства",
-  "description": "Продвинутый чек-лист для тех, кто уже освоил базовый учёт расходов и хочет перейти к накоплению капитала. Здесь собраны ключевые принципы поведенческих финансов, стратегии инвестирования и психология денег от ведущих экономистов и инвесторов мира.",
+  "title": "Financial Intelligence",
+  "subtitle": "Money, Investing, and Wealth Mindset",
+  "description": "An advanced checklist for those who have already mastered basic expense tracking and want to move on to capital accumulation. Here are key principles of behavioral finance, investment strategies, and the psychology of money from leading economists and investors worldwide.",
 
   "items": [
     {
       "emoji": "💰",
-      "title": "Правило 50/30/20",
+      "title": "The 50/30/20 Rule",
       "source": "Elizabeth Warren — All Your Worth",
-      "text": "Сбалансированная система распределения дохода: 50% на обязательные нужды (жильё, еда), 30% на желания (развлечения, хобби) и 20% на сбережения и инвестиции. Это не жёсткая диета, а устойчивый каркас, который позволяет жить сейчас и строить будущее одновременно.",
-      "tip": "Рассчитай свои проценты от чистого дохода за последний месяц. Скорее всего, пропорции нарушены в пользу 'желаний'."
+      "text": "A balanced system for allocating income: 50% to needs (housing, food), 30% to wants (entertainment, hobbies), and 20% to savings and investments. This isn't a strict diet but a sustainable framework allowing you to live now and build the future simultaneously.",
+      "tip": "Calculate your percentages from last month's net income. Chances are, proportions are skewed toward 'wants.'"
     },
     {
       "emoji": "🛡️",
-      "title": "Подушка безопасности 2.0",
+      "title": "Emergency Fund 2.0",
       "source": "Morgan Housel — The Psychology of Money",
-      "text": "Классическая рекомендация — 3-6 месяцев расходов. Но настоящая психологическая свобода наступает при запасе в 12 месяцев. Это даёт возможность уволиться с нелюбимой работы, взять паузу на переобучение или переждать кризис без панических продаж активов.",
-      "tip": "Держи подушку в высоколиквидных инструментах: накопительный счёт, фонды денежного рынка, краткосрочные ОФЗ."
+      "text": "The classic recommendation is 3-6 months of expenses. But true psychological freedom comes with a 12-month cushion. This provides the ability to quit an unfulfilling job, take a break for retraining, or weather a crisis without panic-selling assets.",
+      "tip": "Keep your emergency fund in highly liquid instruments: savings account, money market funds, short-term government bonds."
     },
     {
       "emoji": "📉",
-      "title": "Неприятие потери",
+      "title": "Loss Aversion",
       "source": "Daniel Kahneman & Amos Tversky — Prospect Theory",
-      "text": "Боль от потери 1000 рублей в 2-2.5 раза сильнее радости от нахождения 1000 рублей. Это искажение заставляет инвесторов продавать активы на панике (фиксируя убыток) и держать убыточные позиции слишком долго в надежде 'выйти в ноль'.",
-      "tip": "Перед покупкой актива письменно ответь на вопрос: 'При каких условиях я продам эту бумагу?' Это снижает эмоциональность решений."
+      "text": "The pain of losing 1000 rubles is 2-2.5 times stronger than the pleasure of finding 1000 rubles. This bias causes investors to sell assets in a panic (locking in losses) and hold losing positions too long, hoping to 'break even.'",
+      "tip": "Before buying an asset, write down: 'Under what conditions will I sell this security?' This reduces emotional decision-making."
     },
     {
       "emoji": "📊",
-      "title": "Диверсификация vs Концентрация",
+      "title": "Diversification vs. Concentration",
       "source": "Ray Dalio — Principles",
-      "text": "Диверсификация — единственный 'бесплатный обед' в инвестициях. Снижая риск портфеля, вы не обязательно снижаете доходность. 'All Weather Portfolio' Далио построен так, чтобы переживать любые экономические сезоны: рост, спад, инфляцию и дефляцию.",
-      "tip": "Начни с распределения активов по классам: акции, облигации, золото, а не с выбора конкретных компаний."
+      "text": "Diversification is the only 'free lunch' in investing. By reducing portfolio risk, you don't necessarily reduce returns. Dalio's 'All Weather Portfolio' is built to weather any economic season: growth, recession, inflation, and deflation.",
+      "tip": "Start with asset class allocation: stocks, bonds, gold — not choosing specific companies."
     },
     {
       "emoji": "⏳",
-      "title": "Сложный процент и время",
+      "title": "Compound Interest and Time",
       "source": "Warren Buffett",
-      "text": "Главный актив инвестора — не деньги и не интеллект, а время. 10 000 рублей, вложенные под 15% годовых, через 30 лет превращаются в 660 000 рублей без каких-либо дополнительных усилий. Но 80% этого роста происходит в последние 10 лет.",
-      "tip": "Начни инвестировать с любой суммы прямо сейчас. Время в рынке важнее, чем тайминг рынка."
+      "text": "The investor's main asset is not money or intelligence, but time. 10,000 rubles invested at 15% per year becomes 660,000 rubles after 30 years without any extra effort. But 80% of this growth occurs in the last 10 years.",
+      "tip": "Start investing any amount right now. Time in the market is more important than timing the market."
     },
     {
       "emoji": "🧠",
-      "title": "Ментальный учёт",
+      "title": "Mental Accounting",
       "source": "Richard Thaler — Misbehaving",
-      "text": "Мы склонны относиться к деньгам по-разному в зависимости от их источника. Премию или выигрыш тратим легче, чем зарплату. Инвесторы часто рискуют 'прибылью' (деньги дома), но боятся трогать 'тело депозита'. С точки зрения рациональности, это одни и те же деньги.",
-      "tip": "Относись ко всем деньгам как к единому капиталу. Не создавай в голове отдельные кошельки 'на чёрный день' и 'на развлечения'."
+      "text": "We treat money differently depending on its source. Bonuses or winnings are spent more easily than salary. Investors often risk 'profits' (house money) but are afraid to touch the 'principal.' Rationally, it's the same money.",
+      "tip": "Treat all money as a single capital pool. Don't create mental 'wallets' for 'rainy day' and 'fun.'"
     },
     {
       "emoji": "🏢",
-      "title": "Бизнес vs Спекуляция",
+      "title": "Business vs. Speculation",
       "source": "Benjamin Graham — The Intelligent Investor",
-      "text": "Инвестиция — это операция, основанная на тщательном анализе, обещающая сохранность вложенной суммы и приемлемый доход. Всё остальное — спекуляция. Покупая акцию, думайте как владелец бизнеса, а не как игрок, угадывающий котировки.",
-      "tip": "Прочитай годовой отчёт компании, акции которой хочешь купить. Если не понимаешь, чем она зарабатывает — не покупай."
+      "text": "An investment operation is one which, upon thorough analysis, promises safety of principal and an adequate return. Everything else is speculation. When buying a stock, think like an owner of the business, not a gambler guessing quotes.",
+      "tip": "Read the annual report of the company whose stock you want to buy. If you don't understand how it makes money — don't buy."
     },
     {
       "emoji": "📈",
-      "title": "Инфляция — молчаливый вор",
+      "title": "Inflation: The Silent Thief",
       "source": "Milton Friedman",
-      "text": "Инфляция в 8% съедает половину покупательной способности денег за 9 лет. Хранение крупных сумм 'под подушкой' или на текущем счёте — это гарантированный убыток. Деньги должны работать, чтобы сохранять свою ценность.",
-      "tip": "Рассчитывай реальную доходность по формуле: Номинальная доходность минус инфляция."
+      "text": "Inflation at 8% eats half the purchasing power of money in 9 years. Storing large sums 'under the mattress' or in a checking account is a guaranteed loss. Money must work to preserve its value.",
+      "tip": "Calculate real return using: Nominal return minus inflation."
     },
     {
       "emoji": "🎯",
-      "title": "Финансовый план и цели",
+      "title": "Financial Plan and Goals",
       "source": "Carl Richards — The Behavior Gap",
-      "text": "Инвестиции без цели — это как поездка без пункта назначения. Волатильность рынка пугает только тогда, когда вы не знаете, зачем вам эти деньги и когда они понадобятся. Горизонт инвестирования определяет уровень допустимого риска.",
-      "tip": "Раздели портфель на 'корзины': деньги через 2 года (депозит/облигации), через 10 лет (акции), через 30 лет (высокорисковые активы)."
+      "text": "Investing without a goal is like a trip without a destination. Market volatility scares only when you don't know why you need the money and when. The investment horizon determines the acceptable risk level.",
+      "tip": "Split your portfolio into 'baskets': money needed in 2 years (deposits/bonds), in 10 years (stocks), in 30 years (higher risk assets)."
     },
     {
       "emoji": "💸",
-      "title": "Дивиденды — не бесплатные деньги",
+      "title": "Dividends Are Not Free Money",
       "source": "Aswath Damodaran",
-      "text": "Распространённое заблуждение: дивидендные акции лучше. На самом деле после выплаты дивидендов цена акции падает ровно на размер выплаты (дивидендный гэп). Компания просто перекладывает часть ваших же денег из левого кармана в правый, удерживая налог.",
-      "tip": "Оценивай компанию по общей доходности (рост капитала + дивиденды), а не только по дивидендной доходности."
+      "text": "A common misconception: dividend stocks are better. In reality, after a dividend is paid, the stock price falls exactly by the dividend amount (dividend gap). The company simply transfers some of your own money from your left pocket to your right, withholding tax.",
+      "tip": "Evaluate a company by total return (capital appreciation + dividends), not just dividend yield."
     },
     {
       "emoji": "📉",
-      "title": "Усреднение долларовой стоимости",
+      "title": "Dollar-Cost Averaging",
       "source": "Burton Malkiel — A Random Walk Down Wall Street",
-      "text": "Пытаться поймать 'дно' рынка бессмысленно. Стратегия регулярного инвестирования фиксированной суммы (DCA) позволяет покупать больше акций, когда рынок падает, и меньше, когда он растёт, снижая среднюю цену входа.",
-      "tip": "Настрой автоплатёж на покупку индексного фонда каждый месяц в одну и ту же дату."
+      "text": "Trying to catch the market bottom is futile. The strategy of regularly investing a fixed amount (DCA) allows you to buy more shares when the market falls and fewer when it rises, lowering the average purchase price.",
+      "tip": "Set up an auto-payment to buy an index fund on the same date each month."
     },
     {
       "emoji": "🧩",
-      "title": "Эффект владения",
+      "title": "Endowment Effect",
       "source": "Richard Thaler",
-      "text": "Мы переоцениваем то, чем уже владеем. Акции, купленные год назад, кажутся нам 'хорошими' только потому, что они наши. Это мешает объективно оценить перспективы компании и вовремя избавиться от балласта.",
-      "tip": "Раз в квартал задавай себе вопрос: 'Купил бы я эту акцию сегодня по текущей цене, если бы у меня её не было?'"
+      "text": "We overvalue what we already own. Stocks bought a year ago seem 'good' just because they're ours. This prevents objective assessment of a company's prospects and timely disposal of dead weight.",
+      "tip": "Once a quarter, ask yourself: 'Would I buy this stock today at its current price if I didn't own it?'"
     },
     {
       "emoji": "🔒",
-      "title": "Самый важный актив — вы сами",
+      "title": "Your Most Important Asset is Yourself",
       "source": "Cal Newport",
-      "text": "Для большинства людей до 35-40 лет основной источник будущего капитала — это их трудоспособность и навыки. Инвестиции в образование, здоровье и профессиональный рост дают доходность в сотни и тысячи процентов годовых, недостижимую на фондовом рынке.",
-      "tip": "Прежде чем искать акции с доходностью 20%, подумай, как увеличить свой ежемесячный доход на 20%."
+      "text": "For most people under 35-40, their main source of future capital is their employability and skills. Investments in education, health, and professional growth yield returns of hundreds or thousands percent per year, unattainable in the stock market.",
+      "tip": "Before looking for stocks with 20% return, think about increasing your monthly income by 20%."
     },
     {
       "emoji": "📰",
-      "title": "Информационный шум",
+      "title": "Information Noise",
       "source": "Nassim Taleb — Fooled by Randomness",
-      "text": "Финансовые новости создают иллюзию контроля и понимания. На самом деле, чем чаще вы смотрите котировки и читаете прогнозы, тем хуже ваши результаты. Шум заставляет действовать импульсивно.",
-      "tip": "Проверяй портфель раз в квартал или полгода, а не каждый день."
+      "text": "Financial news creates an illusion of control and understanding. In reality, the more often you check quotes and read forecasts, the worse your results. Noise causes impulsive actions.",
+      "tip": "Check your portfolio quarterly or semi-annually, not daily."
     }
   ],
 
   "quiz": [
     {
-      "q": "Что согласно Канеману и Тверски сильнее: боль от потери или радость от приобретения?",
-      "a": ["Радость сильнее", "Боль от потери сильнее в 2-2.5 раза", "Они равны"],
+      "q": "According to Kahneman and Tversky, what is stronger: the pain of loss or the joy of gain?",
+      "a": ["Joy is stronger", "The pain of loss is 2-2.5 times stronger", "They are equal"],
       "correct": 1
     },
     {
-      "q": "Что является 'единственным бесплатным обедом' в инвестициях?",
-      "a": ["Дивиденды", "Диверсификация", "Использование плеча"],
+      "q": "What is the 'only free lunch' in investing?",
+      "a": ["Dividends", "Diversification", "Using leverage"],
       "correct": 1
     },
     {
-      "q": "Какой процент от дохода рекомендуется направлять на сбережения по правилу 50/30/20?",
+      "q": "What percentage of income does the 50/30/20 rule recommend allocating to savings?",
       "a": ["10%", "20%", "30%"],
       "correct": 1
     },
     {
-      "q": "Что происходит с ценой акции на следующий день после дивидендной отсечки?",
-      "a": ["Растёт на размер дивиденда", "Падает на размер дивиденда", "Не меняется"],
+      "q": "What happens to a stock's price on the day after the dividend record date (ex-dividend date)?",
+      "a": ["Rises by the dividend amount", "Falls by the dividend amount", "Doesn't change"],
       "correct": 1
     },
     {
-      "q": "Какова главная идея стратегии 'Усреднение долларовой стоимости' (DCA)?",
-      "a": ["Купить всё на минимуме рынка", "Покупать регулярно на одну сумму", "Продавать каждый раз на пике"],
+      "q": "What is the main idea of the Dollar-Cost Averaging (DCA) strategy?",
+      "a": ["Buy everything at market bottom", "Buy regularly with a fixed sum", "Sell every time at the peak"],
       "correct": 1
     },
     {
-      "q": "Какой актив Н. Талеб и М. Хоузел считают самым важным для молодого человека?",
-      "a": ["Криптовалюты", "Способность зарабатывать (человеческий капитал)", "Недвижимость"],
+      "q": "Which asset do N. Taleb and M. Housel consider most important for a young person?",
+      "a": ["Cryptocurrencies", "Earning ability (human capital)", "Real estate"],
       "correct": 1
     },
     {
-      "q": "В чём опасность 'Ментального учёта' (Mental Accounting)?",
-      "a": ["Сложно считать в уме", "Легче тратим 'лёгкие' деньги", "Забываем про налоги"],
+      "q": "What is the danger of 'Mental Accounting'?",
+      "a": ["Difficulty calculating", "Easier to spend 'easy' money", "Forgetting about taxes"],
       "correct": 1
     }
   ]
