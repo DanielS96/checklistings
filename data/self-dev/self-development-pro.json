@@ -1,85 +1,85 @@
 {
   "id": "self-development-pro",
-  "title": "Архитектура личности",
-  "subtitle": "Осознанный рост, навыки и управление будущим",
-  "description": "Этот чек-лист — фундамент непрерывного развития. Он охватывает управление вниманием, формирование идентичности, работу с ограничивающими убеждениями и построение системы обучения. Без этого движение вперед хаотично.",
+  "title": "Architecture of Personality",
+  "subtitle": "Intentional growth, skills, and future management",
+  "description": "This checklist is the foundation of continuous development. It covers attention management, identity formation, working with limiting beliefs, and building a learning system. Without this, moving forward is chaotic.",
   "items": [
     {
       "emoji": "🧠",
-      "title": "Управление вниманием",
+      "title": "Attention Management",
       "source": "Cal Newport — Deep Work",
-      "text": "Способность концентрироваться на сложных задачах без отвлечений становится главной суперсилой в современной экономике. Рассеянное внимание снижает когнитивные способности и качество результата.",
-      "tip": "Практикуй 90-минутные сессии работы без телефона и уведомлений."
+      "text": "The ability to concentrate on complex tasks without distraction is becoming the main superpower in the modern economy. Distracted attention reduces cognitive abilities and outcome quality.",
+      "tip": "Practice 90-minute sessions of work without phone and notifications."
     },
     {
       "emoji": "🗣️",
-      "title": "Внутренний диалог",
+      "title": "Inner Dialogue",
       "source": "Ethan Kross — Chatter",
-      "text": "То, как мы разговариваем сами с собой, напрямую определяет уровень стресса и способность решать проблемы. Переход от «Я» к «Ты» или использованию имени снижает эмоциональную вовлеченность.",
-      "tip": "В стрессовой ситуации спроси себя по имени: «[Имя], что сейчас конкретно можно сделать?»"
+      "text": "How we talk to ourselves directly determines our stress level and problem-solving ability. Shifting from 'I' to 'you' or using your name reduces emotional involvement.",
+      "tip": "In a stressful situation, ask yourself by name: '[Name], what specifically can be done right now?'"
     },
     {
       "emoji": "🎯",
-      "title": "Идентичность vs Цели",
+      "title": "Identity vs. Goals",
       "source": "James Clear — Atomic Habits",
-      "text": "Цель — это временный результат. Идентичность — это устойчивая система убеждений о себе. Изменения сохраняются надолго только тогда, когда становятся частью личности.",
-      "tip": "Формулируй намерения не как «я хочу прочитать книгу», а как «я — читающий человек»."
+      "text": "A goal is a temporary result. Identity is a stable system of beliefs about oneself. Changes stick long-term only when they become part of your personality.",
+      "tip": "Formulate intentions not as 'I want to read a book' but as 'I am a reading person'."
     },
     {
       "emoji": "🧩",
-      "title": "Ментальные модели",
+      "title": "Mental Models",
       "source": "Charlie Munger",
-      "text": "Обладание набором ментальных моделей из разных дисциплин (психология, физика, биология) позволяет видеть реальность объемно и принимать неочевидные, верные решения.",
-      "tip": "Изучи базовые принципы: инверсия, сложный процент, круг компетенции, второй уровень последствий."
+      "text": "Having a set of mental models from different disciplines (psychology, physics, biology) allows you to see reality in 3D and make non-obvious, correct decisions.",
+      "tip": "Learn basic principles: inversion, compound interest, circle of competence, second-order consequences."
     },
     {
       "emoji": "⏳",
-      "title": "Сложный процент улучшений",
+      "title": "The Compound Effect of Improvements",
       "source": "Darren Hardy — The Compound Effect",
-      "text": "Небольшие ежедневные действия (1% в день) кажутся незаметными в моменте, но за год дают прирост в 37 раз. Проблема в том, что люди переоценивают один рывок и недооценивают регулярность.",
-      "tip": "Выбери один микро-навык (5 минут чтения, 10 отжиманий) и делай его без пропусков."
+      "text": "Small daily actions (1% per day) seem unnoticeable in the moment, but over a year yield a 37-fold increase. The problem is that people overestimate one heroic leap and underestimate regularity.",
+      "tip": "Choose one micro-skill (5 minutes reading, 10 pushups) and do it without skipping."
     },
     {
       "emoji": "🛑",
-      "title": "Работа с ограничивающими убеждениями",
+      "title": "Working with Limiting Beliefs",
       "source": "Carol Dweck — Mindset",
-      "text": "Установка на данность («У меня нет таланта к языкам») блокирует развитие. Установка на рост («Я пока не умею, но могу научиться») открывает возможности.",
-      "tip": "Добавляй слово «пока» к любой негативной самооценке: «У меня не получается... пока»."
+      "text": "A fixed mindset ('I don't have talent for languages') blocks development. A growth mindset ('I can't yet, but I can learn') opens up possibilities.",
+      "tip": "Add the word 'yet' to any negative self-assessment: 'I can't do it... yet'."
     },
     {
       "emoji": "📚",
-      "title": "Стратегия обучения",
+      "title": "Learning Strategy",
       "source": "Scott Young — Ultralearning",
-      "text": "Пассивное потребление информации создает иллюзию знания. Реальное обучение требует активного вспоминания и применения знаний на практике.",
-      "tip": "После прочтения главы закрой книгу и запиши главную мысль своими словами на листе бумаги."
+      "text": "Passive consumption of information creates an illusion of knowledge. Real learning requires active recall and application of knowledge in practice.",
+      "tip": "After reading a chapter, close the book and write down the main idea in your own words on a piece of paper."
     },
     {
       "emoji": "🗓️",
-      "title": "Рефлексия и дневник",
+      "title": "Reflection and Journaling",
       "source": "Stoic Philosophy (Marcus Aurelius)",
-      "text": "Непрожитый и непроанализированный опыт теряется. Письменная рефлексия вечером структурирует мышление и снижает уровень тревожности.",
-      "tip": "Вечером запиши 3 хороших события дня и 1 действие, которое завтра можно улучшить."
+      "text": "Unlived and unanalyzed experience is lost. Written evening reflection structures thinking and reduces anxiety levels.",
+      "tip": "In the evening, write down 3 good events of the day and 1 action you can improve tomorrow."
     },
     {
       "emoji": "🔋",
-      "title": "Управление дофамином",
+      "title": "Dopamine Management",
       "source": "Anna Lembke — Dopamine Nation",
-      "text": "Постоянный поиск легкого удовольствия (соцсети, быстрые углеводы) истощает дофаминовые рецепторы, лишая мотивации к сложным задачам. Практика «дофаминового голодания» восстанавливает чувствительность.",
-      "tip": "Устраивай один день в неделю без цифровых развлечений."
+      "text": "Constantly seeking easy pleasure (social media, fast carbs) depletes dopamine receptors, robbing motivation for complex tasks. 'Dopamine fasting' practice restores sensitivity.",
+      "tip": "Schedule one day a week without digital entertainment."
     },
     {
       "emoji": "🤝",
-      "title": "Сила окружения",
+      "title": "The Power of Environment",
       "source": "David Burkus — Friend of a Friend",
-      "text": "Мы представляем собой среднее арифметическое пяти людей, с которыми проводим больше всего времени. Окружение влияет на наши нормы поведения сильнее силы воли.",
-      "tip": "Осознанно присоединись к сообществу людей, которые уже имеют желаемые тобой навыки."
+      "text": "We are the average of the five people we spend the most time with. Environment influences our behavior norms more than willpower.",
+      "tip": "Consciously join a community of people who already have the skills you desire."
     }
   ],
   "quiz": [
-    {"q": "Что эффективнее для долгосрочных изменений?", "a": ["Цели на год", "Смена идентичности", "Визуализация успеха"], "correct": 1},
-    {"q": "Какова ключевая идея 'Deep Work' Кэла Ньюпорта?", "a": ["Многозадачность", "Интенсивная концентрация", "Скорость работы"], "correct": 1},
-    {"q": "Что дает прирост в 37 раз за год при улучшении на 1% в день?", "a": ["Сложный процент", "Случайная удача", "Стрессовая ситуация"], "correct": 0},
-    {"q": "Как бороться с ограничивающим убеждением 'Я не умею продавать'?", "a": ["Сменить профессию", "Добавить слово 'пока'", "Найти партнера"], "correct": 1},
-    {"q": "Что является альтернативой пассивному чтению для запоминания?", "a": ["Скорочтение", "Активное воспроизведение", "Выделение маркером"], "correct": 1}
+    {"q": "What is more effective for long-term change?", "a": ["Annual goals", "Identity shift", "Visualizing success"], "correct": 1},
+    {"q": "What is the key idea of 'Deep Work' by Cal Newport?", "a": ["Multitasking", "Intense concentration", "Work speed"], "correct": 1},
+    {"q": "What yields a 37-fold increase over a year with 1% daily improvement?", "a": ["Compound interest", "Random luck", "Stressful situation"], "correct": 0},
+    {"q": "How to combat the limiting belief 'I can't sell'?", "a": ["Change profession", "Add the word 'yet'", "Find a partner"], "correct": 1},
+    {"q": "What is an alternative to passive reading for memorization?", "a": ["Speed reading", "Active recall", "Highlighting with marker"], "correct": 1}
   ]
 }
