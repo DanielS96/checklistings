@@ -1,106 +1,106 @@
 {
   "id": "neuroplasticity-learning-pro",
-  "title": "Нейропластичность и обучение",
-  "subtitle": "Как мозг физически меняется при освоении новых навыков",
-  "description": "Этот чек-лист раскрывает механизмы нейропластичности — способности мозга перестраивать свою структуру в ответ на опыт. Вы узнаете научно обоснованные методики ускоренного обучения: spaced repetition, interleaving, deliberate practice и другие. Понимание этих принципов позволяет осваивать любые навыки быстрее и глубже.",
+  "title": "Neuroplasticity and Learning",
+  "subtitle": "How the brain physically changes when acquiring new skills",
+  "description": "This checklist reveals the mechanisms of neuroplasticity — the brain's ability to restructure its structure in response to experience. You'll learn scientifically proven accelerated learning methods: spaced repetition, interleaving, deliberate practice, and others. Understanding these principles allows you to master any skill faster and deeper.",
 
   "items": [
     {
       "emoji": "🧠",
-      "title": "Нейропластичность: базовый принцип",
+      "title": "Neuroplasticity: The Basic Principle",
       "source": "Norman Doidge — The Brain That Changes Itself",
-      "text": "Долгое время считалось, что мозг взрослого человека неизменен. Сегодня доказано: нейроны, которые возбуждаются вместе, связываются (закон Хебба). Каждый раз, когда вы практикуете навык, вы укрепляете определённые нейронные цепи. Мозг буквально перестраивает свою физическую структуру — растут новые дендритные шипики, усиливаются синаптические связи, а неиспользуемые — отмирают (синаптический прунинг).",
-      "tip": "Воспринимайте каждую тренировку навыка не как 'ещё одну попытку', а как физическую стройку в мозгу. Вы буквально выращиваете новые связи."
+      "text": "For a long time, it was thought that the adult brain was immutable. We now know: neurons that fire together, wire together (Hebb's Law). Each time you practice a skill, you strengthen specific neural circuits. The brain literally rebuilds its physical structure — new dendritic spines grow, synaptic connections strengthen, and unused ones die off (synaptic pruning).",
+      "tip": "Think of each skill practice not as 'another attempt', but as a physical construction project in your brain. You are literally growing new connections."
     },
     {
       "emoji": "🔁",
-      "title": "Интервальное повторение",
-      "source": "Hermann Ebbinghaus — Кривая забывания",
-      "text": "Эббингауз экспериментально доказал: без повторения мы забываем до 80% новой информации в течение 30 дней. Но повторение в правильные моменты — когда материал почти забыт, но ещё доступен для извлечения — закрепляет его в долговременной памяти максимально эффективно. Оптимальные интервалы: 1 день, 3 дня, 1 неделя, 2 недели, 1 месяц после первого изучения.",
-      "tip": "Используй приложения Anki или Quizlet, в которые встроен алгоритм интервальных повторений. Не пытайся запомнить всё за один присест — распределяй усилия во времени."
+      "title": "Spaced Repetition",
+      "source": "Hermann Ebbinghaus — Forgetting Curve",
+      "text": "Ebbinghaus experimentally proved: without repetition, we forget up to 80% of new information within 30 days. But repetition at the right moments — when material is almost forgotten but still accessible for retrieval — cements it in long-term memory most effectively. Optimal intervals: 1 day, 3 days, 1 week, 2 weeks, 1 month after initial learning.",
+      "tip": "Use apps with built-in spaced repetition algorithms (Anki, Quizlet). Don't try to memorize everything in one sitting — distribute your efforts over time."
     },
     {
       "emoji": "🔄",
-      "title": "Чередование навыков",
+      "title": "Interleaving (Alternating Skills)",
       "source": "Robert Bjork — Desirable Difficulties",
-      "text": "Традиционный подход 'отработал приём А до автоматизма, потом перешёл к приёму Б' — неэффективен. Гораздо лучше чередовать разные типы задач или вариации навыка в рамках одной сессии. Это создаёт 'желаемые трудности': мозгу приходится каждый раз заново извлекать схему действия, что усиливает нейронные связи. Бейсболисты, которые отрабатывали удары по разным типам подач вперемешку, показали результаты на 57% лучше, чем группа, отрабатывавшая каждый тип блоками.",
-      "tip": "При изучении языка не учи 50 слов одной темы подряд. Смешивай слова из разных категорий, грамматику и аудирование в одной сессии."
+      "text": "The traditional approach 'practice technique A to automation, then move to technique B' is inefficient. It is much better to alternate different types of tasks or skill variations within a single session. This creates 'desirable difficulties': the brain must retrieve the action pattern anew each time, which strengthens neural connections. Baseball players who practiced hitting different types of pitches intermixed showed results 57% better than the group practicing each type in blocks.",
+      "tip": "When learning a language, don't learn 50 words from one topic in a row. Mix words from different categories, grammar, and listening in one session."
     },
     {
       "emoji": "🎯",
-      "title": "Осознанная практика",
+      "title": "Deliberate Practice",
       "source": "Anders Ericsson — Peak",
-      "text": "Простое повторение действия не ведёт к мастерству. Ключевой фактор развития экспертов — deliberate practice. Её признаки: 1) чёткая конкретная цель на сессию, 2) полная концентрация внимания, 3) немедленная обратная связь, 4) выход из зоны комфорта, 5) работа над слабыми местами. Любители играют в теннис ради удовольствия. Профессионалы часами отрабатывают один удар, который у них плохо получается.",
-      "tip": "Разбей сложный навык на микро-компоненты. Выяви самый слабый и посвяти ближайшие 3 тренировки только ему, игнорируя остальное."
+      "text": "Simple repetition of an action does not lead to mastery. The key factor in expert growth is deliberate practice. Its features: 1) a clear specific goal for the session, 2) full concentration, 3) immediate feedback, 4) stepping out of comfort zone, 5) working on weaknesses. Amateurs play tennis for pleasure. Professionals spend hours practicing one shot they're bad at.",
+      "tip": "Break down a complex skill into micro-components. Identify your weakest and dedicate your next 3 practices to it exclusively, ignoring everything else."
     },
     {
       "emoji": "😴",
-      "title": "Сон и консолидация памяти",
+      "title": "Sleep and Memory Consolidation",
       "source": "Matthew Walker — Why We Sleep",
-      "text": "Обучение происходит не во время практики, а во время сна. Во время медленной фазы сна мозг многократно воспроизводит дневные паттерны нейронной активности в ускоренном темпе, перенося информацию из гиппокампа (кратковременное хранилище) в кору (долговременное). Фаза быстрого сна связывает новые знания с уже существующими, создавая ассоциативные сети. Пропуск сна после интенсивного обучения снижает запоминание на 40-50%.",
-      "tip": "Сложную информацию изучай перед сном. А после обучения обязательно обеспечь себе полноценный 7-8 часовой сон без алкоголя."
+      "text": "Learning does NOT happen during practice, but during sleep. During slow-wave sleep, the brain repeatedly replays daily neural activity patterns in accelerated mode, transferring information from the hippocampus (short-term storage) to the cortex (long-term). REM sleep connects new knowledge with existing ones, creating associative networks. Missing sleep after intensive learning reduces retention by 40-50%.",
+      "tip": "Study complex information before bed. After learning, ensure a full 7-8 hours of sleep without alcohol."
     },
     {
       "emoji": "⚡",
-      "title": "Ацетилхолин и состояние фокуса",
+      "title": "Acetylcholine and the Focused State",
       "source": "Andrew Huberman — Huberman Lab Podcast",
-      "text": "Нейропластичность запускается только при высоком уровне ацетилхолина — нейромедиатора, отвечающего за фокус и внимание. Без концентрации физические изменения в мозге не происходят, сколько бы вы ни повторяли. Визуальный фокус (пристальный взгляд на объекте) напрямую связан с ментальным фокусом. Сужение зрачков стимулирует выброс ацетилхолина.",
-      "tip": "Перед началом практики зафиксируй взгляд на одной точке (например, на кончике ручки) в течение 30-60 секунд. Это 'разогревает' систему внимания."
+      "text": "Neuroplasticity is only triggered when acetylcholine levels are high — the neurotransmitter responsible for focus and attention. Without concentration, no physical changes occur in the brain, no matter how much you repeat. Visual focus (fixing your gaze on an object) is directly linked to mental focus. Pupil constriction stimulates acetylcholine release.",
+      "tip": "Before starting practice, fix your gaze on one point (e.g., the tip of a pen) for 30-60 seconds. This 'warms up' the attention system."
     },
     {
       "emoji": "⚠️",
-      "title": "Роль ошибок и фрустрации",
+      "title": "The Role of Errors and Frustration",
       "source": "Stanislas Dehaene — How We Learn",
-      "text": "Ошибки — не признак неудачи, а необходимый сигнал для запуска нейропластичности. Когда ожидание не совпадает с реальностью, мозг выбрасывает дофамин (удивление) и ацетилхолин (внимание), открывая 'окно пластичности'. Именно в моменты фрустрации от неудачи мозг максимально готов к перестройке. Если всё получается легко — роста нет.",
-      "tip": "Не избегай сложных задач. Если упражнение кажется лёгким — ты не учишься. Стремись к 70-80% правильных ответов: это зона оптимального обучения."
+      "text": "Errors are not a sign of failure, but a necessary signal to trigger neuroplasticity. When expectation does not match reality, the brain releases dopamine (surprise) and acetylcholine (attention), opening a 'plasticity window'. It is precisely in moments of frustration from failure that the brain is most ready for restructuring. If everything is easy — no growth occurs.",
+      "tip": "Don't avoid difficult tasks. If an exercise feels easy — you're not learning. Aim for 70-80% correct answers: that's the optimal learning zone."
     },
     {
       "emoji": "🏃",
-      "title": "Кардио и нейрогенез",
+      "title": "Cardio and Neurogenesis",
       "source": "John Ratey — Spark",
-      "text": "Аэробная физическая нагрузка — единственный доказанный способ стимулировать рождение новых нейронов (нейрогенез) в гиппокампе — центре памяти. BDNF (нейротрофический фактор мозга) — это 'удобрение для нейронов', которое выделяется во время бега или быстрой ходьбы. 20-30 минут кардио перед обучением повышают способность к запоминанию на 20-30%.",
-      "tip": "Планируй изучение сложного материала через 30-60 минут после кардиотренировки. Мозг будет буквально 'пропитан' BDNF."
+      "text": "Aerobic exercise is the only proven way to stimulate the birth of new neurons (neurogenesis) in the hippocampus — the memory center. BDNF (Brain-Derived Neurotrophic Factor) is 'fertilizer for neurons' released during running or brisk walking. 20-30 minutes of cardio before learning increases memory capacity by 20-30%.",
+      "tip": "Schedule complex material for 30-60 minutes after a cardio workout. Your brain will literally be 'soaked' in BDNF."
     },
     {
       "emoji": "🗣️",
-      "title": "Генерация и активное воспроизведение",
+      "title": "Generation and Active Recall",
       "source": "Barbara Oakley — A Mind for Numbers",
-      "text": "Перечитывание конспекта — худший способ учиться. Мозг принимает узнавание за знание. Эффективное обучение — это попытка извлечь информацию из памяти без подсказок. Закрой книгу и объясни тему вслух, как пятилетнему ребёнку. Напряжение при воспоминании — это и есть момент укрепления синаптической связи.",
-      "tip": "После изучения новой темы выдели 10 минут на 'свободное вспоминание': запиши на чистый лист всё, что запомнил, в любом порядке."
+      "text": "Rereading notes is the worst way to learn. The brain mistakes recognition for knowledge. Effective learning is attempting to retrieve information from memory without prompts. Close the book and explain the topic aloud as if to a five-year-old. The strain of recollection is the moment of synaptic strengthening.",
+      "tip": "After studying a new topic, spend 10 minutes on 'free recall': write down everything you remember on a blank sheet, in any order."
     },
     {
       "emoji": "⏸️",
-      "title": "Микро-отдых и пассивное повторение",
+      "title": "Micro-Rests and Passive Repetition",
       "source": "Leonardo Cohen — NIH Research",
-      "text": "Нейропластичность происходит не в момент практики, а в короткие паузы между повторениями. Исследования показывают: мозг в 20 раз быстрее прокручивает последовательность действий во время 10-секундных перерывов, чем во время самого выполнения. Поэтому техника 'помидора' с короткими паузами — не просто способ избежать усталости, а критическое условие для консолидации навыка.",
-      "tip": "Делай паузу 10-15 секунд между повторениями одного и того же движения или фразы. Ничего не делай. Мозг в это время активно учится."
+      "text": "Neuroplasticity occurs not during practice, but in the short pauses between repetitions. Research shows: the brain replays action sequences 20 times faster during 10-second breaks than during the execution itself. Therefore, the Pomodoro technique with short breaks is not just a way to avoid fatigue, but a critical condition for skill consolidation.",
+      "tip": "Take a 10-15 second pause between repetitions of the same movement or phrase. Do nothing. The brain is actively learning during this time."
     }
   ],
 
   "quiz": [
     {
-      "q": "Какой закон описывает принцип 'нейроны, которые возбуждаются вместе, связываются'?",
-      "a": ["Закон Парето", "Закон Хебба", "Закон Йеркса-Додсона"],
+      "q": "Which law describes the principle 'neurons that fire together, wire together'?",
+      "a": ["Pareto's Law", "Hebb's Law", "Yerkes-Dodson Law"],
       "correct": 1
     },
     {
-      "q": "Что такое 'желаемые трудности' (desirable difficulties) в обучении?",
-      "a": ["Максимально сложные задачи", "Условия, заставляющие мозг напрягаться при извлечении информации", "Трудности с мотивацией"],
+      "q": "What are 'desirable difficulties' in learning?",
+      "a": ["Maximum difficulty tasks", "Conditions that make the brain strain during information retrieval", "Motivational difficulties"],
       "correct": 1
     },
     {
-      "q": "Какой нейромедиатор критически важен для запуска нейропластичности и связан с состоянием фокуса?",
-      "a": ["Дофамин", "Серотонин", "Ацетилхолин"],
+      "q": "Which neurotransmitter is critically important for triggering neuroplasticity and is linked to the focused state?",
+      "a": ["Dopamine", "Serotonin", "Acetylcholine"],
       "correct": 2
     },
     {
-      "q": "В какой фазе сна происходит перенос информации из кратковременной памяти в долговременную?",
-      "a": ["Быстрый сон", "Медленный сон", "Дремота"],
+      "q": "During which sleep phase does information transfer from short-term to long-term memory occur?",
+      "a": ["REM sleep", "Slow-wave (deep) sleep", "Drowsiness"],
       "correct": 1
     },
     {
-      "q": "Что происходит с мозгом во время 10-секундных пауз между повторениями навыка?",
-      "a": ["Мозг отдыхает и ничего не делает", "Мозг прокручивает последовательность действий в 20 раз быстрее", "Мозг вырабатывает дофамин"],
+      "q": "What happens in the brain during 10-second pauses between repetitions of a skill?",
+      "a": ["The brain rests and does nothing", "The brain replays the action sequence 20 times faster", "The brain produces dopamine"],
       "correct": 1
     }
   ]
