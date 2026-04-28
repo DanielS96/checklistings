@@ -1,87 +1,87 @@
 {
   "id": "lifestyle-design-pro",
-  "title": "Дизайн жизни",
-  "subtitle": "Осознанный выбор, привычки и качество каждого дня",
-  "description": "Образ жизни — это не то, что случается с вами по умолчанию. Это совокупность осознанных решений о том, как вы тратите своё время, внимание и энергию. Этот чек-лист о том, как спроектировать жизнь, от которой не захочется сбегать в отпуск.",
+  "title": "Lifestyle Design",
+  "subtitle": "Intentional choices, habits, and quality of each day",
+  "description": "Lifestyle is not what happens to you by default. It is the sum of intentional decisions about how you spend your time, attention, and energy. This checklist is about designing a life you don't want to escape from on vacation.",
 
   "items": [
     {
       "emoji": "🏛️",
-      "title": "Эвдемония vs Гедония",
+      "title": "Eudaimonia vs. Hedonia",
       "source": "Aristotle / Positive Psychology",
-      "text": "Гедония — это погоня за удовольствием здесь и сейчас (вкусная еда, Netflix). Эвдемония — это счастье от реализации потенциала и осмысленной деятельности. Удовольствие быстро угасает, смысл даёт устойчивое удовлетворение жизнью.",
-      "tip": "В конце дня спроси: 'Что сегодня принесло мне настоящее удовлетворение, а не просто развлечение?'"
+      "text": "Hedonia is the pursuit of pleasure in the here and now (tasty food, Netflix). Eudaimonia is happiness derived from realizing potential and meaningful activity. Pleasure fades quickly; meaning provides lasting life satisfaction.",
+      "tip": "At the end of the day, ask: 'What brought me genuine satisfaction today, not just entertainment?'"
     },
     {
       "emoji": "⚖️",
-      "title": "Четыре тысячи недель",
+      "title": "Four Thousand Weeks",
       "source": "Oliver Burkeman",
-      "text": "Средняя продолжительность жизни — около 4000 недель. Принятие конечности времени парадоксально освобождает. Вы не можете успеть всё, поэтому нужно сознательно выбирать, что вы упустите. Выбор — это всегда отказ от альтернатив.",
-      "tip": "Составь список того, от чего ты сознательно отказываешься в этом году, чтобы освободить место для главного."
+      "text": "The average human lifespan is about 4000 weeks. Accepting the finitude of time paradoxically frees you. You cannot do everything, so you must consciously choose what you will miss out on. Choice is always a rejection of alternatives.",
+      "tip": "Make a list of what you consciously give up this year to make room for what matters most."
     },
     {
       "emoji": "🔄",
-      "title": "Привычки как идентичность",
+      "title": "Habits as Identity",
       "source": "James Clear — Atomic Habits",
-      "text": "Каждое действие — это голос за тип человека, которым вы становитесь. Чистка зубов, пробежка, чтение — это не просто задачи, это подтверждение идентичности. Фокус смещается с 'Я хочу пробежать марафон' на 'Я — бегун'.",
-      "tip": "Начни с двухминутной версии привычки. Достаточно надеть кроссовки, чтобы стать 'человеком, который бегает'."
+      "text": "Every action is a vote for the type of person you are becoming. Brushing teeth, going for a run, reading — these are not just tasks, they are affirmations of identity. The focus shifts from 'I want to run a marathon' to 'I am a runner'.",
+      "tip": "Start with a two-minute version of the habit. Just putting on your sneakers is enough to become 'someone who runs'."
     },
     {
       "emoji": "📵",
-      "title": "Цифровой минимализм",
+      "title": "Digital Minimalism",
       "source": "Cal Newport — Digital Minimalism",
-      "text": "Технологии — отличные слуги, но ужасные хозяева. Проводить 3-4 часа в день в телефоне — это не отдых, это истощение дофаминовой системы. Время одиночества без входящих стимулов необходимо для саморефлексии и креативности.",
-      "tip": "Устраивай 'цифровой шаббат' — 24 часа в неделю без интернета и экранов."
+      "text": "Technology is an excellent servant but a terrible master. Spending 3-4 hours a day on your phone is not rest, it's dopamine system depletion. Time alone without incoming stimuli is necessary for self-reflection and creativity.",
+      "tip": "Schedule a 'digital Sabbath' — 24 hours a week without internet and screens."
     },
     {
       "emoji": "🧳",
-      "title": "Эссенциализм",
+      "title": "Essentialism",
       "source": "Greg McKeown — Essentialism",
-      "text": "Меньше, но лучше. Эссенциалист постоянно спрашивает: 'Является ли это занятие абсолютно необходимым?'. Отказ от хороших возможностей ради одной великой — это высшая форма дисциплины.",
-      "tip": "Если ответ на предложение не 'ЧЁРТ ВОЗЬМИ, ДА!', то это 'Нет'."
+      "text": "Less but better. The essentialist constantly asks: 'Is this activity absolutely necessary?' Saying no to good opportunities in favor of one great one is the highest form of discipline.",
+      "tip": "If the answer to an offer isn't 'HELL YES!', it's 'No'."
     },
     {
       "emoji": "🌿",
-      "title": "Внимание к обыденности",
+      "title": "Mindfulness of the Ordinary",
       "source": "Thich Nhat Hanh — The Miracle of Mindfulness",
-      "text": "Мы проводим жизнь в ожидании 'настоящего момента' (отпуск, выходные), пропуская саму жизнь. Умение находить интерес и красоту в рутине (вкус чая, прогулка до метро) — это навык, который тренируется.",
-      "tip": "Раз в день выполняй одно рутинное действие (мытьё посуды, чистка зубов) с полным вниманием к ощущениям."
+      "text": "We spend life waiting for the 'real' moment (vacation, weekend), missing life itself. The ability to find interest and beauty in routine (the taste of tea, the walk to the subway) is a trainable skill.",
+      "tip": "Once a day, perform one routine action (washing dishes, brushing teeth) with full attention to the sensations."
     },
     {
       "emoji": "📅",
-      "title": "Идеальный день",
+      "title": "The Ideal Day",
       "source": "Debbie Millman",
-      "text": "Визуализируйте не абстрактный 'успех', а конкретный идеальный вторник через 5 лет. Во сколько вы встали? Что едите на завтрак? Где работаете? Чем занимаетесь вечером? Это упражнение даёт гораздо более точный компас для решений, чем финансовые цели.",
-      "tip": "Опиши свой идеальный обычный день в настоящем времени, как будто он уже наступил."
+      "text": "Visualize not abstract 'success', but a specific ideal Tuesday in 5 years. What time do you wake up? What do you eat for breakfast? Where do you work? What do you do in the evening? This exercise provides a much more accurate compass for decisions than financial goals.",
+      "tip": "Describe your ideal ordinary day in the present tense, as if it has already arrived."
     },
     {
       "emoji": "💰",
-      "title": "Достаточно",
+      "title": "Enough",
       "source": "Vicki Robin — Your Money or Your Life",
-      "text": "Валюта жизни — это время и энергия. Каждая покупка — это обмен часов вашей жизни на вещь. Точка 'Достаточно' — это момент, когда дополнительные деньги перестают приносить пропорциональное счастье и начинают создавать лишний шум.",
-      "tip": "Рассчитай свою реальную почасовую ставку с учётом времени на дорогу и подготовку к работе."
+      "text": "The currency of life is time and energy. Every purchase is exchanging hours of your life for an item. The point of 'Enough' is when additional money stops bringing proportional happiness and starts creating extra noise.",
+      "tip": "Calculate your real hourly wage, including commute and work preparation time."
     },
     {
       "emoji": "🧠",
-      "title": "Скука как катализатор",
+      "title": "Boredom as a Catalyst",
       "source": "Sandie Mann — The Science of Boredom",
-      "text": "Современный человек разучился скучать. При первых признаках пустоты рука тянется к телефону. Но именно в состоянии скуки мозг начинает блуждать и создавать новые нейронные связи, рождая креативные идеи и самоосознание.",
-      "tip": "Стой в очереди или едь в лифте без телефона. Наблюдай за мыслями, которые приходят."
+      "text": "Modern humans have forgotten how to be bored. At the first sign of emptiness, the hand reaches for the phone. But it is in a state of boredom that the brain begins to wander and create new neural connections, giving rise to creative ideas and self-awareness.",
+      "tip": "Stand in line or ride the elevator without your phone. Observe the thoughts that come."
     },
     {
       "emoji": "🤝",
-      "title": "Слабые связи",
+      "title": "Weak Ties",
       "source": "Mark Granovetter — The Strength of Weak Ties",
-      "text": "Близкие друзья дают поддержку, но новые возможности (работа, идеи) чаще приходят через 'слабые связи' — знакомых, с которыми вы редко общаетесь. Поддержание широкой, но неглубокой сети контактов увеличивает 'поверхность удачи'.",
-      "tip": "Раз в месяц пиши старому знакомому, с которым давно не общался, просто чтобы узнать, как дела."
+      "text": "Close friends provide support, but new opportunities (jobs, ideas) more often come through 'weak ties' — acquaintances you rarely see. Maintaining a wide but not deep network of contacts increases the 'surface area of luck'.",
+      "tip": "Once a month, write to an old acquaintance you haven't spoken to in a while, just to see how they're doing."
     }
   ],
 
   "quiz": [
-    {"q": "Чем эвдемония отличается от гедонии?", "a": ["Это одно и то же", "Эвдемония — счастье от смысла и развития", "Гедония — это страдание"], "correct": 1},
-    {"q": "Что такое 'Эссенциализм' по Грегу Маккеону?", "a": ["Делать больше дел", "Делать меньше, но лучше", "Коллекционировать вещи"], "correct": 1},
-    {"q": "Почему 'слабые связи' важны для возможностей?", "a": ["Они дают деньги в долг", "Через них приходит новая информация", "Они ближе географически"], "correct": 1},
-    {"q": "Что предлагает упражнение 'Идеальный обычный день'?", "a": ["Спланировать отпуск", "Понять истинные ценности через детали быта", "Заработать миллион"], "correct": 1},
-    {"q": "Почему скука полезна для мозга?", "a": ["Можно поспать", "Активирует режим блуждания мыслей и креативность", "Тратит меньше калорий"], "correct": 1}
+    {"q": "How does eudaimonia differ from hedonia?", "a": ["They are the same", "Eudaimonia is happiness from meaning and development", "Hedonia is suffering"], "correct": 1},
+    {"q": "What is 'Essentialism' according to Greg McKeown?", "a": ["Doing more tasks", "Doing less, but better", "Collecting things"], "correct": 1},
+    {"q": "Why are 'weak ties' important for opportunities?", "a": ["They lend money", "New information comes through them", "They are geographically closer"], "correct": 1},
+    {"q": "What does the 'Ideal Ordinary Day' exercise propose?", "a": ["Plan a vacation", "Understand true values through daily life details", "Make a million"], "correct": 1},
+    {"q": "Why is boredom beneficial for the brain?", "a": ["You can sleep", "Activates the mind-wandering mode and creativity", "Burns fewer calories"], "correct": 1}
   ]
 }
