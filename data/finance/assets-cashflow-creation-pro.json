@@ -1,106 +1,106 @@
 {
   "id": "assets-cashflow-creation-pro",
-  "title": "Создание активов и денежных потоков",
-  "subtitle": "Отличие актива от пассива, интеллектуальная собственность, рентный доход, бизнес-системы",
-  "description": "Этот чек-лист — глубокое погружение в философию и механику создания богатства. Мы разберём фундаментальное различие между активами и пассивами, изучим конкретные классы активов, генерирующих денежный поток без вашего прямого участия, и рассмотрим системы, позволяющие капиталу работать на вас. Это не про 'быстрое обогащение', а про построение долгосрочной финансовой архитектуры.",
+  "title": "Creating Assets and Cash Flow",
+  "subtitle": "Distinguishing assets from liabilities, intellectual property, rental income, business systems",
+  "description": "This checklist is a deep dive into the philosophy and mechanics of wealth creation. We will examine the fundamental difference between assets and liabilities, study specific asset classes that generate cash flow without your direct involvement, and explore systems that allow capital to work for you. This is not about 'get rich quick,' but about building long-term financial architecture.",
 
   "items": [
     {
       "emoji": "🏦",
-      "title": "Фундаментальное определение актива и пассива",
-      "source": "Robert Kiyosaki — Rich Dad Poor Dad (расширенная концепция)",
-      "text": "Классическое определение Кийосаки: актив кладёт деньги в ваш карман, пассив — вынимает. Но более глубокое понимание требует разделения активов на три уровня. Первый уровень — 'бумажные' активы (акции, облигации). Второй уровень — 'жёсткие' активы, генерирующие ренту (недвижимость, оборудование). Третий, самый мощный уровень — 'невидимые' активы: патенты, авторские права, бренд, клиентская база, уникальные знания. Главная ошибка среднего класса — накопление пассивов, которые маскируются под активы (собственный дом с ипотекой, машина в кредит, дача, требующая вложений).",
-      "tip": "Проведи инвентаризацию всего, чем владеешь. Честно ответь по каждому пункту: 'Кладёт ли это деньги мне в карман каждый месяц или забирает?' Если забирает — это не актив, а обязательство."
+      "title": "The Fundamental Definition of an Asset and a Liability",
+      "source": "Robert Kiyosaki — Rich Dad Poor Dad (extended concept)",
+      "text": "Kiyosaki's classic definition: an asset puts money in your pocket, a liability takes money out. But a deeper understanding requires separating assets into three levels. The first level is 'paper' assets (stocks, bonds). The second level is 'hard' assets generating rent (real estate, equipment). The third, most powerful level — 'invisible' assets: patents, copyrights, brand, customer base, unique knowledge. The main mistake of the middle class is accumulating liabilities disguised as assets (own home with a mortgage, car on credit, a dacha requiring ongoing investment).",
+      "tip": "Take inventory of everything you own. Honestly assess each item: 'Does this put money in my pocket every month or take it out?' If it takes out — it's not an asset, it's a liability."
     },
     {
       "emoji": "💰",
-      "title": "Денежный поток против прироста капитала",
+      "title": "Cash Flow vs. Capital Appreciation",
       "source": "Robert Kiyosaki — Cashflow Quadrant",
-      "text": "Существует два принципиально разных способа зарабатывать на активах: капитализация (рост стоимости самого актива) и денежный поток (регулярные поступления от использования актива). Большинство инвесторов зациклены на первом: 'купить дешевле, продать дороже'. Но это спекуляция, зависящая от рыночной конъюнктуры. Истинная финансовая свобода строится на втором: создание источников пассивного дохода, которые не требуют продажи самого актива. Денежный поток — это зарплата, которую платят ваши активы, пока вы спите. Он делает вас неуязвимым к рыночным циклам.",
-      "tip": "Стремись к созданию минимум 3-5 независимых источников денежного потока. Если один иссякнет, остальные продолжат кормить."
+      "text": "There are two fundamentally different ways to earn from assets: capitalization (the growth in value of the asset itself) and cash flow (regular income from using the asset). Most investors are fixated on the first: 'buy low, sell high.' But this is speculation, dependent on market conditions. True financial freedom is built on the second: creating sources of passive income that don't require selling the asset itself. Cash flow is the salary your assets pay you while you sleep. It makes you immune to market cycles.",
+      "tip": "Strive to create at least 3-5 independent sources of cash flow. If one dries up, the others will continue to support you."
     },
     {
       "emoji": "🏢",
-      "title": "Бизнес-системы как актив",
+      "title": "Business Systems as an Asset",
       "source": "Michael Gerber — The E-Myth Revisited",
-      "text": "Бизнес становится активом только тогда, когда он может работать без вашего ежедневного участия. До этого момента вы не владелец бизнеса, а самозанятый специалист, который купил себе работу. Создание системы требует документирования всех процессов, стандартизации операций и найма людей, которые выполняют работу по чётким инструкциям. Франчайзинг — яркий пример бизнес-системы: вы покупаете готовую 'машину по производству денег' с прописанными процедурами. Ключевой вопрос: 'Будет ли этот бизнес приносить доход, если я уеду на год без связи?'",
-      "tip": "Начни документировать каждую повторяющуюся задачу в своей работе. Создавай чек-листы и инструкции, даже если пока работаешь один. Это фундамент будущей системы."
+      "text": "A business becomes an asset only when it can operate without your daily involvement. Until that point, you are not a business owner, but a self-employed specialist who has bought themselves a job. Creating a system requires documenting all processes, standardizing operations, and hiring people who follow clear instructions. Franchising is a prime example of a business system: you buy a ready-made 'money-making machine' with prescribed procedures. The key question: 'Will this business generate income if I leave for a year without contact?'",
+      "tip": "Start documenting every repetitive task in your work. Create checklists and instructions, even if you work alone. This is the foundation of future systems."
     },
     {
       "emoji": "🎨",
-      "title": "Интеллектуальная собственность: актив с бесконечным плечом",
+      "title": "Intellectual Property: An Asset with Infinite Leverage",
       "source": "Paul Pilzer — Unlimited Wealth",
-      "text": "В отличие от физических активов, интеллектуальная собственность обладает уникальным свойством: её можно продать миллион раз, и она не исчезнет. Книга, курс, патент, музыкальный трек, программный код — всё это требует значительных вложений на этапе создания, но предельные издержки копирования стремятся к нулю. Однажды созданная ценность может приносить роялти десятилетиями. В цифровую эпоху это самый доступный путь к созданию денежного потока для человека без крупного стартового капитала.",
-      "tip": "Выбери одну узкую тему, в которой у тебя есть глубокая экспертиза или уникальный опыт. Упакуй это знание в цифровой продукт: мини-курс, гайд, шаблоны, чек-листы."
+      "text": "Unlike physical assets, intellectual property has a unique property: it can be sold a million times and not be destroyed. A book, a course, a patent, a musical track, software code — all require significant investment at the creation stage, but marginal replication costs approach zero. Once created, value can provide royalties for decades. In the digital age, this is the most accessible path to creating cash flow for someone without large start-up capital.",
+      "tip": "Choose one narrow topic in which you have deep expertise or unique experience. Package this knowledge into a digital product: a mini-course, guide, templates, checklists."
     },
     {
       "emoji": "🏠",
-      "title": "Рентный доход от недвижимости: углублённый анализ",
+      "title": "Rental Income from Real Estate: In-Depth Analysis",
       "source": "Gary Keller — The Millionaire Real Estate Investor",
-      "text": "Недвижимость — классический актив для создания денежного потока, но большинство подходит к ней дилетантски. Формула успеха: денежный поток = арендная плата - (ипотека + налоги + страховка + управление + ремонт + резерв на пустоты). Положительный денежный поток с первого дня — редкое явление, но именно к нему нужно стремиться. Ключевые стратегии увеличения потока: 1) BRRRR (Buy, Rehab, Rent, Refinance, Repeat) — покупка недооценённого объекта, ремонт, сдача, рефинансирование и повторение; 2) House Hacking — покупка многоквартирного дома, проживание в одной квартире и сдача остальных; 3) Краткосрочная аренда в туристических локациях.",
-      "tip": "Изучи рынок недвижимости в своём городе. Найди 10 объектов, которые сдаются в аренду, и посчитай их реальную доходность (годовая аренда / стоимость объекта). Сравни с доходностью банковского депозита."
+      "text": "Real estate is a classic asset for generating cash flow, but most approach it amateurishly. The success formula: cash flow = rent - (mortgage + taxes + insurance + management + repairs + vacancy reserve). Positive cash flow from day one is a rare phenomenon, but it's what you should aim for. Key strategies for increasing flow: 1) BRRRR (Buy, Rehab, Rent, Refinance, Repeat) — buying an undervalued property, renovating, renting, refinancing, and repeating; 2) House Hacking — buying a multi-unit building, living in one unit and renting the others; 3) Short-term rentals in tourist locations.",
+      "tip": "Study the real estate market in your city. Find 10 properties for rent and calculate their actual yield (annual rent / property value). Compare to bank deposit yields."
     },
     {
       "emoji": "📈",
-      "title": "Дивидендные акции и ETF как генератор потока",
+      "title": "Dividend Stocks and ETFs as a Cash Flow Generator",
       "source": "Jeremy Siegel — The Future for Investors",
-      "text": "Исторически дивиденды составляли до 40% общей доходности фондового рынка США за последние 100 лет. Компании, которые стабильно повышают дивиденды десятилетиями ('дивидендные аристократы'), как правило, обладают устойчивой бизнес-моделью и проходят через кризисы с меньшими потерями. Стратегия 'жить на дивиденды' требует значительного капитала, но даже небольшие регулярные инвестиции в дивидендные ETF создают снежный ком: реинвестированные дивиденды покупают новые акции, которые генерируют ещё больше дивидендов.",
-      "tip": "Начни с малого: открой ИИС и настрой автоматическую покупку ETF на индекс широкого рынка (например, S&P 500 или MSCI World) с реинвестированием дивидендов."
+      "text": "Historically, dividends have accounted for up to 40% of the total return of the US stock market over the last 100 years. Companies that consistently increase dividends for decades ('dividend aristocrats') typically have sustainable business models and weather crises with fewer losses. The strategy of 'living on dividends' requires significant capital, but even small regular investments in dividend ETFs create a snowball effect: reinvested dividends buy more shares, which generate more dividends.",
+      "tip": "Start small: open an individual investment account (IIS) and set up automatic purchase of broad market index ETFs (e.g., S&P 500 or MSCI World) with dividend reinvestment."
     },
     {
       "emoji": "🌐",
-      "title": "Цифровые активы и контент-бизнес",
+      "title": "Digital Assets and Content Business",
       "source": "Tiago Forte — Building a Second Brain",
-      "text": "В современной экономике контент — это актив. Блог с трафиком, YouTube-канал с просмотрами, Telegram-канал с лояльной аудиторией, база email-подписчиков — всё это генерирует денежный поток через рекламу, партнёрские программы, спонсорство и продажу собственных продуктов. Ключевое отличие от интеллектуальной собственности: здесь активом является не столько сам контент, сколько внимание и доверие аудитории. Это требует постоянной 'подпитки' новым контентом, но даёт экспоненциальный рост при достижении критической массы.",
-      "tip": "Выбери одну платформу и начни публиковать контент по узкой теме раз в неделю. Через год у тебя будет актив, который можно монетизировать."
+      "text": "In the modern economy, content is an asset. A blog with traffic, a YouTube channel with views, a Telegram channel with a loyal audience, an email subscriber list — all generate cash flow through advertising, affiliate programs, sponsorship, and selling own products. The key difference from intellectual property: here, the asset is not so much the content itself, but the audience's attention and trust. This requires constant 'feeding' with new content, but yields exponential growth when critical mass is reached.",
+      "tip": "Choose one platform and start publishing content on a narrow topic once a week. In a year, you'll have an asset that can be monetized."
     },
     {
       "emoji": "🤝",
-      "title": "Партнёрства и доля в бизнесе",
+      "title": "Partnerships and Business Equity",
       "source": "Felix Dennis — How to Get Rich",
-      "text": "Владение долей в чужом успешном бизнесе — один из самых эффективных способов создания денежного потока, не требующий операционного управления. Это может быть миноритарная доля в ООО друга-предпринимателя, инвестиции через краудфандинговые платформы или венчурные сделки (для квалифицированных инвесторов). Ключевой навык здесь — умение оценивать не только бизнес-модель, но и личность основателя. В малом бизнесе личность владельца часто важнее финансовых показателей.",
-      "tip": "В своём окружении найди 1-2 предпринимателей, в чей бизнес ты веришь. Предложи не только деньги, но и свои компетенции в обмен на небольшую долю."
+      "text": "Owning a stake in someone else's successful business is one of the most effective ways to generate cash flow without operational management. This could be a minority stake in an entrepreneurial friend's LLC, investments through crowdfunding platforms, or venture deals (for accredited investors). The key skill is the ability to assess not only the business model but also the founder's personality. In small business, the owner's character is often more important than financial metrics.",
+      "tip": "In your network, find 1-2 entrepreneurs whose business you believe in. Offer not just money, but also your competencies in exchange for a small stake."
     },
     {
       "emoji": "⚖️",
-      "title": "Налоговая эффективность активов",
+      "title": "Tax Efficiency of Assets",
       "source": "Tom Wheelwright — Tax-Free Wealth",
-      "text": "Одно и то же количество денег, полученное из разных типов активов, облагается налогом по-разному. Доход от аренды можно уменьшить на амортизацию и расходы. Доход от продажи акций, удерживаемых более 3 лет, попадает под налоговый вычет (ИИС). Роялти от интеллектуальной собственности могут облагаться по ставке самозанятого (4-6%). Понимание налоговой архитектуры позволяет законно сохранять на 20-30% больше созданного денежного потока. Незнание этих нюансов — прямой убыток.",
-      "tip": "Перед созданием нового источника дохода проконсультируйся с налоговым консультантом. Спроси: 'Какую структуру владения этим активом выбрать, чтобы платить минимальный законный налог?'"
+      "text": "The same amount of money received from different types of assets is taxed differently. Rental income can be reduced by depreciation and expenses. Income from selling shares held for more than 3 years may qualify for a tax deduction (IIS). Royalties from intellectual property can be taxed at self-employed rates (4-6%). Understanding the tax architecture allows you to legally keep an additional 20-30% of created cash flow. Ignorance of these nuances is a direct loss.",
+      "tip": "Before creating a new income source, consult a tax advisor. Ask: 'What ownership structure for this asset should I choose to pay the minimum legal tax?'"
     },
     {
       "emoji": "🔄",
-      "title": "Реинвестирование как двигатель роста",
+      "title": "Reinvestment as an Engine of Growth",
       "source": "Warren Buffett — Letters to Shareholders",
-      "text": "Секрет богатства Баффетта не в том, что он нашёл 'волшебные' акции, а в том, что он последовательно реинвестировал всю прибыль в новые активы на протяжении 70 лет. Сложный процент работает только при условии, что вы не изымаете заработанные деньги из системы. Каждый рубль, потраченный на потребление сегодня, — это украденные 10 рублей у себя через 20 лет. Первые 5-10 лет создания активов должны проходить в режиме 'финансового аскетизма': весь денежный поток от активов направляется обратно на покупку новых активов.",
-      "tip": "Создай отдельный счёт для доходов от активов. Установи правило: первые 5 лет с этого счёта деньги не снимаются ни под каким предлогом, только реинвестируются."
+      "text": "Buffett's secret to wealth is not finding 'magic' stocks, but consistently reinvesting all profits into new assets for 70 years. Compound interest works only under the condition that you do not withdraw earnings from the system. Every ruble spent on consumption today is 10 rubles stolen from yourself in 20 years. The first 5-10 years of asset creation should be in 'financial asceticism' mode: all cash flow from assets goes straight back into buying new assets.",
+      "tip": "Create a separate account for income from assets. Establish a rule: for the first 5 years, no money is withdrawn from this account under any pretext, only reinvested."
     }
   ],
 
   "quiz": [
     {
-      "q": "Чем фундаментально актив отличается от пассива в концепции Кийосаки?",
-      "a": ["Актив дороже стоит", "Актив кладёт деньги в карман, пассив — вынимает", "Актив нельзя продать"],
+      "q": "How does an asset fundamentally differ from a liability in Kiyosaki's concept?",
+      "a": ["An asset is more expensive", "An asset puts money in your pocket, a liability takes it out", "An asset cannot be sold"],
       "correct": 1
     },
     {
-      "q": "Когда бизнес становится настоящим активом, а не работой?",
-      "a": ["Когда приносит первую прибыль", "Когда может работать без ежедневного участия владельца", "Когда зарегистрировано юрлицо"],
+      "q": "When does a business become a real asset instead of a job?",
+      "a": ["When it makes its first profit", "When it can operate without daily input from the owner", "When it is registered as a legal entity"],
       "correct": 1
     },
     {
-      "q": "В чём уникальное свойство интеллектуальной собственности как актива?",
-      "a": ["Её легко украсть", "Предельные издержки копирования стремятся к нулю", "Она не облагается налогом"],
+      "q": "What is the unique property of intellectual property as an asset?",
+      "a": ["It's easy to steal", "Marginal replication costs approach zero", "It is not taxed"],
       "correct": 1
     },
     {
-      "q": "Что такое стратегия BRRRR в инвестициях в недвижимость?",
-      "a": ["Покупка, ремонт, сдача, рефинансирование, повторение", "Покупка только новостроек", "Сдача недвижимости посуточно"],
+      "q": "What is the BRRRR strategy in real estate investing?",
+      "a": ["Buy, Rehab, Rent, Refinance, Repeat", "Buying only new constructions", "Short-term rental"],
       "correct": 0
     },
     {
-      "q": "Почему реинвестирование критически важно на ранних этапах создания активов?",
-      "a": ["Чтобы платить меньше налогов", "Чтобы запустить эффект сложного процента", "Чтобы диверсифицировать риски"],
+      "q": "Why is reinvestment critically important in the early stages of asset building?",
+      "a": ["To pay less tax", "To kickstart the effect of compound interest", "To diversify risks"],
       "correct": 1
     }
   ]
