@@ -1,106 +1,106 @@
 {
   "id": "career-as-product-pro",
-  "title": "Управление карьерой как продуктом",
-  "subtitle": "Личный бренд, нетворкинг, видимость в индустрии. Как продавать свои навыки дорого",
-  "description": "Этот чек-лист меняет парадигму отношения к карьере: вы не 'сотрудник, который ищет работу', а 'продукт, который решает конкретные проблемы рынка'. Мы разберём, как упаковать свои навыки в ценностное предложение, выстроить личный бренд, создающий входящий поток возможностей, и освоить искусство нетворкинга без навязчивости. Ваша зарплата — это не оценка вас как личности, а цена, которую рынок готов платить за решение определённой проблемы. Научитесь управлять этой ценой.",
+  "title": "Managing Your Career as a Product",
+  "subtitle": "Personal brand, networking, industry visibility. How to sell your skills at a premium",
+  "description": "This checklist shifts the paradigm of career thinking: you are not an 'employee looking for a job', but a 'product solving specific market problems'. We'll cover how to package your skills into a value proposition, build a personal brand that creates an inbound flow of opportunities, and master the art of networking without being pushy. Your salary is not a judgment of you as a person, but the price the market is willing to pay for solving a specific problem. Learn to manage this price.",
 
   "items": [
     {
       "emoji": "📦",
-      "title": "Карьера как продукт: фундаментальная смена мышления",
+      "title": "Career as a Product: Fundamental Mindset Shift",
       "source": "Cal Newport — So Good They Can't Ignore You",
-      "text": "Традиционный подход: 'У меня есть диплом и опыт, я ищу работу'. Предпринимательский подход: 'Я — продукт, решающий конкретные проблемы определённой аудитории за определённые деньги'. Разница колоссальна. В первом случае вы — проситель, конкурирующий с сотнями таких же резюме. Во втором — эксперт, которого ищут. Кэл Ньюпорт называет это 'карьерным капиталом' — совокупностью редких и ценных навыков, которые вы можете предложить рынку. Вопрос не 'Какую работу я могу получить?', а 'Какую проблему, за которую хорошо платят, я могу решить лучше других?'. Это требует инвентаризации навыков, честной оценки их рыночной ценности и стратегии по наращиванию дефицитных компетенций.",
-      "tip": "Проведите аудит своих навыков. Разделите их на три категории: 1) Commodity (есть у всех, низкая цена), 2) Specialized (есть у многих в вашей нише, средняя цена), 3) Rare & Valuable (есть у единиц, высокая цена). Сфокусируйтесь на развитии третьей категории."
+      "text": "Traditional approach: 'I have a degree and experience, I'm looking for a job.' Entrepreneurial approach: 'I am a product solving specific problems for a specific audience for specific money.' The difference is colossal. In the first case, you are a supplicant, competing with hundreds of similar resumes. In the second, an expert people seek out. Cal Newport calls this 'career capital' — the combination of rare and valuable skills you can offer the market. The question is not 'What job can I get?', but 'What well-paying problem can I solve better than others?' This requires an inventory of your skills, an honest assessment of their market value, and a strategy for building scarce competencies.",
+      "tip": "Conduct a skills audit. Divide them into three categories: 1) Commodity (everyone has them, low price), 2) Specialized (many in your niche have them, medium price), 3) Rare & Valuable (few have them, high price). Focus on developing the third category."
     },
     {
       "emoji": "🎯",
-      "title": "Ценностное предложение: формула 'Я помогаю X достичь Y путём Z'",
+      "title": "Value Proposition: The Formula 'I Help X Achieve Y Through Z'",
       "source": "April Dunford — Obviously Awesome",
-      "text": "Резюме с перечислением обязанностей ('отвечал за маркетинг', 'вёл проекты') не продаёт. Оно описывает действия, а не результаты. Ценностное предложение должно отвечать на три вопроса: Кто ваша целевая аудитория (X)? Какого измеримого результата вы помогаете достичь (Y)? Каким уникальным способом (Z)? Например: 'Я помогаю B2B SaaS-компаниям на стадии роста (X) увеличить конверсию из пробной версии в платную на 30% за 3 месяца (Y) путём внедрения персонализированного онбординга и анализа поведенческих данных (Z)'. Такая формулировка сразу позиционирует вас как решение, а не как ещё одного соискателя. Работодатели и клиенты покупают не ваше время, а конкретный исход.",
-      "tip": "Сформулируйте своё ценностное предложение по формуле 'Я помогаю [кому] достичь [какого результата] путём [какого метода]'. Проверьте: можно ли измерить результат? Звучит ли он привлекательно для тех, кто принимает решения о деньгах?"
+      "text": "A resume listing responsibilities ('responsible for marketing', 'managed projects') doesn't sell. It describes actions, not results. Your value proposition should answer three questions: Who is your target audience (X)? What measurable result do you help them achieve (Y)? What unique method do you use (Z)? For example: 'I help B2B SaaS companies at the growth stage (X) increase trial-to-paid conversion by 30% within 3 months (Y) by implementing personalized onboarding and behavioral data analysis (Z).' This formulation immediately positions you as a solution, not just another candidate. Employers and clients don't buy your time; they buy specific outcomes.",
+      "tip": "Formulate your value proposition using the formula 'I help [whom] achieve [what result] through [what method].' Check: Is the result measurable? Does it sound attractive to decision-makers with money?"
     },
     {
       "emoji": "🏗️",
-      "title": "Личный бренд: не самолюбование, а актив",
+      "title": "Personal Brand: Not Self-Promotion, But an Asset",
       "source": "Dorie Clark — Reinventing You",
-      "text": "Личный бренд — это не про селфи и вдохновляющие цитаты. Это управляемая репутация эксперта в определённой нише. Когда рекрутер или потенциальный клиент гуглит ваше имя, он должен увидеть подтверждение вашей экспертизы: статьи, выступления, комментарии в профессиональных медиа, рекомендации коллег. Личный бренд работает на вас 24/7, создавая входящий поток возможностей. Ключевые каналы построения: LinkedIn (профессиональный контент), отраслевые конференции (выступления), профессиональные сообщества (активное участие), создание 'активов контента' (статьи, подкасты, видео), которые продолжают приносить пользу годами. Важно: личный бренд строится вокруг одной ключевой темы, в которой вы хотите быть известны как эксперт.",
-      "tip": "Выберите одну узкую нишу, в которой вы хотите быть 'лицом'. Например, не просто 'маркетолог', а 'маркетолог для EdTech-стартапов, специализирующийся на органическом росте'. Вся ваша публичная активность должна подкреплять этот фокус."
+      "text": "Personal brand is not about selfies and inspirational quotes. It's a managed reputation as an expert in a specific niche. When a recruiter or potential client Googles your name, they should see confirmation of your expertise: articles, talks, comments in professional media, recommendations from colleagues. A personal brand works for you 24/7, creating an inbound flow of opportunities. Key channels for building: LinkedIn (professional content), industry conferences (speaking), professional communities (active participation), creating 'content assets' (articles, podcasts, videos) that continue to provide value for years. Important: a personal brand is built around a single key theme in which you want to be known as an expert.",
+      "tip": "Choose one narrow niche where you want to be 'the face'. For example, not just 'marketer', but 'marketer for EdTech startups specializing in organic growth'. All your public activity should reinforce this focus."
     },
     {
       "emoji": "📝",
-      "title": "LinkedIn как витрина вашего продукта",
+      "title": "LinkedIn as Your Product Showcase",
       "source": "Richard van der Blom — LinkedIn Algorithm Report",
-      "text": "LinkedIn — это не цифровое резюме, а ваша профессиональная витрина, открытая 24/7 для глобального рынка. Ключевые элементы упаковки: 1) Заголовок (headline) — не должность, а ценностное предложение (например, не 'Product Manager в X', а 'Помогаю B2B-продуктам расти от 0 до 100k пользователей'). 2) Раздел 'О себе' — не биография, а обращение к целевой аудитории с описанием их проблем и ваших решений. 3) Featured section — лучшие кейсы, статьи, видео. 4) Активность — регулярный контент, показывающий ваше мышление. Алгоритм LinkedIn вознаграждает тех, кто создаёт дискуссию, а не просто транслирует. Комментарии к чужим постам часто дают больший охват, чем собственные публикации.",
-      "tip": "Обновите заголовок LinkedIn: уберите должность, вставьте формулу 'Помогаю [кому] достигать [результат]'. Добавьте 3-5 ключевых слов, по которым вас должны находить рекрутеры."
+      "text": "LinkedIn is not a digital resume, but your professional showcase, open 24/7 to the global market. Key packaging elements: 1) Headline — not a job title, but a value proposition (e.g., not 'Product Manager at X', but 'Helping B2B Products Grow from 0 to 100k Users'). 2) 'About' section — not a biography, but an address to your target audience describing their problems and your solutions. 3) Featured section — best case studies, articles, videos. 4) Activity — regular content showing your thinking. The LinkedIn algorithm rewards those who create discussion, not just broadcast. Comments on others' posts often get more reach than your own publications.",
+      "tip": "Update your LinkedIn headline: remove your job title, insert the formula 'Helping [whom] achieve [result]'. Add 3-5 keywords recruiters should find you by."
     },
     {
       "emoji": "🤝",
-      "title": "Нетворкинг без навязчивости: принцип 'Давать, а не брать'",
+      "title": "Networking Without Pushiness: The Principle of 'Give, Not Take'",
       "source": "Adam Grant — Give and Take",
-      "text": "Большинство людей ненавидит 'нетворкинг', потому что представляет его как сбор визиток и холодные письма с просьбами. Настоящий нетворкинг — это построение отношений взаимной ценности задолго до того, как вам что-то понадобится. Адам Грант в своём исследовании показал: в долгосрочной перспективе выигрывают 'дающие' — те, кто щедро делится знаниями, знакомствами и помощью, не ожидая немедленной отдачи. Практическая стратегия: 1) Регулярно делитесь полезным контентом и инсайтами в своей нише. 2) Знакомьте людей друг с другом, если видите взаимную выгоду. 3) Предлагайте конкретную помощь, а не абстрактное 'обращайтесь, если что'. 4) Поддерживайте 'слабые связи' — периодически напоминайте о себе людям, с которыми вы не работаете ежедневно.",
-      "tip": "Каждую неделю делайте одно 'нетворк-действие' без запроса для себя: напишите рекомендацию бывшему коллеге, поделитесь статьёй с полезным комментарием, познакомьте двух людей из своей сети, которым это может быть полезно."
+      "text": "Most people hate 'networking' because they imagine it as collecting business cards and cold emails with requests. Real networking is building mutually valuable relationships long before you need something. Adam Grant's research showed: in the long run, 'givers' win — those who generously share knowledge, connections, and help without expecting immediate return. Practical strategy: 1) Regularly share useful content and insights in your niche. 2) Introduce people to each other if you see mutual benefit. 3) Offer specific help, not abstract 'let me know if you need anything'. 4) Maintain 'weak ties' — periodically remind people you don't work with daily of your existence.",
+      "tip": "Each week, do one 'networking action' without asking for yourself: write a recommendation for a former colleague, share an article with a helpful comment, introduce two people in your network who might benefit from knowing each other."
     },
     {
       "emoji": "🔍",
-      "title": "Видимость в индустрии: стратегия 'Трёх столпов'",
+      "title": "Industry Visibility: The 'Three Pillars' Strategy",
       "source": "Austin Kleon — Show Your Work",
-      "text": "Быть отличным специалистом недостаточно, если о вас никто не знает. Видимость — это не хвастовство, а документирование процесса работы и демонстрация экспертизы. Стратегия 'Трёх столпов' видимости: 1) Письменный контент — статьи на профильных ресурсах, посты в LinkedIn, ведение блога о процессе решения профессиональных задач. 2) Устные выступления — доклады на конференциях (от маленьких митапов до крупных форумов), вебинары, подкасты. 3) Участие в сообществах — активная помощь на профильных форумах, в Slack-сообществах, ответы на вопросы в Q&A. Начинайте с малого: комментарий в профессиональном чате, короткий пост о решённой задаче, предложение рассказать кейс на внутреннем митапе компании.",
-      "tip": "Ведите 'рабочий дневник' публично. Раз в неделю пишите пост о том, какую профессиональную задачу вы решили, с какими трудностями столкнулись и какой урок извлекли. Люди ценят процесс, а не только результат."
+      "text": "Being a great specialist is not enough if no one knows about you. Visibility is not bragging; it's documenting your work process and demonstrating expertise. The 'Three Pillars' visibility strategy: 1) Written content — articles on professional platforms, LinkedIn posts, blogging about solving professional problems. 2) Speaking — presentations at conferences (from small meetups to large forums), webinars, podcasts. 3) Community participation — active help on professional forums, Slack communities, answering questions in Q&A. Start small: a comment in a professional chat, a short post about a solved problem, offering to present a case study at an internal company meetup.",
+      "tip": "Keep a 'work diary' publicly. Once a week, write a post about what professional problem you solved, what difficulties you faced, and what lesson you learned. People value process, not just results."
     },
     {
       "emoji": "💰",
-      "title": "Переговоры о зарплате: продажа ценности, а не просьба о повышении",
+      "title": "Salary Negotiation: Selling Value, Not Asking for a Raise",
       "source": "Linda Babcock — Women Don't Ask",
-      "text": "Переговоры о компенсации — это не конфликт и не просьба, а деловая дискуссия о справедливой цене за создаваемую вами ценность. Ключевые ошибки: 1) Начинать разговор с личных обстоятельств ('у меня ипотека'). Работодатель платит за результат, а не за ваши потребности. 2) Не готовить данные о рынке. Зарплатные исследования (Glassdoor, Levels.fyi, отраслевые отчёты) — ваша объективная опора. 3) Обсуждать только базовую зарплату. Полный компенсационный пакет включает: бонусы, опционы/акции, подписной бонус, ДМС, обучение, гибкий график, дополнительный отпуск. 4) Принимать первое предложение без попытки обсуждения. Исследования показывают: те, кто ведёт переговоры, в среднем получают на 7-10% больше на старте, что за карьеру выливается в сотни тысяч долларов.",
-      "tip": "Готовясь к переговорам, подготовьте 'досье ценности': список ваших конкретных достижений за последний год с цифрами (увеличил X на Y%, сэкономил Z рублей, запустил проект, принёсший N). Говорите языком бизнес-результатов."
+      "text": "Compensation negotiation is not a conflict or a request, but a business discussion about a fair price for the value you create. Key mistakes: 1) Starting with personal circumstances ('I have a mortgage'). Employers pay for results, not your needs. 2) Not preparing market data. Salary studies (Glassdoor, Levels.fyi, industry reports) are your objective anchor. 3) Discussing only base salary. Total compensation package includes: bonuses, options/equity, sign-on bonus, health insurance, training, flexible hours, extra vacation. 4) Accepting the first offer without trying to negotiate. Research shows negotiators earn 7-10% more on average at start, which over a career amounts to hundreds of thousands of dollars.",
+      "tip": "When preparing for negotiations, prepare a 'value dossier': a list of your specific achievements over the past year with numbers (increased X by Y%, saved Z rubles, launched a project worth N). Speak the language of business results."
     },
     {
       "emoji": "📈",
-      "title": "Карьерный рост через 'внутреннее предпринимательство'",
+      "title": "Career Growth Through 'Intrapreneurship'",
       "source": "Gifford Pinchot — Intrapreneuring",
-      "text": "Интрапренёр — это сотрудник, который действует как предприниматель внутри компании: ищет новые возможности, инициирует проекты, берёт ответственность за результаты, а не просто выполняет поручения. Такие сотрудники растут быстрее и зарабатывают больше, потому что создают уникальную ценность, которую сложно заменить. Как стать интрапренёром: 1) Ищите 'боли' бизнеса, которые никто не решает. 2) Предлагайте не проблему, а решение с примерным расчётом эффекта. 3) Беритесь за проекты, которые находятся на стыке вашей текущей роли и следующей желаемой позиции. 4) Документируйте результаты и делайте их видимыми для руководства.",
-      "tip": "Найдите одну 'боль' в вашей компании, которая лежит вне ваших прямых обязанностей. Разработайте мини-предложение по её решению и представьте руководителю в формате: 'Я заметил проблему X, вот как её можно решить с минимальными затратами, я готов взять это на себя'. Это демонстрирует лидерство."
+      "text": "An intrapreneur is an employee who acts like an entrepreneur inside a company: seeks new opportunities, initiates projects, takes responsibility for results, not just follows orders. Such employees grow faster and earn more because they create unique value that is hard to replace. How to become an intrapreneur: 1) Look for business 'pains' that no one is solving. 2) Propose not a problem, but a solution with a rough calculation of effect. 3) Take on projects at the intersection of your current role and your next desired position. 4) Document results and make them visible to management.",
+      "tip": "Find one 'pain' in your company that lies outside your direct responsibilities. Develop a mini-proposal for solving it and present it to your manager in the format: 'I noticed problem X, here's how it can be solved with minimal cost, I'm ready to take this on.' This demonstrates leadership."
     },
     {
       "emoji": "🌐",
-      "title": "Рынок скрытых вакансий и как на него выйти",
+      "title": "The Hidden Job Market and How to Access It",
       "source": "Lou Adler — Hire With Your Head",
-      "text": "По разным оценкам, от 50% до 80% хороших позиций никогда не публикуются в открытом доступе. Это 'скрытый рынок' вакансий, который заполняется через рекомендации, нетворк и прямой хантинг. Чтобы получить доступ к этому рынку, нужно быть видимым и запоминаемым в своей профессиональной нише. Практические шаги: 1) Станьте 'человеком, который разбирается в X' в своей профессиональной тусовке. 2) Поддерживайте отношения с рекрутерами из вашей отрасли, даже когда не ищете работу. 3) Периодически общайтесь с коллегами из других компаний на профессиональных мероприятиях. 4) Будьте открыты к 'информационным интервью' — когда кто-то хочет узнать о вашей компании или роли, соглашайтесь. Часто такие разговоры превращаются в предложения.",
-      "tip": "Составьте список из 10-15 компаний, в которых вы хотели бы работать. Найдите сотрудников этих компаний на LinkedIn (особенно тех, кто на позиции, смежной с вашей). Напишите им не с просьбой о работе, а с вопросом об индустрии: 'Я слежу за вашей компанией, впечатлён проектом X. Не могли бы вы поделиться, какие вызовы сейчас стоят перед вашим отделом?'"
+      "text": "Estimates suggest 50% to 80% of good positions are never publicly posted. This is the 'hidden job market', filled through referrals, networking, and direct headhunting. To access this market, you need to be visible and memorable in your professional niche. Practical steps: 1) Become 'the person who knows about X' in your professional community. 2) Maintain relationships with recruiters in your industry, even when not job searching. 3) Periodically network with colleagues from other companies at professional events. 4) Be open to 'informational interviews' — when someone wants to learn about your company or role, agree. Often these conversations turn into offers.",
+      "tip": "Make a list of 10-15 companies you'd like to work for. Find employees of those companies on LinkedIn (especially those at a level adjacent to yours). Write to them not with a job request, but with an industry question: 'I follow your company, impressed by project X. Could you share what challenges your department is currently facing?'"
     },
     {
       "emoji": "🔄",
-      "title": "Стратегическое планирование карьеры на 3-5 лет",
+      "title": "Strategic Career Planning for 3-5 Years",
       "source": "Reid Hoffman — The Start-Up of You",
-      "text": "Карьера в современном мире — это не лестница, по которой вы поднимаетесь в одной компании, а серия 'туров' (tours of duty), каждый из которых длится 2-4 года и даёт вам новый опыт, навыки и связи. Рид Хоффман, основатель LinkedIn, предлагает относиться к карьере как к стартапу в условиях неопределённости: иметь долгосрочное видение, но быть гибким в тактике. План карьеры не должен быть жёстким 'через 5 лет я стану директором', но должен содержать ответы на вопросы: Какие компетенции я хочу приобрести в ближайшие 3 года? В каких индустриях и компаниях эти компетенции ценятся? Какие проекты и роли дадут мне такой опыт? Какая сеть контактов мне для этого нужна?",
-      "tip": "Раз в полгода проводите 'карьерную ретроспективу': что я узнал нового за последние 6 месяцев? Какие навыки приобрёл? Насколько я приблизился к своему видению? Нужно ли скорректировать курс? Это удерживает от дрейфа по течению."
+      "text": "Career in the modern world is not a ladder you climb in one company, but a series of 'tours of duty', each lasting 2-4 years and giving you new experience, skills, and connections. Reid Hoffman, founder of LinkedIn, suggests treating your career as a startup under uncertainty: have a long-term vision, but be flexible in tactics. A career plan should not be rigid 'in 5 years I'll be a director', but should contain answers to: What competencies do I want to acquire in the next 3 years? In which industries and companies are these competencies valued? What projects and roles will give me such experience? What network of contacts do I need for this?",
+      "tip": "Every six months, conduct a 'career retro': what new things did I learn in the last 6 months? What skills did I acquire? How much closer am I to my vision? Do I need to adjust course? This prevents drifting with the current."
     }
   ],
 
   "quiz": [
     {
-      "q": "Что такое 'карьерный капитал' по Кэлу Ньюпорту?",
-      "a": ["Деньги, накопленные за карьеру", "Совокупность редких и ценных навыков, которые можно предложить рынку", "Количество лет опыта в резюме"],
+      "q": "What is 'career capital' according to Cal Newport?",
+      "a": ["Money saved over a career", "The set of rare and valuable skills you can offer the market", "Number of years of experience on a resume"],
       "correct": 1
     },
     {
-      "q": "Какой элемент заголовка LinkedIn наиболее эффективен для привлечения возможностей?",
-      "a": ["Текущая должность и компания", "Ценностное предложение: 'Помогаю X достигать Y'", "Количество лет опыта"],
+      "q": "Which LinkedIn headline element is most effective for attracting opportunities?",
+      "a": ["Current job title and company", "Value proposition: 'Helping X achieve Y'", "Number of years experience"],
       "correct": 1
     },
     {
-      "q": "Какой тип людей, согласно исследованию Адама Гранта, наиболее успешен в долгосрочном нетворкинге?",
-      "a": ["Берущие (Takers)", "Обменивающие (Matchers)", "Дающие (Givers)"],
+      "q": "According to Adam Grant's research, which type of people are most successful in long-term networking?",
+      "a": ["Takers", "Matchers", "Givers"],
       "correct": 2
     },
     {
-      "q": "Какой процент вакансий, по разным оценкам, находится на 'скрытом рынке' и не публикуется открыто?",
+      "q": "What percentage of jobs, by various estimates, are in the 'hidden market' and not publicly posted?",
       "a": ["10-20%", "50-80%", "90-95%"],
       "correct": 1
     },
     {
-      "q": "Как называется подход к карьере, при котором сотрудник действует как предприниматель внутри компании?",
-      "a": ["Аутсорсинг", "Интрапренёрство", "Фриланс"],
+      "q": "What is the approach called where an employee acts as an entrepreneur inside a company?",
+      "a": ["Outsourcing", "Intrapreneurship", "Freelancing"],
       "correct": 1
     }
   ]
