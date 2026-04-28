@@ -1,87 +1,87 @@
 {
   "id": "travel-exploration-pro",
-  "title": "Искусство путешествий",
-  "subtitle": "География впечатлений, логистика и культурный интеллект",
-  "description": "Путешествия — это мощнейший инструмент расширения сознания, если подходить к ним не как к 'отдыху по путёвке', а как к исследованию. Этот чек-лист о том, как путешествовать глубже, осознаннее и с максимальной пользой для личности.",
+  "title": "The Art of Travel",
+  "subtitle": "Geography of experiences, logistics, and cultural intelligence",
+  "description": "Travel is a powerful tool for expanding consciousness, if approached not as a 'package tour vacation', but as an exploration. This checklist is about how to travel deeper, more mindfully, and with maximum benefit for your personality.",
 
   "items": [
     {
       "emoji": "🗺️",
-      "title": "Депланификация",
+      "title": "De-planning",
       "source": "Rolf Potts — Vagabonding",
-      "text": "Главный враг настоящих открытий — жёсткое расписание. Оставляйте в плане путешествия большие 'пустые' блоки. Именно в незапланированное время происходят случайные встречи, находки кафе и повороты не туда, которые становятся лучшими воспоминаниями.",
-      "tip": "Планируй только 50% времени в поездке. Остальное — импровизация по месту."
+      "text": "The main enemy of real discoveries is a rigid schedule. Leave large 'empty' blocks in your travel plan. It is in unscheduled time that chance meetings, serendipitous cafe finds, and wrong turns that become best memories happen.",
+      "tip": "Plan only 50% of your time on a trip. The rest is improvisation on the spot."
     },
     {
       "emoji": "🏠",
-      "title": "Медленное путешествие",
+      "title": "Slow Travel",
       "source": "Paul Theroux",
-      "text": "Гонка за галочками '10 стран за 14 дней' создаёт иллюзию насыщенной жизни, но не даёт глубины. Провести месяц в одном небольшом городе, узнавая пекаря и бармена в лицо, даёт понимание культуры больше, чем десяток экскурсий.",
-      "tip": "Вместо 5 городов за неделю выбери 1-2 и живи в них 'как местный'."
+      "text": "The race for checkmarks ('10 countries in 14 days') creates an illusion of a full life, but doesn't provide depth. Spending a month in one small town, getting to know the baker and bartender by face, gives an understanding of culture more than a dozen tours.",
+      "tip": "Instead of 5 cities in a week, choose 1-2 and live in them 'like a local'."
     },
     {
       "emoji": "📸",
-      "title": "Эффект фотографирования",
+      "title": "The Photographing Effect",
       "source": "Linda Henkel — Point-and-Shoot Memories",
-      "text": "Когда мы фотографируем объект, мозг 'делегирует' задачу запоминания камере и расслабляется. Мы хуже помним детали того, что снимали. Чтобы сохранить момент в памяти, сначала впитайте его глазами, а потом доставайте телефон.",
-      "tip": "Правило '10 секунд': смотри на вид 10 секунд без камеры, только потом снимай."
+      "text": "When we photograph an object, the brain 'delegates' the task of remembering to the camera and relaxes. We remember details of what we shot worse. To preserve a moment in memory, first soak it in with your eyes, then take out your phone.",
+      "tip": "The '10-second rule': look at the view for 10 seconds without a camera, only then shoot."
     },
     {
       "emoji": "✈️",
-      "title": "Правило одного рюкзака",
+      "title": "The One-Backpack Rule",
       "source": "Tim Ferriss",
-      "text": "Избыток вещей в поездке создаёт физический и ментальный якорь. Каждая лишняя вещь — это минута на сборы, вес на плечах и ограничение мобильности. Чем меньше вещей, тем больше свободы спонтанно изменить маршрут.",
-      "tip": "Собери вещи, а потом убери ровно половину. Оставшегося всё равно будет достаточно."
+      "text": "An excess of things on a trip creates a physical and mental anchor. Every extra item is a minute of packing, weight on shoulders, and limitation of mobility. The fewer things, the more freedom to spontaneously change the route.",
+      "tip": "Pack your things, then put exactly half back. What's left will still be enough."
     },
     {
       "emoji": "🗣️",
-      "title": "Лингвистический ключ",
+      "title": "The Linguistic Key",
       "source": "Pico Iyer",
-      "text": "Знание даже 20 базовых фраз на местном языке ('спасибо', 'пожалуйста', 'сколько стоит', 'вкусно') кардинально меняет отношение к вам. Это сигнал уважения, который открывает двери, закрытые для обычных туристов.",
-      "tip": "Выучи 10 фраз на языке страны перед поездкой. Начни с 'Здравствуйте' и 'Спасибо, очень вкусно'."
+      "text": "Knowing even 20 basic phrases in the local language ('thank you', 'please', 'how much', 'delicious') dramatically changes locals' attitude toward you. It's a sign of respect that opens doors closed to ordinary tourists.",
+      "tip": "Learn 10 phrases in the country's language before your trip. Start with 'Hello' and 'Thank you, very tasty'."
     },
     {
       "emoji": "🚶",
-      "title": "Деривация от туристических троп",
+      "title": "Deviation from Tourist Trails",
       "source": "Alain de Botton — The Art of Travel",
-      "text": "Самые яркие впечатления часто находятся в 15 минутах ходьбы от главной достопримечательности, но в противоположную от туристического потока сторону. Сделайте над собой усилие и сверните в первый попавшийся переулок.",
-      "tip": "Используй правило 'Третьего поворота': отойдя от главной площади, сверни в третий по счёту переулок."
+      "text": "The brightest impressions are often 15 minutes' walk from the main attraction, but in the opposite direction from the tourist flow. Make an effort and turn into the first alley you see.",
+      "tip": "Use the 'Third Turn' rule: stepping away from the main square, turn into the third lane."
     },
     {
       "emoji": "🌍",
-      "title": "Обратный культурный шок",
+      "title": "Reverse Culture Shock",
       "source": "Craig Storti — The Art of Coming Home",
-      "text": "Самая сложная часть путешествия — возвращение домой. То, что раньше казалось нормой, теперь может раздражать. Это признак роста. Интегрируйте полученный опыт в повседневную жизнь, а не пытайтесь просто 'забыть поездку как сон'.",
-      "tip": "Привези из путешествия не сувенир, а новую привычку (например, сиесту или традицию долгих ужинов)."
+      "text": "The hardest part of travel is coming home. What once seemed normal may now irritate you. This is a sign of growth. Integrate your experience into daily life, don't just try to 'forget the trip as a dream'.",
+      "tip": "Bring back from your trip not a souvenir, but a new habit (e.g., a siesta or a tradition of long dinners)."
     },
     {
       "emoji": "📝",
-      "title": "Дневник наблюдений",
+      "title": "Observation Diary",
       "source": "Michael Crichton — Travels",
-      "text": "Память искажает события уже через несколько дней. Записывайте не 'Где был и что видел', а запахи, звуки, обрывки разговоров, ощущение воздуха на коже. Эти детали через годы оживят воспоминание ярче любой фотографии.",
-      "tip": "Выдели 10 минут вечером в поездке, чтобы записать 3 сенсорных впечатления дня."
+      "text": "Memory distorts events within a few days. Record not 'Where I was and what I saw', but smells, sounds, fragments of conversations, the feeling of air on your skin. These details will bring back memories more vividly than any photo years later.",
+      "tip": "Set aside 10 minutes in the evening on your trip to write down 3 sensory impressions of the day."
     },
     {
       "emoji": "🧭",
-      "title": "Путешествие как метафора",
+      "title": "Travel as Metaphor",
       "source": "Joseph Campbell — The Hero's Journey",
-      "text": "Поездка — это мини-версия мономифа: вы покидаете зону комфорта, встречаете испытания, получаете награду (новое знание о себе) и возвращаетесь изменившимся. Относитесь к трудностям в дороге не как к проблемам, а как к обязательным главам вашей личной Одиссеи.",
-      "tip": "Если всё идёт не по плану, скажи вслух: 'Вот он, сюжетный поворот. Будет что рассказать'."
+      "text": "A trip is a mini-version of the monomyth: you leave your comfort zone, face trials, receive a reward (new knowledge about yourself), and return changed. Treat difficulties on the road not as problems, but as obligatory chapters of your personal Odyssey.",
+      "tip": "If things don't go according to plan, say aloud: 'Here's the plot twist. At least there'll be a story to tell.'"
     },
     {
       "emoji": "🌱",
-      "title": "Регенеративный туризм",
+      "title": "Regenerative Tourism",
       "source": "Anna Pollock",
-      "text": "Современный туризм часто разрушает то, за чем едет. Переход от 'не навреди' к 'оставь место лучше, чем оно было до тебя'. Это может быть уборка мусора на пляже, покупки в семейных лавках, а не сетевых магазинах.",
-      "tip": "Найди один способ оставить место своего путешествия лучше: убери за собой и за кем-то ещё."
+      "text": "Modern tourism often destroys what it comes for. The shift from 'do no harm' to 'leave the place better than you found it'. This could be beach clean-up, shopping at family-run shops instead of chain stores.",
+      "tip": "Find one way to leave your travel destination better: clean up after yourself and someone else too."
     }
   ],
 
   "quiz": [
-    {"q": "Почему жёсткое расписание вредит впечатлениям?", "a": ["Сложно запомнить время", "Убивает пространство для случайных открытий", "Гиды устают"], "correct": 1},
-    {"q": "Что такое 'медленное путешествие'?", "a": ["Путешествие на поезде", "Долгое пребывание в одном месте для глубины", "Отказ от транспорта"], "correct": 1},
-    {"q": "Как фотографирование влияет на память о моменте?", "a": ["Улучшает память", "Ухудшает детальное запоминание", "Никак не влияет"], "correct": 1},
-    {"q": "Что даёт знание 10 базовых фраз на местном языке?", "a": ["Скидку в магазине", "Сигнал уважения и доступ к другому уровню общения", "Возможность работать гидом"], "correct": 1},
-    {"q": "Что такое 'обратный культурный шок'?", "a": ["Болезнь после отпуска", "Трудности адаптации к дому после поездки", "Страх летать обратно"], "correct": 1}
+    {"q": "Why does a rigid schedule harm impressions?", "a": ["Hard to remember times", "Kills space for serendipitous discoveries", "Guides get tired"], "correct": 1},
+    {"q": "What is 'slow travel'?", "a": ["Travel by train", "Long stays in one place for depth", "No transport"], "correct": 1},
+    {"q": "How does photographing affect memory of a moment?", "a": ["Improves memory", "Worsens detailed recall", "No effect"], "correct": 1},
+    {"q": "What does knowing 10 basic phrases in the local language give you?", "a": ["Store discount", "Signal of respect and access to a different level of communication", "Opportunity to work as a guide"], "correct": 1},
+    {"q": "What is 'reverse culture shock'?", "a": ["Illness after vacation", "Difficulty readapting to home after travel", "Fear of flying back"], "correct": 1}
   ]
 }
