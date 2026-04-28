@@ -1,87 +1,87 @@
 {
   "id": "books-reading-pro",
-  "title": "Искусство чтения",
-  "subtitle": "Как извлекать максимум из книг и управлять знаниями",
-  "description": "Чтение — это не поглощение знаков, а диалог с автором и перестройка собственного мышления. Этот чек-лист о том, как читать эффективно, запоминать надолго и превращать прочитанное в действия и убеждения.",
+  "title": "The Art of Reading",
+  "subtitle": "How to Extract Maximum Value from Books and Manage Knowledge",
+  "description": "Reading is not the consumption of signs, but a dialogue with the author and a restructuring of your own thinking. This checklist is about how to read effectively, remember for the long term, and turn what you read into actions and beliefs.",
 
   "items": [
     {
       "emoji": "📖",
-      "title": "Синтопическое чтение",
+      "title": "Syntopical Reading",
       "source": "Mortimer Adler — How to Read a Book",
-      "text": "Высший уровень чтения — это не чтение одной книги от корки до корки, а изучение темы по нескольким источникам одновременно. Вы становитесь не учеником автора, а судьёй в дискуссии между экспертами. Только так формируется объёмное понимание.",
-      "tip": "Выбери тему (например, 'переговоры') и прочитай 3 книги разных авторов, сравнивая их подходы."
+      "text": "The highest level of reading is not reading one book cover to cover, but studying a topic from multiple sources simultaneously. You become not a student of an author, but a judge in a discussion between experts. Only then does a multi-dimensional understanding form.",
+      "tip": "Choose a topic (e.g., 'negotiation') and read 3 books by different authors, comparing their approaches."
     },
     {
       "emoji": "❓",
-      "title": "Инспекционное чтение",
+      "title": "Inspectional Reading",
       "source": "Mortimer Adler",
-      "text": "Большинство нон-фикшн книг можно понять за 15-20 минут, изучив оглавление, введение, заключение и пробежавшись по заголовкам. Это позволяет отсеять 80% 'воды' и решить, стоит ли тратить на книгу 6 часов глубокого чтения.",
-      "tip": "Перед покупкой или началом чтения всегда делай инспекционный обзор."
+      "text": "Most non-fiction books can be understood in 15-20 minutes by studying the table of contents, introduction, conclusion, and skimming headings. This allows you to filter out 80% of the 'fluff' and decide if the book is worth 6 hours of deep reading.",
+      "tip": "Always do an inspectional review before buying or starting a book."
     },
     {
       "emoji": "✍️",
-      "title": "Маргиналии",
+      "title": "Marginalia",
       "source": "Ryan Holiday",
-      "text": "Чтение без карандаша в руке — это пассивное потребление. Пометки на полях, подчёркивания и вопросы к тексту превращают книгу в личный артефакт мышления. Через год, открыв книгу, вы увидите не текст автора, а свои мысли в момент чтения.",
-      "tip": "Используй систему знаков: ! — важно, ? — сомневаюсь/вопрос, стрелка — связь с другой идеей."
+      "text": "Reading without a pencil in hand is passive consumption. Marginal notes, underlining, and questions to the text turn the book into a personal artifact of thinking. A year later, opening the book, you will see not the author's text, but your own thoughts at the moment of reading.",
+      "tip": "Use a system of symbols: ! — important, ? — doubt/question, arrow — connection to another idea."
     },
     {
       "emoji": "🗂️",
-      "title": "Zettelkasten и ведение заметок",
+      "title": "Zettelkasten and Note-Taking",
       "source": "Sönke Ahrens — How to Take Smart Notes",
-      "text": "Мозг не хранилище фактов, а генератор связей. Ценность прочитанного раскрывается только когда вы связываете новую идею с уже известными. Система заметок — это внешний нейрон, позволяющий идеям сталкиваться и порождать новые.",
-      "tip": "На каждую интересную мысль создавай отдельную атомарную заметку и обязательно ставь ссылки на смежные."
+      "text": "The brain is not a storage of facts, but a generator of connections. The value of reading is revealed only when you connect a new idea to existing knowledge. A note-taking system is an external neuron, allowing ideas to collide and generate new ones.",
+      "tip": "For each interesting thought, create a separate atomic note and be sure to link to related notes."
     },
     {
       "emoji": "🔄",
-      "title": "Активное воспроизведение",
+      "title": "Active Recall",
       "source": "Barbara Oakley — A Mind for Numbers",
-      "text": "Перечитывание конспекта создаёт иллюзию знания. Мозг узнаёт текст и думает: 'А, это я уже видел, значит знаю'. Единственный способ проверить реальное понимание — закрыть книгу и объяснить идею вслух, как ребёнку.",
-      "tip": "После каждой главы запиши три главные мысли по памяти, не подглядывая."
+      "text": "Rereading notes creates an illusion of knowledge. The brain recognizes the text and thinks: 'Ah, I've seen this before, so I know it.' The only way to check real understanding is to close the book and explain the idea aloud, as if to a child.",
+      "tip": "After each chapter, write down the three main points from memory, without peeking."
     },
     {
       "emoji": "⏸️",
-      "title": "Право не дочитывать",
+      "title": "The Right Not to Finish",
       "source": "Nassim Taleb",
-      "text": "Время — единственный невосполнимый ресурс. Если книга не захватывает к 50-й странице, вы имеете полное право её закрыть. Продолжение чтения 'из принципа' отнимает время у десятка других, потенциально судьбоносных книг.",
-      "tip": "Установи правило '50 страниц'. Не пошло — отложи без чувства вины."
+      "text": "Time is the only non-renewable resource. If a book hasn't grabbed you by page 50, you have every right to close it. Continuing to read 'out of principle' takes time away from dozens of other, potentially life-changing books.",
+      "tip": "Establish a '50-page rule.' If it doesn't click, put it aside without guilt."
     },
     {
       "emoji": "📚",
-      "title": "Анти-библиотека",
+      "title": "Anti-Library",
       "source": "Umberto Eco",
-      "text": "Прочитанные книги менее ценны, чем непрочитанные. Коллекция непрочитанных книг — это карта вашего невежества и напоминание о том, сколько ещё предстоит узнать. Это инструмент смирения и мотивации.",
-      "tip": "Держи на виду стопку из 5-10 книг, которые хочешь прочесть в ближайшее время."
+      "text": "Read books are less valuable than unread ones. A collection of unread books is a map of your ignorance and a reminder of how much more there is to learn. It is a tool for humility and motivation.",
+      "tip": "Keep a stack of 5-10 books you want to read soon visible."
     },
     {
       "emoji": "🎧",
-      "title": "Гибридное потребление",
+      "title": "Hybrid Consumption",
       "source": "Tiago Forte",
-      "text": "Разные форматы для разных целей: бумага для глубокого изучения и маргиналий, электронная книга для поиска и цитирования, аудио для знакомства с идеями и повторения. Не ограничивай себя одним носителем.",
-      "tip": "Слушай книгу в аудио на прогулке, а ключевые места перечитывай в бумажной версии с карандашом."
+      "text": "Different formats for different purposes: paper for deep study and marginalia, e-books for searching and quoting, audio for getting acquainted with ideas and repetition. Don't limit yourself to one medium.",
+      "tip": "Listen to the audiobook while walking, and reread key places in the paper version with a pencil."
     },
     {
       "emoji": "🏃",
-      "title": "Имплементация",
+      "title": "Implementation",
       "source": "James Clear",
-      "text": "Знание без действия — это развлечение. Самая маленькая книга, из которой вы внедрили хотя бы одну идею, в 100 раз полезнее энциклопедии, оставшейся на полке. Чтение должно заканчиваться списком конкретных действий.",
-      "tip": "В конце каждой книги записывай не 'о чём она', а 'что я теперь буду делать иначе'."
+      "text": "Knowledge without action is entertainment. The thinnest book from which you implement at least one idea is a hundred times more useful than an encyclopedia left on the shelf. Reading should end with a list of concrete actions.",
+      "tip": "At the end of each book, write not 'what it's about,' but 'what I will do differently now.'"
     },
     {
       "emoji": "🌐",
-      "title": "Чтение против течения",
+      "title": "Reading Against the Current",
       "source": "Tyler Cowen",
-      "text": "Чтение только новинок и бестселлеров сужает кругозор до 'духа времени'. Самые ценные идеи часто лежат в книгах 10-20-100-летней давности, проверенных временем. Читайте то, что пережило свою эпоху.",
-      "tip": "Соотношение в чтении: 70% классики и проверенных временем работ, 30% новинок."
+      "text": "Reading only new releases and bestsellers narrows your horizons to the 'spirit of the times.' The most valuable ideas are often found in books 10-20-100 years old, tested by time. Read what has outlived its era.",
+      "tip": "A reading ratio: 70% classics and time-tested works, 30% new releases."
     }
   ],
 
   "quiz": [
-    {"q": "Что такое 'синтопическое чтение' по Адлеру?", "a": ["Быстрое чтение", "Сравнение нескольких книг по одной теме", "Чтение вслух"], "correct": 1},
-    {"q": "Почему перечитывание конспекта неэффективно для запоминания?", "a": ["Это скучно", "Мозг путает узнавание со знанием", "Текст выцветает"], "correct": 1},
-    {"q": "Что такое 'Анти-библиотека' Умберто Эко?", "a": ["Запрещённые книги", "Коллекция непрочитанных книг", "Электронная библиотека"], "correct": 1},
-    {"q": "Какое правило предлагает Нассим Талеб для экономии времени?", "a": ["Читать только классику", "Право не дочитывать", "Читать по 100 страниц в день"], "correct": 1},
-    {"q": "Чем должно заканчиваться чтение нон-фикшн книги?", "a": ["Рецензией на сайте", "Списком конкретных действий", "Обсуждением с другом"], "correct": 1}
+    {"q": "What is 'syntopical reading' according to Adler?", "a": ["Speed reading", "Comparing multiple books on one topic", "Reading aloud"], "correct": 1},
+    {"q": "Why is rereading notes ineffective for memorization?", "a": ["It's boring", "The brain confuses recognition with knowing", "The text fades"], "correct": 1},
+    {"q": "What is Umberto Eco's 'Anti-Library'?", "a": ["Banned books", "A collection of unread books", "An electronic library"], "correct": 1},
+    {"q": "What rule does Nassim Taleb propose for saving time?", "a": ["Read only classics", "The right not to finish", "Read 100 pages a day"], "correct": 1},
+    {"q": "What should reading a non-fiction book end with?", "a": ["A review on a website", "A list of concrete actions", "A discussion with a friend"], "correct": 1}
   ]
 }
