@@ -1,123 +1,123 @@
 {
   "id": "game-theory-strategic-thinking",
-  "title": "Теория игр: стратегическое мышление",
-  "subtitle": "Равновесие Нэша, дилемма заключённого, аукционы, переговоры и повторяющиеся игры",
-  "description": "Теория игр — это не про игры. Это математический и поведенческий инструмент для принятия решений в ситуациях, где ваш результат зависит от того, что сделают другие. Этот чек-лист охватывает ключевые концепции: типы игр (с нулевой и положительной суммой), равновесие Нэша, дилемму заключённого, повторяющиеся игры и стратегию «Око за око», аукционы и проблему «проклятия победителя», иерархические игры (Штакельберг), игры с природой и теорию ожидаемой полезности. Вы научитесь анализировать переговоры, рыночную конкуренцию, повседневные конфликты и даже влиять на правила игры в свою пользу.",
+  "title": "Game Theory: Strategic Thinking",
+  "subtitle": "Nash equilibrium, prisoner's dilemma, auctions, negotiation, and repeated games",
+  "description": "Game theory is not about games. It is a mathematical and behavioral tool for decision-making in situations where your outcome depends on what others do. This checklist covers key concepts: types of games (zero-sum and positive-sum), Nash equilibrium, the prisoner's dilemma, repeated games and tit-for-tat strategy, auctions and the winner's curse, Stackelberg games, games against nature, and expected utility theory. You'll learn to analyze negotiations, market competition, everyday conflicts, and even influence the rules of the game to your advantage.",
   "items": [
     {
       "emoji": "🎲",
-      "title": "Дилемма заключённого: как личная выгода убивает общую",
-      "source": "Albert W. Tucker (1950), формализация; Robert Axelrod — The Evolution of Cooperation (1984)",
-      "text": "Два заключённых допрашиваются в разных комнатах. У каждого выбор: молчать (кооперировать) или признаться (предать). Если оба молчат — получают по 1 году. Если оба признаются — по 5 лет. Если один признаётся, а другой молчит — признавшийся выходит сразу, а молчащий получает 10 лет. С точки зрения личной выгоды, признаться всегда выгоднее (доминирующая стратегия). Но в итоге оба признаются и получают по 5 лет, тогда как могли бы получить по 1 году, если бы молчали. Это и есть дилемма: индивидуальная рациональность ведёт к коллективной катастрофе. Дилемма заключённого повсюду: ценовые войны (снижаем цены — проигрываем оба, но один боится, что другой снизит), гонка вооружений, перегруженные дороги (каждый думает, что его «один раз» ничего не решит), загрязнение окружающей среды. Ключевое решение: если игра повторяется многократно, кооперация становится возможной благодаря механизмам наказания и репутации.",
-      "tip": "Когда видите ситуацию, где все действуют в ущерб общему благу, спросите: это однократная игра или многократная? Если многократная — предложите простое правило: «Я сотрудничаю, пока сотрудничаешь ты; предаёшь один раз — перехожу на предательство на следующем ходу» (стратегия «Око за око»). Это запускает кооперацию."
+      "title": "Prisoner's Dilemma: How Individual Interest Kills the Common Good",
+      "source": "Albert W. Tucker (1950), formalization; Robert Axelrod — The Evolution of Cooperation (1984)",
+      "text": "Two prisoners are interrogated in separate rooms. Each has a choice: stay silent (cooperate) or confess (defect). If both stay silent — 1 year each. If both confess — 5 years each. If one confesses and the other stays silent — the confessor goes free immediately, the silent one gets 10 years. From an individual perspective, confessing is always more profitable (dominant strategy). But the result is both confess and get 5 years each, when they could have gotten 1 year each by staying silent. This is the dilemma: individual rationality leads to collective disaster. Prisoner's dilemmas are everywhere: price wars (we lower prices — we both lose, but each fears the other will lower), arms races, traffic jams (each thinks their 'one time' won't matter), environmental pollution. Key solution: if the game is repeated many times, cooperation becomes possible through punishment and reputation mechanisms.",
+      "tip": "When you see a situation where everyone acts against the common good, ask: is this a one-shot or repeated game? If repeated, suggest a simple rule: 'I cooperate as long as you cooperate; you defect once — I defect on the next move' (tit-for-tat strategy). This triggers cooperation."
     },
     {
       "emoji": "⚖️",
-      "title": "Равновесие Нэша: точка, где никто не хочет менять решение",
+      "title": "Nash Equilibrium: The Point Where No One Wants to Change Their Decision",
       "source": "John Nash (1950) — Non-Cooperative Games",
-      "text": "Равновесие Нэша (Nash equilibrium) — это набор стратегий, в котором ни один игрок не может улучшить свой результат, изменив свою стратегию в одиночку, при условии что остальные свои стратегии не меняют. Это не обязательно «лучший» или «справедливый» исход. Это стабильный прогноз: если все играют равновесие Нэша, ни у кого нет стимула отклоняться. Пример: в дилемме заключённого равновесие Нэша — оба признаются (хотя это хуже для обоих, чем оба молчат). Пример 2: выбор стороны движения на дороге — два равновесия Нэша (все едут справа или все едут слева), но не важно какое, важно, чтобы все выбрали одно. У большинства игр может быть несколько равновесий Нэша. Задача аналитика — предсказать, какое из них реализуется (культурные нормы, фокальные точки, история взаимодействий). Равновесие Нэша — стандартный инструмент прогноза в экономике, политологии и биологии (эволюционно-стабильные стратегии).",
-      "tip": "Принимая решение, спросите: «Если я сейчас сделаю X, будет ли у другого игрока стимул делать Y? А если я сделаю Z — изменится ли его лучший ответ?» Найдите набор действий, где ни вы, ни другой не захотите менять свой ход первыми. Это и есть равновесие Нэша."
+      "text": "A Nash equilibrium is a set of strategies where no player can improve their outcome by unilaterally changing their strategy, assuming others keep theirs unchanged. This is not necessarily the 'best' or 'fairest' outcome. It is a stable prediction: if everyone plays a Nash equilibrium, no one has an incentive to deviate. Example: in the prisoner's dilemma, the Nash equilibrium is both confess (even though it's worse for both than both staying silent). Example 2: choosing a driving side — two Nash equilibria (everyone drives on the right or everyone on the left), but it doesn't matter which, as long as everyone chooses the same. Most games have multiple Nash equilibria. The analyst's task is to predict which one will be realized (cultural norms, focal points, history of interactions). Nash equilibrium is a standard prediction tool in economics, political science, and biology (evolutionarily stable strategies).",
+      "tip": "When making a decision, ask: 'If I do X now, will the other player have an incentive to do Y? And if I do Z — will their best response change?' Find a set of actions where neither you nor the other wants to move first. That's a Nash equilibrium."
     },
     {
       "emoji": "🔄",
-      "title": "Повторяющиеся игры и стратегия «Око за око»",
-      "source": "Robert Axelrod — The Evolution of Cooperation (1984), турнир компьютерных стратегий",
-      "text": "В однократной дилемме заключённого предательство — доминирующая стратегия. Но если одна и та же игра повторяется много раз с одними и теми же игроками, возникает возможность для кооперации. Роберт Аксельрод провёл знаменитый турнир компьютерных стратегий для повторяющейся дилеммы заключённого. Победила простейшая стратегия: «Око за око» (Tit-for-Tat). Её алгоритм: первый ход — сотрудничать. Каждый следующий ход — просто повторяй последний ход оппонента. Свойства «Око за око»: доброжелательность (не предаёт первой), провоцируемость (немедленно наказывает за предательство), прощение (возвращается к сотрудничеству, если оппонент вернулся), простота (легко распознаётся другими). Это создаёт долгосрочную кооперацию без центрального контроля. Обратный пример: если игра не имеет заранее известного конца («бесконечный горизонт»), кооперация устойчива. Если конец известен («последний ход»), в последнем ходе оба предадут — и это разматывает предательство назад (парадокс конца игры).",
-      "tip": "В долгосрочных отношениях (с коллегой, поставщиком, соседом) сознательно играйте «Око за око». Начните с доброжелательного действия. На предательство отвечайте симметричным предательством (один раз). При возврате к кооперации — прощайте и возвращайтесь к сотрудничеству. Это дисциплинирует другую сторону и не превращает вас в жертву."
+      "title": "Repeated Games and the Tit-for-Tat Strategy",
+      "source": "Robert Axelrod — The Evolution of Cooperation (1984), computer strategy tournament",
+      "text": "In a one-shot prisoner's dilemma, defection is the dominant strategy. But if the same game is repeated many times with the same players, cooperation becomes possible. Robert Axelrod ran a famous tournament of computer strategies for the repeated prisoner's dilemma. The simplest strategy won: 'Tit-for-Tat'. Its algorithm: first move — cooperate. Each subsequent move — simply repeat the opponent's last move. Properties of Tit-for-Tat: nice (never defects first), retaliatory (immediately punishes defection), forgiving (returns to cooperation if the opponent returns), simple (easily recognized by others). This creates long-term cooperation without central control. Conversely, if the game has no known end ('infinite horizon'), cooperation is stable. If the end is known ('last move'), both will defect on the last move — and this unravels defection backwards (the end-game paradox).",
+      "tip": "In long-term relationships (with a colleague, supplier, neighbor), consciously play Tit-for-Tat. Start with a cooperative action. Respond to defection with symmetrical defection (once). When cooperation returns — forgive and return to cooperation. This disciplines the other side and doesn't turn you into a victim."
     },
     {
       "emoji": "🏛️",
-      "title": "Игры с нулевой и положительной суммой",
+      "title": "Zero-Sum and Positive-Sum Games",
       "source": "John von Neumann, Oskar Morgenstern — Theory of Games and Economic Behavior (1944)",
-      "text": "Базовое деление игр по сумме выигрышей. Игры с нулевой суммой (zero-sum): выигрыш одного равен проигрышу другого. Общий «пирог» фиксирован. Примеры: шахматы, теннис, большинство азартных игр, судебный процесс за фиксированную сумму. Здесь оптимальная стратегия — максимизировать свой выигрыш за счёт другого (минимаксный принцип). Игры с положительной суммой (positive-sum): общий выигрыш может быть больше, чем сумма вкладов, благодаря кооперации и созданию новой ценности. Примеры: торговля (обе стороны выигрывают от обмена), совместное предприятие, переговоры с профсоюзом о повышении производительности, экологические соглашения. Ошибка многих людей в том, что они воспринимают любую игру как нулевую («если он выиграл — значит я проиграл»), упуская возможности для win-win. Настоящее мастерство — в умении трансформировать игру: расширить пирог, прежде чем его делить. Часто сначала нужно сыграть в игру с положительной суммой (создать ценность), а затем — в игру с нулевой суммой (разделить).",
-      "tip": "Перед переговорами задайте себе вопрос: «Это фиксированный пирог или его можно расширить?» Если можно — сначала найдите способы увеличить общий результат (дополнительные уступки, ресурсы, сроки). Только потом переходите к дележу. Если собеседник упорно видит игру как нулевую — покажите ему, что вы тоже можете играть жёстко, но сначала предложите кооперацию."
+      "text": "A basic division of games by sum of payoffs. Zero-sum games: one player's gain equals another's loss. The total 'pie' is fixed. Examples: chess, tennis, most gambling, a lawsuit over a fixed amount. Here, the optimal strategy is to maximize your gain at the other's expense (minimax principle). Positive-sum games: the total gain can be greater than the sum of inputs through cooperation and value creation. Examples: trade (both sides benefit from exchange), joint ventures, negotiations with a union about increasing productivity, environmental agreements. Many people's mistake is perceiving any game as zero-sum ('if he wins, I lose'), missing win-win opportunities. True mastery is transforming the game: enlarge the pie before dividing it. Often, you first need to play a positive-sum game (create value), then a zero-sum game (divide it).",
+      "tip": "Before negotiations, ask yourself: 'Is this a fixed pie or can it be enlarged?' If possible — first find ways to increase the total outcome (additional concessions, resources, timelines). Only then move to dividing. If the other person stubbornly sees the game as zero-sum — show them you can play tough too, but first offer cooperation."
     },
     {
       "emoji": "🔨",
-      "title": "Аукционы и проклятие победителя",
-      "source": "Richard Thaler — The Winner's Curse (1988); William Vickrey (1961), Нобелевская премия",
-      "text": "На аукционах победитель часто переплачивает. «Проклятие победителя» (winner's curse) возникает, когда ценность лота неопределённа, и каждый участник делает свою оценку. Победителем становится тот, кто дал самую высокую оценку. Но его оценка, скорее всего, завышена относительно истинной ценности. В итоге победитель либо переплачивает, либо получает убыточный актив. Классический пример: аукционы на нефтяные участки в Мексиканском заливе в 1970-х — победители часто не окупали затрат. Разные типы аукционов влияют на стратегию: английский (открытые торги с повышением) — позволяет собирать информацию; голландский (цена идёт сверху вниз) — давит на скорость; аукцион первой цены (победитель платит свою ставку) — ведёт к занижению ставок; аукцион второй цены (Викри) — победитель платит ставку второго — теоретически стимулирует называть истинную ценность. Вывод: всегда заранее определяйте свою максимальную цену (основанную на вашей оценке и рисках) и никогда не превышайте её в ходе торгов, каким бы ни было давление.",
-      "tip": "Перед участием в аукционе (от покупки квартиры до тендера) сделайте три шага. 1) Определите объективную ценность лота для вас. 2) Уменьшите её на 20% — это поправка на проклятие победителя. 3) Напишите эту цифру на бумаге и не превышайте её, какие бы эмоции ни возникали. Помните: если вы выиграли аукцион, возможно, вы единственный, кто ошибся в оценке."
+      "title": "Auctions and the Winner's Curse",
+      "source": "Richard Thaler — The Winner's Curse (1988); William Vickrey (1961), Nobel Prize",
+      "text": "In auctions, the winner often overpays. The 'winner's curse' occurs when an item's value is uncertain and each participant makes their own estimate. The winner is the one who gave the highest estimate. But their estimate is likely inflated relative to true value. As a result, the winner either overpays or gets a losing asset. Classic example: oil lease auctions in the Gulf of Mexico in the 1970s — winners often did not recover costs. Different auction types affect strategy: English (open bidding with increases) — allows information gathering; Dutch (price goes down) — pressures speed; first-price sealed-bid (winner pays their bid) — leads to underbidding; second-price sealed-bid (Vickrey) — winner pays second bidder's price — theoretically incentivizes bidding true value. Conclusion: always determine your maximum price in advance (based on your valuation and risks) and never exceed it during bidding, regardless of pressure.",
+      "tip": "Before participating in any auction (from buying an apartment to a tender), do three steps. 1) Determine the objective value of the lot to you. 2) Reduce it by 20% — a correction for the winner's curse. 3) Write this figure on paper and do not exceed it, whatever emotions arise. Remember: if you win the auction, you may be the only one who misjudged the value."
     },
     {
       "emoji": "👑",
-      "title": "Игры Штакельберга: преимущество первого хода",
+      "title": "Stackelberg Games: First-Mover Advantage",
       "source": "Heinrich von Stackelberg (1934) — Marktform und Gleichgewicht",
-      "text": "В иерархических (динамических) играх порядок ходов имеет значение. В модели Штакельберга (Stackelberg duopoly) один игрок — лидер — выбирает объём выпуска первым. Второй игрок — последователь — наблюдает выбор лидера и принимает своё решение. Лидер получает преимущество: он может занять большую часть рынка, зная, что последователь будет подстраиваться. В модели Курно (одновременный выбор) равновесие симметрично, в модели Штакельберга лидер получает прибыль выше, чем последователь, и даже выше, чем в равновесии Курно. Более общий принцип: в последовательных играх тот, кто может сделать достоверное обязательство первым, получает выгоду. Примеры: компания, первой строящая крупный завод (создаёт избыточные мощности как угрозу), государство, первым устанавливающее норматив (меняет правила игры), переговорщик, первым называющий цену (эффект якоря). Но важно, чтобы ход лидера был необратимым или дорогим в отмене — иначе это не обязательство, а просто информация.",
-      "tip": "Если вы можете сделать первый шаг, который заметно изменит стимулы других игроков, делайте его. Но убедитесь, что ваш ход видим, понятен и трудно отменяем (публичное обещание, контракт, инвестиции в специфические активы). Если вы второй — изучите ход лидера и ищите ниши, которые он не покрыл, или предлагайте альтернативный ход, который меняет саму игру."
+      "text": "In sequential (dynamic) games, the order of moves matters. In the Stackelberg duopoly model, one player — the leader — chooses output quantity first. The second player — the follower — observes the leader's choice and makes their own decision. The leader gains an advantage: they can take a larger market share, knowing the follower will adjust. In the Cournot model (simultaneous choice), the equilibrium is symmetric; in Stackelberg, the leader's profit is higher than the follower's, and even higher than in the Cournot equilibrium. A broader principle: in sequential games, whoever can make a credible commitment first gains an advantage. Examples: a company that first builds a large plant (creating excess capacity as a threat), a government that first sets a regulation (changes the rules of the game), a negotiator who names a price first (anchoring effect). But it's important that the leader's move is irreversible or costly to reverse — otherwise it's not a commitment, just information.",
+      "tip": "If you can make the first move that significantly changes other players' incentives, do it. But ensure your move is visible, understandable, and hard to undo (public commitment, contract, investment in specific assets). If you are second — study the leader's move and look for niches they haven't covered, or propose an alternative move that changes the game itself."
     },
     {
       "emoji": "🎯",
-      "title": "Смешанные стратегии: играем случайно",
-      "source": "John von Neumann (1928) — минимаксная теорема",
-      "text": "В некоторых играх нет равновесия в чистых стратегиях (когда игрок всегда выбирает одно действие). Пример: игра «Орёл или решка» (matching pennies). Игрок А выигрывает, если результаты совпадают, игрок Б — если разные. Если А всегда ставит «Орла», Б всегда ставит «Решку» и выигрывает. Если Б всегда ставит «Решку», А переключается на «Орла» — и так бесконечно. Решение: смешанная стратегия — случайный выбор с определённой вероятностью (например, 50% на 50%). В равновесии по Нэшу в смешанных стратегиях каждый игрок выбирает вероятности так, чтобы другому было всё равно, что выбирать (ожидаемый выигрыш от любой чистой стратегии одинаков). Смешанные стратегии важны в спорте (подача в теннис: иногда влево, иногда вправо), в бизнесе (случайные проверки качества, чтобы подчинённые не могли подстроиться), в военном деле (скрытность и внезапность). Практический вывод: если ваш оппонент может предсказать ваше действие, вы в уязвимости. Добавьте управляемую случайность.",
-      "tip": "Если вы находитесь в ситуации, где ваши действия легко предсказуемы и противник этим пользуется, введите элемент случайности. Простой способ: бросьте монетку или используйте генератор случайных чисел для выбора между 2-3 вариантами. Главное — чтобы вероятности были оптимальными (например, 40% на 60%, а не 50/50)."
+      "title": "Mixed Strategies: Playing Randomly",
+      "source": "John von Neumann (1928) — minimax theorem",
+      "text": "In some games, there is no pure-strategy equilibrium (where a player always chooses one action). Example: the game 'Matching Pennies'. Player A wins if the results match, Player B wins if they differ. If A always plays Heads, B always plays Tails and wins. If B always plays Tails, A switches to Heads — and so on endlessly. Solution: mixed strategy — random choice with a certain probability (e.g., 50/50). In a mixed-strategy Nash equilibrium, each player chooses probabilities so that the other is indifferent between their pure strategies (expected payoff from any pure strategy is the same). Mixed strategies are important in sports (tennis serve: sometimes left, sometimes right), business (random quality checks so subordinates can't anticipate), military (stealth and surprise). Practical conclusion: if your opponent can predict your action, you are vulnerable. Add controlled randomness.",
+      "tip": "If you're in a situation where your actions are easily predictable and the opponent exploits that, introduce an element of randomness. A simple method: flip a coin or use a random number generator to choose between 2-3 options. The main thing is that the probabilities are optimal (e.g., 40% / 60%, not 50/50)."
     },
     {
       "emoji": "🌿",
-      "title": "Эволюционная теория игр: стратегии, которые выживают",
+      "title": "Evolutionary Game Theory: Strategies That Survive",
       "source": "John Maynard Smith, George R. Price (1973) — Evolution of Animal Behaviour",
-      "text": "Эволюционная теория игр (Evolutionary Game Theory) применяет логику игр к биологии. Вместо «рационального выбора» — отбор: стратегии, дающие более высокую приспособленность, распространяются в популяции. Ключевое понятие — эволюционно-стабильная стратегия (ESS, ЭСС). Это стратегия, которая, будучи принята большинством, не может быть вытеснена любой мутантной стратегией. ESS — это уточнение равновесия Нэша для динамических популяций. Классический пример: «ястребы и голуби» (Hawk-Dove). Ястреб дерётся до серьёзных травм, голубь демонстрирует, но отступает. Ни одна из этих чистых стратегий не является ESS. Равновесие — смешанная стратегия (часть популяции ястребы, часть голуби) или условная стратегия («сначала голубь, если нападают — ястреб»). Эволюционная теория игр объясняет кооперацию у животных, альтруизм, сигналы угрозы (почему они честны), половой отбор (почему павлиний хвост — это сигнал качества). В бизнесе и культуре новые практики распространяются как «мемы» — и побеждают не самые оптимальные, а самые устойчивые к вторжению альтернатив.",
-      "tip": "Внедряя новую практику в коллективе (например, удалённую работу или новый софт), подумайте: является ли эта стратегия эволюционно-стабильной? Будет ли она вытеснена обратно к старой практике, если некоторые сотрудники откажутся? Создайте среду, в которой новая стратегия даёт лучший результат, даже если несколько человек продолжают делать по-старому."
+      "text": "Evolutionary game theory applies game logic to biology. Instead of 'rational choice' — selection: strategies that yield higher fitness spread in a population. The key concept is the evolutionarily stable strategy (ESS). This is a strategy that, once adopted by most, cannot be invaded by any mutant strategy. ESS is a refinement of Nash equilibrium for dynamic populations. Classic example: 'Hawks and Doves'. Hawk fights until serious injury; Dove displays but retreats. Neither pure strategy is an ESS. Equilibrium is a mixed strategy (part of the population are Hawks, part Doves) or a conditional strategy ('Dove first, if attacked — Hawk'). Evolutionary game theory explains cooperation in animals, altruism, honest threat signals (why they are honest), sexual selection (why peacock tails are a quality signal). In business and culture, new practices spread as 'memes' — and the winners are not the most optimal, but the most resistant to invasion by alternatives.",
+      "tip": "When introducing a new practice in a team (e.g., remote work or new software), think: is this strategy evolutionarily stable? Will it be pushed back to the old practice if some employees refuse? Create an environment where the new strategy yields better results even if a few keep doing things the old way."
     },
     {
       "emoji": "🧩",
-      "title": "Игры с природой и теория ожидаемой полезности",
+      "title": "Games Against Nature and Expected Utility Theory",
       "source": "John von Neumann, Oskar Morgenstern (1944); Daniel Kahneman, Amos Tversky (1979) — Prospect Theory",
-      "text": "Не все игры включают рационального противника. В играх с природой (games against nature) «второй игрок» — это неопределённость: погода, рынок, случайность. Здесь применяется теория принятия решений в условиях неопределённости. Основной инструмент — максимизация ожидаемой полезности (expected utility). Вычисляем: вероятность исхода × полезность исхода, суммируем, выбираем вариант с максимальной суммой. Но люди систематически нарушают эту модель (например, боятся маленьких вероятностей катастроф и переоценивают высокие вероятности гарантий). Канеман и Тверски показали, что люди оценивают выигрыши и потери относительно точки отсчёта (reference point), а не абсолютно, и не любят потери сильнее, чем любят выигрыши (неприятие потерь). Теория перспектив (prospect theory) описывает реальное поведение. Для практических решений: если вы можете повторить игру много раз — следуйте ожидаемой полезности (закон больших чисел сработает). Если игра однократная и ставки высоки — учитывайте свои психологические особенности.",
-      "tip": "Составьте таблицу: варианты решений, возможные исходы, их вероятности (хотя бы приблизительные) и полезность для вас (не в деньгах, а в счастье, здоровье, времени). Умножьте и сравните суммы. Это защита от эмоциональных перекосов. Для критических однократных решений спросите: «Что я буду чувствовать, если этот исход произойдёт?» Не игнорируйте страх, но и не позволяйте ему доминировать."
+      "text": "Not all games involve a rational opponent. In games against nature, the 'second player' is uncertainty: weather, market, randomness. Here, decision theory under uncertainty applies. The main tool is maximizing expected utility. Calculate: probability of outcome × utility of outcome, sum, choose the option with the highest sum. But humans systematically violate this model (e.g., fear small-probability catastrophes and overestimate high-probability certainties). Kahneman and Tversky showed people evaluate gains and losses relative to a reference point, not absolutely, and dislike losses more than they like gains (loss aversion). Prospect theory describes real behavior. For practical decisions: if you can repeat the game many times — follow expected utility (law of large numbers will work). If the game is one-shot with high stakes — account for your psychological biases.",
+      "tip": "Create a table: decision options, possible outcomes, their probabilities (even approximate), and utility to you (not in money, but in happiness, health, time). Multiply and compare sums. This protects against emotional biases. For critical one-shot decisions, ask: 'What will I feel if this outcome occurs?' Don't ignore fear, but don't let it dominate."
     },
     {
       "emoji": "🧠",
-      "title": "Поведенческая теория игр: люди не рациональны",
+      "title": "Behavioral Game Theory: People Are Not Rational",
       "source": "Colin Camerer (2003) — Behavioral Game Theory; Kahneman, Tversky, Thaler",
-      "text": "Классическая теория игр предполагает «экономического человека» (Homo economicus): бесконечно рационального, эгоистичного, с неизменными предпочтениями. Поведенческая теория игр (Behavioral Game Theory) изучает, как реальные люди (ограниченно рациональные, социальные, эмоциональные) играют в игры. Экспериментальные данные показывают: люди наказывают несправедливость даже ценой собственного выигрыша (альтруистическое наказание). В игре «Ультиматум» (Ultimatum Game) предлагающий делит сумму, принимающий может согласиться или отказаться (тогда никто не получает ничего). Классическая теория предсказывает: предлагающий даёт минимальную сумму (например, 1% ), принимающий соглашается (1% лучше, чем 0). В реальности: предлагающие дают 30-50%, принимающие отвергают предложения ниже 20% (им важно наказать несправедливость). Люди также чрезмерно доверяют в игре «Доверие» (Trust Game) и платят за доверие взаимностью. Вывод: учитывайте справедливость, репутацию, эмоции, ограниченную рациональность (люди не просчитывают все ходы до конца). В переговорах не пытайтесь «обобрать до нитки» — это спровоцирует месть. Предлагайте честное распределение, и вы получите больше в долгосрочной перспективе.",
-      "tip": "В переговорах, особенно с незнакомыми людьми, не полагайтесь на предсказания «равновесия Нэша в чистых стратегиях». Сделайте ход, который большинство людей сочтут «честным» (например, разделите 50/50 в игре Ультиматум). Если вам предлагают очень неравное распределение — знайте, что у вас есть социальное право отказаться, даже если это «невыгодно». Это посылает сигнал и меняет поведение в будущем."
+      "text": "Classic game theory assumes 'Homo economicus': infinitely rational, selfish, with stable preferences. Behavioral game theory studies how real people (boundedly rational, social, emotional) play games. Experimental data show: people punish unfairness even at their own expense (altruistic punishment). In the Ultimatum Game, the proposer divides a sum, the responder can accept or reject (then both get nothing). Classic theory predicts: proposer gives minimal (e.g., 1%), responder accepts (1% is better than 0). In reality: proposers give 30-50%, responders reject offers below 20% (they want to punish unfairness). People also over-trust in the Trust Game and reciprocate trust. Conclusion: consider fairness, reputation, emotions, bounded rationality (people don't calculate all moves to the end). In negotiations, don't try to 'bleed them dry' — it provokes revenge. Offer a fair split, and you'll gain more in the long run.",
+      "tip": "In negotiations, especially with strangers, don't rely on predictions of 'pure-strategy Nash equilibrium'. Make a move most people would consider 'fair' (e.g., a 50/50 split in the Ultimatum Game). If you're offered a very unequal split — know you have the social right to refuse, even if it's 'not optimal'. This sends a signal and changes future behavior."
     }
   ],
   "quiz": [
     {
-      "q": "Что такое равновесие Нэша?",
+      "q": "What is a Nash equilibrium?",
       "a": [
-        "Ситуация, когда все игроки получают максимально возможный выигрыш",
-        "Набор стратегий, где ни один игрок не может улучшить свой результат, изменив стратегию в одиночку",
-        "Стратегия, при которой игроки всегда сотрудничают"
+        "A situation where all players get maximum possible payoff",
+        "A set of strategies where no player can improve their outcome by unilaterally changing their strategy",
+        "A strategy where players always cooperate"
       ],
       "correct": 1
     },
     {
-      "q": "В чём суть дилеммы заключённого?",
+      "q": "What is the essence of the prisoner's dilemma?",
       "a": [
-        "Индивидуальная рациональность ведёт к коллективному проигрышу",
-        "Всегда выгодно признаваться",
-        "Всегда выгодно молчать"
+        "Individual rationality leads to collective loss",
+        "Confessing is always better",
+        "Staying silent is always better"
       ],
       "correct": 0
     },
     {
-      "q": "Какая стратегия победила в турнире Аксельрода по повторяющейся дилемме заключённого?",
+      "q": "Which strategy won Axelrod's tournament on the repeated prisoner's dilemma?",
       "a": [
-        "Всегда предавать",
-        "Всегда сотрудничать",
-        "Око за око (начинать с сотрудничества, затем копировать ход оппонента)"
+        "Always defect",
+        "Always cooperate",
+        "Tit-for-Tat (start cooperating, then copy opponent's last move)"
       ],
       "correct": 2
     },
     {
-      "q": "Что такое «проклятие победителя» на аукционе?",
+      "q": "What is the 'winner's curse' in auctions?",
       "a": [
-        "Победитель всегда переплачивает из-за завышенной оценки",
-        "Победитель получает приз, но не может его забрать",
-        "Аукцион не состоится из-за низких ставок"
+        "The winner always overpays due to overestimation",
+        "The winner receives a prize but cannot collect it",
+        "The auction fails due to low bids"
       ],
       "correct": 0
     },
     {
-      "q": "В игре «Ультиматум» классическая теория игр предсказывает, что принимающий...",
+      "q": "In the Ultimatum Game, classic game theory predicts that the responder will...",
       "a": [
-        "Всегда отвергает любое предложение",
-        "Соглашается на любую положительную сумму, даже очень маленькую",
-        "Требует ровно половину"
+        "Always reject any offer",
+        "Accept any positive amount, even a very small one",
+        "Demand exactly half"
       ],
       "correct": 1
     }
