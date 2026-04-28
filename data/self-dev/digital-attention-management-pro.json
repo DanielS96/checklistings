@@ -1,106 +1,106 @@
 {
   "id": "digital-attention-management-pro",
-  "title": "Управление вниманием в цифровую эпоху",
-  "subtitle": "Дофаминовые ловушки, экономика внимания и практики глубокой концентрации",
-  "description": "Этот чек-лист раскрывает, как современная цифровая среда захватывает наше внимание и почему мы чувствуем себя постоянно отвлечёнными. Вы узнаете о механизмах дофаминовой зависимости от соцсетей, поймёте принципы экономики внимания и освоите практические техники возвращения контроля над своим фокусом и временем.",
+  "title": "Managing Attention in the Digital Age",
+  "subtitle": "Dopamine traps, attention economy, and deep focus practices",
+  "description": "This checklist reveals how the modern digital environment captures our attention and why we feel constantly distracted. You'll learn about mechanisms of dopamine addiction to social media, understand the principles of the attention economy, and master practical techniques for regaining control over your focus and time.",
 
   "items": [
     {
       "emoji": "🎯",
-      "title": "Экономика внимания",
+      "title": "The Attention Economy",
       "source": "Tim Wu — The Attention Merchants",
-      "text": "Внимание — это самая ценная валюта XXI века. Крупнейшие технологические компании (Meta, Google, TikTok) строят бизнес-модель на захвате и перепродаже вашего внимания рекламодателям. Каждая секунда, проведённая в приложении, приносит им деньги. Их цель — не помочь вам, а максимизировать 'время в приложении'. Алгоритмы обучаются на вашем поведении и становятся всё эффективнее в удержании вас на платформе. Осознание этого факта — первый шаг к защите.",
-      "tip": "Относись к своему вниманию как к ограниченному бюджету. Спроси себя: 'Кому я плачу своим вниманием прямо сейчас и что получаю взамен?'"
+      "text": "Attention is the most valuable currency of the 21st century. Major tech companies (Meta, Google, TikTok) build their business model on capturing and reselling your attention to advertisers. Every second spent in an application brings them money. Their goal is not to help you, but to maximize 'time in app'. Algorithms learn from your behavior and become increasingly effective at keeping you on the platform. Realizing this fact is the first step toward defense.",
+      "tip": "Treat your attention like a limited budget. Ask yourself: 'Who am I paying with my attention right now and what am I getting in return?'"
     },
     {
       "emoji": "🧪",
-      "title": "Дофаминовая петля",
+      "title": "The Dopamine Loop",
       "source": "Anna Lembke — Dopamine Nation",
-      "text": "Дофамин — нейромедиатор желания и предвкушения, а не удовольствия. Уведомления, лайки и бесконечная лента активируют дофаминовую систему по принципу переменного подкрепления (как игровой автомат). Мы никогда не знаем, найдём ли в следующем свайпе что-то интересное, и эта неопределённость вызывает сильнейший выброс дофамина. Проблема в том, что постоянная стимуляция истощает дофаминовые рецепторы, и обычная жизнь начинает казаться пресной и скучной.",
-      "tip": "Отключи все уведомления, кроме звонков от ключевых людей. Уведомление — это чужой запрос на прерывание твоей жизни."
+      "text": "Dopamine is the neurotransmitter of desire and anticipation, not pleasure. Notifications, likes, and endless feeds activate the dopamine system on a variable reinforcement schedule (like a slot machine). We never know if the next swipe will find something interesting, and this uncertainty triggers the strongest dopamine release. The problem is that constant stimulation depletes dopamine receptors, and ordinary life starts to seem bland and boring.",
+      "tip": "Turn off all notifications except calls from key people. A notification is someone else's request to interrupt your life."
     },
     {
       "emoji": "🧠",
-      "title": "Цена переключения контекста",
+      "title": "The Cost of Context Switching",
       "source": "Gloria Mark — Attention Span",
-      "text": "Каждый раз, когда вы отвлекаетесь на уведомление и возвращаетесь к работе, мозг тратит от 23 до 25 минут на полное восстановление фокуса. За рабочий день человек в среднем проверяет почту 77 раз (у тех, кто не контролирует этот процесс). В результате мы проводим день в состоянии постоянного 'полувнимания', не погружаясь по-настоящему ни в одну задачу. Качество работы падает, а усталость растёт.",
-      "tip": "Введи 'блоки фокуса': 90 минут работы с выключенным телефоном и закрытой почтой. Затем 15-20 минут на обработку входящих."
+      "text": "Each time you are distracted by a notification and return to work, the brain takes 23 to 25 minutes to fully restore focus. During a workday, the average person checks email 77 times (among those who don't control the process). As a result, we spend the day in a state of constant 'half-attention', never truly immersing ourselves in any task. Work quality suffers, and fatigue increases.",
+      "tip": "Introduce 'focus blocks': 90 minutes of work with phone turned off and email closed. Then 15-20 minutes for incoming messages."
     },
     {
       "emoji": "📵",
-      "title": "Цифровой минимализм",
+      "title": "Digital Minimalism",
       "source": "Cal Newport — Digital Minimalism",
-      "text": "Философия использования технологий, при которой вы оставляете только те цифровые инструменты, которые приносят значимую ценность, и безжалостно отсекаете всё остальное. Это не отказ от технологий, а осознанный выбор. Ключевая практика — 30-дневная 'цифровая уборка': полный отказ от необязательных приложений и сервисов с последующим аккуратным возвращением только того, что действительно нужно.",
-      "tip": "Устрой цифровой детокс на выходные. Удали соцсети с телефона и заходи в них только с компьютера в строго отведённое время."
+      "text": "A philosophy of technology use where you keep only those digital tools that bring significant value, and ruthlessly cut everything else. It's not a rejection of technology, but a conscious choice. The key practice is a 30-day 'digital declutter': complete abstinence from optional applications and services, followed by careful reintroduction of only what is truly needed.",
+      "tip": "Schedule a digital detox for the weekend. Delete social media from your phone and access them only from your computer at strictly scheduled times."
     },
     {
       "emoji": "📧",
-      "title": "Пакетная обработка коммуникаций",
+      "title": "Batch Processing Communications",
       "source": "Tim Ferriss — The 4-Hour Workweek",
-      "text": "Реактивный стиль работы (ответ на письмо сразу, как оно пришло) — главный враг продуктивности. Мозг не может эффективно переключаться между задачами. Пакетная обработка — это выделение 1-3 временных слотов в день для проверки почты и мессенджеров. Всё остальное время вы находитесь в режиме 'созидания', а не 'реагирования'. Это даёт ощущение контроля над своим днём, а не подчинения чужой повестке.",
-      "tip": "Установи автоответчик: 'Почту проверяю в 11:00 и 16:00. Если вопрос срочный, звоните'. Люди быстро привыкают."
+      "text": "Reactive work style (responding to emails as they arrive) is the enemy of productivity. The brain cannot effectively switch between tasks. Batch processing is allocating 1-3 time slots per day for checking email and messengers. The rest of the time you are in 'creation' mode, not 'reaction' mode. This gives a sense of control over your day, not subservience to someone else's agenda.",
+      "tip": "Set an auto-responder: 'I check email at 11:00 and 16:00. If urgent, call.' People quickly adapt."
     },
     {
       "emoji": "🌊",
-      "title": "Состояние потока",
+      "title": "Flow State",
       "source": "Mihaly Csikszentmihalyi — Flow",
-      "text": "Поток — это состояние полного погружения в деятельность, когда время исчезает, а сам процесс приносит глубокое удовлетворение. Условия входа в поток: 1) чёткая цель, 2) баланс между сложностью задачи и вашими навыками, 3) немедленная обратная связь, 4) отсутствие отвлечений. В состоянии потока продуктивность возрастает в 5 раз, а уровень счастья значительно выше, чем при пассивном потреблении контента.",
-      "tip": "Создай 'ритуал входа' в глубокую работу: одна и та же музыка, наушники, чашка чая. Мозг будет воспринимать это как сигнал к концентрации."
+      "text": "Flow is a state of complete immersion in an activity, where time disappears and the process itself brings deep satisfaction. Conditions for entering flow: 1) clear goal, 2) balance between task difficulty and your skills, 3) immediate feedback, 4) absence of distractions. In flow, productivity increases 5-fold, and happiness levels are significantly higher than during passive content consumption.",
+      "tip": "Create a 'ritual of entry' into deep work: the same music, headphones, cup of tea. The brain will see it as a signal to concentrate."
     },
     {
       "emoji": "📰",
-      "title": "Информационная диета",
+      "title": "Information Diet",
       "source": "Rolf Dobelli — Stop Reading the News",
-      "text": "Новости — это фастфуд для ума. 99% новостей не имеют отношения к вашей жизни и не ведут к действиям, но создают иллюзию информированности и повышают тревожность. К тому же, новостная повестка специально сконструирована так, чтобы вызывать эмоциональную реакцию (страх, гнев, возмущение), что делает её сверхстимулом, от которого трудно оторваться. Осознанное ограничение новостей освобождает огромное количество ментальной энергии.",
-      "tip": "Замени скроллинг новостной ленты на еженедельный обзор качественного аналитического издания. Всё важное подождёт."
+      "text": "News is junk food for the mind. 99% of news is irrelevant to your life and doesn't lead to action, but creates an illusion of being informed and increases anxiety. Moreover, the news agenda is specially constructed to provoke an emotional reaction (fear, anger, indignation), making it a super-stimulus from which it's hard to break away. Conscious limitation of news frees up enormous mental energy.",
+      "tip": "Replace scrolling news feeds with a weekly review of a quality analytical publication. Everything important can wait."
     },
     {
       "emoji": "🔕",
-      "title": "Скука как катализатор креативности",
+      "title": "Boredom as a Catalyst for Creativity",
       "source": "Sandie Mann — The Science of Boredom",
-      "text": "Современный человек разучился скучать. При первых признаках пустоты рука автоматически тянется к телефону. Но именно в моменты скуки, без внешней стимуляции, мозг переходит в режим 'блуждания' (default mode network) — состояния, в котором рождаются творческие идеи, происходит саморефлексия и объединение разрозненных кусков информации в новые смыслы. Убивая скуку телефоном, вы убиваете свою креативность.",
-      "tip": "В очереди, в лифте или ожидая кофе — не доставай телефон. Просто смотри по сторонам и наблюдай за мыслями, которые приходят."
+      "text": "Modern humans have forgotten how to be bored. At the first sign of emptiness, the hand automatically reaches for the phone. But it is in moments of boredom, without external stimulation, that the brain enters 'default mode network' — a state where creative ideas are born, self-reflection occurs, and disparate pieces of information combine into new meanings. Killing boredom with your phone kills your creativity.",
+      "tip": "In line, in the elevator, or waiting for coffee — don't reach for your phone. Just look around and observe the thoughts that come."
     },
     {
       "emoji": "⚙️",
-      "title": "Автоматизация цифровой гигиены",
+      "title": "Automating Digital Hygiene",
       "source": "James Clear — Atomic Habits (Digital)",
-      "text": "Сила воли — ограниченный ресурс. Полагаться на неё в борьбе с многомиллиардными алгоритмами, созданными умнейшими инженерами мира, — заведомо проигрышная стратегия. Вместо этого нужно изменить среду: сделать желаемое поведение лёгким, а нежелательное — трудным. Технические блокировщики, перевод телефона в чёрно-белый режим, удаление приложений с главного экрана — всё это снижает трение для правильных действий.",
-      "tip": "Установи приложение-блокировщик (Freedom, Cold Turkey) и настрой автоматическое отключение соцсетей в рабочие часы."
+      "text": "Willpower is a limited resource. Relying on it in the fight against billion-dollar algorithms created by the world's smartest engineers is a losing strategy. Instead, change the environment: make desired behavior easy and undesired behavior difficult. Technical blockers, switching your phone to black-and-white mode, deleting apps from the home screen — all this reduces friction for the right actions.",
+      "tip": "Install blocker apps (Freedom, Cold Turkey) and set automatic disabling of social media during work hours."
     },
     {
       "emoji": "🌳",
-      "title": "Восстановление через природу",
+      "title": "Restoration Through Nature",
       "source": "Attention Restoration Theory — Rachel & Stephen Kaplan",
-      "text": "Городская среда и цифровые интерфейсы требуют направленного, сфокусированного внимания, которое утомляется. Природа же захватывает 'непроизвольное внимание' мягко, без усилий с нашей стороны. Вид на зелень, воду, облака позволяет префронтальной коре (центру волевого контроля) отдохнуть и восстановиться. 20 минут в парке без телефона снижают уровень кортизола и восстанавливают способность к концентрации.",
-      "tip": "Раз в день выходи на 15-минутную прогулку без телефона. Смотри на деревья, небо, наблюдай за движением облаков."
+      "text": "Urban environments and digital interfaces require directed, focused attention, which becomes fatigued. Nature, however, captures 'involuntary attention' gently, without effort on our part. A view of greenery, water, clouds allows the prefrontal cortex (center of volitional control) to rest and recover. 20 minutes in a park without a phone lowers cortisol levels and restores the ability to concentrate.",
+      "tip": "Once a day, go for a 15-minute walk without a phone. Look at trees, sky, observe the movement of clouds."
     }
   ],
 
   "quiz": [
     {
-      "q": "Что такое 'экономика внимания'?",
-      "a": ["Система, где компании зарабатывают на захвате и продаже вашего внимания", "Экономия на рекламе", "Способ быстро читать"],
+      "q": "What is the 'attention economy'?",
+      "a": ["A system where companies profit from capturing and selling your attention", "Saving money on advertising", "A way to speed read"],
       "correct": 0
     },
     {
-      "q": "Сколько времени в среднем требуется мозгу, чтобы восстановить фокус после отвлечения?",
-      "a": ["1-2 минуты", "5-7 минут", "23-25 минут"],
+      "q": "How much time does the brain typically need to refocus after a distraction?",
+      "a": ["1-2 minutes", "5-7 minutes", "23-25 minutes"],
       "correct": 2
     },
     {
-      "q": "Какой нейромедиатор отвечает за предвкушение награды и активируется уведомлениями и лайками?",
-      "a": ["Серотонин", "Дофамин", "Мелатонин"],
+      "q": "Which neurotransmitter is responsible for reward anticipation and is activated by notifications and likes?",
+      "a": ["Serotonin", "Dopamine", "Melatonin"],
       "correct": 1
     },
     {
-      "q": "Что такое 'цифровой минимализм' по Кэлу Ньюпорту?",
-      "a": ["Полный отказ от технологий", "Осознанное использование только ценных цифровых инструментов", "Использование только одного гаджета"],
+      "q": "What is 'digital minimalism' according to Cal Newport?",
+      "a": ["Complete rejection of technology", "Conscious use of only valuable digital tools", "Using only one gadget"],
       "correct": 1
     },
     {
-      "q": "Почему скука полезна для мозга?",
-      "a": ["Экономит заряд батареи", "Запускает режим блуждания мыслей и креативность", "Помогает быстрее заснуть"],
+      "q": "Why is boredom beneficial for the brain?",
+      "a": ["It saves battery", "It activates the mind-wandering mode and creativity", "It helps to fall asleep faster"],
       "correct": 1
     }
   ]
