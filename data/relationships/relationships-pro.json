@@ -1,85 +1,85 @@
 {
   "id": "relationships-pro",
-  "title": "Психология близости",
-  "subtitle": "Связи, эмпатия и управление конфликтами",
-  "description": "Этот чек-лист закрывает ключевые аспекты построения глубоких и устойчивых отношений: от дружеских до романтических. В основе лежат исследования привязанности, коммуникации и социального интеллекта.",
+  "title": "The Psychology of Intimacy",
+  "subtitle": "Connections, empathy, and conflict management",
+  "description": "This checklist covers key aspects of building deep and sustainable relationships: from friendships to romantic. It is based on research into attachment, communication, and social intelligence.",
   "items": [
     {
       "emoji": "🪞",
-      "title": "Отражение партнера",
+      "title": "Mirroring the Partner",
       "source": "John Gottman — The Seven Principles for Making Marriage Work",
-      "text": "Попытки эмоциональной связи (bids for connection) — это мелкие жесты внимания. Игнорирование этих попыток разрушает доверие быстрее, чем громкие ссоры. Ответ на попытку укрепляет эмоциональный счет.",
-      "tip": "Замечай, когда близкий показывает тебе что-то в телефоне или комментирует погоду — отреагируй хотя бы междометием."
+      "text": "Bids for connection are small gestures of attention. Ignoring these bids destroys trust faster than loud arguments. Responding to a bid strengthens the emotional bank account.",
+      "tip": "Notice when a loved one shows you something on their phone or comments on the weather — respond at least with an interjection."
     },
     {
       "emoji": "👂",
-      "title": "Валидация вместо советов",
+      "title": "Validation Instead of Advice",
       "source": "Michael Sorensen — I Hear You",
-      "text": "В 90% случаев человек делится проблемой не для получения решения, а для того, чтобы его эмоции были признаны реальными. Непрошеные советы вызывают раздражение и ощущение непонимания.",
-      "tip": "Вместо «Тебе надо сделать...» скажи «Звучит так, будто ты очень устал от этого. Понимаю, почему ты злишься»."
+      "text": "90% of the time, a person shares a problem not for a solution, but for their emotions to be acknowledged as real. Unsolicited advice causes irritation and a feeling of being misunderstood.",
+      "tip": "Instead of 'You need to do...' say 'It sounds like you're really tired of this. I understand why you're angry.'"
     },
     {
       "emoji": "🧩",
-      "title": "Теория привязанности",
+      "title": "Attachment Theory",
       "source": "Amir Levine — Attached",
-      "text": "Поведение в конфликтах часто диктуется типом привязанности: тревожный цепляется, избегающий отстраняется. Понимание своего типа и типа партнера снижает уровень неоправданных ожиданий.",
-      "tip": "Если партнер хочет побыть один после ссоры — это не всегда конец отношений, возможно, это его способ восстановления."
+      "text": "Behavior in conflicts is often driven by attachment type: anxious clings, avoidant withdraws. Understanding your own and your partner's type lowers unrealistic expectations.",
+      "tip": "If your partner wants to be alone after an argument, it's not necessarily the end of the relationship; it might be their way of recovering."
     },
     {
       "emoji": "🗣️",
-      "title": "Я-высказывания",
+      "title": "I-Statements",
       "source": "Thomas Gordon — Parent Effectiveness Training",
-      "text": "Фразы, начинающиеся с «Ты вечно...» или «Ты никогда...», включают защитную реакцию у собеседника. Я-высказывание описывает чувства говорящего и факты без обвинения.",
-      "tip": "Замени «Ты меня бесишь, когда опаздываешь» на «Я начинаю нервничать и чувствую себя неважно, когда жду больше 15 минут»."
+      "text": "Phrases starting with 'You always...' or 'You never...' trigger defensive reactions in the listener. An I-statement describes the speaker's feelings and facts without blame.",
+      "tip": "Replace 'You make me so mad when you're late' with 'I start to feel anxious and uncomfortable when I wait more than 15 minutes.'"
     },
     {
       "emoji": "⚔️",
-      "title": "Физиология конфликта",
+      "title": "The Physiology of Conflict",
       "source": "John Gottman",
-      "text": "При пульсе выше 100 ударов в минуту префронтальная кора отключается. Человек физически не способен слышать аргументы. Это состояние 'затопления'. Продолжать спор в этот момент бессмысленно.",
-      "tip": "Введите стоп-слово и расходитесь на 20-30 минут для успокоения."
+      "text": "When the pulse exceeds 100 beats per minute, the prefrontal cortex shuts down. The person is physically unable to hear arguments. This is a state of 'flooding'. Continuing the argument at this point is pointless.",
+      "tip": "Introduce a safe word and separate for 20-30 minutes to calm down."
     },
     {
       "emoji": "🎁",
-      "title": "Языки любви",
+      "title": "Love Languages",
       "source": "Gary Chapman",
-      "text": "Мы склонны проявлять любовь так, как хотели бы получать ее сами. Но если ваш язык — помощь по дому, а партнера — слова поддержки, он будет чувствовать себя недолюбленным, даже если полы вымыты идеально.",
-      "tip": "Спроси напрямую: «Что в моем поведении за последнее время заставило тебя почувствовать, что я тебя ценю?»"
+      "text": "We tend to show love in the way we want to receive it. But if your language is acts of service and your partner's is words of affirmation, they will feel unloved even if the floors are perfectly washed.",
+      "tip": "Ask directly: 'What have I done recently that made you feel appreciated?'"
     },
     {
       "emoji": "🔍",
-      "title": "Принцип фундаментальной ошибки атрибуции",
+      "title": "Fundamental Attribution Error",
       "source": "Lee Ross — Social Psychology",
-      "text": "Свои ошибки мы списываем на обстоятельства («Я опоздал из-за пробок»), а чужие — на личные качества («Он опоздал, потому что безответственный»). Осознание этого искажения снижает агрессию.",
-      "tip": "В момент раздражения на человека задай вопрос: «Какие обстоятельства могли заставить его так поступить, если он в целом хороший?»"
+      "text": "We attribute our own mistakes to circumstances ('I was late because of traffic'), but others' to character ('He was late because he's irresponsible'). Recognizing this distortion reduces aggression.",
+      "tip": "When annoyed with someone, ask: 'What circumstances might have caused them to do this if they are generally a good person?'"
     },
     {
       "emoji": "🌱",
-      "title": "Эффект Микеланджело",
+      "title": "The Michelangelo Effect",
       "source": "Caryl Rusbult",
-      "text": "В здоровых отношениях партнеры не просто принимают друг друга, а 'высекают' идеальную версию друг друга, поддерживая лучшие устремления. Это не критика, а вера в потенциал.",
-      "tip": "Поддерживай не только текущие достижения, но и стремления: «Я знаю, ты хочешь написать книгу. Расскажи, как идет работа над сюжетом?»"
+      "text": "In healthy relationships, partners don't just accept each other; they 'sculpt' the ideal version of each other, supporting their best aspirations. This is not criticism, but belief in potential.",
+      "tip": "Support not only current achievements but also aspirations: 'I know you want to write a book. How's the plot coming?'"
     },
     {
       "emoji": "🛡️",
-      "title": "Личные границы",
+      "title": "Personal Boundaries",
       "source": "Henry Cloud — Boundaries",
-      "text": "Отсутствие границ ведет к выгоранию и скрытой агрессии. Границы определяют, где заканчиваюсь я и начинается другой. Говорить «нет» — это забота об отношениях в долгосрочной перспективе.",
-      "tip": "Вежливый отказ формулируется так: «Я не могу сделать это, но вот что я могу... (предложить альтернативу)»."
+      "text": "Lack of boundaries leads to burnout and hidden aggression. Boundaries define where I end and the other begins. Saying 'no' is caring for the relationship in the long term.",
+      "tip": "A polite refusal formula: 'I can't do that, but here's what I can do... (offer an alternative).'"
     },
     {
       "emoji": "🔁",
-      "title": "Ремонт разрыва",
+      "title": "Repairing Ruptures",
       "source": "Ed Tronick — Still Face Experiment",
-      "text": "Конфликты неизбежны. Важно не отсутствие ссор, а умение восстанавливать связь после них. Успешное примирение делает связь крепче, чем она была до конфликта.",
-      "tip": "Используй юмор, прикосновения или простые слова признания ошибки, чтобы сигнализировать о завершении 'войны'."
+      "text": "Conflict is inevitable. What matters is not the absence of fights, but the ability to repair the connection after them. Successful reconciliation makes the bond stronger than before the conflict.",
+      "tip": "Use humor, touch, or simple words of admission of fault to signal the end of the 'war'."
     }
   ],
   "quiz": [
-    {"q": "Что такое 'bid for connection' в теории Готтмана?", "a": ["Просьба о деньгах", "Попытка привлечь внимание", "Требование извинений"], "correct": 1},
-    {"q": "Почему советы в ответ на жалобу часто раздражают?", "a": ["Они некомпетентны", "Человек ждет эмпатии, а не решения", "Советы дают поздно"], "correct": 1},
-    {"q": "Что делать при пульсе выше 100 уд/мин во время ссоры?", "a": ["Говорить громче", "Взять паузу на 20 минут", "Пытаться обнять партнера"], "correct": 1},
-    {"q": "В чем суть фундаментальной ошибки атрибуции?", "a": ["Мы виним обстоятельства для себя и характер для других", "Мы всегда правы", "Мы помним только плохое"], "correct": 0},
-    {"q": "Что важнее для долгосрочного счастья пары: отсутствие ссор или...", "a": ["Умение мириться", "Общий бюджет", "Одинаковые хобби"], "correct": 0}
+    {"q": "What is a 'bid for connection' in Gottman's theory?", "a": ["Request for money", "Attempt to get attention", "Demand for apology"], "correct": 1},
+    {"q": "Why do unsolicited suggestions often annoy people?", "a": ["They are incompetent", "The person wants empathy, not a solution", "Advice is given too late"], "correct": 1},
+    {"q": "What to do when pulse exceeds 100 bpm during an argument?", "a": ["Speak louder", "Take a 20-minute break", "Try to hug your partner"], "correct": 1},
+    {"q": "What is the fundamental attribution error?", "a": ["We blame circumstances for ourselves and character for others", "We are always right", "We only remember the bad"], "correct": 0},
+    {"q": "What is more important for long-term happiness: absence of fights or...", "a": ["Ability to make up", "Shared budget", "Same hobbies"], "correct": 0}
   ]
 }
