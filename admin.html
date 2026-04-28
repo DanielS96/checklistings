@@ -316,7 +316,7 @@
         async function loadData() {
             showLoading();
             try {
-                const response = await fetch(`${WORKER_URL}/api/admin/stats`);
+                const response = await fetch(`${WORKER_URL}/api/admin/stats?_=${Date.now()}`);
                 allData = await response.json();
                 renderAll();
             } catch (e) {
