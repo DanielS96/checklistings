@@ -1,87 +1,87 @@
 {
   "id": "work-productivity-pro",
-  "title": "Архитектура продуктивности",
-  "subtitle": "Управление задачами, фокус и карьерный рост",
-  "description": "Продуктивность — это не умение делать больше за единицу времени, а умение делать правильные вещи и доводить их до результата. Этот чек-лист объединяет лучшие мировые практики управления работой, вниманием и карьерой.",
+  "title": "The Architecture of Productivity",
+  "subtitle": "Task management, focus, and career growth",
+  "description": "Productivity is not the ability to do more in less time, but the ability to do the right things and see them through to results. This checklist combines the world's best practices for managing work, attention, and career.",
 
   "items": [
     {
       "emoji": "🎯",
-      "title": "Закон Парето",
+      "title": "Pareto Principle (80/20 Rule)",
       "source": "Richard Koch — The 80/20 Principle",
-      "text": "20% усилий дают 80% результата. Но это не значит, что остальные 80% усилий нужно выбросить. Задача профессионала — выявить эти 20% и направить на них больше ресурсов, а остальное — делегировать, автоматизировать или удалить.",
-      "tip": "В конце недели запиши все задачи и обведи те, которые реально двигали тебя к целям."
+      "text": "20% of efforts yield 80% of results. But this doesn't mean the remaining 80% of effort should be thrown away. The professional's task is to identify that 20% and direct more resources to them, and delegate, automate, or eliminate the rest.",
+      "tip": "At the end of the week, write down all tasks and circle the ones that actually moved you toward your goals."
     },
     {
       "emoji": "🐸",
-      "title": "Съешь лягушку",
+      "title": "Eat That Frog",
       "source": "Brian Tracy — Eat That Frog",
-      "text": "Самая неприятная и важная задача дня должна быть выполнена первой. Прокрастинация съедает ментальную энергию на весь день. Выполнив сложное с утра, вы получаете заряд дофамина и освобождаете ум для остальных дел.",
-      "tip": "Вечером определяй 'лягушку' на завтра и не проверяй почту, пока не сделаешь её."
+      "text": "The most unpleasant and important task of the day should be done first. Procrastination eats mental energy all day. By completing the difficult task in the morning, you get a dopamine boost and free up your mind for the rest.",
+      "tip": "In the evening, identify the 'frog' for tomorrow and don't check email until you've done it."
     },
     {
       "emoji": "📧",
-      "title": "Правило трёх писем",
+      "title": "The Three-Email Rule",
       "source": "Tim Ferriss — The 4-Hour Workweek",
-      "text": "Постоянная проверка почты и мессенджеров — это система прерываний, навязанная другими. Обрабатывай входящие потоки в строго отведённое время (2-3 раза в день), а не реактивно. Письма — это чужой список приоритетов.",
-      "tip": "Установи автоответчик: 'Почту проверяю в 11:00 и 16:00. Срочно — звоните'."
+      "text": "Constantly checking email and messengers is a system of interruptions imposed by others. Process incoming streams at strictly scheduled times (2-3 times a day), not reactively. Emails are someone else's priority list.",
+      "tip": "Set an auto-reply: 'I check email at 11:00 and 16:00. Urgent — call me.'"
     },
     {
       "emoji": "⏲️",
-      "title": "Техника Помидора",
+      "title": "The Pomodoro Technique",
       "source": "Francesco Cirillo",
-      "text": "Мозг не может поддерживать пиковую концентрацию часами. Работа интервалами (25 минут фокуса / 5 отдыха) использует естественные ритмы внимания. Это снижает сопротивление перед началом большой задачи.",
-      "tip": "Для сложной творческой работы увеличивай интервалы до 52 минут работы и 17 минут отдыха."
+      "text": "The brain cannot sustain peak concentration for hours. Working in intervals (25 minutes focus / 5 minutes rest) uses natural attention rhythms. This reduces resistance before starting a big task.",
+      "tip": "For complex creative work, increase intervals to 52 minutes work / 17 minutes rest."
     },
     {
       "emoji": "📋",
-      "title": "Матрица Эйзенхауэра",
+      "title": "The Eisenhower Matrix",
       "source": "Dwight D. Eisenhower",
-      "text": "У всего есть два измерения: срочность и важность. Люди склонны делать срочное, но неважное (звонки, уведомления). Истинная продуктивность находится в квадранте 'Важно, но не срочно': обучение, стратегия, здоровье.",
-      "tip": "Каждое утро распределяй задачи по 4 квадрантам. Делегируй или удаляй 'Неважное и несрочное'."
+      "text": "Everything has two dimensions: urgency and importance. People tend to do urgent but unimportant tasks (calls, notifications). True productivity lies in the 'Important but not urgent' quadrant: learning, strategy, health.",
+      "tip": "Each morning, distribute tasks among 4 quadrants. Delegate or delete 'Not important and not urgent'."
     },
     {
       "emoji": "🚫",
-      "title": "Сила слова НЕТ",
+      "title": "The Power of NO",
       "source": "Steve Jobs",
-      "text": "Фокус — это не про то, на что вы сказали 'да'. Фокус — это про сотни вещей, которым вы сказали 'нет'. Каждое новое обязательство размывает ресурсы и снижает качество выполнения ключевых проектов.",
-      "tip": "Прежде чем согласиться, спроси: 'От какой текущей задачи я откажусь ради этого?'"
+      "text": "Focus is not about what you say 'yes' to. Focus is about the hundreds of things you say 'no' to. Each new commitment dilutes resources and reduces the quality of execution on key projects.",
+      "tip": "Before agreeing, ask: 'What current task will I give up for this?'"
     },
     {
       "emoji": "🧠",
-      "title": "Глубокая работа",
+      "title": "Deep Work",
       "source": "Cal Newport — Deep Work",
-      "text": "В экономике знаний ценность создаётся только в состоянии глубокой концентрации. Поверхностная работа (почта, созвоны) необходима, но не создаёт конкурентного преимущества. Защищайте блоки глубокой работы как святыню.",
-      "tip": "Внеси в календарь 2-3 часа 'Встречи с собой' и не позволяй никому их сдвигать."
+      "text": "In the knowledge economy, value is created only in a state of deep concentration. Shallow work (email, calls) is necessary but does not create a competitive advantage. Protect deep work blocks like a shrine.",
+      "tip": "Put 2-3 hours of 'Meeting with Myself' on your calendar and don't let anyone move them."
     },
     {
       "emoji": "🪜",
-      "title": "Карьерный капитал",
+      "title": "Career Capital",
       "source": "Cal Newport — So Good They Can't Ignore You",
-      "text": "Страсть не предшествует мастерству, она следует за ним. Вместо вопроса 'Что мир может дать мне?', задавайте 'Какую редкую и ценную проблему я могу решить?'. Редкие навыки дают рычаг для переговоров о свободе и деньгах.",
-      "tip": "Определи один навык, который в твоей индустрии является 'узким горлышком' и стань в нём лучшим."
+      "text": "Passion does not precede mastery; it follows it. Instead of asking 'What can the world give me?', ask 'What rare and valuable problem can I solve?' Rare skills give you leverage to negotiate for freedom and money.",
+      "tip": "Identify one skill that is a 'bottleneck' in your industry and become the best at it."
     },
     {
       "emoji": "📝",
-      "title": "Еженедельный обзор",
+      "title": "Weekly Review",
       "source": "David Allen — Getting Things Done",
-      "text": "Без регулярной рефлексии система планирования разваливается. Еженедельный обзор — это время, когда вы очищаете 'оперативную память', закрываете циклы и выстраиваете стратегию на следующую неделю.",
-      "tip": "В пятницу днём или воскресенье вечером выдели 45 минут на разбор входящих и планирование."
+      "text": "Without regular reflection, a planning system falls apart. The weekly review is when you clear your 'working memory', close loops, and build strategy for the next week.",
+      "tip": "On Friday afternoon or Sunday evening, set aside 45 minutes to process inputs and plan."
     },
     {
       "emoji": "⚡",
-      "title": "Управление энергией, а не временем",
+      "title": "Manage Energy, Not Time",
       "source": "Jim Loehr — The Power of Full Engagement",
-      "text": "Время — конечный и фиксированный ресурс. Энергия — возобновляемый. Работать 12 часов на низкой энергии менее эффективно, чем 4 часа на пике. Важно управлять циклами напряжения и восстановления.",
-      "tip": "Планируй сложные задачи на пик своей энергии (для большинства — утро), а рутину — на спад."
+      "text": "Time is a finite and fixed resource. Energy is renewable. Working 12 hours at low energy is less effective than 4 hours at peak. It's important to manage cycles of stress and recovery.",
+      "tip": "Schedule complex tasks for your energy peak (for most, morning), and routine tasks for the slump."
     }
   ],
 
   "quiz": [
-    {"q": "Что утверждает Закон Парето в контексте продуктивности?", "a": ["Работать надо 80% времени", "20% усилий дают 80% результата", "80% задач срочные"], "correct": 1},
-    {"q": "Что Кэл Ньюпорт называет 'Глубокой работой'?", "a": ["Многозадачность", "Деятельность в состоянии максимальной концентрации", "Работу в подвале"], "correct": 1},
-    {"q": "В чём суть 'Матрицы Эйзенхауэра'?", "a": ["Деление задач на срочные и важные", "Список военных приказов", "План захвата рынка"], "correct": 0},
-    {"q": "Почему, согласно Кэлу Ньюпорту, следовать за страстью — плохая карьерная стратегия?", "a": ["Страсть быстро проходит", "Мастерство рождает страсть, а не наоборот", "Страсть не приносит денег"], "correct": 1},
-    {"q": "Что важнее в течение рабочего дня: управлять временем или энергией?", "a": ["Временем", "Энергией", "Одинаково"], "correct": 1}
+    {"q": "What does the Pareto Principle state in the context of productivity?", "a": ["Work 80% of the time", "20% of efforts yield 80% of results", "80% of tasks are urgent"], "correct": 1},
+    {"q": "What does Cal Newport call 'Deep Work'?", "a": ["Multitasking", "Activity in a state of maximum concentration", "Working in a basement"], "correct": 1},
+    {"q": "What is the essence of the Eisenhower Matrix?", "a": ["Dividing tasks into urgent and important", "A list of military orders", "A market capture plan"], "correct": 0},
+    {"q": "According to Cal Newport, why is following passion a bad career strategy?", "a": ["Passion fades quickly", "Mastery creates passion, not the other way around", "Passion doesn't make money"], "correct": 1},
+    {"q": "What is more important during a workday: managing time or energy?", "a": ["Time", "Energy", "Equally"], "correct": 1}
   ]
 }
