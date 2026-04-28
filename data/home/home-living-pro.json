@@ -1,106 +1,106 @@
 {
   "id": "home-living-pro",
-  "title": "Экология пространства",
-  "subtitle": "Уют, минимализм и управление домашними ресурсами",
-  "description": "Этот чек-лист закрывает фундамент организации быта: от расхламления и систем хранения до управления домашними финансами и создания восстанавливающей атмосферы. Порядок в доме напрямую влияет на порядок в голове и уровень ежедневной энергии.",
+  "title": "Living Space Ecology",
+  "subtitle": "Cozy, minimalist, and managing home resources",
+  "description": "This checklist covers the foundation of home organization: from decluttering and storage systems to managing home finances and creating a restorative atmosphere. Order in the home directly impacts order in the mind and daily energy levels.",
 
   "items": [
     {
       "emoji": "🧹",
-      "title": "Расхламление по категориям",
+      "title": "Decluttering by Category",
       "source": "Marie Kondo — The Life-Changing Magic of Tidying Up",
-      "text": "Визуальный шум от лишних вещей незаметно потребляет когнитивный ресурс мозга. Уборка по локациям (сегодня шкаф, завтра ящик) не работает, потому что вы не видите реального объёма вещей. Только собрав всю одежду из всех комнат в одну кучу, можно осознать масштаб и принять решение.",
-      "tip": "Начни с категории 'Одежда'. Собери всё в центр комнаты и оставь только то, что реально носишь и любишь."
+      "text": "Visual noise from excess stuff quietly consumes cognitive resources. Cleaning by room (closet today, drawer tomorrow) doesn't work because you don't see the real volume of belongings. Only by gathering all clothes from all rooms in one pile can you realize the scale and make decisions.",
+      "tip": "Start with the 'Clothing' category. Gather everything in the center of the room and keep only what you actually wear and love."
     },
     {
       "emoji": "📦",
-      "title": "Принцип 'Одного входа'",
+      "title": "The 'One In, One Out' Principle",
       "source": "Fumio Sasaki — Goodbye, Things",
-      "text": "Количество вещей в доме стремится к увеличению, если не ввести осознанное правило. Каждая новая покупка должна сопровождаться расставанием с одной старой вещью аналогичной функции. Это останавливает энтропию и сохраняет пространство свободным.",
-      "tip": "Купил новую кружку — отдай или выброси старую с трещиной. Купил новую футболку — убери одну старую в пакет на выброс."
+      "text": "The number of things in a home tends to increase unless you introduce a conscious rule. Each new purchase should be accompanied by parting with one old item of similar function. This stops entropy and keeps space free.",
+      "tip": "Bought a new mug — give away or throw out the old cracked one. Bought a new t-shirt — put one old one in the donation bag."
     },
     {
       "emoji": "🗂️",
-      "title": "Система хранения",
+      "title": "Storage System",
       "source": "David Allen — Getting Things Done (Home Edition)",
-      "text": "Каждая вещь не на своём месте — это незакрытый цикл в мозгу. Когда у предмета есть единственное законное 'место жительства', мозг перестаёт тратить энергию на его поиск и фоновое беспокойство. Система хранения должна быть интуитивной для всех членов семьи.",
-      "tip": "Сгруппируй вещи по частоте использования: ежедневное — на уровне глаз и рук, сезонное — на верхние полки."
+      "text": "Every item not in its place is an open loop in the brain. When an object has a single 'home', the brain stops spending energy searching for it and worrying. The storage system should be intuitive for all family members.",
+      "tip": "Group items by frequency of use: daily items at eye and hand level, seasonal items on higher shelves."
     },
     {
       "emoji": "🧽",
-      "title": "Правило 5 минут",
+      "title": "The 5-Minute Rule",
       "source": "Gretchen Rubin — The Happiness Project",
-      "text": "Беспорядок нарастает из-за отложенных микро-действий. Чашка в раковину, куртка в шкаф, протереть стол — всё это занимает меньше 5 минут. Привычка делать такие дела немедленно, а не 'потом', экономит часы на генеральной уборке и сохраняет дом в состоянии 'гостевой готовности'.",
-      "tip": "Если действие занимает меньше 5 минут — сделай его прямо сейчас, не откладывая."
+      "text": "Clutter accumulates from postponed micro-actions. A cup in the sink, a jacket in the closet, wipe the counter — all take less than 5 minutes. The habit of doing these small tasks immediately, rather than 'later', saves hours on major cleaning and keeps the home in 'guest-ready' condition.",
+      "tip": "If an action takes less than 5 minutes — do it right now, don't postpone."
     },
     {
       "emoji": "💡",
-      "title": "Световой сценарий",
+      "title": "Lighting Scenario",
       "source": "Matthew Walker — Why We Sleep",
-      "text": "Освещение напрямую управляет циркадными ритмами и гормональным фоном. Яркий холодный свет вечером подавляет выработку мелатонина и мешает засыпанию. Тёплый приглушённый свет сигнализирует мозгу о приближении ночи и способствует расслаблению.",
-      "tip": "Используй несколько источников света в комнате: верхний свет для уборки, торшеры и бра с тёплым спектром (2700K) для вечера."
+      "text": "Lighting directly controls circadian rhythms and hormonal status. Bright cool light in the evening suppresses melatonin production and hinders sleep onset. Warm dim light signals the brain that night is approaching and promotes relaxation.",
+      "tip": "Use multiple light sources in a room: overhead light for cleaning, floor lamps and sconces with warm spectrum (2700K) for evening."
     },
     {
       "emoji": "🌿",
-      "title": "Биофилия в интерьере",
+      "title": "Biophilia in Interior Design",
       "source": "Stephen Kellert — Biophilic Design",
-      "text": "Человек эволюционно запрограммирован на контакт с природой. Присутствие живых растений, натуральных текстур дерева и камня, а также видов на зелень снижает уровень кортизола и ускоряет восстановление после стресса. Это не декор, а элемент психической гигиены.",
-      "tip": "Заведи минимум одно крупное неприхотливое растение (сансевиерия, замиокулькас) в зоне, где проводишь больше всего времени."
+      "text": "Humans are evolutionarily programmed for contact with nature. The presence of live plants, natural textures of wood and stone, and views of greenery lower cortisol levels and accelerate recovery from stress. This is not decor, but an element of mental hygiene.",
+      "tip": "Get at least one large, unpretentious plant (snake plant, ZZ plant) in the area where you spend the most time."
     },
     {
       "emoji": "🧺",
-      "title": "Метод 'Одной закладки'",
+      "title": "The 'One Load' Method",
       "source": "FlyLady System",
-      "text": "Перфекционизм в уборке приводит к прокрастинации. Идея убрать 'всю кухню идеально' пугает масштабом. Метод 'Одной закладки' (или 'Зоны') предлагает фокусироваться на одной небольшой области за раз, но делать это регулярно. Раковина — отправная точка порядка.",
-      "tip": "Начни с сияющей раковины на кухне каждый вечер. Это якорная привычка, которая запускает цепную реакцию порядка."
+      "text": "Perfectionism in cleaning leads to procrastination. The idea of cleaning 'the whole kitchen perfectly' is intimidating in scale. The 'One Load' or 'Zone' method suggests focusing on one small area at a time, but doing it regularly. The sink is the starting point of order.",
+      "tip": "Start with a sparkling kitchen sink every evening. This is the anchor habit that triggers a chain reaction of order."
     },
     {
       "emoji": "💰",
-      "title": "Домашняя бухгалтерия",
+      "title": "Home Accounting",
       "source": "Ramit Sethi — I Will Teach You To Be Rich",
-      "text": "Быт съедает бюджет через мелкие, но частые траты: кофе навынос, спонтанная доставка еды, забытые подписки. Осознанное планирование меню на неделю и список покупок снижают расходы на еду на 20-30% без потери качества жизни.",
-      "tip": "Раз в неделю проводи ревизию холодильника перед походом в магазин. Составляй список и не отходи от него."
+      "text": "Daily life eats the budget through small but frequent expenses: takeaway coffee, spontaneous food delivery, forgotten subscriptions. Conscious weekly meal planning and a shopping list reduce food costs by 20-30% without sacrificing quality of life.",
+      "tip": "Review the refrigerator before going to the store once a week. Make a list and stick to it."
     },
     {
       "emoji": "🧘",
-      "title": "Зона восстановления",
+      "title": "Restoration Zone",
       "source": "Alain de Botton — The Architecture of Happiness",
-      "text": "В доме обязательно должно быть место, свободное от экранов, рабочих документов и напоминаний об обязанностях. Уголок с креслом, пледом и книгой, где можно просто 'быть'. Наличие такой зоны — это сигнал психике, что здесь безопасно и можно расслабиться.",
-      "tip": "Создай 'алтарь спокойствия': кресло, мягкий свет, свеча или аромалампа. Проводи там 10 минут в день без телефона."
+      "text": "The home must have a place free from screens, work documents, and reminders of obligations. A corner with an armchair, blanket, and book where you can just 'be'. The presence of such a zone signals the psyche that it is safe and can relax.",
+      "tip": "Create a 'calm altar': an armchair, soft light, a candle or aromatherapy lamp. Spend 10 minutes there daily without a phone."
     },
     {
       "emoji": "🔄",
-      "title": "Сезонная ревизия",
+      "title": "Seasonal Review",
       "source": "Courtney Carver — Project 333",
-      "text": "Вещи имеют свойство накапливаться незаметно. Четыре раза в год (в идеале — со сменой сезона) проводи лёгкую ревизию гардероба, кухонной утвари и аптечки. Это занимает пару часов, но предотвращает хаос и позволяет вовремя избавиться от просроченного и сломанного.",
-      "tip": "Поставь напоминание в календаре на первое число каждого сезона: 'Ревизия пространства'."
+      "text": "Things tend to accumulate unnoticed. Four times a year (ideally with the change of seasons) do a light review of your wardrobe, kitchenware, and medicine cabinet. It takes a couple of hours but prevents chaos and allows timely disposal of expired and broken items.",
+      "tip": "Set a calendar reminder for the first day of each season: 'Space Review'."
     }
   ],
 
   "quiz": [
     {
-      "q": "Почему Мари Кондо рекомендует убирать вещи по категориям, а не по комнатам?",
-      "a": ["Это быстрее", "Чтобы увидеть реальный объём вещей одной категории", "Чтобы не ходить по всему дому"],
+      "q": "Why does Marie Kondo recommend tidying by category rather than by room?",
+      "a": ["It's faster", "To see the total volume of items in one category", "To avoid walking around the whole house"],
       "correct": 1
     },
     {
-      "q": "В чём суть принципа 'Одного входа'?",
-      "a": ["Входить в дом только через одну дверь", "Новая вещь — минус одна старая аналогичная", "Покупать только один предмет в день"],
+      "q": "What is the essence of the 'One In, One Out' principle?",
+      "a": ["Enter the house through only one door", "New item — minus one old similar item", "Buy only one item per day"],
       "correct": 1
     },
     {
-      "q": "Какой спектр света рекомендуется для вечернего освещения спальни?",
-      "a": ["Холодный белый (5000K)", "Тёплый жёлтый (2700K)", "Яркий дневной (4000K)"],
+      "q": "What light spectrum is recommended for evening bedroom lighting?",
+      "a": ["Cool white (5000K)", "Warm yellow (2700K)", "Bright daylight (4000K)"],
       "correct": 1
     },
     {
-      "q": "Что такое 'якорная привычка' в системе FlyLady?",
-      "a": ["Мытьё полов во всём доме", "Чистая раковина на кухне каждый вечер", "Разбор гардероба раз в год"],
+      "q": "What is an 'anchor habit' in the FlyLady system?",
+      "a": ["Mopping all floors in the house", "A clean kitchen sink every evening", "Annual wardrobe purge"],
       "correct": 1
     },
     {
-      "q": "Зачем нужна 'зона восстановления' в доме?",
-      "a": ["Для приёма гостей", "Для сигнала психике о безопасности и отдыхе", "Для хранения спортинвентаря"],
+      "q": "Why is a 'restoration zone' needed in the home?",
+      "a": ["For receiving guests", "To signal the psyche of safety and rest", "For storing sports equipment"],
       "correct": 1
     }
   ]
