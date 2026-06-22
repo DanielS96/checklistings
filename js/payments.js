@@ -1,7 +1,7 @@
 console.log('💰 Payments module loading...');
 
 const WORKER_URL = 'https://checklistings-en.dan-svistunov.workers.dev';
-const CHECKLIST_PRICE = 0;
+const CHECKLIST_PRICE = 100;
 
 let tg = null;
 let userId = null;
